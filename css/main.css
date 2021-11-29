@@ -360,7 +360,7 @@ body{
 .section__hand-point{
 	position: absolute;
 	display: inline-block;
-	left: 80px;
+	left: 70px;
 	width: 30px;
 	text-align: center;
 	color: #001800;
@@ -370,7 +370,7 @@ body{
 	position: absolute;
 	right: 10px;
 	display: none;
-	width: 160px;
+	width: 180px;
 	text-align-last: justify;
 }
 
