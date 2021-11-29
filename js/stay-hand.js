@@ -21,7 +21,7 @@ function showPlayerHands(){
 
 	//Setting width for description of each hand
 	points_details.forEach(details=>{
-		details.style.width = "280px";
+		details.style.width = "300px";
 	});
 
 	//Setting width for total points
