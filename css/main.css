@@ -177,7 +177,7 @@ body{
 	border-radius: 20px;
 	box-shadow: 2px 4px 15px #222;
 	color: white;
-	font-size: 5em;
+	font-size: 80px;
 	text-transform: uppercase;
 	z-index: 70;
 }
@@ -269,7 +269,7 @@ body{
 }
 
 .section__card-info{
-	font-size: 2rem;
+	font-size: 32px;
 	transition: none;
 	text-align: center;
 	letter-spacing: -2px;
@@ -300,13 +300,8 @@ body{
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	font-size: 24rem;
+	font-size: 384px;
 	text-align: center;
-}
-
-.section__card img{
-	height: 75%;
-	font-size: 1.5rem;
 }
 
 #card1{
