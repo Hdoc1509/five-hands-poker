@@ -25,7 +25,7 @@ function showPlayerHands(){
 	});
 
 	//Setting width for total points
-	total_points.style.width = "140px";
+	total_points.style.width = "160px";
 
 	//Show player hands
 	for (hand_cards in playerHands){
