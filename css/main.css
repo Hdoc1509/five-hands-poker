@@ -346,6 +346,7 @@ body{
 .section__points-details{
 	position: relative;
 	width: 120px;
+	margin: 0 auto;
 	text-align: left;
 }
 
