@@ -345,7 +345,7 @@ body{
 
 .section__points-details{
 	position: relative;
-	width: 120px;
+	width: 102px;
 	margin: 0 auto;
 	text-align: left;
 }
@@ -353,7 +353,6 @@ body{
 .section__current-hand{
 	background-color: #51f75182;
 	border-radius: 10px;
-	font-size: 18px;
 	color: #001800;
 }
 
@@ -370,7 +369,7 @@ body{
 	position: absolute;
 	right: 10px;
 	display: none;
-	width: 180px;
+	width: 190px;
 	text-align-last: justify;
 }
 
