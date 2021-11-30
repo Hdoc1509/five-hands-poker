@@ -214,7 +214,7 @@ body{
 
 .section__action-button{
 	position: relative;
-	margin: 12px 0;
+	margin-bottom: 8px;
 	background-color: #000;
 	padding: 10px 20px;
 	color: white;
@@ -325,10 +325,8 @@ body{
 }
 
 .section--points{
-	margin-top: 20px;
 	flex-direction: row;
 	justify-content: center;
-	z-index: 100;
 }
 
 .section__points-title, .section__remaining-cards-title{
@@ -345,9 +343,10 @@ body{
 
 .section__points-details{
 	position: relative;
-	width: 102px;
-	margin: 0 auto;
-	text-align: left;
+	width: 120px;
+	margin: 10px auto;
+	text-align: center;
+	line-height: 20px;
 }
 
 .section__current-hand{
@@ -357,19 +356,15 @@ body{
 }
 
 .section__hand-point{
-	position: absolute;
 	display: inline-block;
-	left: 70px;
 	width: 30px;
 	text-align: center;
 	color: #001800;
 }
 
 .section__hand-cards{
-	position: absolute;
-	right: 10px;
 	display: none;
-	width: 190px;
+	width: 200px;
 	text-align-last: justify;
 }
 

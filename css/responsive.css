@@ -207,7 +207,6 @@
 	}
 
 	.section__action-button{
-		margin: 8px;
 		font-size: 14px;
 	}
 
@@ -239,7 +238,7 @@
 	}
 
 	.section__card{
-		font-size: 120px;
+		font-size: 100px;
 	}
 
 	#card2{
@@ -258,4 +257,7 @@
 		left: 160px;
 	}
 
+	.section__points-details{
+		width: 110px;
+	}
 }
