@@ -21,7 +21,9 @@ function showPlayerHands(){
 
 	//Setting width for description of each hand
 	points_details.forEach(details=>{
-		details.style.width = "300px";
+		details.style.backgroundColor = "#0ba70566";
+		details.style.width = "280px";
+		details.style.borderRadius = "10px";
 	});
 
 	//Setting width for total points
@@ -128,6 +130,9 @@ function stayHand(){
 		const game_result = document.getElementById("game-result");
 		game_result.show();
 
+		//Show player hands beside points of each hand
+		showPlayerHands();
+
 		//Validation for win the game
 		if (p_points >= 60) {
 			result_text = "You win!";
@@ -148,8 +153,6 @@ function stayHand(){
 		//Hidding the remaining card container
 		remaining_cards_container.style.display = "none";
 
-		//Show player hands beside points of each hand
-		showPlayerHands();
 	}
 
 	//If it isn't the last hand
