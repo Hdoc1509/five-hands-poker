@@ -1,175 +1,171 @@
-const stay_button = document.getElementById("stay-button");
-const next_hand_button = document.getElementById("next-hand-button");
-let counter_hands_player = 1;
-let total_p_points = document.getElementById("total-hands-points");
-const current_hand = document.querySelectorAll("p.section__current-hand");
-const play_again_button = document.getElementById("play-again-button");
+/**
+ * @fileoverview	Functions, elements and instructions for stay hand and next hand
+ * 
+ * @author			Héctor Ochoa
+ * 
+ * @copyright		Héctor Ochoa 2021
+ */
 
-//Play again
-function playAgain(){location.reload()}
+/**
+ * Stay hand button
+ * @type {HTMLElement}
+ */
+const stayButton = document.getElementById("stay-button");
 
-//Show player hands
-function showPlayerHands(){
-	let cards_desc = document.querySelectorAll(".section__hand-cards"),
-	points_details = document.querySelectorAll(".section__points-details"),
-	total_points = document.getElementById("total-points");
+/**
+ * Next hand button
+ * @type {HTMLElement}
+ */
+const nextHandButton = document.getElementById("next-hand-button");
 
-	//Displaying description of each hand
-	cards_desc.forEach(hand_cards=>{
-		hand_cards.style.display = "inline-block";
-	});
+/**
+ * Play again button
+ * @type {HTMLElement}
+ */
+const playAgainButton = document.getElementById("play-again-button");
 
-	//Setting width for description of each hand
-	points_details.forEach(details=>{
+/**
+ * Text box for total player points
+ * @type {HTMLElement}
+ */
+const totalPlayerPoints = document.getElementById("total-hands-points");
+
+/**
+ * Counter for player hands
+ * @type {Number}
+ */
+let handsPlayerCounter = 1;
+
+/** Play again the game */
+function playAgain() {
+	location.reload();
+}
+
+/** Show player hands */
+function showPlayerHands() {
+	let cardsDesc = document.querySelectorAll(".section__hand-cards"),
+	pointsDetails = document.querySelectorAll(".section__points-details"),
+	totalPointsBox = document.getElementById("total-points");
+
+	//Displaying description container of each hand
+	// @ts-ignore
+	cardsDesc.forEach(handCards => {handCards.style.display = "inline-block"});
+
+	// Setting new styles for description of each hand
+	pointsDetails.forEach(details => {
+		// @ts-ignore
 		details.style.backgroundColor = "#0ba70566";
+		// @ts-ignore
 		details.style.width = "280px";
+		// @ts-ignore
 		details.style.borderRadius = "10px";
 	});
 
-	//Setting width for total points
-	total_points.style.width = "140px";
+	// Setting width for total points
+	totalPointsBox.style.width = "140px";
 
-	//Show player hands
-	for (hand_cards in playerHands){
-		//Taking the cards of the hand
-		let hand_desc = playerHands[hand_cards].cards,
+	// Show player hands
+	for (let hand of playerHands) {
+		let handCards = hand.cards,
+		currentHandId = hand.id,
+		handDescTxt = `(${handCards.join(" ")})`;
 
-		//Getting the id of the card
-		current_hand_id = playerHands[hand_cards].id,
+		const handTxtBox = document.getElementById(`${currentHandId}-cards`);
 
-		//Element of document with the previous id
-		hand_txt = document.getElementById(`${current_hand_id}-cards`),
-
-		//Text that will contain the cards of the hand
-		hand_desc_txt = "(";
-
-		//Array for the cards of the hand
-		const hand_desc_array = [];
-		
-		//Adding each card to the array of hand cards
-		for (hands in hand_desc){
-			hand_desc_array.push(hand_desc[hands]);
-		}
-
-		//Completing the text of hand cards
-		hand_desc_txt += hand_desc_array.join(" ");
-		hand_desc_txt += ")";
-
-		//Showing hand cards
-		hand_txt.innerHTML = hand_desc_txt;
+		// Displaying hand cards
+		handTxtBox.innerHTML = handDescTxt;
 	}
 }
 
-//Stay Hand
-function stayHand(){
-	//Hidding the Change and the Stay buttons
-	change_button.style.display = "none";
-	stay_button.style.display = "none";
+/** Stay with the current hand */
+function stayHand() {
+	hideShowButton(changeButton, "hide");
+	hideShowButton(stayButton, "hide");
 
-	//Removing listener for change cards
-	change_button.removeEventListener("click", changeSelectedCards);
+	changeButton.removeEventListener("click", changeSelectedCards);
+	stayButton.removeEventListener("click", stayHand);
 
-	//Removing listener for toggle class "section__selected-card"
-	for (let card of cards_to_change) {
+	for (let card of cardsToChange) {
 		card.removeEventListener("click", toggleClassSelectedCard);
 	}
 
-	//Generating data for the current hand
-	const hand_p = verificateHand(generatedObjCards[0], generatedObjCards[1], generatedObjCards[2], generatedObjCards[3], generatedObjCards[4]);
-	hand_p.id = `hand${counter_hands_player}`;
+	// Data for the current hand
+	const currentHandData = verificateHand(generatedObjCards[0], generatedObjCards[1], generatedObjCards[2], generatedObjCards[3], generatedObjCards[4]);
+	currentHandData.id = `hand${handsPlayerCounter}`;
 
-	//Updating the points of the current hand
-	let hand_p_point = document.getElementById(`hand${counter_hands_player}-points`);
-	hand_p_point.innerHTML = hand_p.points;
+	// Updating the points of the current hand
+	let currentHandPointBox = document.getElementById(`hand${handsPlayerCounter}-points`);
+	currentHandPointBox.innerHTML = `${currentHandData.points}`;
 
-	//Adding the current hand to array playerHands
-	playerHands.push(hand_p);
+	// Adding the current hand to array playerHands
+	playerHands.push(currentHandData);
 
-	//Updating the counter of hands
-	counter_hands_player++;
-
-	//Removing the listener for the Stay button
-	stay_button.removeEventListener("click", stayHand);
+	// Updating the counter of hands
+	handsPlayerCounter++;
 
 	//Validation if it's the last hand
 	if (playerHands.length == 5) {
-		//Hidding the Next Hand button
-		next_hand_button.style.display = "none";
+		hideShowButton(nextHandButton, "hide");
+		hideShowButton(playAgainButton, "show");
 
-		//Showing the Play Again button
-		play_again_button.style.display = "inline-block";
+		playAgainButton.addEventListener("click", playAgain);
+		nextHandButton.removeEventListener("click", startGame);
 
-		//Adding listener for play again
-		play_again_button.addEventListener("click",playAgain);
-
-		//Removing the listener for Next Hand button
-		next_hand_button.removeEventListener("click", startGame);
-
-		//Getting the current hand and removing its class "section__current-hand"
-		const current_hand = document.querySelectorAll("p.section__current-hand");
-		current_hand.forEach(hand_p => {
-			hand_p.classList.remove("section__current-hand");
-		});
+		// Removing class for current hand
+		clearCurrentHandClass();
 		
-		//Setting total points
-		let p_points = 0;
-		playerHands.forEach(p_hand => {p_points += p_hand.points});
+		// Setting total points
+		let playerPoints = 0;
+		playerHands.forEach(playerHand => {playerPoints += playerHand.points});
 
-		//Updating the total points
-		total_p_points.innerHTML = p_points;
+		// Updating the total points
+		totalPlayerPoints.innerHTML = `${playerPoints}`;
 
-		//Updating styles for total points
-		let total_points_container = document.getElementById("total-points");
+		// Updating styles for total points
+		let totalPointsBox = document.getElementById("total-points");
 
-		total_points_container.style.fontSize = "24px";
-		total_points_container.style.color = "#fff";
+		totalPointsBox.style.fontSize = "24px";
+		totalPointsBox.style.color = "#fff";
 		document.getElementById("total-hands-points").style.fontSize = "24px";
 
-		//Showing game result
-		let result_text = "";
-		const game_result = document.getElementById("game-result");
-		game_result.show();
+		// Showing game result
+		const gameResult = document.getElementById("game-result");
+		// @ts-ignore
+		gameResult.show();
 
-		//Show player hands beside points of each hand
+		// Show player hands beside points of each hand
 		showPlayerHands();
 
-		//Validation for win the game
-		if (p_points >= 60) {
-			result_text = "You win!";
-			game_result.style.backgroundColor = "#106e10";
-			total_points_container.style.backgroundColor = "#106e10";
+		// Validation for win the game
+		let textResult = "";
+
+		if (playerPoints >= 60) {
+			textResult = "You win!";
+			gameResult.style.backgroundColor = "#106e10";
+			totalPointsBox.style.backgroundColor = "#106e10";
 
 		} else {
-			result_text = "You lose!";
-			game_result.style.backgroundColor = "#e71e1e";
-			total_points_container.style.backgroundColor = "#c71c1c";
+			textResult = "You lose!";
+			gameResult.style.backgroundColor = "#e71e1e";
+			totalPointsBox.style.backgroundColor = "#c71c1c";
 		}
 
-		game_result.innerHTML = result_text;
+		gameResult.innerHTML = textResult;
 
-		//Updating the counter of remaining cards
-		counter_remaining_cards = 0;
-
-		//Hidding the remaining card container
-		remaining_cards_container.style.display = "none";
-
+		// Hidding the remaining card container
+		remainingCardsContainer.style.display = "none";
 	}
 
-	//If it isn't the last hand
+	// If it isn't the last hand
 	else {
-		//Displaying the Next Hand button
-		next_hand_button.style.display = "inline-block";
+		hideShowButton(nextHandButton, "show");
 
-		//Adding the listener for Next Hand button
-		next_hand_button.addEventListener("click", startGame);
+		nextHandButton.addEventListener("click", startGame);
+		playAgainButton.removeEventListener("click", playAgain);
 
-		//Removing the listener for Play Again button
-		play_again_button.removeEventListener("click",playAgain);
-
-		//Cleaning the array generatedObjCards
-		generatedObjCards.splice(0,5);
-
-		//Updating the counter of remaining cards
-		counter_remaining_cards = 3;
+		// Cleaning the array generatedObjCards
+		cleanArray(generatedObjCards);
 	}
+
+	remainingCards.innerHTML = "-";
 }

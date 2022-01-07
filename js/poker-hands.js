@@ -1,16 +1,36 @@
-//Verificate Hand
-function verificateHand(card1, card2, card3, card4, card5){
-	let hand = {
-		cards: {
-			card_1: `${card1.number}${card1.figure}`,
-			card_2: `${card2.number}${card2.figure}`,
-			card_3: `${card3.number}${card3.figure}`,
-			card_4: `${card4.number}${card4.figure}`,
-			card_5: `${card5.number}${card5.figure}`
-		}
+/**
+ * Hand Object
+ * @typedef {Object} ObjHand
+ * @property {Array<String>} cards Hand's cards
+ * @property {String} description Hand's description
+ * @property {String} id Hand's id
+ * @property {Number} points Hand's points
+ */
+
+/**
+ * Verificate hand
+ * @param {ObjCard} card1 First card
+ * @param {ObjCard} card2 Second card
+ * @param {ObjCard} card3 Third card
+ * @param {ObjCard} card4 Fourth card
+ * @param {ObjCard} card5 Fifth card
+ * @returns {ObjHand} Returns hand information as an object
+ */
+function verificateHand(card1, card2, card3, card4, card5) {
+	const hand = {
+		cards: [
+			`${card1.number}${card1.figure}`,
+			`${card2.number}${card2.figure}`,
+			`${card3.number}${card3.figure}`,
+			`${card4.number}${card4.figure}`,
+			`${card5.number}${card5.figure}`
+		],
+		description: "",
+		id: "",
+		points: 0
 	};
 
-	//For Pair
+	// For PAIR
 	if ((card1.number == card2.number &&
 		card1.number != card3.number &&
 		card1.number != card4.number &&
@@ -104,7 +124,7 @@ function verificateHand(card1, card2, card3, card4, card5){
 		hand.description = `Par de ${card4.number}`;
 	}
 
-	//For Double Pair
+	// For DOUBLE PAIR
 	else if ((card1.number == card2.number &&
 		card3.number == card4.number &&
 		card1.number != card3.number &&
@@ -216,7 +236,7 @@ function verificateHand(card1, card2, card3, card4, card5){
 		`Doble par: par de ${card2.number} y par de ${card3.number}`;
 	}
 
-	//For Trio
+	// For TRIO
 	else if ((card1.number == card2.number &&
 		card1.number == card3.number &&
 		card1.number != card4.number &&
@@ -287,7 +307,7 @@ function verificateHand(card1, card2, card3, card4, card5){
 		hand.description = `Trío de ${card3.number}`;
 	}
 
-	//For Stair
+	// For STAIR
 	else if ((card1.number == "A" ||
 		card1.number == 2 ||
 		card1.number == 3 ||
@@ -333,17 +353,17 @@ function verificateHand(card1, card2, card3, card4, card5){
 		card4.number != card5.number) {
 
 		if (card1.figure == card2.figure &&
-		card2.figure == card3.figure &&
-		card3.figure == card4.figure &&
-		card4.figure == card5.figure) {
+			card2.figure == card3.figure &&
+			card3.figure == card4.figure &&
+			card4.figure == card5.figure) {
 
-			//For Color Stair
+			// For COLOR STAIR
 			hand.points = 75;
 			hand.description = `Escalera de Color(${card1.figure}): A - 5`;
 
 		} else {
 
-			//For Stair
+			// For STAIR
 			hand.points = 15;
 			hand.description = "Escalera: A - 5";
 		}
@@ -393,17 +413,17 @@ function verificateHand(card1, card2, card3, card4, card5){
 		card4.number != card5.number) {
 
 		if (card1.figure == card2.figure &&
-		card2.figure == card3.figure &&
-		card3.figure == card4.figure &&
-		card4.figure == card5.figure) {
+			card2.figure == card3.figure &&
+			card3.figure == card4.figure &&
+			card4.figure == card5.figure) {
 
-			//For Color Stair
+			// For COLOR STAIR
 			hand.points = 75;
 			hand.description = `Escalera de Color(${card1.figure})`;
 
 		} else {
 
-			//For Stair
+			// For STAIR
 			hand.points = 15;
 			hand.description = "Escalera: 2 - 6";
 		}
@@ -453,17 +473,17 @@ function verificateHand(card1, card2, card3, card4, card5){
 		card4.number != card5.number) {
 
 		if (card1.figure == card2.figure &&
-		card2.figure == card3.figure &&
-		card3.figure == card4.figure &&
-		card4.figure == card5.figure) {
+			card2.figure == card3.figure &&
+			card3.figure == card4.figure &&
+			card4.figure == card5.figure) {
 
-			//For Color Stair
+			// For COLOR STAIR
 			hand.points = 75;
 			hand.description = `Escalera de Color(${card1.figure}): 3 - 7`;
 
 		} else {
 
-			//For Stair
+			// For STAIR
 			hand.points = 15;
 			hand.description = "Escalera: 3 - 7";
 		}
@@ -513,17 +533,17 @@ function verificateHand(card1, card2, card3, card4, card5){
 		card4.number != card5.number) {
 
 		if (card1.figure == card2.figure &&
-		card2.figure == card3.figure &&
-		card3.figure == card4.figure &&
-		card4.figure == card5.figure) {
+			card2.figure == card3.figure &&
+			card3.figure == card4.figure &&
+			card4.figure == card5.figure) {
 
-			//For Color Stair
+			// For COLOR STAIR
 			hand.points = 75;
 			hand.description = `Escalera de Color(${card1.figure}): 4 - 8`;
 
 		} else {
 
-			//For Stair
+			// For STAIR
 			hand.points = 15;
 			hand.description = "Escalera: 4 - 8";
 		}
@@ -573,17 +593,17 @@ function verificateHand(card1, card2, card3, card4, card5){
 		card4.number != card5.number) {
 
 		if (card1.figure == card2.figure &&
-		card2.figure == card3.figure &&
-		card3.figure == card4.figure &&
-		card4.figure == card5.figure) {
+			card2.figure == card3.figure &&
+			card3.figure == card4.figure &&
+			card4.figure == card5.figure) {
 
-			//For Color Stair
+			// For COLOR STAIR
 			hand.points = 75;
 			hand.description = `Escalera de Color(${card1.figure}): 5 - 9`;
 
 		} else {
 
-			//For Stair
+			// For STAIR
 			hand.points = 15;
 			hand.description = "Escalera: 5 - 9";
 		}
@@ -633,17 +653,17 @@ function verificateHand(card1, card2, card3, card4, card5){
 		card4.number != card5.number) {
 
 		if (card1.figure == card2.figure &&
-		card2.figure == card3.figure &&
-		card3.figure == card4.figure &&
-		card4.figure == card5.figure) {
+			card2.figure == card3.figure &&
+			card3.figure == card4.figure &&
+			card4.figure == card5.figure) {
 
-			//For Color Stair
+			// For COLOR STAIR
 			hand.points = 75;
 			hand.description = `Escalera de Color(${card1.figure}): 6 - 10`;
 
 		} else {
 
-			//For Stair
+			// For STAIR
 			hand.points = 15;
 			hand.description = "Escalera: 6 - 10";
 		}
@@ -693,17 +713,17 @@ function verificateHand(card1, card2, card3, card4, card5){
 		card4.number != card5.number) {
 
 		if (card1.figure == card2.figure &&
-		card2.figure == card3.figure &&
-		card3.figure == card4.figure &&
-		card4.figure == card5.figure) {
+			card2.figure == card3.figure &&
+			card3.figure == card4.figure &&
+			card4.figure == card5.figure) {
 
-			//For Color Stair
+			// For COLOR STAIR
 			hand.points = 75;
 			hand.description = `Escalera de Color(${card1.figure}): 7 - J`;
 
 		} else {
 
-			//For Stair
+			// For STAIR
 			hand.points = 15;
 			hand.description = `Escalera: 7 - J`;
 		}
@@ -753,17 +773,17 @@ function verificateHand(card1, card2, card3, card4, card5){
 		card4.number != card5.number) {
 
 		if (card1.figure == card2.figure &&
-		card2.figure == card3.figure &&
-		card3.figure == card4.figure &&
-		card4.figure == card5.figure) {
+			card2.figure == card3.figure &&
+			card3.figure == card4.figure &&
+			card4.figure == card5.figure) {
 
-			//For Color Stair
+			// For COLOR STAIR
 			hand.points = 75;
 			hand.description = `Escalera de Color(${card1.figure}): 8 - Q`;
 
 		} else {
 
-			//For Stair
+			// For STAIR
 			hand.points = 15;
 			hand.description = `Escalera: 8 - Q`;
 		}
@@ -813,17 +833,17 @@ function verificateHand(card1, card2, card3, card4, card5){
 		card4.number != card5.number) {
 
 		if (card1.figure == card2.figure &&
-		card2.figure == card3.figure &&
-		card3.figure == card4.figure &&
-		card4.figure == card5.figure) {
+			card2.figure == card3.figure &&
+			card3.figure == card4.figure &&
+			card4.figure == card5.figure) {
 
-			//For Color Stair
+			// For COLOR STAIR
 			hand.points = 75;
 			hand.description = `Escalera de Color(${card1.figure}): 9 - K`;
 
 		} else {
 
-			//For Stair
+			// For STAIR
 			hand.points = 15;
 			hand.description = "Escalera: 9 - K";
 		}
@@ -873,23 +893,23 @@ function verificateHand(card1, card2, card3, card4, card5){
 		card4.number != card5.number) {
 
 		if (card1.figure == card2.figure &&
-		card2.figure == card3.figure &&
-		card3.figure == card4.figure &&
-		card4.figure == card5.figure) {
+			card2.figure == card3.figure &&
+			card3.figure == card4.figure &&
+			card4.figure == card5.figure) {
 
-			//For Real Color Stair
+			// For REAL COLOR STAIR
 			hand.points = 100;
 			hand.description = `Escaler Real de Color (${card1.figure})`;
 
 		} else {
 
-			//For Stair
+			// For STAIR
 			hand.points = 15;
 			hand.description = "Escalera: 10 - A";
 		}	
 	}
 
-	//For color
+	// For COLOR
 	else if (card1.figure == card2.figure &&
 		card2.figure == card3.figure &&
 		card3.figure == card4.figure &&
@@ -899,7 +919,7 @@ function verificateHand(card1, card2, card3, card4, card5){
 		hand.description = `Color(${card1.figure})`;
 	}
 
-	//For Full House
+	// For FULL HOUSE
 	else if ((card1.number == card2.number &&
 		card2.number == card3.number &&
 		card1.number != card4.number &&
@@ -923,6 +943,12 @@ function verificateHand(card1, card2, card3, card4, card5){
 		card1.number != card2.number &&
 		card1.number != card4.number &&
 		card2.number == card4.number) ||
+
+		(card1.number == card3.number &&
+		card1.number == card4.number &&
+		card1.number != card2.number &&
+		card1.number != card5.number &&
+		card2.number == card5.number) ||
 
 		(card1.number == card4.number &&
 		card1.number == card5.number &&
@@ -958,7 +984,7 @@ function verificateHand(card1, card2, card3, card4, card5){
 		hand.description = "Full House";
 	}
 
-	//For Poker
+	// For POKER
 	else if ((card1.number == card2.number &&
 		card1.number == card3.number &&
 		card1.number == card4.number &&
@@ -991,7 +1017,7 @@ function verificateHand(card1, card2, card3, card4, card5){
 		hand.description = `Póker de ${card2.number}`;
 	}
 
-	//For nothing
+	//For NOTHING
 	else {
 		hand.points = 0;
 		hand.description = "Nothing";
