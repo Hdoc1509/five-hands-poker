@@ -124,17 +124,13 @@ button {
 }
 
 .dialog-container__close-button {
-  display: inline-block;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 1.5rem;
+  right: 1rem;
+  aspect-ratio: 1 / 1;
   width: 30px;
-  height: 30px;
   border-radius: 10px;
-  border: none;
-  outline: none;
   font-weight: bold;
-  cursor: pointer;
   transition: background-color 0.25s ease;
 }
 
