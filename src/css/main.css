@@ -173,11 +173,6 @@ button {
   color: var(--poker-hand-points);
 }
 
-/*TODO Remove this selector*/
-.dialog-container__hand-punctuation {
-  color: #51d4ff;
-}
-
 /*TODO Remove display on this selector*/
 .dialog-container__game-version {
   display: inline-block;
