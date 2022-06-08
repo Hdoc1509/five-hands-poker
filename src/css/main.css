@@ -98,21 +98,16 @@ button {
 }
 
 .dialog-container {
-  position: absolute;
+  position: fixed;
   top: 240px;
-  left: 0;
-  right: 0;
-  width: 680px;
-  height: 360px;
+  width: 75%;
+  height: 50vh;
   background-color: #444;
+  padding: 1.5rem;
   margin: 0 auto;
-  padding: 16px;
-  padding-right: 10px;
   color: #fff;
-  text-align: center;
   border: none;
-  border-radius: 6px;
-  outline: none;
+  border-radius: 10px;
   overflow-y: scroll;
 }
 
