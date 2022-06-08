@@ -2,255 +2,401 @@
 =            PANTANLLA GENERAL            =
 =========================================*/
 
-.col-12 {width: 100%}
+.col-12 {
+  width: 100%;
+}
 
-.col-11 {width: 91.66666667%}
+.col-11 {
+  width: 91.66666667%;
+}
 
-.col-10 {width: 83.33333333%}
+.col-10 {
+  width: 83.33333333%;
+}
 
-.col-9 {width: 75%}
+.col-9 {
+  width: 75%;
+}
 
-.col-8 {width: 66.66666667%}
+.col-8 {
+  width: 66.66666667%;
+}
 
-.col-7 {width: 58.33333333%}
+.col-7 {
+  width: 58.33333333%;
+}
 
-.col-6 {width: 50%}
+.col-6 {
+  width: 50%;
+}
 
-.col-5 {width: 41.66666667%}
+.col-5 {
+  width: 41.66666667%;
+}
 
-.col-4 {width: 33.33333333%}
+.col-4 {
+  width: 33.33333333%;
+}
 
-.col-3 {width: 25%}
+.col-3 {
+  width: 25%;
+}
 
-.col-2 {width: 16.66666667%}
+.col-2 {
+  width: 16.66666667%;
+}
 
-.col-1 {width: 8.33333333%}
+.col-1 {
+  width: 8.33333333%;
+}
 
-.col-0 {display: none;}
+.col-0 {
+  display: none;
+}
 
 /*==================================================================
 =            PANTALLA DE ESCRITORIO GRANDE - LARGE (lg)            =
 ==================================================================*/
 
-@media(min-width: 1200px) {
+@media (min-width: 1200px) {
+  .col-lg-12 {
+    width: 100%;
+  }
 
-	.col-lg-12 {width: 100%}
+  .col-lg-11 {
+    width: 91.66666667%;
+  }
 
-	.col-lg-11 {width: 91.66666667%}
+  .col-lg-10 {
+    width: 83.33333333%;
+  }
 
-	.col-lg-10 {width: 83.33333333%}
+  .col-lg-9 {
+    width: 75%;
+  }
 
-	.col-lg-9 {width: 75%}
+  .col-lg-8 {
+    width: 66.66666667%;
+  }
 
-	.col-lg-8 {width: 66.66666667%}
+  .col-lg-7 {
+    width: 58.33333333%;
+  }
 
-	.col-lg-7 {width: 58.33333333%}
+  .col-lg-6 {
+    width: 50%;
+  }
 
-	.col-lg-6 {width: 50%}
+  .col-lg-5 {
+    width: 41.66666667%;
+  }
 
-	.col-lg-5 {width: 41.66666667%}
+  .col-lg-4 {
+    width: 33.33333333%;
+  }
 
-	.col-lg-4 {width: 33.33333333%}
+  .col-lg-3 {
+    width: 25%;
+  }
 
-	.col-lg-3 {width: 25%}
+  .col-lg-2 {
+    width: 16.66666667%;
+  }
 
-	.col-lg-2 {width: 16.66666667%}
+  .col-lg-1 {
+    width: 8.33333333%;
+  }
 
-	.col-lg-1 {width: 8.33333333%}
+  .col-lg-0 {
+    display: none;
+  }
 
-	.col-lg-0 {display: none;}
-
-	.container--changelog {
-		width: 66.66666667%;
-	}
+  .container--changelog {
+    width: 66.66666667%;
+  }
 }
 
 /*========================================================
 =            PANTALLA DE LAPTOP - MEDIUM (md)            =
 ========================================================*/
 
-@media(max-width: 1199px) and (min-width: 992px) {
+@media (max-width: 1199px) and (min-width: 992px) {
+  .col-md-12 {
+    width: 100%;
+  }
 
-	.col-md-12 {width: 100%}
+  .col-md-11 {
+    width: 91.66666667%;
+  }
 
-	.col-md-11 {width: 91.66666667%}
+  .col-md-10 {
+    width: 83.33333333%;
+  }
 
-	.col-md-10 {width: 83.33333333%}
+  .col-md-9 {
+    width: 75%;
+  }
 
-	.col-md-9 {width: 75%}
+  .col-md-8 {
+    width: 66.66666667%;
+  }
 
-	.col-md-8 {width: 66.66666667%}
+  .col-md-7 {
+    width: 58.33333333%;
+  }
 
-	.col-md-7 {width: 58.33333333%}
+  .col-md-6 {
+    width: 50%;
+  }
 
-	.col-md-6 {width: 50%}
+  .col-md-5 {
+    width: 41.66666667%;
+  }
 
-	.col-md-5 {width: 41.66666667%}
+  .col-md-4 {
+    width: 33.33333333%;
+  }
 
-	.col-md-4 {width: 33.33333333%}
+  .col-md-3 {
+    width: 25%;
+  }
 
-	.col-md-3 {width: 25%}
+  .col-md-2 {
+    width: 16.66666667%;
+  }
 
-	.col-md-2 {width: 16.66666667%}
+  .col-md-1 {
+    width: 8.33333333%;
+  }
 
-	.col-md-1 {width: 8.33333333%}
+  .col-md-0 {
+    display: none;
+  }
 
-	.col-md-0 {display: none;}
-
-	.container--changelog {
-		width: 66.66666667%;
-	}
+  .container--changelog {
+    width: 66.66666667%;
+  }
 }
 
 /*=======================================================
 =            PANTALLA DE TABLET - SMALL (sm)            =
 =======================================================*/
 
-@media(max-width: 991px) and (min-width: 768px) {
+@media (max-width: 991px) and (min-width: 768px) {
+  .col-sm-12 {
+    width: 100%;
+  }
 
-	.col-sm-12 {width: 100%}
+  .col-sm-11 {
+    width: 91.66666667%;
+  }
 
-	.col-sm-11 {width: 91.66666667%}
+  .col-sm-10 {
+    width: 83.33333333%;
+  }
 
-	.col-sm-10 {width: 83.33333333%}
+  .col-sm-9 {
+    width: 75%;
+  }
 
-	.col-sm-9 {width: 75%}
+  .col-sm-8 {
+    width: 66.66666667%;
+  }
 
-	.col-sm-8 {width: 66.66666667%}
+  .col-sm-7 {
+    width: 58.33333333%;
+  }
 
-	.col-sm-7 {width: 58.33333333%}
+  .col-sm-6 {
+    width: 50%;
+  }
 
-	.col-sm-6 {width: 50%}
+  .col-sm-5 {
+    width: 41.66666667%;
+  }
 
-	.col-sm-5 {width: 41.66666667%}
+  .col-sm-4 {
+    width: 33.33333333%;
+  }
 
-	.col-sm-4 {width: 33.33333333%}
+  .col-sm-3 {
+    width: 25%;
+  }
 
-	.col-sm-3 {width: 25%}
+  .col-sm-2 {
+    width: 16.66666667%;
+  }
 
-	.col-sm-2 {width: 16.66666667%}
+  .col-sm-1 {
+    width: 8.33333333%;
+  }
 
-	.col-sm-1 {width: 8.33333333%}
+  .col-sm-0 {
+    display: none;
+  }
 
-	.col-sm-0 {display: none;}
-
-	.container--changelog {
-		width: 83.33333333%;
-	}
+  .container--changelog {
+    width: 83.33333333%;
+  }
 }
 
 /*==================================================================
 =            PANTALLA DE SMARTPHONES - EXTRA SMALL (xs)            =
 ==================================================================*/
 
-@media(max-width: 767px) {
+@media (max-width: 767px) {
+  .col-xs-12 {
+    width: 100%;
+  }
 
-	.col-xs-12 {width: 100%}
+  .col-xs-11 {
+    width: 91.66666667%;
+  }
 
-	.col-xs-11 {width: 91.66666667%}
+  .col-xs-10 {
+    width: 83.33333333%;
+  }
 
-	.col-xs-10 {width: 83.33333333%}
+  .col-xs-9 {
+    width: 75%;
+  }
 
-	.col-xs-9 {width: 75%}
+  .col-xs-8 {
+    width: 66.66666667%;
+  }
 
-	.col-xs-8 {width: 66.66666667%}
+  .col-xs-7 {
+    width: 58.33333333%;
+  }
 
-	.col-xs-7 {width: 58.33333333%}
+  .col-xs-6 {
+    width: 50%;
+  }
 
-	.col-xs-6 {width: 50%}
+  .col-xs-5 {
+    width: 41.66666667%;
+  }
 
-	.col-xs-5 {width: 41.66666667%}
+  .col-xs-4 {
+    width: 33.33333333%;
+  }
 
-	.col-xs-4 {width: 33.33333333%}
+  .col-xs-3 {
+    width: 25%;
+  }
 
-	.col-xs-3 {width: 25%}
+  .col-xs-2 {
+    width: 16.66666667%;
+  }
 
-	.col-xs-2 {width: 16.66666667%}
+  .col-xs-1 {
+    width: 8.33333333%;
+  }
 
-	.col-xs-1 {width: 8.33333333%}
+  .col-xs-0 {
+    display: none;
+  }
 
-	.col-xs-0 {display: none;}
+  .container--changelog {
+    width: 83.33333333%;
+  }
 
-	.container--changelog {
-		width: 83.33333333%;
-	}
+  .dialog-open-button {
+    width: 24px;
+    height: 24px;
+    top: 15px;
+    right: 8px;
+    line-height: 12px;
+    font-size: 14px;
+  }
 
-	.dialog-open-button {
-		width: 24px;
-		height: 24px;
-		top: 15px;
-		right: 8px;
-		line-height: 12px;
-		font-size: 14px;
-	}
+  .dialog-container {
+    top: 60px;
+  }
 
-	.dialog-container {top: 60px;}
+  .dialog-container__close-button {
+    top: 14px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+  }
 
-	.dialog-container__close-button {
-		top: 14px;
-		right: 5px;
-		width: 20px;
-		height: 20px;
-		border-radius: 8px;
-	}
+  .dialog-container__rules-title {
+    margin: 0 0 10px;
+    font-size: 16px;
+  }
 
-	.dialog-container__rules-title {
-		margin: 0 0 10px;
-		font-size: 16px;
-	}
+  .dialog-container__rules-subtitle {
+    font-size: 14px;
+  }
 
-	.dialog-container__rules-subtitle {font-size: 14px;}
+  .dialog-container__rules-details {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
 
-	.dialog-container__rules-details {
-		margin-bottom: 12px;
-		font-size: 12px;
-	}
+  .dialog-game-result {
+    top: 220px;
+    font-size: 48px;
+  }
 
-	.dialog-game-result {
-		top: 220px;
-		font-size: 48px;
-	}
+  .title-container__title {
+    font-size: 28px;
+  }
 
-	.title-container__title {font-size: 28px;}
+  .section__action-button {
+    font-size: 14px;
+  }
 
-	.section__action-button {font-size: 14px;}
+  .section__cards-group {
+    height: 240px;
+    width: 300px;
+  }
 
-	.section__cards-group {
-		height: 240px;
-		width: 300px;
-	}
+  .section__card-container {
+    width: 140px;
+    height: 240px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #222;
+  }
 
-	.section__card-container {
-		width: 140px;
-		height: 240px;
-		border-radius: 10px;
-		box-shadow: 4px 4px 10px #222;
-	}
+  .section__card-info {
+    font-size: 20px;
+    line-height: 18px;
+  }
 
-	.section__card-info {
-		font-size: 20px;
-		line-height: 18px;
-	}
+  .section__card-top-info {
+    top: 8px;
+    left: 8px;
+  }
 
-	.section__card-top-info {
-		top: 8px;
-		left: 8px;
-	}
+  .section__card-bottom-info {
+    bottom: 8px;
+    right: 8px;
+  }
 
-	.section__card-bottom-info {
-		bottom: 8px;
-		right: 8px;
-	}
+  .section__card {
+    font-size: 100px;
+  }
 
-	.section__card {font-size: 100px;}
+  #card2 {
+    left: 40px;
+  }
 
-	#card2 {left: 40px;}
+  #card3 {
+    left: 80px;
+  }
 
-	#card3 {left: 80px;}
+  #card4 {
+    left: 120px;
+  }
 
-	#card4 {left: 120px;}
+  #card5 {
+    left: 160px;
+  }
 
-	#card5 {left: 160px;}
-
-	.section__points-details {width: 110px;}
+  .section__points-details {
+    width: 110px;
+  }
 }
