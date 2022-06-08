@@ -70,8 +70,7 @@ body::-webkit-scrollbar-thumb:hover {
 ==============================*/
 
 .dialog-open-button {
-  display: inline-block;
-  position: absolute;
+  position: fixed;
   width: 30px;
   height: 30px;
   top: 10px;
