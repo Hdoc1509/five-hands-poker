@@ -13,10 +13,7 @@
 
 <div class="container">
 
-	<!--============================
-	=            Dialog            =
-	=============================-->
-
+	<!-- MODAL -->
 	<button id="dialog-open-button" class="dialog-open-button">i</button>
 	
 	<dialog id="dialog-game-rules" class="dialog-container">
@@ -59,32 +56,22 @@
 	</dialog>
 
 	<dialog id="game-result" class="dialog-game-result"></dialog>
+	<!-- END OF MODAL -->
 	
-	<!--====  End of Dialog  ====-->
-	
-	<!--============================
-	=            Header            =
-	=============================-->
-	
+	<!-- HEADER -->
 	<header class="row">
 		<div class="title-container col-12">
 			<h1 class="title-container__title">Five Hands Poker</h1>
 		</div>
 	</header>
-	
-	<!--====  End of Header  ====-->
+	<!-- END OF HEADER -->
 
-	<!--=============================
-	=            Article            =
-	==============================-->
-	
+	<!-- MAIN -->
 	<article class="row">
-
-		<!--===============================
-		=            Section 1            =
-		================================-->
 		
 		<section class="section col-12">
+
+			<!-- BUTTONS -->
 			<div class="section__buttons-container">
 				<button id="start-button" class="section__action-button">Start</button>
 
@@ -96,7 +83,9 @@
 
 				<button id="play-again-button" class="section__action-button">Play Again</button>
 			</div>
+			<!-- END OF BUTTONS -->
 
+			<!-- CARDS -->
 			<div class="section__cards-group">
 				<div id="card1" class="section__card-container">
 					<p class="section__card-info section__card-top-info">?</p>
@@ -124,15 +113,14 @@
 					<p class="section__card-info section__card-bottom-info">?</p>
 				</div>
 			</div>
+			<!-- END OF CARDS -->
+
 		</section>
 
-		<!--====  End of Section 1  ====-->
-
-		<!--===============================
-		=            Section 2            =
-		================================-->
-		
+		<!-- GAME INFO -->
 		<section class="section section--points col-12">
+
+			<!-- POINTS -->
 			<div class="section__points-details-container">
 				<h3 class="section__points-title">Player points</h3>
 
@@ -165,31 +153,28 @@
 					<span id="total-hands-points" class="section__total-hands-points">00</span>
 				</p>
 			</div>
+			<!-- END OF POINTS -->
 
+			<!-- REMAINING CARDS -->
 			<div id="remaining-cards-container" class="section__remaining-cards-container">
 				<h3 class="section__remaining-cards-title">Remaining Cards</h3>
 				<p id="remaining-cards" class="section__remaining-cards-details">?</p>
 			</div>
-		</section>
+			<!-- END OF REMAINING CARDS -->
 
-		<!--====  End of Section 2  ====-->
+		</section>
+		<!-- END OF GAME INFO -->
 
 	</article>
-	
-	<!--====  End of Article  ====-->
+	<!-- END OF MAIN -->
 
-	<!--============================
-	=            Footer            =
-	=============================-->
-	
+	<!-- FOOTER -->
 	<footer class="row">
 		<div class="credits-container col-12">
 			<p id="credits" class="credits-container__author">&copy; 2021 Héctor Ochoa</p>
 		</div>
 	</footer>
-	
-	<!--====  End of Footer  ====-->
-	
+	<!-- END OF FOOTER -->
 
 </div>
 
