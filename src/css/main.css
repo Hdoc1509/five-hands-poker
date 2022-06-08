@@ -187,8 +187,14 @@ button {
   text-decoration: underline;
 }
 
+/**
+
+  TODO Check and improve rest of selectors
+
+ */
+
 .dialog-game-result {
-  position: absolute;
+  position: fixed;
   top: 360px;
   margin: 0 auto;
   padding: 10px;
