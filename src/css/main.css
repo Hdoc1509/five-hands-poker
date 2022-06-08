@@ -161,10 +161,6 @@ button {
   text-align: justify;
 }
 
-.dialog-container__rules-details--punctuation {
-  text-align: left;
-}
-
 .dialog-container__rules-details--punctuation li {
   margin: 4px 0;
 }
