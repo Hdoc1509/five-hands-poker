@@ -140,8 +140,9 @@ button {
 }
 
 .dialog-container__rules-title {
-  margin: 6px 0 8px 0;
+  margin-bottom: 10px;
   color: #fff;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
