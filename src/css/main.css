@@ -150,9 +150,7 @@ button {
 .dialog-container__rules-subtitle {
   margin: 6px 0;
   color: var(--rules-subtitle);
-  font-weight: normal;
   letter-spacing: 2px;
-  text-align: left;
   text-transform: uppercase;
 }
 
