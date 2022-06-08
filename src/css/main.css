@@ -173,9 +173,7 @@ button {
   color: var(--poker-hand-points);
 }
 
-/*TODO Remove display on this selector*/
 .dialog-container__game-version {
-  display: inline-block;
   float: right;
   font-style: italic;
 }
