@@ -240,7 +240,7 @@ section {
   gap: 10px;
 }
 
-.section__action-button {
+.buttons-container__action-button {
   position: relative;
   margin-bottom: 8px;
   background-color: #000;
@@ -254,7 +254,7 @@ section {
   transition: background-color 0.25s ease;
 }
 
-.section__action-button:hover {
+.buttons-container__action-button:hover {
   background-color: #2c632c;
 }
 
