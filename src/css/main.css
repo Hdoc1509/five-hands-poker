@@ -195,12 +195,6 @@ section {
   text-decoration: underline;
 }
 
-/**
-
-  TODO Check and improve rest of selectors
-
- */
-
 .dialog-game-result {
   position: fixed;
   top: 360px;
@@ -269,6 +263,12 @@ section {
 
 /*----------  CARDS  ----------*/
 
+/**
+
+  TODO Check and improve rest of selectors
+
+ */
+
 .cards-group {
   height: 550px;
   width: 680px;
@@ -278,7 +278,7 @@ section {
   margin: 0 auto;
 }
 
-.section__card-container {
+.card-container {
   position: absolute;
   top: 0;
   width: 320px;
