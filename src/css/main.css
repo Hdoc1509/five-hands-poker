@@ -368,6 +368,13 @@ button {
   font-weight: bold;
 }
 
+.points-details__hand-point {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  color: #001800;
+}
+
 .section__remaining-cards-title {
   margin-bottom: 4px;
   text-align: center;
@@ -394,13 +401,6 @@ button {
 .section__current-hand {
   background-color: var(--current-hand);
   border-radius: 10px;
-  color: #001800;
-}
-
-.section__hand-point {
-  display: inline-block;
-  width: 30px;
-  text-align: center;
   color: #001800;
 }
 
