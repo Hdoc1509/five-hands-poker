@@ -274,7 +274,7 @@ button {
   position: absolute;
   top: 0;
   width: 320px;
-  height: 546px;
+  height: 100%;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 4px 4px 15px #222;
