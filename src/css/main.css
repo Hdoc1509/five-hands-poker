@@ -347,8 +347,6 @@ button {
 =            GAME INFO            =
 =================================*/
 
-/*----------  POINTS  ----------*/
-
 .game-info {
   display: flex;
   flex-direction: row;
@@ -356,7 +354,13 @@ button {
   margin-top: 10px;
 }
 
-.section__points-title,
+/*----------  POINTS  ----------*/
+
+.points-details__title {
+  margin-bottom: 4px;
+  text-align: center;
+}
+
 .section__remaining-cards-title {
   margin-bottom: 4px;
   text-align: center;
