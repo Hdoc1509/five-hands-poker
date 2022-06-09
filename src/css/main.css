@@ -361,6 +361,13 @@ button {
   text-align: center;
 }
 
+.points-details__hand {
+  padding: 8px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
 .section__remaining-cards-title {
   margin-bottom: 4px;
   text-align: center;
