@@ -269,7 +269,7 @@ section {
 
 /*----------  CARDS  ----------*/
 
-.section__cards-group {
+.cards-group {
   height: 550px;
   width: 680px;
   position: relative;
