@@ -71,14 +71,6 @@ button {
   cursor: pointer;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  float: none;
-  margin: 0 auto;
-}
-
 /*==============================
 =            DIALOG            =
 ==============================*/
