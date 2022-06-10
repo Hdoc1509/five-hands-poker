@@ -255,12 +255,6 @@ button {
 
 /*----------  CARDS  ----------*/
 
-/**
-
-  TODO Check and improve rest of selectors
-
- */
-
 .cards-group {
   height: 550px;
   width: 680px;
@@ -270,7 +264,7 @@ button {
   margin: 0 auto;
 }
 
-.card-container {
+.card {
   position: absolute;
   width: 320px;
   height: 100%;
@@ -280,6 +274,12 @@ button {
   cursor: default;
   transition: top 0.25s ease, outline 0.25s ease;
 }
+
+/**
+
+  TODO Refactor from here to .section__card
+
+ */
 
 .section__selected-card {
   top: -16px;
