@@ -6,7 +6,7 @@ const changeButton = document.getElementById('change-button');
 
 /** Change selected cards */
 function changeSelectedCards() {
-	const selectedCards = document.querySelectorAll('.section__selected-card'),
+	const selectedCards = document.querySelectorAll('.card--selected'),
 		len = selectedCards.length;
 
 	function changeCardsQuantity(quantity) {
