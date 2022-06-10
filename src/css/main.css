@@ -189,7 +189,7 @@ button {
 }
 
 .dialog-game-result {
-  position: fixed;
+  position: absolute;
   top: 360px;
   margin: 0 auto;
   padding: 10px;
