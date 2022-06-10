@@ -355,12 +355,13 @@ button {
   margin-top: 10px;
 }
 
-/*----------  POINTS  ----------*/
-
-.points-details__title {
+.points-details__title,
+.remaining-cards__title {
   margin-bottom: 4px;
   text-align: center;
 }
+
+/*----------  POINTS  ----------*/
 
 .points-details__hand {
   padding: 8px;
@@ -391,10 +392,6 @@ button {
 }
 
 /*----------  REMAINING CARDS  ----------*/
-.remaining-cards__title {
-  margin-bottom: 4px;
-  text-align: center;
-}
 
 .remaining-cards__details {
   padding: 8px;
