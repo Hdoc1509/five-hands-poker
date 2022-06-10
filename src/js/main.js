@@ -8,13 +8,13 @@ const cardsInfo = document.querySelectorAll('.card__info');
  * Central figure of each card
  * @type {NodeListOf<Element>}
  */
-const cardDisplay = document.querySelectorAll('.section__card');
+const cardDisplay = document.querySelectorAll('.card__figure');
 
 /**
  * CSS Class for all cards
  * @type {NodeListOf<Element>}
  */
-const cardsToChange = document.querySelectorAll('.section__card-container');
+const cardsToChange = document.querySelectorAll('.card');
 
 /**
  * Container for remaining cards
