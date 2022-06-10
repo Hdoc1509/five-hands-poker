@@ -302,7 +302,7 @@ button {
   left: 20px;
 }
 
-.section__card-bottom-info {
+.card__info--bottom {
   position: absolute;
   bottom: 20px;
   right: 20px;
