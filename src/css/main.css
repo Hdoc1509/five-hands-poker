@@ -420,11 +420,7 @@ button {
 =            FOOTER            =
 ==============================*/
 
-.credits-container {
-  position: relative;
-}
-
-.credits-container__author {
+.credits__author {
   padding: 10px;
   font-size: 18px;
   text-align: center;
