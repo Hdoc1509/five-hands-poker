@@ -415,17 +415,6 @@ button {
   text-align-last: justify;
 }
 
-.section__points-details--total-points {
-  display: flex;
-  justify-content: space-around;
-  margin: 8px auto 0;
-  width: 140px;
-  background-color: #fffd;
-  border-radius: 10px;
-  font-size: 20px;
-  color: var(--total-points);
-}
-
 .section__remaining-cards-details {
   font-size: 32px;
 }
