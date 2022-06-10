@@ -283,7 +283,7 @@ button {
 
  */
 
-.section__selected-card {
+.card--selected {
   top: -16px;
   outline: solid var(--selected-card);
   transition: top 0.25s ease, outline 0.25s ease;
