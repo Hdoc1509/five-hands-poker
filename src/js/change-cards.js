@@ -37,7 +37,7 @@ function changeSelectedCards() {
 	}
 
 	selectedCards.forEach((card) => {
-		card.classList.remove('section__selected-card');
+		card.classList.remove('card--selected');
 	});
 
 	// Updating the counter of remaining cards
