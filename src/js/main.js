@@ -2,7 +2,7 @@
  * Number and figure in the corners of each card
  * @type {NodeListOf<Element>}
  */
-const cardsInfo = document.querySelectorAll('.section__card-info');
+const cardsInfo = document.querySelectorAll('.card__info');
 
 /**
  * Central figure of each card
