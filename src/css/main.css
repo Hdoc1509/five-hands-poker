@@ -396,20 +396,11 @@ button {
 
 /*----------  REMAINING CARDS  ----------*/
 
-.section__remaining-cards-details,
-.section__points-details {
+.section__remaining-cards-details {
   padding: 8px;
   color: #fff;
   text-align: center;
   font-weight: bold;
-}
-
-.section__points-details {
-  position: relative;
-  width: 120px;
-  margin: 10px auto;
-  text-align: center;
-  line-height: 20px;
 }
 
 .section__current-hand {
