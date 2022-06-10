@@ -375,6 +375,20 @@ button {
   color: #001800;
 }
 
+.points-details__total {
+  display: flex;
+  justify-content: space-around;
+  width: 140px;
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #fffd;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--total-points);
+  text-align: center;
+}
+
 .section__remaining-cards-title {
   margin-bottom: 4px;
   text-align: center;
