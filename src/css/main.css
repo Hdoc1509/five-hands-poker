@@ -390,12 +390,11 @@ button {
   text-align: center;
 }
 
-.section__remaining-cards-title {
+/*----------  REMAINING CARDS  ----------*/
+.remaining-cards__title {
   margin-bottom: 4px;
   text-align: center;
 }
-
-/*----------  REMAINING CARDS  ----------*/
 
 .section__remaining-cards-details {
   padding: 8px;
