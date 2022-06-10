@@ -404,13 +404,6 @@ button {
   font-size: 2rem;
 }
 
-.section__remaining-cards-details {
-  padding: 8px;
-  color: #fff;
-  text-align: center;
-  font-weight: bold;
-}
-
 .section__current-hand {
   background-color: var(--current-hand);
   border-radius: 10px;
@@ -421,10 +414,6 @@ button {
   display: none;
   width: 200px;
   text-align-last: justify;
-}
-
-.section__remaining-cards-details {
-  font-size: 32px;
 }
 
 /*==============================
