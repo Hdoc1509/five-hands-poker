@@ -224,7 +224,7 @@ function setCardColor(cardFigure, cardOrdinalPosition) {
  * @returns {Number}
  */
 function setNewCardPosition(cardId, cardNumber, cardFigure) {
-  const selectedCards = document.querySelectorAll('.section__selected-card');
+  const selectedCards = document.querySelectorAll('.card--selected');
   let selCardsLen = selectedCards.length,
     cardPosition = 0;
 
