@@ -220,7 +220,7 @@ button {
 
 /*----------  BUTTONS  ----------*/
 
-.buttons-container {
+.buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
