@@ -256,9 +256,9 @@ function setNewCardPosition(cardId, cardNumber, cardFigure) {
   return cardPosition;
 }
 
-/** Toggle class "section__selected-card" */
+/** Toggles class "card--selected" */
 function toggleClassSelectedCard() {
-  this.classList.toggle('section__selected-card');
+  this.classList.toggle('card--selected');
 }
 
 /** Remove class "section__current-hand" */
