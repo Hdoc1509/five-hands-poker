@@ -1,12 +1,4 @@
 /**
- * @fileoverview	Functions, elements and instructions for start game and start each hand
- *
- * @author			Héctor Ochoa
- *
- * @copyright		Héctor Ochoa 2021
- */
-
-/**
  * Start game button
  * @type {HTMLElement}
  */
