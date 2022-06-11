@@ -413,7 +413,6 @@ button {
 .points-details__total--game-over {
   font-size: 24px;
   color: #fff;
-  background-color: var(--red-game-over);
 }
 
 /*----------  REMAINING CARDS  ----------*/
