@@ -50,8 +50,7 @@ function playAgain() {
 /** Show player hands */
 function showPlayerHands() {
 	let cardsDesc = document.querySelectorAll('.points-details__hand-cards'),
-		pointsDetails = document.querySelectorAll('.points-details__hand'),
-		totalPointsBox = document.getElementById('total-points');
+		pointsDetails = document.querySelectorAll('.points-details__hand');
 
 	//Displaying description container of each hand
 	// @ts-ignore
@@ -61,9 +60,6 @@ function showPlayerHands() {
 	pointsDetails.forEach((detail) =>
 		detail.classList.add('points-details__hand--game-over')
 	);
-
-	// Setting width for total points
-	totalPointsBox.classList.add('points-details__total--game-over');
 
 	// Show player hands
 	for (let hand of playerHands) {
