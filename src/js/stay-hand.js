@@ -129,10 +129,8 @@ function stayHand() {
 		totalPlayerPoints.innerHTML = `${playerPoints}`;
 
 		// Updating styles for total points
-		let totalPointsBox = document.getElementById('total-points');
+		const totalPointsBox = document.getElementById('total-points');
 
-		totalPointsBox.style.fontSize = '24px';
-		totalPointsBox.style.color = '#fff';
 		document.getElementById('total-hands-points').style.fontSize = '24px';
 
 		// Showing game result
@@ -149,11 +147,11 @@ function stayHand() {
 		if (playerPoints >= 60) {
 			textResult = 'You win!';
 			gameResult.style.backgroundColor = '#106e10';
-			totalPointsBox.style.backgroundColor = '#106e10';
+			totalPointsBox.classList.add('points-details__total--game-over-win');
 		} else {
 			textResult = 'You lose!';
 			gameResult.style.backgroundColor = '#e71e1e';
-			totalPointsBox.style.backgroundColor = '#c71c1c';
+			totalPointsBox.classList.add('points-details__total--game-over-lose');
 		}
 
 		gameResult.innerHTML = textResult;
