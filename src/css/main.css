@@ -6,6 +6,7 @@
   --table-background: #2f4f4f;
   --red-close-btn: #ff4d4d;
   --red-game-over: #c71c1c;
+  --green-game-over: #106e10;
   --rules-subtitle: #0483ff;
   --poker-hand: #87ceeb;
   --poker-hand-points: #9acd32;
@@ -410,9 +411,18 @@ button {
   text-align: center;
 }
 
-.points-details__total--game-over {
+.points-details__total--game-over-lose,
+.points-details__total--game-over-win {
   font-size: 24px;
   color: #fff;
+}
+
+.points-details__total--game-over-lose {
+  background-color: var(--red-game-over);
+}
+
+.points-details__total--game-over-win {
+  background-color: var(--green-game-over);
 }
 
 /*----------  REMAINING CARDS  ----------*/
