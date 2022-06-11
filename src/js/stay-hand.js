@@ -41,6 +41,12 @@ function playAgain() {
 	location.reload();
 }
 
+/**
+
+	TODO: Fix styles for showing player hands at the end of game
+
+ */
+
 /** Show player hands */
 function showPlayerHands() {
 	let cardsDesc = document.querySelectorAll('.section__hand-cards'),
@@ -54,14 +60,9 @@ function showPlayerHands() {
 	});
 
 	// Setting new styles for description of each hand
-	pointsDetails.forEach((details) => {
-		// @ts-ignore
-		details.style.backgroundColor = '#0ba70566';
-		// @ts-ignore
-		details.style.width = '280px';
-		// @ts-ignore
-		details.style.borderRadius = '10px';
-	});
+	pointsDetails.forEach((detail) =>
+		detail.classList.add('points-details__hand--game-over')
+	);
 
 	// Setting width for total points
 	totalPointsBox.style.width = '140px';
