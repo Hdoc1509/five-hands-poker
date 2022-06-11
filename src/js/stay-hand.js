@@ -55,9 +55,7 @@ function showPlayerHands() {
 
 	//Displaying description container of each hand
 	// @ts-ignore
-	cardsDesc.forEach((handCards) => {
-		handCards.style.display = 'inline-block';
-	});
+	cardsDesc.forEach((handCards) => handCards.classList.remove('hidden'));
 
 	// Setting new styles for description of each hand
 	pointsDetails.forEach((detail) =>
