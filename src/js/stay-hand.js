@@ -49,7 +49,7 @@ function playAgain() {
 
 /** Show player hands */
 function showPlayerHands() {
-	let cardsDesc = document.querySelectorAll('.section__hand-cards'),
+	let cardsDesc = document.querySelectorAll('.points-details__hand-cards'),
 		pointsDetails = document.querySelectorAll('.points-details__hand'),
 		totalPointsBox = document.getElementById('total-points');
 
