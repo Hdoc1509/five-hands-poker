@@ -41,12 +41,6 @@ function playAgain() {
 	location.reload();
 }
 
-/**
-
-	TODO: Fix styles for showing player hands at the end of game
-
- */
-
 /** Show player hands */
 function showPlayerHands() {
 	let cardsDesc = document.querySelectorAll('.points-details__hand-cards'),
@@ -132,9 +126,14 @@ function stayHand() {
 		const totalPointsBox = document.getElementById('total-points');
 		totalPointsBox.classList.remove('hidden');
 
-		// Showing game result
+		/**
+
+			TODO: Improve logic to show dialog-game-result -> gameResult
+
+		 */
+
+		/** @type {HTMLDialogElement} */
 		const gameResult = document.getElementById('game-result');
-		// @ts-ignore
 		gameResult.show();
 
 		// Show player hands beside points of each hand
@@ -145,15 +144,15 @@ function stayHand() {
 
 		if (playerPoints >= 60) {
 			textResult = 'You win!';
-			gameResult.style.backgroundColor = '#106e10';
+			gameResult.classList.add('dialog-game-result--win');
 			totalPointsBox.classList.add('points-details__total--game-over-win');
 		} else {
 			textResult = 'You lose!';
-			gameResult.style.backgroundColor = '#e71e1e';
+			gameResult.classList.add('dialog-game-result--lose');
 			totalPointsBox.classList.add('points-details__total--game-over-lose');
 		}
 
-		gameResult.innerHTML = textResult;
+		gameResult.textContent = textResult;
 
 		// Hidding the remaining card container
 		remainingCardsContainer.style.display = 'none';
