@@ -5,6 +5,7 @@
 :root {
   --table-background: #2f4f4f;
   --red-close-btn: #ff4d4d;
+  --red-game-over: #c71c1c;
   --rules-subtitle: #0483ff;
   --poker-hand: #87ceeb;
   --poker-hand-points: #9acd32;
@@ -407,6 +408,12 @@ button {
   font-weight: bold;
   color: var(--total-points);
   text-align: center;
+}
+
+.points-details__total--game-over {
+  font-size: 24px;
+  color: #fff;
+  background-color: var(--red-game-over);
 }
 
 /*----------  REMAINING CARDS  ----------*/
