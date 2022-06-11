@@ -194,8 +194,13 @@ button {
   text-decoration: underline;
 }
 
+/**
+
+  TODO: Improve styles for .dialog-game-result
+
+ */
+
 .dialog-game-result {
-  position: absolute;
   top: 360px;
   margin: 0 auto;
   padding: 10px;
