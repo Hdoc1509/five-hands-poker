@@ -263,9 +263,11 @@ function toggleClassSelectedCard() {
 
 /** Remove class "section__current-hand" */
 function clearCurrentHandClass() {
-  const currentHand = document.querySelectorAll('p.section__current-hand');
+  const currentHand = document.querySelectorAll(
+    'p.points-details__hand--current'
+  );
 
   currentHand.forEach((hand) => {
-    hand.classList.remove('section__current-hand');
+    hand.classList.remove('points-details__hand--current');
   });
 }
