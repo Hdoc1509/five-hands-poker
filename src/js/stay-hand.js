@@ -63,7 +63,7 @@ function showPlayerHands() {
 	);
 
 	// Setting width for total points
-	totalPointsBox.style.width = '140px';
+	totalPointsBox.classList.add('points-details__total--game-over');
 
 	// Show player hands
 	for (let hand of playerHands) {
