@@ -213,6 +213,14 @@ button {
   z-index: 70;
 }
 
+.dialog-game-result--lose {
+  background-color: var(--red-game-over);
+}
+
+.dialog-game-result--win {
+  background-color: var(--green-game-over);
+}
+
 /*==============================
 =            HEADER            =
 ==============================*/
