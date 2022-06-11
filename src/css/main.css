@@ -194,12 +194,6 @@ button {
   text-decoration: underline;
 }
 
-/**
-
-  TODO: Improve styles for .dialog-game-result
-
- */
-
 .dialog-game-result {
   top: 360px;
   margin: 0 auto;
@@ -424,17 +418,17 @@ button {
   text-align: center;
 }
 
-.points-details__total--game-over-lose,
-.points-details__total--game-over-win {
+.points-details__total--lose,
+.points-details__total--win {
   font-size: 24px;
   color: #fff;
 }
 
-.points-details__total--game-over-lose {
+.points-details__total--lose {
   background-color: var(--red-game-over);
 }
 
-.points-details__total--game-over-win {
+.points-details__total--win {
   background-color: var(--green-game-over);
 }
 

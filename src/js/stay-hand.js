@@ -126,12 +126,6 @@ function stayHand() {
 		const totalPointsBox = document.getElementById('total-points');
 		totalPointsBox.classList.remove('hidden');
 
-		/**
-
-			TODO: Improve logic to show dialog-game-result -> gameResult
-
-		 */
-
 		/** @type {HTMLDialogElement} */
 		const gameResult = document.getElementById('game-result');
 		gameResult.show();
@@ -145,11 +139,11 @@ function stayHand() {
 		if (playerPoints >= 60) {
 			textResult = 'You win!';
 			gameResult.classList.add('dialog-game-result--win');
-			totalPointsBox.classList.add('points-details__total--game-over-win');
+			totalPointsBox.classList.add('points-details__total--win');
 		} else {
 			textResult = 'You lose!';
 			gameResult.classList.add('dialog-game-result--lose');
-			totalPointsBox.classList.add('points-details__total--game-over-lose');
+			totalPointsBox.classList.add('points-details__total--lose');
 		}
 
 		gameResult.textContent = textResult;
