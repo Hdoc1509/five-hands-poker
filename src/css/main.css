@@ -372,6 +372,12 @@ button {
   font-weight: bold;
 }
 
+.points-details__hand--game-over {
+  background-color: #207231;
+  width: 280px;
+  border-radius: 10px;
+}
+
 .points-details__hand-point {
   display: inline-block;
   width: 30px;
