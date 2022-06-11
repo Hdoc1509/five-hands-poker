@@ -130,6 +130,7 @@ function stayHand() {
 
 		// Updating styles for total points
 		const totalPointsBox = document.getElementById('total-points');
+		totalPointsBox.classList.remove('hidden');
 
 		// Showing game result
 		const gameResult = document.getElementById('game-result');
