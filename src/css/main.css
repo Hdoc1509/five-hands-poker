@@ -365,6 +365,7 @@ button {
 /*----------  POINTS  ----------*/
 
 .points-details__hand {
+  margin: 10px 0;
   padding: 8px;
   color: #fff;
   text-align: center;
