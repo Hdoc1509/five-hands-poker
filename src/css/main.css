@@ -386,7 +386,7 @@ button {
 }
 
 .points-details__hand-cards {
-  display: none;
+  display: inline-block;
   width: 200px;
   text-align-last: justify;
 }
