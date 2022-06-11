@@ -385,6 +385,12 @@ button {
   color: #001800;
 }
 
+.points-details__hand-cards {
+  display: none;
+  width: 200px;
+  text-align-last: justify;
+}
+
 .points-details__total {
   display: flex;
   justify-content: space-around;
@@ -413,12 +419,6 @@ button {
   background-color: var(--current-hand);
   border-radius: 10px;
   color: #001800;
-}
-
-.section__hand-cards {
-  display: none;
-  width: 200px;
-  text-align-last: justify;
 }
 
 /*==============================
