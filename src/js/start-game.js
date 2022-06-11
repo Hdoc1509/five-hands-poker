@@ -60,7 +60,7 @@ function startGame() {
 			`hand${handsPlayerCounter}-points`
 		);
 		// @ts-ignore
-		handPlayerPoint.parentNode.classList.add('section__current-hand');
+		handPlayerPoint.parentNode.classList.add('points-details__hand--current');
 	}
 
 	// Removing listeners of the start button and the next hand button
