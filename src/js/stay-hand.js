@@ -131,8 +131,6 @@ function stayHand() {
 		// Updating styles for total points
 		const totalPointsBox = document.getElementById('total-points');
 
-		document.getElementById('total-hands-points').style.fontSize = '24px';
-
 		// Showing game result
 		const gameResult = document.getElementById('game-result');
 		// @ts-ignore
