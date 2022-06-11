@@ -385,6 +385,12 @@ button {
   font-weight: bold;
 }
 
+.points-details__hand--current {
+  background-color: var(--current-hand);
+  border-radius: 10px;
+  color: #001800;
+}
+
 .points-details__hand--game-over {
   background-color: #207231;
   width: 280px;
@@ -440,12 +446,6 @@ button {
   text-align: center;
   font-weight: bold;
   font-size: 2rem;
-}
-
-.section__current-hand {
-  background-color: var(--current-hand);
-  border-radius: 10px;
-  color: #001800;
 }
 
 /*==============================
