@@ -430,7 +430,7 @@ button {
 ==============================*/
 
 .credits__author {
-  padding: 10px;
+  padding-bottom: 10px;
   font-size: 18px;
   text-align: center;
   text-shadow: 2px 2px 4px #000;
