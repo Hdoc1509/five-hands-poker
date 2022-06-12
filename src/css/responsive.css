@@ -178,20 +178,6 @@
     font-size: 14px;
   }
 
-  .dialog-container__rules-title {
-    margin: 0 0 10px;
-    font-size: 16px;
-  }
-
-  .dialog-container__rules-subtitle {
-    font-size: 14px;
-  }
-
-  .dialog-container__rules-details {
-    margin-bottom: 12px;
-    font-size: 12px;
-  }
-
   .dialog-game-result {
     top: 220px;
     font-size: 48px;
