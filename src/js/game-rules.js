@@ -1,16 +1,22 @@
-const dialogOpenButton = document.getElementById("dialog-open-button"),
-dialogContainer = document.getElementById("dialog-game-rules"),
-dialogCloseButton = document.getElementById("dialog-close-button");
+/**
 
-dialogOpenButton.addEventListener("click",showRules);
+  TODO: apply changes of class names inside modal
 
-function showRules(){
-	dialogContainer.showModal();
-	dialogOpenButton.style.display = "none";
-	dialogCloseButton.addEventListener("click",hideRules);
+ */
+
+const dialogOpenBtn = document.getElementById('dialog-open-button'),
+  dialogContainer = document.getElementById('dialog-game-rules'),
+  dialogCloseButton = document.getElementById('dialog-close-button');
+
+dialogOpenBtn.addEventListener('click', showRules);
+
+function showRules() {
+  dialogContainer.showModal();
+  dialogOpenBtn.style.display = 'none';
+  dialogCloseButton.addEventListener('click', hideRules);
 }
 
-function hideRules(){
-	dialogContainer.close();
-	dialogOpenButton.style.display = "inline-block";
+function hideRules() {
+  dialogContainer.close();
+  dialogOpenBtn.style.display = 'inline-block';
 }
