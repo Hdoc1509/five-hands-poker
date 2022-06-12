@@ -270,11 +270,11 @@ button {
 /*----------  CARDS  ----------*/
 
 .cards-group {
-  height: 550px;
-  width: 680px;
-  position: relative;
   display: flex;
   justify-content: center;
+  position: relative;
+  height: 550px;
+  width: 680px;
   margin: 0 auto;
 }
 
