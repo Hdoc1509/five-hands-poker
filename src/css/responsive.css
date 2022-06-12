@@ -200,9 +200,9 @@
     line-height: 18px;
   }
 
-  .section__card-top-info {
-    top: 8px;
-    left: 8px;
+  .card__info--top {
+    top: 10px;
+    left: 10px;
   }
 
   .section__card-bottom-info {
