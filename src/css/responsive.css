@@ -205,9 +205,9 @@
     left: 10px;
   }
 
-  .section__card-bottom-info {
-    bottom: 8px;
-    right: 8px;
+  .card__info--bottom {
+    bottom: 10px;
+    right: 10px;
   }
 
   .section__card {
