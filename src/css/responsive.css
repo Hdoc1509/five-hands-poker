@@ -62,10 +62,6 @@
   .col-lg-0 {
     display: none;
   }
-
-  .container--changelog {
-    width: 66.66666667%;
-  }
 }
 
 /*========================================================
@@ -99,10 +95,6 @@
 
   .col-md-0 {
     display: none;
-  }
-
-  .container--changelog {
-    width: 66.66666667%;
   }
 }
 
@@ -138,10 +130,6 @@
   .col-sm-0 {
     display: none;
   }
-
-  .container--changelog {
-    width: 83.33333333%;
-  }
 }
 
 /*==================================================================
@@ -175,10 +163,6 @@
 
   .col-xs-0 {
     display: none;
-  }
-
-  .container--changelog {
-    width: 83.33333333%;
   }
 
   .dialog-open-button {
