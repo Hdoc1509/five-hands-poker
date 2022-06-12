@@ -160,7 +160,7 @@ button {
   letter-spacing: 2px;
 }
 
-.dialog-container__rules-subtitle {
+.dialog-rules__subtitle {
   margin: 6px 0;
   color: var(--rules-subtitle);
   letter-spacing: 2px;
