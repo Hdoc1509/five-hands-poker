@@ -5,7 +5,7 @@
  */
 
 const dialogOpenBtn = document.querySelector('.dialog-open-button'),
-  dialogContainer = document.getElementById('dialog-game-rules'),
+  dialogContainer = document.querySelector('.dialog-rules'),
   dialogCloseButton = document.getElementById('dialog-close-button');
 
 dialogOpenBtn.addEventListener('click', showRules);
