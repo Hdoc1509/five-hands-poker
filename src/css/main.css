@@ -182,7 +182,7 @@ button {
   color: var(--poker-hand);
 }
 
-.dialog-container__poker-hand-points {
+.dialog-rules__poker-hand-points {
   color: var(--poker-hand-points);
 }
 
