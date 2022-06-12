@@ -1,4 +1,5 @@
 const dialogOpenBtn = document.querySelector('.dialog-open-button');
+/** @type {HTMLDialogElement} */
 const dialogRules = document.querySelector('.dialog-rules');
 const dialogCloseBtn = document.querySelector('.dialog-rules__close');
 
