@@ -83,15 +83,12 @@ button {
 ==============================*/
 
 .dialog-open-button {
-  display: flex;
   position: fixed;
   aspect-ratio: 1 / 1;
   width: 30px;
   top: 10px;
   right: 10px;
   line-height: 15px;
-  justify-content: center;
-  align-items: center;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 50%;
