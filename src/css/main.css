@@ -178,7 +178,7 @@ button {
   margin: 4px 0;
 }
 
-.dialog-container__poker-hand {
+.dialog-rules__poker-hand {
   color: var(--poker-hand);
 }
 
