@@ -6,7 +6,7 @@
 
 const dialogOpenBtn = document.querySelector('.dialog-open-button'),
   dialogContainer = document.querySelector('.dialog-rules'),
-  dialogCloseButton = document.getElementById('dialog-close-button');
+  dialogCloseButton = document.querySelector('.dialog-rules__close');
 
 dialogOpenBtn.addEventListener('click', showRules);
 
