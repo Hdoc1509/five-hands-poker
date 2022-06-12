@@ -167,7 +167,7 @@ button {
   text-transform: uppercase;
 }
 
-.dialog-container__rules-details {
+.dialog-rules__details {
   margin-bottom: 1rem;
   letter-spacing: 1px;
   line-height: 20px;
