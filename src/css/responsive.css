@@ -165,12 +165,16 @@
     display: none;
   }
 
+  /**
+
+    TODO: Optimize rest of selectors
+
+   */
+
   .dialog-open-button {
     width: 24px;
-    height: 24px;
     top: 15px;
-    right: 8px;
-    line-height: 12px;
+    right: 15px;
     font-size: 14px;
   }
 
