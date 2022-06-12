@@ -4,19 +4,19 @@
 
  */
 
-const dialogOpenBtn = document.querySelector('.dialog-open-button'),
-  dialogContainer = document.querySelector('.dialog-rules'),
-  dialogCloseButton = document.querySelector('.dialog-rules__close');
+const dialogOpenBtn = document.querySelector('.dialog-open-button');
+const dialogRules = document.querySelector('.dialog-rules');
+const dialogCloseBtn = document.querySelector('.dialog-rules__close');
 
 dialogOpenBtn.addEventListener('click', showRules);
 
 function showRules() {
-  dialogContainer.showModal();
+  dialogRules.showModal();
   dialogOpenBtn.classList.add('hidden');
-  dialogCloseButton.addEventListener('click', hideRules);
+  dialogCloseBtn.addEventListener('click', hideRules);
 }
 
 function hideRules() {
-  dialogContainer.close();
+  dialogRules.close();
   dialogOpenBtn.classList.remove('hidden');
 }
