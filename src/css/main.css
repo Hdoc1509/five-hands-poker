@@ -104,12 +104,6 @@ button {
   color: #fff;
 }
 
-/**
-
-  TODO: Improve name selector of dialog modal
-
- */
-
 .dialog-rules {
   position: fixed;
   top: 240px;
