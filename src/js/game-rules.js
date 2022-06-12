@@ -12,11 +12,11 @@ dialogOpenBtn.addEventListener('click', showRules);
 
 function showRules() {
   dialogContainer.showModal();
-  dialogOpenBtn.style.display = 'none';
+  dialogOpenBtn.classList.add('hidden');
   dialogCloseButton.addEventListener('click', hideRules);
 }
 
 function hideRules() {
   dialogContainer.close();
-  dialogOpenBtn.style.display = 'inline-block';
+  dialogOpenBtn.classList.remove('hidden');
 }
