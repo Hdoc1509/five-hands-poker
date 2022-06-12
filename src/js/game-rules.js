@@ -4,7 +4,7 @@
 
  */
 
-const dialogOpenBtn = document.getElementById('dialog-open-button'),
+const dialogOpenBtn = document.querySelector('.dialog-open-button'),
   dialogContainer = document.getElementById('dialog-game-rules'),
   dialogCloseButton = document.getElementById('dialog-close-button');
 
