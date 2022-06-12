@@ -186,17 +186,17 @@ button {
   color: var(--poker-hand-points);
 }
 
-.dialog-container__game-version {
+.dialog-rules__game-version {
   float: right;
   font-style: italic;
 }
 
-.dialog-container__game-version a:link,
-.dialog-container__game-version a:visited {
+.dialog-rules__game-version a:link,
+.dialog-rules__game-version a:visited {
   color: var(--rules-subtitle);
 }
 
-.dialog-container__game-version:hover a {
+.dialog-rules__game-version:hover a {
   text-decoration: underline;
 }
 
