@@ -1,15 +1,19 @@
+.container--changelog {
+  float: none;
+}
+
 .game-version {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-bottom: 16px;
 }
 
 .game-version-description {
   margin-left: 20px;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .game-version-description ul li {
   margin: 4px 0;
-  text-align: justify;
+  text-align: left;
   list-style-type: disc;
 }
