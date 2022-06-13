@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/Hdoc1509/five-hands-poker#readme",
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "1.2.2"
   }
 }
