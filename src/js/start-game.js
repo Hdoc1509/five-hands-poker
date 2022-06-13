@@ -1,19 +1,6 @@
-/**
- * Start game button
- * @type {HTMLElement}
- */
 const startButton = document.getElementById('start-button');
-
-/**
- * Remaing cards box
- * @type {HTMLElement}
- */
 const remainingCards = document.getElementById('remaining-cards');
 
-/**
- * Remaining cards counter
- * @type {Number}
- */
 let remainingCardsCounter = 0;
 
 startButton.addEventListener('click', startGame);
