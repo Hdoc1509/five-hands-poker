@@ -108,9 +108,10 @@ const getRandomCard = () => arrayRandElement(generatedCards);
  * @returns {ObjCard} Returns the card as an object
  */
 function setCardNumAndFig(cardId, isToChange) {
-  let card = getRandomCard(),
-    cardFigure = '',
-    cardNumber;
+  // TODO: Optimize this function
+  const card = getRandomCard();
+  let cardFigure = '';
+  let cardNumber = null;
 
   if (card.includes('10')) {
     cardNumber = Number(card.slice(0, 2));
@@ -129,7 +130,7 @@ function setCardNumAndFig(cardId, isToChange) {
   }
 
   // Setting the object for each card
-  let cardObj = {
+  const cardObj = {
     id: cardId,
     number: cardNumber,
     figure: cardFigure,
