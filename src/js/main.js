@@ -111,38 +111,32 @@ function setCardNumAndFig(cardId, isToChange) {
   // TODO: Optimize this function
   /** @type {string} */
   const card = getRandomCard();
-  let cardFigure = '';
-  let cardNumber = null;
+  let figure = '';
+  let number = null;
 
   if (card.startsWith('10')) {
-    cardNumber = Number(card.slice(0, 2));
-    cardFigure = card.charAt(2);
+    number = Number(card.slice(0, 2));
+    figure = card.charAt(2);
   } else if (card.match(/^J|Q|K|A/) !== null) {
-    cardNumber = card.charAt(0);
-    cardFigure = card.charAt(1);
+    number = card.charAt(0);
+    figure = card.charAt(1);
   } else {
-    cardNumber = Number(card.charAt(0));
-    cardFigure = card.charAt(1);
+    number = Number(card.charAt(0));
+    figure = card.charAt(1);
   }
 
-  // Setting the object for each card
-  const cardObj = {
-    id: cardId,
-    number: cardNumber,
-    figure: cardFigure,
-  };
+  // Setting the object for the card
+  const cardObj = { id: cardId, number, figure };
 
-  if (isToChange) {
-    for (let cards of generatedObjCards) {
-      // Update data of the card to change
-      if (cards.id == cardId) {
-        cards.number = cardNumber;
-        cards.figure = cardFigure;
+  if (isToChange)
+    // Update data of the card to change
+    generatedObjCards.forEach((card) => {
+      if (card.id === cardId) {
+        card.number = number;
+        card.figure = figure;
       }
-    }
-  } else {
-    generatedObjCards.push(cardObj);
-  }
+    });
+  else generatedObjCards.push(cardObj);
 
   // Remove the card from generatedCards
   removeElement(card, generatedCards);
