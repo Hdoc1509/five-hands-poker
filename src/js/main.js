@@ -37,11 +37,8 @@ const generatedObjCards = [];
 
 const playerHands = [];
 
-/** Generating all cards */
-for (let i = 0; i < 52; i++) {
-  let genCard = generateRandomCard();
-  generatedCards.push(genCard);
-}
+// Generating all cards
+for (let i = 0; i < 52; i++) generatedCards.push(generateRandomCard());
 
 /**
  * Get a random element from an array
