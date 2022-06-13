@@ -213,20 +213,4 @@
   .card__figure {
     font-size: 100px;
   }
-
-  #card2 {
-    left: 40px;
-  }
-
-  #card3 {
-    left: 80px;
-  }
-
-  #card4 {
-    left: 120px;
-  }
-
-  #card5 {
-    left: 160px;
-  }
 }
