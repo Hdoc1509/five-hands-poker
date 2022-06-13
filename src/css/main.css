@@ -273,7 +273,7 @@ button {
   display: flex;
   justify-content: center;
   position: relative;
-  height: 550px;
+  aspect-ratio: 68 / 54.4;
   width: 680px;
   margin: 0 auto;
 }
