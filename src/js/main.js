@@ -1,39 +1,18 @@
-/**
- * Number and figure in the corners of each card
- * @type {NodeListOf<Element>}
- */
+/** Number and figure in the corners of each card */
 const cardsInfo = document.querySelectorAll('.card__info');
 
-/**
- * Central figure of each card
- * @type {NodeListOf<Element>}
- */
+/** Central figure of each card */
 const cardDisplay = document.querySelectorAll('.card__figure');
 
-/**
- * CSS Class for all cards
- * @type {NodeListOf<Element>}
- */
+/** Card containers */
 const cardsToChange = document.querySelectorAll('.card');
 
-/**
- * Container for remaining cards
- * @type {HTMLElement}
- */
 const remainingCardsContainer = document.getElementById(
   'remaining-cards-container'
 );
 
-/**
- * Array of game figures
- * @type {Array<String>}
- */
 const figures = ['♥', '♦', '♣', '♠'];
 
-/**
- * Array of game numbers
- * @type {Array<String | Number>}
- */
 const numbers = ['A', 2, 3, 4, 5, 6, 7, 8, 9, '10', 'J', 'Q', 'K'];
 
 /**
