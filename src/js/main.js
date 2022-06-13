@@ -100,21 +100,6 @@ function generateRandomCard() {
 }
 
 /**
- * Hide or show game buttons
- * @param {HTMLElement} btn Button to alter
- * @param {String} action Action to do
- */
-function hideShowButton(btn, action) {
-  if (action == 'hide') {
-    btn.style.display = 'none';
-  } else if (action == 'show') {
-    btn.style.display = 'inline-block';
-  } else {
-    alert('Error, acción inválida');
-  }
-}
-
-/**
  * Set the info of each card
  * @param {String} card Card in string format
  * @param {String} cardId Card's Id
