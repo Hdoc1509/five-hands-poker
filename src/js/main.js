@@ -109,19 +109,15 @@ const getRandomCard = () => arrayRandElement(generatedCards);
  */
 function setCardNumAndFig(cardId, isToChange) {
   // TODO: Optimize this function
+  /** @type {string} */
   const card = getRandomCard();
   let cardFigure = '';
   let cardNumber = null;
 
-  if (card.includes('10')) {
+  if (card.startsWith('10')) {
     cardNumber = Number(card.slice(0, 2));
     cardFigure = card.charAt(2);
-  } else if (
-    card.includes('J') ||
-    card.includes('Q') ||
-    card.includes('K') ||
-    card.includes('A')
-  ) {
+  } else if (card.match(/^J|Q|K|A/) !== null) {
     cardNumber = card.charAt(0);
     cardFigure = card.charAt(1);
   } else {
