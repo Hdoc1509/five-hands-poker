@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "Game created as a personal project",
   "scripts": {
+    "dev": "live-server --watch=src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
