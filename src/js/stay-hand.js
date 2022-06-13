@@ -37,8 +37,8 @@ function showPlayerHands() {
 
 /** Stay with the current hand */
 function stayHand() {
-  hideShowButton(changeButton, 'hide');
-  hideShowButton(stayButton, 'hide');
+  changeButton.classList.add('hidden');
+  stayButton.classList.add('hidden');
 
   changeButton.removeEventListener('click', changeSelectedCards);
   stayButton.removeEventListener('click', stayHand);
@@ -71,8 +71,8 @@ function stayHand() {
 
   //Validation if it's the last hand
   if (playerHands.length == 5) {
-    hideShowButton(nextHandButton, 'hide');
-    hideShowButton(playAgainButton, 'show');
+    nextHandButton.classList.add('hidden');
+    playAgainButton.classList.remove('hidden');
 
     playAgainButton.addEventListener('click', playAgain);
     nextHandButton.removeEventListener('click', startGame);
@@ -121,7 +121,7 @@ function stayHand() {
 
   // If it isn't the last hand
   else {
-    hideShowButton(nextHandButton, 'show');
+    nextHandButton.classList.remove('hidden');
 
     nextHandButton.addEventListener('click', startGame);
     playAgainButton.removeEventListener('click', playAgain);
