@@ -101,7 +101,6 @@ function generateRandomCard() {
 
 /**
  * Set the info of each card
- * @param {String} card Card in string format
  * @param {String} cardId Card's Id
  * @param {Boolean} isToChange Especify if the card must be changed
  * @returns {ObjCard} Returns the card as an object
