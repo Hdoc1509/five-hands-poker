@@ -24,6 +24,7 @@
     "comma-style": ["error", "last"],
     "curly": ["error", "multi"],
     "func-call-spacing": ["error", "never"],
+    "init-declarations": ["error", "always"],
     "implicit-arrow-linebreak": ["error", "beside"],
     "key-spacing": [
       "error",
