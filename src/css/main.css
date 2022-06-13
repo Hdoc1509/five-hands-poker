@@ -260,13 +260,6 @@ button {
   background-color: #2c632c;
 }
 
-#stay-button,
-#change-button,
-#next-hand-button,
-#play-again-button {
-  display: none;
-}
-
 /*----------  CARDS  ----------*/
 
 .cards-group {
