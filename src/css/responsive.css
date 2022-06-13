@@ -195,12 +195,6 @@
     width: 90%;
   }
 
-  .card {
-    /*height: 240px;*/
-    /*border-radius: 10px;*/
-    box-shadow: 4px 4px 10px #222;
-  }
-
   .card__info {
     font-size: 20px;
     line-height: 18px;
