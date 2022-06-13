@@ -39,7 +39,7 @@ function changeSelectedCards() {
   remainingCards.innerHTML = `${remainingCardsCounter}`;
 
   if (remainingCardsCounter == 0) {
-    hideShowButton(changeButton, 'hide');
+    changeButton.classList.add('hidden');
 
     for (let card of cardsToChange) {
       card.removeEventListener('click', toggleClassSelectedCard);
