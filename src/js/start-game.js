@@ -14,7 +14,7 @@ function startGame() {
 
   // Display counter of remaining cards
   remainingCardsCounter = 3;
-  remainingCards.innerHTML = `${remainingCardsCounter}`;
+  remainingCards.textContent = `${remainingCardsCounter}`;
 
   // Generating the first 5 cards of the hand
   for (let i = 0; i < 5; i++) {
