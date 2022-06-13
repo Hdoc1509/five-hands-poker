@@ -183,6 +183,14 @@
     font-size: 3rem;
   }
 
+  .buttons__action-button {
+    font-size: 14px;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+  }
+
   .cards-group {
     width: 300px;
   }
