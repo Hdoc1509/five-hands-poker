@@ -6,9 +6,7 @@ const totalPlayerPoints = document.getElementById('total-hands-points');
 
 let handsPlayerCounter = 1;
 
-function playAgain() {
-  location.reload();
-}
+const playAgain = () => location.reload();
 
 /** Show player hands */
 function showPlayerHands() {
