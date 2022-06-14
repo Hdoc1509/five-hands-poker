@@ -129,7 +129,12 @@ function setCardNumAndFig(cardId, isToChange) {
   const cardIndex = Number(cardId.charAt(4)) - 1;
   console.log(cardIndex);
 
-  const cardObj = { id: cardId, number, figure };
+  const cardObj = {
+    id: cardId,
+    number,
+    figure,
+    cardInfo: `${number}\n${figure}`,
+  };
 
   if (isToChange) generatedObjCards[Number(cardId.slice(-1)) - 1] = cardObj;
   else generatedObjCards.push(cardObj);
