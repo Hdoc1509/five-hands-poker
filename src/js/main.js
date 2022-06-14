@@ -95,16 +95,11 @@ function generateRandomCard() {
 const getRandomCard = () => arrayRandElement(generatedCards);
 
 /**
- * Set the info of each card
- * @param {String} cardId Card's Id
- * @param {Boolean} isToChange Especify if the card must be changed
- * @returns {ObjCard} Returns the card as an object
+ * Parse data of string card
+ * @param  {string} card
+ * @return {{number: string|number, figure: string}}
  */
-function setCardNumAndFig(cardId, isToChange) {
-  /** @type {string} */
-  const card = getRandomCard();
-  const cardIndex = Number(cardId.charAt(4)) - 1;
-  console.log(cardIndex);
+const parseCard = (card) => {
   let figure = '';
   let number = null;
 
@@ -118,6 +113,22 @@ function setCardNumAndFig(cardId, isToChange) {
     number = Number(card.charAt(0));
     figure = card.charAt(1);
   }
+
+  return { number, figure };
+};
+
+/**
+ * Set the info of each card
+ * @param {String} cardId Card's Id
+ * @param {Boolean} isToChange Especify if the card must be changed
+ * @returns {ObjCard} Returns the card as an object
+ */
+function setCardNumAndFig(cardId, isToChange) {
+  /** @type {string} */
+  const card = getRandomCard();
+  const { number, figure } = parseCard(card);
+  const cardIndex = Number(cardId.charAt(4)) - 1;
+  console.log(cardIndex);
 
   const cardObj = { id: cardId, number, figure };
 
