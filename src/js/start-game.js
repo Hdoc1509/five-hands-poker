@@ -41,11 +41,11 @@ function startGame() {
 
   // validation for current hand
   if (handsPlayerCounter <= 5) {
-    let handPlayerPoint = document.getElementById(
+    const currentHand = document.getElementById(
       `hand${handsPlayerCounter}-points`
     );
     // @ts-ignore
-    handPlayerPoint.parentNode.classList.add('points-details__hand--current');
+    currentHand.parentNode.classList.add('points-details__hand--current');
   }
 
   // Removing listeners of the start button and the next hand button
