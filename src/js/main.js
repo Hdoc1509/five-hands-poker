@@ -154,26 +154,6 @@ function setCardColor(cardFigure, cardOrdinalPosition) {
   cardDisplay[cardOrdinalPosition - 1].textContent = cardFigure;
 }
 
-/**
- * Set the ordinal position for the card that will be changed
- * @param {String} cardId Card's id
- * @param {String | Number} number Card's number
- * @param {String} figure Card's figure
- * @returns {Number}
- */
-function setNewCardPosition(cardId, number, figure) {
-  const selectedCards = document.querySelectorAll('.card--selected');
-  const selCardsLen = selectedCards.length;
-  const cardPosition = cardId.charAt(4);
-
-  if (cardId === 'card5')
-    selectedCards[
-      selCardsLen - 1
-    ].lastElementChild.innerText = `${number}\n${figure}`;
-
-  return cardPosition;
-}
-
 /** Toggles class "card--selected" */
 function toggleClassSelectedCard() {
   this.classList.toggle('card--selected');
