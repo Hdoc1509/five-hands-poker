@@ -18,16 +18,14 @@ function startGame() {
 
   // Generating the first 5 cards of the hand
   for (let i = 0; i < 5; i++) {
-    // Generating the number and the figure for each card
-    const card = setCardNumAndFig(`card${i + 1}`, false);
+    const { id, number, figure } = setCardNumAndFig(`card${i + 1}`, false);
+    const cardInfo = `${number}\n${figure}`;
 
     // Adding to each card its info on its corners
-    setCardColor(card.figure, i + 1);
-    cardsInfo[i].innerHTML = `${card.number}<br>${card.figure}`;
+    setCardColor(figure, i + 1);
+    cardsInfo[i].innerText = cardInfo;
 
-    if (card.id == 'card5') {
-      cardsInfo[i + 1].innerHTML = `${card.number}<br>${card.figure}`;
-    }
+    if (id === 'card5') cardsInfo[i + 1].innerText = cardInfo;
   }
 
   // Add the event click for toggle class for selected cards
