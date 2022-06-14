@@ -74,21 +74,6 @@ function removeCard(card) {
 }
 
 /**
- * Remove an string element of an array
- * @param {String} element
- */
-function removeElement(element, array) {
-  if (typeof element == 'string') {
-    let elementPosition = array.indexOf(element);
-    array.splice(elementPosition, 1);
-  } else {
-    console.error(
-      "Uncaught TypeError: especting an 'string' parameter on 'removeElement'"
-    );
-  }
-}
-
-/**
  * Generate random unique cards
  * @returns {String}
  */
