@@ -127,8 +127,6 @@ const parseCard = (card) => {
 function setCardNumAndFig(cardId, isToChange) {
   const { number, figure, rawCard: card } = parseCard(getRandomCard());
   const cardIndex = Number(cardId.charAt(4)) - 1;
-  console.log(cardIndex);
-
   const cardObj = {
     id: cardId,
     number,
@@ -136,9 +134,14 @@ function setCardNumAndFig(cardId, isToChange) {
     cardInfo: `${number}\n${figure}`,
   };
 
-  if (isToChange) generatedObjCards[Number(cardId.slice(-1)) - 1] = cardObj;
-  else generatedObjCards.push(cardObj);
+  isToChange
+    ? (generatedObjCards[Number(cardId.slice(-1)) - 1] = cardObj)
+    : generatedObjCards.push(cardObj);
 
+  cardsToChange[cardIndex].style.color = figure.match(/^♥|♦$/)
+    ? '#f00'
+    : '#000';
+  cardDisplay[cardIndex].textContent = figure;
   removeCard(card);
 
   return cardObj;
