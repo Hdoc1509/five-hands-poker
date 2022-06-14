@@ -6,11 +6,10 @@ function changeSelectedCards() {
 
   function changeCardsQuantity(quantity) {
     for (let i = 0; i < quantity; i++) {
-      const { number, figure, id } = setCardNumAndFig(
+      const { figure, id, cardInfo } = setCardNumAndFig(
         selectedCards[i].id,
         true
       );
-      const cardInfo = `${number}\n${figure}`;
       const position = Number(id.charAt(4));
 
       selectedCards[i].firstElementChild.innerText = cardInfo;
