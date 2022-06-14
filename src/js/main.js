@@ -101,7 +101,6 @@ const getRandomCard = () => arrayRandElement(generatedCards);
  * @returns {ObjCard} Returns the card as an object
  */
 function setCardNumAndFig(cardId, isToChange) {
-  // TODO: Optimize this function
   /** @type {string} */
   const card = getRandomCard();
   let figure = '';
