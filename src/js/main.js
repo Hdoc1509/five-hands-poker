@@ -66,6 +66,14 @@ function cleanArray(array) {
 }
 
 /**
+ * @param  {string} card Card to remove
+ */
+function removeCard(card) {
+  const cardPosition = generatedCards.indexOf(card);
+  generatedCards.splice(cardPosition, 1);
+}
+
+/**
  * Remove an string element of an array
  * @param {String} element
  */
@@ -130,7 +138,7 @@ function setCardNumAndFig(cardId, isToChange) {
   if (isToChange) generatedObjCards[Number(cardId.slice(-1)) - 1] = cardObj;
   else generatedObjCards.push(cardObj);
 
-  removeElement(card, generatedCards);
+  removeCard(card);
 
   return cardObj;
 }
