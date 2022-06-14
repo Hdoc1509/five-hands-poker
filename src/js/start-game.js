@@ -39,6 +39,8 @@ function startGame() {
   // Listener for the Stay Button
   stayButton.addEventListener('click', stayHand);
 
+  clearCurrentHandClass();
+
   // validation for current hand
   if (handsPlayerCounter <= 5) {
     const currentHand = document.getElementById(
@@ -51,7 +53,4 @@ function startGame() {
   // Removing listeners of the start button and the next hand button
   startButton.removeEventListener('click', startGame);
   nextHandButton.removeEventListener('click', startGame);
-
-  // Listener for the next hand
-  nextHandButton.addEventListener('click', clearCurrentHandClass);
 }
