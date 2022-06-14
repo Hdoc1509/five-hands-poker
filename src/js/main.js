@@ -147,39 +147,19 @@ function setCardColor(cardFigure, cardOrdinalPosition) {
 /**
  * Set the ordinal position for the card that will be changed
  * @param {String} cardId Card's id
- * @param {String | Number} cardNumber Card's number
- * @param {String} cardFigure Card's figure
+ * @param {String | Number} number Card's number
+ * @param {String} figure Card's figure
  * @returns {Number}
  */
-function setNewCardPosition(cardId, cardNumber, cardFigure) {
+function setNewCardPosition(cardId, number, figure) {
   const selectedCards = document.querySelectorAll('.card--selected');
-  let selCardsLen = selectedCards.length,
-    cardPosition = 0;
+  const selCardsLen = selectedCards.length;
+  const cardPosition = cardId.charAt(4);
 
-  switch (cardId) {
-    case 'card5':
-      cardPosition = 5;
-      selectedCards[
-        selCardsLen - 1
-      ].lastElementChild.innerHTML = `${cardNumber}<br>${cardFigure}`;
-      break;
-
-    case 'card4':
-      cardPosition = 4;
-      break;
-
-    case 'card3':
-      cardPosition = 3;
-      break;
-
-    case 'card2':
-      cardPosition = 2;
-      break;
-
-    case 'card1':
-      cardPosition = 1;
-      break;
-  }
+  if (cardId === 'card5')
+    selectedCards[
+      selCardsLen - 1
+    ].lastElementChild.innerText = `${number}\n${figure}`;
 
   return cardPosition;
 }
