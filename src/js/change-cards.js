@@ -10,14 +10,12 @@ function changeSelectedCards() {
         selectedCards[i].id,
         true
       );
-
+      const cardInfo = `${number}\n${figure}`;
       const position = Number(id.charAt(4));
 
-      selectedCards[i].firstElementChild.innerText = `${number}\n${figure}`;
+      selectedCards[i].firstElementChild.innerText = cardInfo;
       if (id === 'card5')
-        selectedCards[
-          len - 1
-        ].lastElementChild.innerText = `${number}\n${figure}`;
+        selectedCards[len - 1].lastElementChild.innerText = cardInfo;
       setCardColor(figure, position);
     }
 
