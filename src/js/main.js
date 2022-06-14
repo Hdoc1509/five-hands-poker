@@ -103,6 +103,8 @@ const getRandomCard = () => arrayRandElement(generatedCards);
 function setCardNumAndFig(cardId, isToChange) {
   /** @type {string} */
   const card = getRandomCard();
+  const cardIndex = Number(cardId.charAt(4)) - 1;
+  console.log(cardIndex);
   let figure = '';
   let number = null;
 
@@ -133,23 +135,13 @@ function setCardNumAndFig(cardId, isToChange) {
  * @param {Number} cardOrdinalPosition Card's ordinal position
  */
 function setCardColor(cardFigure, cardOrdinalPosition) {
-  switch (cardFigure) {
-    // Color for ♥ and ♦
-    case '♥':
-    case '♦':
-      // @ts-ignore
-      cardsToChange[cardOrdinalPosition - 1].style.color = '#f00';
-      break;
-
-    // Color for ♣ and ♠
-    default:
-      // @ts-ignore
-      cardsToChange[cardOrdinalPosition - 1].style.color = '#000';
-      break;
-  }
+  // TODO: Fuse this function with setCardNumAndFig()
+  cardsToChange[cardOrdinalPosition - 1].style.color = cardFigure.match(/^♥|♦$/)
+    ? '#f00'
+    : '#000';
 
   // Displaying the figure of the card
-  cardDisplay[cardOrdinalPosition - 1].innerHTML = cardFigure;
+  cardDisplay[cardOrdinalPosition - 1].textContent = cardFigure;
 }
 
 /**
