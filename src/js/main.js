@@ -92,12 +92,13 @@ function generateRandomCard() {
   return card;
 }
 
-const getRandomCard = () => arrayRandElement(generatedCards);
+const getRandomCard = () =>
+  generatedCards[Math.floor(Math.random() * generatedCards.length)];
 
 /**
  * Parse data of string card
  * @param  {string} card
- * @return {{number: string|number, figure: string}}
+ * @return {{number: string|number, figure: string, rawCard: string}}
  */
 const parseCard = (card) => {
   let figure = '';
@@ -114,7 +115,7 @@ const parseCard = (card) => {
     figure = card.charAt(1);
   }
 
-  return { number, figure };
+  return { number, figure, rawCard: card };
 };
 
 /**
@@ -124,9 +125,7 @@ const parseCard = (card) => {
  * @returns {ObjCard} Returns the card as an object
  */
 function setCardNumAndFig(cardId, isToChange) {
-  /** @type {string} */
-  const card = getRandomCard();
-  const { number, figure } = parseCard(card);
+  const { number, figure, rawCard: card } = parseCard(getRandomCard());
   const cardIndex = Number(cardId.charAt(4)) - 1;
   console.log(cardIndex);
 
