@@ -125,20 +125,11 @@ function setCardNumAndFig(cardId, isToChange) {
     figure = card.charAt(1);
   }
 
-  // Setting the object for the card
   const cardObj = { id: cardId, number, figure };
 
-  if (isToChange)
-    // Update data of the card to change
-    generatedObjCards.forEach((card) => {
-      if (card.id === cardId) {
-        card.number = number;
-        card.figure = figure;
-      }
-    });
+  if (isToChange) generatedObjCards[Number(cardId.slice(-1)) - 1] = cardObj;
   else generatedObjCards.push(cardObj);
 
-  // Remove the card from generatedCards
   removeElement(card, generatedCards);
 
   return cardObj;
