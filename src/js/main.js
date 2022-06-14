@@ -147,21 +147,6 @@ function setCardNumAndFig(cardId, isToChange) {
   return cardObj;
 }
 
-/**
- * Display the info of each card
- * @param {String} cardFigure Card's figure
- * @param {Number} cardOrdinalPosition Card's ordinal position
- */
-function setCardColor(cardFigure, cardOrdinalPosition) {
-  // TODO: Fuse this function with setCardNumAndFig()
-  cardsToChange[cardOrdinalPosition - 1].style.color = cardFigure.match(/^♥|♦$/)
-    ? '#f00'
-    : '#000';
-
-  // Displaying the figure of the card
-  cardDisplay[cardOrdinalPosition - 1].textContent = cardFigure;
-}
-
 /** Toggles class "card--selected" */
 function toggleClassSelectedCard() {
   this.classList.toggle('card--selected');
