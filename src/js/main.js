@@ -78,18 +78,18 @@ function removeCard(card) {
  * @returns {String}
  */
 function generateRandomCard() {
-  let cardNumber = arrayRandElement(numbers),
-    cardFigure = arrayRandElement(figures);
-  let generatedRandCard = `${cardNumber}${cardFigure}`;
+  let number = arrayRandElement(numbers),
+    figure = arrayRandElement(figures);
+  let card = `${number}${figure}`;
 
   /** Validation for get unique cards */
-  while (generatedCards.includes(generatedRandCard)) {
-    cardNumber = arrayRandElement(numbers);
-    cardFigure = arrayRandElement(figures);
-    generatedRandCard = `${cardNumber}${cardFigure}`;
+  while (generatedCards.includes(card)) {
+    number = arrayRandElement(numbers);
+    figure = arrayRandElement(figures);
+    card = `${number}${figure}`;
   }
 
-  return generatedRandCard;
+  return card;
 }
 
 const getRandomCard = () => arrayRandElement(generatedCards);
