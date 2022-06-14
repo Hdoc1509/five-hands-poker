@@ -18,8 +18,7 @@ function startGame() {
 
   // Generating the first 5 cards of the hand
   for (let i = 0; i < 5; i++) {
-    const { id, number, figure } = setCardNumAndFig(`card${i + 1}`, false);
-    const cardInfo = `${number}\n${figure}`;
+    const { id, figure, cardInfo } = setCardNumAndFig(`card${i + 1}`, false);
 
     // Adding to each card its info on its corners
     setCardColor(figure, i + 1);
