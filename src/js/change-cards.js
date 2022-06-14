@@ -6,17 +6,15 @@ function changeSelectedCards() {
 
   function changeCardsQuantity(quantity) {
     for (let i = 0; i < quantity; i++) {
-      let card = setCardNumAndFig(selectedCards[i].id, true),
-        cardPosition = setNewCardPosition(
-          selectedCards[i].id,
-          card.number,
-          card.figure
-        );
+      const { number, figure } = setCardNumAndFig(selectedCards[i].id, true);
+      const cardPosition = setNewCardPosition(
+        selectedCards[i].id,
+        number,
+        figure
+      );
 
-      selectedCards[
-        i
-      ].firstElementChild.innerHTML = `${card.number}<br>${card.figure}`;
-      setCardColor(card.figure, cardPosition);
+      selectedCards[i].firstElementChild.innerText = `${number}\n${figure}`;
+      setCardColor(figure, cardPosition);
     }
 
     // Updating the counter of remaining cards
