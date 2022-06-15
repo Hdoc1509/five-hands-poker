@@ -1,20 +1,19 @@
 const startButton = document.getElementById('start-button');
-const remainingCards = document.getElementById('remaining-cards');
-
 let remainingCardsCounter = 0;
 
 startButton.addEventListener('click', startGame);
 
-/** Start the game */
 function startGame() {
   startButton.classList.add('hidden');
   nextHandButton.classList.add('hidden');
   changeButton.classList.remove('hidden');
   stayButton.classList.remove('hidden');
 
-  // Display counter of remaining cards
+  // Displaying counter of remaining cards
   remainingCardsCounter = 3;
-  remainingCards.textContent = `${remainingCardsCounter}`;
+  document.getElementById(
+    'remaining-cards'
+  ).textContent = `${remainingCardsCounter}`;
 
   // Generating the first 5 cards of the hand
   for (let i = 0; i < 5; i++) {
