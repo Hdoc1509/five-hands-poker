@@ -21,9 +21,7 @@ function changeSelectedCards() {
   else if (len == 0) errNoCardSelected();
   else changeCardsQuantity(len);
 
-  selectedCards.forEach((card) => {
-    card.classList.remove('card--selected');
-  });
+  selectedCards.forEach((card) => card.classList.remove('card--selected'));
 
   // Updating the counter of remaining cards
   document.getElementById(
