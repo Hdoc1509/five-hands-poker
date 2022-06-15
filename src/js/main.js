@@ -33,9 +33,6 @@ const generatedObjCards = [];
 
 const playerHands = [];
 
-// Generating all cards
-for (let i = 0; i < 52; i++) generatedCards.push(generateRandomCard());
-
 /**
  * Get a random element from an array
  * @param {Array} array Array from get an element
@@ -64,31 +61,6 @@ const cleanArray = (array) => array.splice(0, array.length);
 function removeCard(card) {
   const cardPosition = generatedCards.indexOf(card);
   generatedCards.splice(cardPosition, 1);
-}
-
-const getRandomNumber = () =>
-  numbers[Math.floor(Math.random() * numbers.length)];
-
-const getRandomFigure = () =>
-  figures[Math.floor(Math.random() * figures.length)];
-
-/**
- * Generate random unique cards
- * @returns {String}
- */
-function generateRandomCard() {
-  let number = arrayRandElement(numbers),
-    figure = arrayRandElement(figures);
-  let card = `${number}${figure}`;
-
-  /** Validation for get unique cards */
-  while (generatedCards.includes(card)) {
-    number = arrayRandElement(numbers);
-    figure = arrayRandElement(figures);
-    card = `${number}${figure}`;
-  }
-
-  return card;
 }
 
 const getRandomCard = () =>
@@ -157,3 +129,29 @@ function clearCurrentHandClass() {
 
   currentHand?.classList.remove('points-details__hand--current');
 }
+
+// Generating all game cards
+((generatedCards) => {
+  const getRandomNumber = () =>
+    numbers[Math.floor(Math.random() * numbers.length)];
+
+  const getRandomFigure = () =>
+    figures[Math.floor(Math.random() * figures.length)];
+
+  /**
+   * Generate random unique cards
+   * @returns {String}
+   */
+  const generateRandomCard = () => {
+    let card = `${getRandomNumber()}${getRandomFigure()}`;
+
+    /** Validation for get unique cards */
+    while (generatedCards.includes(card))
+      card = `${getRandomNumber()}${getRandomFigure()}`;
+
+    return card;
+  };
+
+  // Generating all cards
+  for (let i = 0; i < 52; i++) generatedCards.push(generateRandomCard());
+})(generatedCards);
