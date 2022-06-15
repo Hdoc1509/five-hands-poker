@@ -34,23 +34,6 @@ const generatedObjCards = [];
 const playerHands = [];
 
 /**
- * Get a random element from an array
- * @param {Array} array Array from get an element
- * @returns {Number | String | Array | Object} Element
- */
-function arrayRandElement(array) {
-  if (Array.isArray(array)) {
-    let index = Math.floor(Math.random() * array.length);
-    let randElement = array[index];
-    return randElement;
-  } else {
-    console.error(
-      "Uncaught TypeError: especting an 'array' parameter on 'arrayRandElement'"
-    );
-  }
-}
-
-/**
  * @param {Array} array
  */
 const cleanArray = (array) => array.splice(0, array.length);
