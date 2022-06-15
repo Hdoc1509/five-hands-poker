@@ -54,12 +54,9 @@ function arrayRandElement(array) {
 }
 
 /**
- * Clean all elements of an array
  * @param {Array} array
  */
-function cleanArray(array) {
-  array.splice(0, array.length);
-}
+const cleanArray = (array) => array.splice(0, array.length);
 
 /**
  * @param  {string} card Card to remove
