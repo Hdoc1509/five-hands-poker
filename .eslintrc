@@ -26,7 +26,6 @@
     "func-call-spacing": ["error", "never"],
     "indent": ["error", 2],
     "init-declarations": ["error", "always"],
-    "implicit-arrow-linebreak": ["error", "beside"],
     "key-spacing": [
       "error",
       {
