@@ -66,6 +66,12 @@ function removeCard(card) {
   generatedCards.splice(cardPosition, 1);
 }
 
+const getRandomNumber = () =>
+  numbers[Math.floor(Math.random() * numbers.length)];
+
+const getRandomFigure = () =>
+  figures[Math.floor(Math.random() * figures.length)];
+
 /**
  * Generate random unique cards
  * @returns {String}
