@@ -119,10 +119,6 @@ function clearCurrentHandClass() {
   const getRandomFigure = () =>
     figures[Math.floor(Math.random() * figures.length)];
 
-  /**
-   * Generate random unique cards
-   * @returns {String}
-   */
   const generateRandomCard = () => {
     let card = `${getRandomNumber()}${getRandomFigure()}`;
 
