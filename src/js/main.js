@@ -12,10 +12,9 @@ const figures = ['♥', '♦', '♣', '♠'];
 const numbers = ['A', 2, 3, 4, 5, 6, 7, 8, 9, '10', 'J', 'Q', 'K'];
 
 /**
- * Array for unique generated cards
  * @type {Array<String>}
  */
-const generatedCards = [];
+const gameCards = [];
 
 /**
  * Card Object
@@ -40,12 +39,12 @@ const cleanArray = (array) => array.splice(0, array.length);
  * @param  {string} card Card to remove
  */
 function removeCard(card) {
-  const cardPosition = generatedCards.indexOf(card);
-  generatedCards.splice(cardPosition, 1);
+  const cardPosition = gameCards.indexOf(card);
+  gameCards.splice(cardPosition, 1);
 }
 
 const getRandomCard = () =>
-  generatedCards[Math.floor(Math.random() * generatedCards.length)];
+  gameCards[Math.floor(Math.random() * gameCards.length)];
 
 /**
  * Parse data of string card
@@ -93,6 +92,7 @@ function setCardNumAndFig(cardId, isToChange) {
   cardsToChange[cardIndex].style.color = figure.match(/^♥|♦$/)
     ? '#f00'
     : '#000';
+
   cardDisplay[cardIndex].textContent = figure;
   removeCard(card);
 
@@ -112,7 +112,7 @@ function clearCurrentHandClass() {
 }
 
 // Generating all game cards
-((generatedCards) => {
+((gameCards) => {
   const getRandomNumber = () =>
     numbers[Math.floor(Math.random() * numbers.length)];
 
@@ -127,12 +127,12 @@ function clearCurrentHandClass() {
     let card = `${getRandomNumber()}${getRandomFigure()}`;
 
     /** Validation for get unique cards */
-    while (generatedCards.includes(card))
+    while (gameCards.includes(card))
       card = `${getRandomNumber()}${getRandomFigure()}`;
 
     return card;
   };
 
   // Generating all cards
-  for (let i = 0; i < 52; i++) generatedCards.push(generateRandomCard());
-})(generatedCards);
+  for (let i = 0; i < 52; i++) gameCards.push(generateRandomCard());
+})(gameCards);
