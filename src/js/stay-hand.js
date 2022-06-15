@@ -1,8 +1,6 @@
 const stayButton = document.getElementById('stay-button');
 const nextHandButton = document.getElementById('next-hand-button');
 const playAgainButton = document.getElementById('play-again-button');
-/** Text box for total player points */
-const totalPlayerPoints = document.getElementById('total-hands-points');
 
 let handsPlayerCounter = 1;
 
@@ -16,17 +14,14 @@ function showPlayerHands() {
   cardsDesc.forEach((handCards) => handCards.classList.remove('hidden'));
 
   // Setting new styles for description of each hand
-  pointsDetails.forEach((detail) =>
-    detail.classList.add('points-details__hand--game-over')
-  );
+  pointsDetails.forEach((detail) => {
+    detail.classList.add('points-details__hand--game-over');
+  });
 
   // Show player hands
   playerHands.forEach(({ cards, id }) => {
-    const handId = id;
     const handCards = `(${cards.join(' ')})`;
-    const handCardsId = document.getElementById(`${handId}-cards`);
-
-    handCardsId.textContent = handCards;
+    document.getElementById(`${id}-cards`).textContent = handCards;
   });
 }
 
@@ -38,34 +33,28 @@ function stayHand() {
   changeButton.removeEventListener('click', changeSelectedCards);
   stayButton.removeEventListener('click', stayHand);
 
-  for (let card of cardsToChange) {
-    card.removeEventListener('click', toggleClassSelectedCard);
-  }
+  cardsToChange.forEach((card) =>
+    card.removeEventListener('click', toggleClassSelectedCard)
+  );
 
   // Data for the current hand
-  const currentHandData = verificateHand(
-    generatedObjCards[0],
-    generatedObjCards[1],
-    generatedObjCards[2],
-    generatedObjCards[3],
-    generatedObjCards[4]
-  );
-  currentHandData.id = `hand${handsPlayerCounter}`;
+  const currentHand = verificateHand(...generatedObjCards);
+  currentHand.id = `hand${handsPlayerCounter}`;
 
-  // Updating the points of the current hand
-  let currentHandPointBox = document.getElementById(
+  // Displaying the points of the current hand
+  const handPointBox = document.getElementById(
     `hand${handsPlayerCounter}-points`
   );
-  currentHandPointBox.innerHTML = `${currentHandData.points}`;
+  handPointBox.textContent = `${currentHand.points}`;
 
   // Adding the current hand to array playerHands
-  playerHands.push(currentHandData);
+  playerHands.push(currentHand);
 
   // Updating the counter of hands
   handsPlayerCounter++;
 
   //Validation if it's the last hand
-  if (playerHands.length == 5) {
+  if (playerHands.length === 5) {
     nextHandButton.classList.add('hidden');
     playAgainButton.classList.remove('hidden');
 
@@ -77,14 +66,13 @@ function stayHand() {
 
     // Setting total points
     let playerPoints = 0;
-    playerHands.forEach((playerHand) => {
-      playerPoints += playerHand.points;
-    });
+    playerHands.forEach(({ points }) => (playerPoints += points));
 
-    // Updating the total points
-    totalPlayerPoints.innerHTML = `${playerPoints}`;
+    // Displaying total points
+    const totalPlayerPoints = document.getElementById('total-hands-points');
+    totalPlayerPoints.textContent = `${playerPoints}`;
 
-    // Updating styles for total points
+    // Updating styles for total points box
     const totalPointsBox = document.getElementById('total-points');
     totalPointsBox.classList.remove('hidden');
 
@@ -96,34 +84,31 @@ function stayHand() {
     showPlayerHands();
 
     // Validation for win the game
-    let textResult = '';
+    const playerWin = playerPoints >= 60;
 
-    if (playerPoints >= 60) {
-      textResult = 'You win!';
+    if (playerWin) {
       gameResult.classList.add('dialog-game-result--win');
       totalPointsBox.classList.add('points-details__total--win');
     } else {
-      textResult = 'You lose!';
       gameResult.classList.add('dialog-game-result--lose');
       totalPointsBox.classList.add('points-details__total--lose');
     }
 
-    gameResult.textContent = textResult;
+    gameResult.textContent = playerWin ? 'You win!' : 'You lose!';
 
-    // Hidding the remaining card container
-    remainingCardsContainer.style.display = 'none';
-  }
-
-  // If it isn't the last hand
-  else {
+    // Hidding the remaining cards container
+    document
+      .getElementById('remaining-cards-container')
+      .classList.add('hidden');
+  } else {
+    // If it isn't the last hand
     nextHandButton.classList.remove('hidden');
 
     nextHandButton.addEventListener('click', startGame);
     playAgainButton.removeEventListener('click', playAgain);
 
-    // Cleaning the array generatedObjCards
     cleanArray(generatedObjCards);
   }
 
-  remainingCards.innerHTML = '-';
+  document.getElementById('remaining-cards').textContent = '-';
 }
