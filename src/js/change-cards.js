@@ -17,22 +17,20 @@ function changeSelectedCards() {
     remainingCardsCounter -= quantity;
   }
 
-  if (len > remainingCardsCounter) {
-    errChangeCardsQuantity();
-  } else if (len == 0) {
-    errNoCardSelected();
-  } else {
-    changeCardsQuantity(len);
-  }
+  if (len > remainingCardsCounter) errChangeCardsQuantity();
+  else if (len == 0) errNoCardSelected();
+  else changeCardsQuantity(len);
 
   selectedCards.forEach((card) => {
     card.classList.remove('card--selected');
   });
 
   // Updating the counter of remaining cards
-  remainingCards.innerHTML = `${remainingCardsCounter}`;
+  document.getElementById(
+    'remaining-cards'
+  ).textContent = `${remainingCardsCounter}`;
 
-  if (remainingCardsCounter == 0) {
+  if (remainingCardsCounter === 0) {
     changeButton.classList.add('hidden');
 
     cardsToChange.forEach((card) =>
