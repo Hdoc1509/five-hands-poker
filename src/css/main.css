@@ -71,7 +71,6 @@ body::-webkit-scrollbar-thumb:hover {
 button {
   border: none;
   outline: none;
-  cursor: pointer;
 }
 
 .hidden {
