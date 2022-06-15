@@ -31,8 +31,6 @@ const generatedCards = [];
  */
 const generatedObjCards = [];
 
-const playerHands = [];
-
 /**
  * @param {Array} array
  */

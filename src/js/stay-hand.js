@@ -1,6 +1,7 @@
 const stayButton = document.getElementById('stay-button');
 const nextHandButton = document.getElementById('next-hand-button');
 const playAgainButton = document.getElementById('play-again-button');
+const playerHands = [];
 
 let handsPlayerCounter = 1;
 
