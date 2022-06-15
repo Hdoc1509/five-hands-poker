@@ -8,13 +8,11 @@ let handsPlayerCounter = 1;
 
 const playAgain = () => location.reload();
 
-/** Show player hands */
 function showPlayerHands() {
-  let cardsDesc = document.querySelectorAll('.points-details__hand-cards'),
-    pointsDetails = document.querySelectorAll('.points-details__hand');
+  const cardsDesc = document.querySelectorAll('.points-details__hand-cards');
+  const pointsDetails = document.querySelectorAll('.points-details__hand');
 
   //Displaying description container of each hand
-  // @ts-ignore
   cardsDesc.forEach((handCards) => handCards.classList.remove('hidden'));
 
   // Setting new styles for description of each hand
@@ -23,16 +21,13 @@ function showPlayerHands() {
   );
 
   // Show player hands
-  for (let hand of playerHands) {
-    let handCards = hand.cards,
-      currentHandId = hand.id,
-      handDescTxt = `(${handCards.join(' ')})`;
+  playerHands.forEach(({ cards, id }) => {
+    const handId = id;
+    const handCards = `(${cards.join(' ')})`;
+    const handCardsId = document.getElementById(`${handId}-cards`);
 
-    const handTxtBox = document.getElementById(`${currentHandId}-cards`);
-
-    // Displaying hand cards
-    handTxtBox.innerHTML = handDescTxt;
-  }
+    handCardsId.textContent = handCards;
+  });
 }
 
 /** Stay with the current hand */
