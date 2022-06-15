@@ -6,16 +6,11 @@ function changeSelectedCards() {
 
   function changeCardsQuantity(quantity) {
     for (let i = 0; i < quantity; i++) {
-      const { figure, id, cardInfo } = setCardNumAndFig(
-        selectedCards[i].id,
-        true
-      );
-      const position = Number(id.charAt(4));
+      const { id, cardInfo } = setCardNumAndFig(selectedCards[i].id, true);
 
       selectedCards[i].firstElementChild.innerText = cardInfo;
       if (id === 'card5')
         selectedCards[len - 1].lastElementChild.innerText = cardInfo;
-      setCardColor(figure, position);
     }
 
     // Updating the counter of remaining cards
