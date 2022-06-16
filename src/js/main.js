@@ -103,6 +103,15 @@ function setCardNumAndFig(cardId, isToChange) {
 function toggleClassSelectedCard() {
   this.classList.toggle('card--selected');
 }
+/**
+ * Toggles class "card--selected"
+ * @param  {Event}       options
+ * @param  {EventTarget} options.target
+ */
+const toggleSelectedCard = ({ target }) => {
+  if (target.matches('.card > *'))
+    target.parentNode.classList.toggle('card--selected');
+};
 
 /** Remove class "section__current-hand" */
 function clearCurrentHandClass() {
