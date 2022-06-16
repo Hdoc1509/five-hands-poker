@@ -13,7 +13,7 @@ function changeSelectedCards() {
 
       selectedCards[i].firstElementChild.innerText = cardInfo;
       if (id === 'card5')
-        selectedCards[quantity - 1].lastElementChild.innerText = cardInfo;
+        selectedCards[i].lastElementChild.innerText = cardInfo;
     }
 
     // Updating the counter of remaining cards
