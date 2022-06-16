@@ -99,10 +99,6 @@ function setCardNumAndFig(cardId, isToChange) {
   return cardObj;
 }
 
-/** Toggles class "card--selected" */
-function toggleClassSelectedCard() {
-  this.classList.toggle('card--selected');
-}
 /**
  * Toggles class "card--selected"
  * @param  {Event}       options
