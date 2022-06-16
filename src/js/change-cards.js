@@ -11,9 +11,10 @@ function changeSelectedCards() {
     for (let i = 0; i < quantity; i++) {
       const { id, cardInfo } = setCardNumAndFig(selectedCards[i].id, true);
 
-      selectedCards[i].firstElementChild.innerText = cardInfo;
+      selectedCards[i].querySelector('.card__info--top').innerText = cardInfo;
       if (id === 'card5')
-        selectedCards[i].lastElementChild.innerText = cardInfo;
+        selectedCards[i].querySelector('.card__info--bottom').innerText =
+          cardInfo;
     }
 
     // Updating the counter of remaining cards
