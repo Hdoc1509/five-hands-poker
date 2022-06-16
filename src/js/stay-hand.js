@@ -42,10 +42,9 @@ function stayHand() {
   currentHand.id = `hand${handsPlayerCounter}`;
 
   // Displaying the points of the current hand
-  const handPointBox = document.getElementById(
+  document.getElementById(
     `hand${handsPlayerCounter}-points`
-  );
-  handPointBox.textContent = `${currentHand.points}`;
+  ).textContent = `${currentHand.points}`;
 
   // Adding the current hand to array playerHands
   playerHands.push(currentHand);
