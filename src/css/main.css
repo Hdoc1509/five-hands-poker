@@ -370,7 +370,7 @@ button {
 /*----------  POINTS  ----------*/
 
 .points-details__hand {
-  margin: 10px 0;
+  margin-top: 10px;
   padding: 8px;
   color: #fff;
   text-align: center;
