@@ -38,8 +38,7 @@ function stayHand() {
   document.removeEventListener('click', toggleSelectedCard);
 
   // Data for the current hand
-  const currentHand = verificateHand(...generatedObjCards);
-  currentHand.id = `hand${handsPlayerCounter}`;
+  const currentHand = verificateHand(generatedObjCards, handsPlayerCounter);
 
   // Displaying the points of the current hand
   document.getElementById(
