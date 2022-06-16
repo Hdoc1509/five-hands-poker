@@ -106,9 +106,8 @@ function stayHand() {
 
     nextHandButton.addEventListener('click', startGame);
     playAgainButton.removeEventListener('click', playAgain);
-
-    cleanArray(generatedObjCards);
   }
 
   document.getElementById('remaining-cards').textContent = '-';
+  cleanArray(generatedObjCards);
 }
