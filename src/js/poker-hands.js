@@ -8,15 +8,22 @@
  */
 
 /**
+ * Card Object
+ * @typedef {Object} ObjCard
+ * @property {String} id Card's id
+ * @property {String | Number} number Card's number
+ * @property {String} figure Card's figure
+ */
+
+/**
  * Verificate hand
- * @param {ObjCard} card1 First card
- * @param {ObjCard} card2 Second card
- * @param {ObjCard} card3 Third card
- * @param {ObjCard} card4 Fourth card
- * @param {ObjCard} card5 Fifth card
+ * @param {Array<ObjCard>} generatedObjCards
+ * @param {number} handsPlayerCounter
  * @returns {ObjHand} Returns hand information as an object
  */
-function verificateHand(card1, card2, card3, card4, card5) {
+function verificateHand(generatedObjCards, handsPlayerCounter) {
+  const [card1, card2, card3, card4, card5] = generatedObjCards;
+
   const hand = {
     cards: [
       `${card1.number}${card1.figure}`,
@@ -26,7 +33,7 @@ function verificateHand(card1, card2, card3, card4, card5) {
       `${card5.number}${card5.figure}`,
     ],
     description: '',
-    id: '',
+    id: `hand${handsPlayerCounter}`,
     points: 0,
   };
 
