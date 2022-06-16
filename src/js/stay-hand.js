@@ -68,8 +68,9 @@ function stayHand() {
     playerHands.forEach(({ points }) => (playerPoints += points));
 
     // Displaying total points
-    const totalPlayerPoints = document.getElementById('total-hands-points');
-    totalPlayerPoints.textContent = `${playerPoints}`;
+    document.getElementById(
+      'total-hands-points'
+    ).textContent = `${playerPoints}`;
 
     // Updating styles for total points box
     const totalPointsBox = document.getElementById('total-points');
