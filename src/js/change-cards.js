@@ -29,6 +29,7 @@ function changeSelectedCards() {
 
   if (remainingCardsCounter === 0) {
     changeButton.classList.add('hidden');
+    changeButton.removeEventListener('click', changeSelectedCards);
 
     // Listener for cards
     document.removeEventListener('click', toggleSelectedCard);
