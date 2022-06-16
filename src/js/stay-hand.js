@@ -34,9 +34,8 @@ function stayHand() {
   changeButton.removeEventListener('click', changeSelectedCards);
   stayButton.removeEventListener('click', stayHand);
 
-  cardsToChange.forEach((card) =>
-    card.removeEventListener('click', toggleClassSelectedCard)
-  );
+  // Listener for cards
+  document.removeEventListener('click', toggleSelectedCard);
 
   // Data for the current hand
   const currentHand = verificateHand(...generatedObjCards);

@@ -24,10 +24,8 @@ function startGame() {
     if (id === 'card5') cardsInfo[i + 1].innerText = cardInfo;
   }
 
-  // Add the event click for toggle class for selected cards
-  cardsToChange.forEach((card) => {
-    card.addEventListener('click', toggleClassSelectedCard);
-  });
+  // Listener for cards
+  document.addEventListener('click', toggleSelectedCard);
 
   // Listener for the Change Button
   changeButton.addEventListener('click', changeSelectedCards);
