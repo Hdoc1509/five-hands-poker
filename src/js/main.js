@@ -49,20 +49,17 @@ const getRandomCard = () =>
 /**
  * Parse data of string card
  * @param  {string} card
- * @return {{number: string|number, figure: string, rawCard: string}}
+ * @return {{number: string, figure: string, rawCard: string}}
  */
 const parseCard = (card) => {
   let figure = '';
   let number = null;
 
   if (card.startsWith('10')) {
-    number = Number(card.slice(0, 2));
+    number = card.slice(0, 2);
     figure = card.charAt(2);
-  } else if (card.match(/^J|Q|K|A/) !== null) {
-    number = card.charAt(0);
-    figure = card.charAt(1);
   } else {
-    number = Number(card.charAt(0));
+    number = card.charAt(0);
     figure = card.charAt(1);
   }
 
