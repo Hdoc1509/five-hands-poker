@@ -312,31 +312,8 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
 
   // For STAIR
   else if (
-    (card1.number === 'A' ||
-      card1.number === '2' ||
-      card1.number === '3' ||
-      card1.number === '4' ||
-      card1.number === '5') &&
-    (card2.number === 'A' ||
-      card2.number === '2' ||
-      card2.number === '3' ||
-      card2.number === '4' ||
-      card2.number === '5') &&
-    (card3.number === 'A' ||
-      card3.number === '2' ||
-      card3.number === '3' ||
-      card3.number === '4' ||
-      card3.number === '5') &&
-    (card4.number === 'A' ||
-      card4.number === '2' ||
-      card4.number === '3' ||
-      card4.number === '4' ||
-      card4.number === '5') &&
-    (card5.number === 'A' ||
-      card5.number === '2' ||
-      card5.number === '3' ||
-      card5.number === '4' ||
-      card5.number === '5') &&
+    // NOTE: Checked ✅
+    generatedObjCards.every(({ number }) => number.match(/^A|[2-5]$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
     if (
@@ -354,31 +331,8 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: A - 5';
     }
   } else if (
-    (card1.number === '2' ||
-      card1.number === '3' ||
-      card1.number === '4' ||
-      card1.number === '5' ||
-      card1.number === '6') &&
-    (card2.number === '2' ||
-      card2.number === '3' ||
-      card2.number === '4' ||
-      card2.number === '5' ||
-      card2.number === '6') &&
-    (card3.number === '2' ||
-      card3.number === '3' ||
-      card3.number === '4' ||
-      card3.number === '5' ||
-      card3.number === '6') &&
-    (card4.number === '2' ||
-      card4.number === '3' ||
-      card4.number === '4' ||
-      card4.number === '5' ||
-      card4.number === '6') &&
-    (card5.number === '2' ||
-      card5.number === '3' ||
-      card5.number === '4' ||
-      card5.number === '5' ||
-      card5.number === '6') &&
+    // NOTE: Checked ✅
+    generatedObjCards.every(({ number }) => number.match(/^[2-6]$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
     if (
@@ -396,31 +350,8 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 2 - 6';
     }
   } else if (
-    (card1.number === '3' ||
-      card1.number === '4' ||
-      card1.number === '5' ||
-      card1.number === '6' ||
-      card1.number === '7') &&
-    (card2.number === '3' ||
-      card2.number === '4' ||
-      card2.number === '5' ||
-      card2.number === '6' ||
-      card2.number === '7') &&
-    (card3.number === '3' ||
-      card3.number === '4' ||
-      card3.number === '5' ||
-      card3.number === '6' ||
-      card3.number === '7') &&
-    (card4.number === '3' ||
-      card4.number === '4' ||
-      card4.number === '5' ||
-      card4.number === '6' ||
-      card4.number === '7') &&
-    (card5.number === '3' ||
-      card5.number === '4' ||
-      card5.number === '5' ||
-      card5.number === '6' ||
-      card5.number === '7') &&
+    // NOTE: Checked ✅
+    generatedObjCards.every(({ number }) => number.match(/^[3-7]$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
     if (
@@ -438,31 +369,8 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 3 - 7';
     }
   } else if (
-    (card1.number === '4' ||
-      card1.number === '5' ||
-      card1.number === '6' ||
-      card1.number === '7' ||
-      card1.number === '8') &&
-    (card2.number === '4' ||
-      card2.number === '5' ||
-      card2.number === '6' ||
-      card2.number === '7' ||
-      card2.number === '8') &&
-    (card3.number === '4' ||
-      card3.number === '5' ||
-      card3.number === '6' ||
-      card3.number === '7' ||
-      card3.number === '8') &&
-    (card4.number === '4' ||
-      card4.number === '5' ||
-      card4.number === '6' ||
-      card4.number === '7' ||
-      card4.number === '8') &&
-    (card5.number === '4' ||
-      card5.number === '5' ||
-      card5.number === '6' ||
-      card5.number === '7' ||
-      card5.number === '8') &&
+    // NOTE: Checked ✅
+    generatedObjCards.every(({ number }) => number.match(/^[4-8]$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
     if (
@@ -480,31 +388,8 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 4 - 8';
     }
   } else if (
-    (card1.number === '5' ||
-      card1.number === '6' ||
-      card1.number === '7' ||
-      card1.number === '8' ||
-      card1.number === '9') &&
-    (card2.number === '5' ||
-      card2.number === '6' ||
-      card2.number === '7' ||
-      card2.number === '8' ||
-      card2.number === '9') &&
-    (card3.number === '5' ||
-      card3.number === '6' ||
-      card3.number === '7' ||
-      card3.number === '8' ||
-      card3.number === '9') &&
-    (card4.number === '5' ||
-      card4.number === '6' ||
-      card4.number === '7' ||
-      card4.number === '8' ||
-      card4.number === '9') &&
-    (card5.number === '5' ||
-      card5.number === '6' ||
-      card5.number === '7' ||
-      card5.number === '8' ||
-      card5.number === '9') &&
+    // NOTE: Checked ✅
+    generatedObjCards.every(({ number }) => number.match(/^[5-9]$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
     if (
@@ -522,31 +407,8 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 5 - 9';
     }
   } else if (
-    (card1.number === '6' ||
-      card1.number === '7' ||
-      card1.number === '8' ||
-      card1.number === '9' ||
-      card1.number === '10') &&
-    (card2.number === '6' ||
-      card2.number === '7' ||
-      card2.number === '8' ||
-      card2.number === '9' ||
-      card2.number === '10') &&
-    (card3.number === '6' ||
-      card3.number === '7' ||
-      card3.number === '8' ||
-      card3.number === '9' ||
-      card3.number === '10') &&
-    (card4.number === '6' ||
-      card4.number === '7' ||
-      card4.number === '8' ||
-      card4.number === '9' ||
-      card4.number === '10') &&
-    (card5.number === '6' ||
-      card5.number === '7' ||
-      card5.number === '8' ||
-      card5.number === '9' ||
-      card5.number === '10') &&
+    // NOTE: Checked ✅
+    generatedObjCards.every(({ number }) => number.match(/^[6-9]|10$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
     if (
@@ -564,31 +426,8 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 6 - 10';
     }
   } else if (
-    (card1.number === '7' ||
-      card1.number === '8' ||
-      card1.number === '9' ||
-      card1.number === '10' ||
-      card1.number === 'J') &&
-    (card2.number === '7' ||
-      card2.number === '8' ||
-      card2.number === '9' ||
-      card2.number === '10' ||
-      card2.number === 'J') &&
-    (card3.number === '7' ||
-      card3.number === '8' ||
-      card3.number === '9' ||
-      card3.number === '10' ||
-      card3.number === 'J') &&
-    (card4.number === '7' ||
-      card4.number === '8' ||
-      card4.number === '9' ||
-      card4.number === '10' ||
-      card4.number === 'J') &&
-    (card5.number === '7' ||
-      card5.number === '8' ||
-      card5.number === '9' ||
-      card5.number === '10' ||
-      card5.number === 'J') &&
+    // NOTE: Checked ✅
+    generatedObjCards.every(({ number }) => number.match(/^[7-9]|10|J$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
     if (
@@ -606,31 +445,8 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = `Escalera: 7 - J`;
     }
   } else if (
-    (card1.number === '8' ||
-      card1.number === '9' ||
-      card1.number === '10' ||
-      card1.number === 'J' ||
-      card1.number === 'Q') &&
-    (card2.number === '8' ||
-      card2.number === '9' ||
-      card2.number === '10' ||
-      card2.number === 'J' ||
-      card2.number === 'Q') &&
-    (card3.number === '8' ||
-      card3.number === '9' ||
-      card3.number === '10' ||
-      card3.number === 'J' ||
-      card3.number === 'Q') &&
-    (card4.number === '8' ||
-      card4.number === '9' ||
-      card4.number === '10' ||
-      card4.number === 'J' ||
-      card4.number === 'Q') &&
-    (card5.number === '8' ||
-      card5.number === '9' ||
-      card5.number === '10' ||
-      card5.number === 'J' ||
-      card5.number === 'Q') &&
+    // NOTE: Checked ✅
+    generatedObjCards.every(({ number }) => number.match(/^8|9|10|J|Q$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
     if (
@@ -648,31 +464,8 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = `Escalera: 8 - Q`;
     }
   } else if (
-    (card1.number === '9' ||
-      card1.number === '10' ||
-      card1.number === 'J' ||
-      card1.number === 'Q' ||
-      card1.number === 'K') &&
-    (card2.number === '9' ||
-      card2.number === '10' ||
-      card2.number === 'J' ||
-      card2.number === 'Q' ||
-      card2.number === 'K') &&
-    (card3.number === '9' ||
-      card3.number === '10' ||
-      card3.number === 'J' ||
-      card3.number === 'Q' ||
-      card3.number === 'K') &&
-    (card4.number === '9' ||
-      card4.number === '10' ||
-      card4.number === 'J' ||
-      card4.number === 'Q' ||
-      card4.number === 'K') &&
-    (card5.number === '9' ||
-      card5.number === '10' ||
-      card5.number === 'J' ||
-      card5.number === 'Q' ||
-      card5.number === 'K') &&
+    // NOTE: Checked ✅
+    generatedObjCards.every(({ number }) => number.match(/^9|10|J|Q|K$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
     if (
@@ -690,31 +483,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 9 - K';
     }
   } else if (
-    (card1.number === '10' ||
-      card1.number === 'J' ||
-      card1.number === 'Q' ||
-      card1.number === 'K' ||
-      card1.number === 'A') &&
-    (card2.number === '10' ||
-      card2.number === 'J' ||
-      card2.number === 'Q' ||
-      card2.number === 'K' ||
-      card2.number === 'A') &&
-    (card3.number === '10' ||
-      card3.number === 'J' ||
-      card3.number === 'Q' ||
-      card3.number === 'K' ||
-      card3.number === 'A') &&
-    (card4.number === '10' ||
-      card4.number === 'J' ||
-      card4.number === 'Q' ||
-      card4.number === 'K' ||
-      card4.number === 'A') &&
-    (card5.number === '10' ||
-      card5.number === 'J' ||
-      card5.number === 'Q' ||
-      card5.number === 'K' ||
-      card5.number === 'A') &&
+    generatedObjCards.every(({ number }) => number.match(/^10|J|Q|K|A$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
     if (
