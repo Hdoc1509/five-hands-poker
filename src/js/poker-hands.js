@@ -1,4 +1,25 @@
 /**
+ * Check if all cards has different numbers
+ * @param  {Array<ObjCard>} cards
+ */
+const allDifferentNumbers = (cards) => {
+  const [card1, card2, card3, card4, card5] = cards;
+
+  return (
+    card1.number !== card2.number &&
+    card1.number !== card3.number &&
+    card1.number !== card4.number &&
+    card1.number !== card5.number &&
+    card2.number !== card3.number &&
+    card2.number !== card4.number &&
+    card2.number !== card5.number &&
+    card3.number !== card4.number &&
+    card3.number !== card5.number &&
+    card4.number !== card5.number
+  );
+};
+
+/**
  * Hand Object
  * @typedef {Object} ObjHand
  * @property {Array<String>} cards Hand's cards
@@ -14,8 +35,6 @@
  * @property {String} number Card's number
  * @property {String} figure Card's figure
  */
-
-// TODO: Check card numbers as strings
 
 /**
  * Verificate hand
@@ -318,16 +337,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       card5.number === '3' ||
       card5.number === '4' ||
       card5.number === '5') &&
-    card1.number !== card2.number &&
-    card1.number !== card3.number &&
-    card1.number !== card4.number &&
-    card1.number !== card5.number &&
-    card2.number !== card3.number &&
-    card2.number !== card4.number &&
-    card2.number !== card5.number &&
-    card3.number !== card4.number &&
-    card3.number !== card5.number &&
-    card4.number !== card5.number
+    allDifferentNumbers(generatedObjCards)
   ) {
     if (
       card1.figure === card2.figure &&
@@ -369,16 +379,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       card5.number === '4' ||
       card5.number === '5' ||
       card5.number === '6') &&
-    card1.number !== card2.number &&
-    card1.number !== card3.number &&
-    card1.number !== card4.number &&
-    card1.number !== card5.number &&
-    card2.number !== card3.number &&
-    card2.number !== card4.number &&
-    card2.number !== card5.number &&
-    card3.number !== card4.number &&
-    card3.number !== card5.number &&
-    card4.number !== card5.number
+    allDifferentNumbers(generatedObjCards)
   ) {
     if (
       card1.figure === card2.figure &&
@@ -420,16 +421,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       card5.number === '5' ||
       card5.number === '6' ||
       card5.number === '7') &&
-    card1.number !== card2.number &&
-    card1.number !== card3.number &&
-    card1.number !== card4.number &&
-    card1.number !== card5.number &&
-    card2.number !== card3.number &&
-    card2.number !== card4.number &&
-    card2.number !== card5.number &&
-    card3.number !== card4.number &&
-    card3.number !== card5.number &&
-    card4.number !== card5.number
+    allDifferentNumbers(generatedObjCards)
   ) {
     if (
       card1.figure === card2.figure &&
@@ -471,16 +463,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       card5.number === '6' ||
       card5.number === '7' ||
       card5.number === '8') &&
-    card1.number !== card2.number &&
-    card1.number !== card3.number &&
-    card1.number !== card4.number &&
-    card1.number !== card5.number &&
-    card2.number !== card3.number &&
-    card2.number !== card4.number &&
-    card2.number !== card5.number &&
-    card3.number !== card4.number &&
-    card3.number !== card5.number &&
-    card4.number !== card5.number
+    allDifferentNumbers(generatedObjCards)
   ) {
     if (
       card1.figure === card2.figure &&
@@ -522,16 +505,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       card5.number === '7' ||
       card5.number === '8' ||
       card5.number === '9') &&
-    card1.number !== card2.number &&
-    card1.number !== card3.number &&
-    card1.number !== card4.number &&
-    card1.number !== card5.number &&
-    card2.number !== card3.number &&
-    card2.number !== card4.number &&
-    card2.number !== card5.number &&
-    card3.number !== card4.number &&
-    card3.number !== card5.number &&
-    card4.number !== card5.number
+    allDifferentNumbers(generatedObjCards)
   ) {
     if (
       card1.figure === card2.figure &&
@@ -573,16 +547,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       card5.number === '8' ||
       card5.number === '9' ||
       card5.number === '10') &&
-    card1.number !== card2.number &&
-    card1.number !== card3.number &&
-    card1.number !== card4.number &&
-    card1.number !== card5.number &&
-    card2.number !== card3.number &&
-    card2.number !== card4.number &&
-    card2.number !== card5.number &&
-    card3.number !== card4.number &&
-    card3.number !== card5.number &&
-    card4.number !== card5.number
+    allDifferentNumbers(generatedObjCards)
   ) {
     if (
       card1.figure === card2.figure &&
@@ -624,16 +589,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       card5.number === '9' ||
       card5.number === '10' ||
       card5.number === 'J') &&
-    card1.number !== card2.number &&
-    card1.number !== card3.number &&
-    card1.number !== card4.number &&
-    card1.number !== card5.number &&
-    card2.number !== card3.number &&
-    card2.number !== card4.number &&
-    card2.number !== card5.number &&
-    card3.number !== card4.number &&
-    card3.number !== card5.number &&
-    card4.number !== card5.number
+    allDifferentNumbers(generatedObjCards)
   ) {
     if (
       card1.figure === card2.figure &&
@@ -675,16 +631,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       card5.number === '10' ||
       card5.number === 'J' ||
       card5.number === 'Q') &&
-    card1.number !== card2.number &&
-    card1.number !== card3.number &&
-    card1.number !== card4.number &&
-    card1.number !== card5.number &&
-    card2.number !== card3.number &&
-    card2.number !== card4.number &&
-    card2.number !== card5.number &&
-    card3.number !== card4.number &&
-    card3.number !== card5.number &&
-    card4.number !== card5.number
+    allDifferentNumbers(generatedObjCards)
   ) {
     if (
       card1.figure === card2.figure &&
@@ -726,16 +673,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       card5.number === 'J' ||
       card5.number === 'Q' ||
       card5.number === 'K') &&
-    card1.number !== card2.number &&
-    card1.number !== card3.number &&
-    card1.number !== card4.number &&
-    card1.number !== card5.number &&
-    card2.number !== card3.number &&
-    card2.number !== card4.number &&
-    card2.number !== card5.number &&
-    card3.number !== card4.number &&
-    card3.number !== card5.number &&
-    card4.number !== card5.number
+    allDifferentNumbers(generatedObjCards)
   ) {
     if (
       card1.figure === card2.figure &&
@@ -777,16 +715,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       card5.number === 'Q' ||
       card5.number === 'K' ||
       card5.number === 'A') &&
-    card1.number !== card2.number &&
-    card1.number !== card3.number &&
-    card1.number !== card4.number &&
-    card1.number !== card5.number &&
-    card2.number !== card3.number &&
-    card2.number !== card4.number &&
-    card2.number !== card5.number &&
-    card3.number !== card4.number &&
-    card3.number !== card5.number &&
-    card4.number !== card5.number
+    allDifferentNumbers(generatedObjCards)
   ) {
     if (
       card1.figure === card2.figure &&
