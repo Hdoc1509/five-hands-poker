@@ -325,132 +325,82 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
     generatedObjCards.every(({ number }) => number.match(/^A|[2-5]$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
-    if (allSameFigure(generatedObjCards)) {
-      // For COLOR STAIR
-      hand.points = 75;
-      hand.description = `Escalera de Color(${card1.figure}): A - 5`;
-    } else {
-      // For STAIR
-      hand.points = 15;
-      hand.description = 'Escalera: A - 5';
-    }
+    hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
+    hand.description = allSameFigure(generatedObjCards)
+      ? `Escalera de Color(${card1.figure}): A - 5`
+      : 'Escalera: A - 5';
   } else if (
     generatedObjCards.every(({ number }) => number.match(/^[2-6]$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
-    if (allSameFigure(generatedObjCards)) {
-      // For COLOR STAIR
-      hand.points = 75;
-      hand.description = `Escalera de Color(${card1.figure}): 2 - 6`;
-    } else {
-      // For STAIR
-      hand.points = 15;
-      hand.description = 'Escalera: 2 - 6';
-    }
+    hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
+    hand.description = allSameFigure(generatedObjCards)
+      ? `Escalera de Color(${card1.figure}): 2 - 6`
+      : 'Escalera: 2 - 6';
   } else if (
     generatedObjCards.every(({ number }) => number.match(/^[3-7]$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
-    if (allSameFigure(generatedObjCards)) {
-      // For COLOR STAIR
-      hand.points = 75;
-      hand.description = `Escalera de Color(${card1.figure}): 3 - 7`;
-    } else {
-      // For STAIR
-      hand.points = 15;
-      hand.description = 'Escalera: 3 - 7';
-    }
+    hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
+    hand.description = allSameFigure(generatedObjCards)
+      ? `Escalera de Color(${card1.figure}): 3 - 7`
+      : 'Escalera: 3 - 7';
   } else if (
     generatedObjCards.every(({ number }) => number.match(/^[4-8]$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
-    if (allSameFigure(generatedObjCards)) {
-      // For COLOR STAIR
-      hand.points = 75;
-      hand.description = `Escalera de Color(${card1.figure}): 4 - 8`;
-    } else {
-      // For STAIR
-      hand.points = 15;
-      hand.description = 'Escalera: 4 - 8';
-    }
+    hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
+    hand.description = allSameFigure(generatedObjCards)
+      ? `Escalera de Color(${card1.figure}): 4 - 8`
+      : 'Escalera: 4 - 8';
   } else if (
     generatedObjCards.every(({ number }) => number.match(/^[5-9]$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
-    if (allSameFigure(generatedObjCards)) {
-      // For COLOR STAIR
-      hand.points = 75;
-      hand.description = `Escalera de Color(${card1.figure}): 5 - 9`;
-    } else {
-      // For STAIR
-      hand.points = 15;
-      hand.description = 'Escalera: 5 - 9';
-    }
+    hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
+    hand.description = allSameFigure(generatedObjCards)
+      ? `Escalera de Color(${card1.figure}): 5 - 9`
+      : 'Escalera: 5 - 9';
   } else if (
     generatedObjCards.every(({ number }) => number.match(/^[6-9]|10$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
-    if (allSameFigure(generatedObjCards)) {
-      // For COLOR STAIR
-      hand.points = 75;
-      hand.description = `Escalera de Color(${card1.figure}): 6 - 10`;
-    } else {
-      // For STAIR
-      hand.points = 15;
-      hand.description = 'Escalera: 6 - 10';
-    }
+    hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
+    hand.description = allSameFigure(generatedObjCards)
+      ? `Escalera de Color(${card1.figure}): 6 - 10`
+      : 'Escalera: 6 - 10';
   } else if (
     generatedObjCards.every(({ number }) => number.match(/^[7-9]|10|J$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
-    if (allSameFigure(generatedObjCards)) {
-      // For COLOR STAIR
-      hand.points = 75;
-      hand.description = `Escalera de Color(${card1.figure}): 7 - J`;
-    } else {
-      // For STAIR
-      hand.points = 15;
-      hand.description = `Escalera: 7 - J`;
-    }
+    hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
+    hand.description = allSameFigure(generatedObjCards)
+      ? `Escalera de Color(${card1.figure}): 7 - J`
+      : 'Escalera: 7 - J';
   } else if (
     generatedObjCards.every(({ number }) => number.match(/^8|9|10|J|Q$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
-    if (allSameFigure(generatedObjCards)) {
-      // For COLOR STAIR
-      hand.points = 75;
-      hand.description = `Escalera de Color(${card1.figure}): 8 - Q`;
-    } else {
-      // For STAIR
-      hand.points = 15;
-      hand.description = `Escalera: 8 - Q`;
-    }
+    hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
+    hand.description = allSameFigure(generatedObjCards)
+      ? `Escalera de Color(${card1.figure}): 8 - Q`
+      : 'Escalera: 8 - Q';
   } else if (
     generatedObjCards.every(({ number }) => number.match(/^9|10|J|Q|K$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
-    if (allSameFigure(generatedObjCards)) {
-      // For COLOR STAIR
-      hand.points = 75;
-      hand.description = `Escalera de Color(${card1.figure}): 9 - K`;
-    } else {
-      // For STAIR
-      hand.points = 15;
-      hand.description = 'Escalera: 9 - K';
-    }
+    hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
+    hand.description = allSameFigure(generatedObjCards)
+      ? `Escalera de Color(${card1.figure}): 9 - K`
+      : 'Escalera: 9 - K';
   } else if (
     generatedObjCards.every(({ number }) => number.match(/^10|J|Q|K|A$/)) &&
     allDifferentNumbers(generatedObjCards)
   ) {
-    if (allSameFigure(generatedObjCards)) {
-      // For REAL COLOR STAIR
-      hand.points = 100;
-      hand.description = `Escalera Real de Color (${card1.figure})`;
-    } else {
-      // For STAIR
-      hand.points = 15;
-      hand.description = 'Escalera: 10 - A';
-    }
+    hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
+    hand.description = allSameFigure(generatedObjCards)
+      ? `Escalera Real de Color(${card1.figure})`
+      : 'Escalera: 10 - A';
   }
 
   // For COLOR
