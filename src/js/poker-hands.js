@@ -15,6 +15,8 @@
  * @property {String} figure Card's figure
  */
 
+// TODO: Check card numbers as strings
+
 /**
  * Verificate hand
  * @param {Array<ObjCard>} generatedObjCards
@@ -291,47 +293,47 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
 
   // For STAIR
   else if (
-    (card1.number == 'A' ||
-      card1.number == 2 ||
-      card1.number == 3 ||
-      card1.number == 4 ||
-      card1.number == 5) &&
-    (card2.number == 'A' ||
-      card2.number == 2 ||
-      card2.number == 3 ||
-      card2.number == 4 ||
-      card2.number == 5) &&
-    (card3.number == 'A' ||
-      card3.number == 2 ||
-      card3.number == 3 ||
-      card3.number == 4 ||
-      card3.number == 5) &&
-    (card4.number == 'A' ||
-      card4.number == 2 ||
-      card4.number == 3 ||
-      card4.number == 4 ||
-      card4.number == 5) &&
-    (card5.number == 'A' ||
-      card5.number == 2 ||
-      card5.number == 3 ||
-      card5.number == 4 ||
-      card5.number == 5) &&
-    card1.number != card2.number &&
-    card1.number != card3.number &&
-    card1.number != card4.number &&
-    card1.number != card5.number &&
-    card2.number != card3.number &&
-    card2.number != card4.number &&
-    card2.number != card5.number &&
-    card3.number != card4.number &&
-    card3.number != card5.number &&
-    card4.number != card5.number
+    (card1.number === 'A' ||
+      card1.number === '2' ||
+      card1.number === '3' ||
+      card1.number === '4' ||
+      card1.number === '5') &&
+    (card2.number === 'A' ||
+      card2.number === '2' ||
+      card2.number === '3' ||
+      card2.number === '4' ||
+      card2.number === '5') &&
+    (card3.number === 'A' ||
+      card3.number === '2' ||
+      card3.number === '3' ||
+      card3.number === '4' ||
+      card3.number === '5') &&
+    (card4.number === 'A' ||
+      card4.number === '2' ||
+      card4.number === '3' ||
+      card4.number === '4' ||
+      card4.number === '5') &&
+    (card5.number === 'A' ||
+      card5.number === '2' ||
+      card5.number === '3' ||
+      card5.number === '4' ||
+      card5.number === '5') &&
+    card1.number !== card2.number &&
+    card1.number !== card3.number &&
+    card1.number !== card4.number &&
+    card1.number !== card5.number &&
+    card2.number !== card3.number &&
+    card2.number !== card4.number &&
+    card2.number !== card5.number &&
+    card3.number !== card4.number &&
+    card3.number !== card5.number &&
+    card4.number !== card5.number
   ) {
     if (
-      card1.figure == card2.figure &&
-      card2.figure == card3.figure &&
-      card3.figure == card4.figure &&
-      card4.figure == card5.figure
+      card1.figure === card2.figure &&
+      card2.figure === card3.figure &&
+      card3.figure === card4.figure &&
+      card4.figure === card5.figure
     ) {
       // For COLOR STAIR
       hand.points = 75;
@@ -342,47 +344,47 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: A - 5';
     }
   } else if (
-    (card1.number == 2 ||
-      card1.number == 3 ||
-      card1.number == 4 ||
-      card1.number == 5 ||
-      card1.number == 6) &&
-    (card2.number == 2 ||
-      card2.number == 3 ||
-      card2.number == 4 ||
-      card2.number == 5 ||
-      card2.number == 6) &&
-    (card3.number == 2 ||
-      card3.number == 3 ||
-      card3.number == 4 ||
-      card3.number == 5 ||
-      card3.number == 6) &&
-    (card4.number == 2 ||
-      card4.number == 3 ||
-      card4.number == 4 ||
-      card4.number == 5 ||
-      card4.number == 6) &&
-    (card5.number == 2 ||
-      card5.number == 3 ||
-      card5.number == 4 ||
-      card5.number == 5 ||
-      card5.number == 6) &&
-    card1.number != card2.number &&
-    card1.number != card3.number &&
-    card1.number != card4.number &&
-    card1.number != card5.number &&
-    card2.number != card3.number &&
-    card2.number != card4.number &&
-    card2.number != card5.number &&
-    card3.number != card4.number &&
-    card3.number != card5.number &&
-    card4.number != card5.number
+    (card1.number === '2' ||
+      card1.number === '3' ||
+      card1.number === '4' ||
+      card1.number === '5' ||
+      card1.number === '6') &&
+    (card2.number === '2' ||
+      card2.number === '3' ||
+      card2.number === '4' ||
+      card2.number === '5' ||
+      card2.number === '6') &&
+    (card3.number === '2' ||
+      card3.number === '3' ||
+      card3.number === '4' ||
+      card3.number === '5' ||
+      card3.number === '6') &&
+    (card4.number === '2' ||
+      card4.number === '3' ||
+      card4.number === '4' ||
+      card4.number === '5' ||
+      card4.number === '6') &&
+    (card5.number === '2' ||
+      card5.number === '3' ||
+      card5.number === '4' ||
+      card5.number === '5' ||
+      card5.number === '6') &&
+    card1.number !== card2.number &&
+    card1.number !== card3.number &&
+    card1.number !== card4.number &&
+    card1.number !== card5.number &&
+    card2.number !== card3.number &&
+    card2.number !== card4.number &&
+    card2.number !== card5.number &&
+    card3.number !== card4.number &&
+    card3.number !== card5.number &&
+    card4.number !== card5.number
   ) {
     if (
-      card1.figure == card2.figure &&
-      card2.figure == card3.figure &&
-      card3.figure == card4.figure &&
-      card4.figure == card5.figure
+      card1.figure === card2.figure &&
+      card2.figure === card3.figure &&
+      card3.figure === card4.figure &&
+      card4.figure === card5.figure
     ) {
       // For COLOR STAIR
       hand.points = 75;
@@ -393,47 +395,47 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 2 - 6';
     }
   } else if (
-    (card1.number == 3 ||
-      card1.number == 4 ||
-      card1.number == 5 ||
-      card1.number == 6 ||
-      card1.number == 7) &&
-    (card2.number == 3 ||
-      card2.number == 4 ||
-      card2.number == 5 ||
-      card2.number == 6 ||
-      card2.number == 7) &&
-    (card3.number == 3 ||
-      card3.number == 4 ||
-      card3.number == 5 ||
-      card3.number == 6 ||
-      card3.number == 7) &&
-    (card4.number == 3 ||
-      card4.number == 4 ||
-      card4.number == 5 ||
-      card4.number == 6 ||
-      card4.number == 7) &&
-    (card5.number == 3 ||
-      card5.number == 4 ||
-      card5.number == 5 ||
-      card5.number == 6 ||
-      card5.number == 7) &&
-    card1.number != card2.number &&
-    card1.number != card3.number &&
-    card1.number != card4.number &&
-    card1.number != card5.number &&
-    card2.number != card3.number &&
-    card2.number != card4.number &&
-    card2.number != card5.number &&
-    card3.number != card4.number &&
-    card3.number != card5.number &&
-    card4.number != card5.number
+    (card1.number === '3' ||
+      card1.number === '4' ||
+      card1.number === '5' ||
+      card1.number === '6' ||
+      card1.number === '7') &&
+    (card2.number === '3' ||
+      card2.number === '4' ||
+      card2.number === '5' ||
+      card2.number === '6' ||
+      card2.number === '7') &&
+    (card3.number === '3' ||
+      card3.number === '4' ||
+      card3.number === '5' ||
+      card3.number === '6' ||
+      card3.number === '7') &&
+    (card4.number === '3' ||
+      card4.number === '4' ||
+      card4.number === '5' ||
+      card4.number === '6' ||
+      card4.number === '7') &&
+    (card5.number === '3' ||
+      card5.number === '4' ||
+      card5.number === '5' ||
+      card5.number === '6' ||
+      card5.number === '7') &&
+    card1.number !== card2.number &&
+    card1.number !== card3.number &&
+    card1.number !== card4.number &&
+    card1.number !== card5.number &&
+    card2.number !== card3.number &&
+    card2.number !== card4.number &&
+    card2.number !== card5.number &&
+    card3.number !== card4.number &&
+    card3.number !== card5.number &&
+    card4.number !== card5.number
   ) {
     if (
-      card1.figure == card2.figure &&
-      card2.figure == card3.figure &&
-      card3.figure == card4.figure &&
-      card4.figure == card5.figure
+      card1.figure === card2.figure &&
+      card2.figure === card3.figure &&
+      card3.figure === card4.figure &&
+      card4.figure === card5.figure
     ) {
       // For COLOR STAIR
       hand.points = 75;
@@ -444,47 +446,47 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 3 - 7';
     }
   } else if (
-    (card1.number == 4 ||
-      card1.number == 5 ||
-      card1.number == 6 ||
-      card1.number == 7 ||
-      card1.number == 8) &&
-    (card2.number == 4 ||
-      card2.number == 5 ||
-      card2.number == 6 ||
-      card2.number == 7 ||
-      card2.number == 8) &&
-    (card3.number == 4 ||
-      card3.number == 5 ||
-      card3.number == 6 ||
-      card3.number == 7 ||
-      card3.number == 8) &&
-    (card4.number == 4 ||
-      card4.number == 5 ||
-      card4.number == 6 ||
-      card4.number == 7 ||
-      card4.number == 8) &&
-    (card5.number == 4 ||
-      card5.number == 5 ||
-      card5.number == 6 ||
-      card5.number == 7 ||
-      card5.number == 8) &&
-    card1.number != card2.number &&
-    card1.number != card3.number &&
-    card1.number != card4.number &&
-    card1.number != card5.number &&
-    card2.number != card3.number &&
-    card2.number != card4.number &&
-    card2.number != card5.number &&
-    card3.number != card4.number &&
-    card3.number != card5.number &&
-    card4.number != card5.number
+    (card1.number === '4' ||
+      card1.number === '5' ||
+      card1.number === '6' ||
+      card1.number === '7' ||
+      card1.number === '8') &&
+    (card2.number === '4' ||
+      card2.number === '5' ||
+      card2.number === '6' ||
+      card2.number === '7' ||
+      card2.number === '8') &&
+    (card3.number === '4' ||
+      card3.number === '5' ||
+      card3.number === '6' ||
+      card3.number === '7' ||
+      card3.number === '8') &&
+    (card4.number === '4' ||
+      card4.number === '5' ||
+      card4.number === '6' ||
+      card4.number === '7' ||
+      card4.number === '8') &&
+    (card5.number === '4' ||
+      card5.number === '5' ||
+      card5.number === '6' ||
+      card5.number === '7' ||
+      card5.number === '8') &&
+    card1.number !== card2.number &&
+    card1.number !== card3.number &&
+    card1.number !== card4.number &&
+    card1.number !== card5.number &&
+    card2.number !== card3.number &&
+    card2.number !== card4.number &&
+    card2.number !== card5.number &&
+    card3.number !== card4.number &&
+    card3.number !== card5.number &&
+    card4.number !== card5.number
   ) {
     if (
-      card1.figure == card2.figure &&
-      card2.figure == card3.figure &&
-      card3.figure == card4.figure &&
-      card4.figure == card5.figure
+      card1.figure === card2.figure &&
+      card2.figure === card3.figure &&
+      card3.figure === card4.figure &&
+      card4.figure === card5.figure
     ) {
       // For COLOR STAIR
       hand.points = 75;
@@ -495,47 +497,47 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 4 - 8';
     }
   } else if (
-    (card1.number == 5 ||
-      card1.number == 6 ||
-      card1.number == 7 ||
-      card1.number == 8 ||
-      card1.number == 9) &&
-    (card2.number == 5 ||
-      card2.number == 6 ||
-      card2.number == 7 ||
-      card2.number == 8 ||
-      card2.number == 9) &&
-    (card3.number == 5 ||
-      card3.number == 6 ||
-      card3.number == 7 ||
-      card3.number == 8 ||
-      card3.number == 9) &&
-    (card4.number == 5 ||
-      card4.number == 6 ||
-      card4.number == 7 ||
-      card4.number == 8 ||
-      card4.number == 9) &&
-    (card5.number == 5 ||
-      card5.number == 6 ||
-      card5.number == 7 ||
-      card5.number == 8 ||
-      card5.number == 9) &&
-    card1.number != card2.number &&
-    card1.number != card3.number &&
-    card1.number != card4.number &&
-    card1.number != card5.number &&
-    card2.number != card3.number &&
-    card2.number != card4.number &&
-    card2.number != card5.number &&
-    card3.number != card4.number &&
-    card3.number != card5.number &&
-    card4.number != card5.number
+    (card1.number === '5' ||
+      card1.number === '6' ||
+      card1.number === '7' ||
+      card1.number === '8' ||
+      card1.number === '9') &&
+    (card2.number === '5' ||
+      card2.number === '6' ||
+      card2.number === '7' ||
+      card2.number === '8' ||
+      card2.number === '9') &&
+    (card3.number === '5' ||
+      card3.number === '6' ||
+      card3.number === '7' ||
+      card3.number === '8' ||
+      card3.number === '9') &&
+    (card4.number === '5' ||
+      card4.number === '6' ||
+      card4.number === '7' ||
+      card4.number === '8' ||
+      card4.number === '9') &&
+    (card5.number === '5' ||
+      card5.number === '6' ||
+      card5.number === '7' ||
+      card5.number === '8' ||
+      card5.number === '9') &&
+    card1.number !== card2.number &&
+    card1.number !== card3.number &&
+    card1.number !== card4.number &&
+    card1.number !== card5.number &&
+    card2.number !== card3.number &&
+    card2.number !== card4.number &&
+    card2.number !== card5.number &&
+    card3.number !== card4.number &&
+    card3.number !== card5.number &&
+    card4.number !== card5.number
   ) {
     if (
-      card1.figure == card2.figure &&
-      card2.figure == card3.figure &&
-      card3.figure == card4.figure &&
-      card4.figure == card5.figure
+      card1.figure === card2.figure &&
+      card2.figure === card3.figure &&
+      card3.figure === card4.figure &&
+      card4.figure === card5.figure
     ) {
       // For COLOR STAIR
       hand.points = 75;
@@ -546,47 +548,47 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 5 - 9';
     }
   } else if (
-    (card1.number == 6 ||
-      card1.number == 7 ||
-      card1.number == 8 ||
-      card1.number == 9 ||
-      card1.number == 10) &&
-    (card2.number == 6 ||
-      card2.number == 7 ||
-      card2.number == 8 ||
-      card2.number == 9 ||
-      card2.number == 10) &&
-    (card3.number == 6 ||
-      card3.number == 7 ||
-      card3.number == 8 ||
-      card3.number == 9 ||
-      card3.number == 10) &&
-    (card4.number == 6 ||
-      card4.number == 7 ||
-      card4.number == 8 ||
-      card4.number == 9 ||
-      card4.number == 10) &&
-    (card5.number == 6 ||
-      card5.number == 7 ||
-      card5.number == 8 ||
-      card5.number == 9 ||
-      card5.number == 10) &&
-    card1.number != card2.number &&
-    card1.number != card3.number &&
-    card1.number != card4.number &&
-    card1.number != card5.number &&
-    card2.number != card3.number &&
-    card2.number != card4.number &&
-    card2.number != card5.number &&
-    card3.number != card4.number &&
-    card3.number != card5.number &&
-    card4.number != card5.number
+    (card1.number === '6' ||
+      card1.number === '7' ||
+      card1.number === '8' ||
+      card1.number === '9' ||
+      card1.number === '10') &&
+    (card2.number === '6' ||
+      card2.number === '7' ||
+      card2.number === '8' ||
+      card2.number === '9' ||
+      card2.number === '10') &&
+    (card3.number === '6' ||
+      card3.number === '7' ||
+      card3.number === '8' ||
+      card3.number === '9' ||
+      card3.number === '10') &&
+    (card4.number === '6' ||
+      card4.number === '7' ||
+      card4.number === '8' ||
+      card4.number === '9' ||
+      card4.number === '10') &&
+    (card5.number === '6' ||
+      card5.number === '7' ||
+      card5.number === '8' ||
+      card5.number === '9' ||
+      card5.number === '10') &&
+    card1.number !== card2.number &&
+    card1.number !== card3.number &&
+    card1.number !== card4.number &&
+    card1.number !== card5.number &&
+    card2.number !== card3.number &&
+    card2.number !== card4.number &&
+    card2.number !== card5.number &&
+    card3.number !== card4.number &&
+    card3.number !== card5.number &&
+    card4.number !== card5.number
   ) {
     if (
-      card1.figure == card2.figure &&
-      card2.figure == card3.figure &&
-      card3.figure == card4.figure &&
-      card4.figure == card5.figure
+      card1.figure === card2.figure &&
+      card2.figure === card3.figure &&
+      card3.figure === card4.figure &&
+      card4.figure === card5.figure
     ) {
       // For COLOR STAIR
       hand.points = 75;
@@ -597,47 +599,47 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 6 - 10';
     }
   } else if (
-    (card1.number == 7 ||
-      card1.number == 8 ||
-      card1.number == 9 ||
-      card1.number == 10 ||
-      card1.number == 'J') &&
-    (card2.number == 7 ||
-      card2.number == 8 ||
-      card2.number == 9 ||
-      card2.number == 10 ||
-      card2.number == 'J') &&
-    (card3.number == 7 ||
-      card3.number == 8 ||
-      card3.number == 9 ||
-      card3.number == 10 ||
-      card3.number == 'J') &&
-    (card4.number == 7 ||
-      card4.number == 8 ||
-      card4.number == 9 ||
-      card4.number == 10 ||
-      card4.number == 'J') &&
-    (card5.number == 7 ||
-      card5.number == 8 ||
-      card5.number == 9 ||
-      card5.number == 10 ||
-      card5.number == 'J') &&
-    card1.number != card2.number &&
-    card1.number != card3.number &&
-    card1.number != card4.number &&
-    card1.number != card5.number &&
-    card2.number != card3.number &&
-    card2.number != card4.number &&
-    card2.number != card5.number &&
-    card3.number != card4.number &&
-    card3.number != card5.number &&
-    card4.number != card5.number
+    (card1.number === '7' ||
+      card1.number === '8' ||
+      card1.number === '9' ||
+      card1.number === '10' ||
+      card1.number === 'J') &&
+    (card2.number === '7' ||
+      card2.number === '8' ||
+      card2.number === '9' ||
+      card2.number === '10' ||
+      card2.number === 'J') &&
+    (card3.number === '7' ||
+      card3.number === '8' ||
+      card3.number === '9' ||
+      card3.number === '10' ||
+      card3.number === 'J') &&
+    (card4.number === '7' ||
+      card4.number === '8' ||
+      card4.number === '9' ||
+      card4.number === '10' ||
+      card4.number === 'J') &&
+    (card5.number === '7' ||
+      card5.number === '8' ||
+      card5.number === '9' ||
+      card5.number === '10' ||
+      card5.number === 'J') &&
+    card1.number !== card2.number &&
+    card1.number !== card3.number &&
+    card1.number !== card4.number &&
+    card1.number !== card5.number &&
+    card2.number !== card3.number &&
+    card2.number !== card4.number &&
+    card2.number !== card5.number &&
+    card3.number !== card4.number &&
+    card3.number !== card5.number &&
+    card4.number !== card5.number
   ) {
     if (
-      card1.figure == card2.figure &&
-      card2.figure == card3.figure &&
-      card3.figure == card4.figure &&
-      card4.figure == card5.figure
+      card1.figure === card2.figure &&
+      card2.figure === card3.figure &&
+      card3.figure === card4.figure &&
+      card4.figure === card5.figure
     ) {
       // For COLOR STAIR
       hand.points = 75;
@@ -648,47 +650,47 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = `Escalera: 7 - J`;
     }
   } else if (
-    (card1.number == 8 ||
-      card1.number == 9 ||
-      card1.number == 10 ||
-      card1.number == 'J' ||
-      card1.number == 'Q') &&
-    (card2.number == 8 ||
-      card2.number == 9 ||
-      card2.number == 10 ||
-      card2.number == 'J' ||
-      card2.number == 'Q') &&
-    (card3.number == 8 ||
-      card3.number == 9 ||
-      card3.number == 10 ||
-      card3.number == 'J' ||
-      card3.number == 'Q') &&
-    (card4.number == 8 ||
-      card4.number == 9 ||
-      card4.number == 10 ||
-      card4.number == 'J' ||
-      card4.number == 'Q') &&
-    (card5.number == 8 ||
-      card5.number == 9 ||
-      card5.number == 10 ||
-      card5.number == 'J' ||
-      card5.number == 'Q') &&
-    card1.number != card2.number &&
-    card1.number != card3.number &&
-    card1.number != card4.number &&
-    card1.number != card5.number &&
-    card2.number != card3.number &&
-    card2.number != card4.number &&
-    card2.number != card5.number &&
-    card3.number != card4.number &&
-    card3.number != card5.number &&
-    card4.number != card5.number
+    (card1.number === '8' ||
+      card1.number === '9' ||
+      card1.number === '10' ||
+      card1.number === 'J' ||
+      card1.number === 'Q') &&
+    (card2.number === '8' ||
+      card2.number === '9' ||
+      card2.number === '10' ||
+      card2.number === 'J' ||
+      card2.number === 'Q') &&
+    (card3.number === '8' ||
+      card3.number === '9' ||
+      card3.number === '10' ||
+      card3.number === 'J' ||
+      card3.number === 'Q') &&
+    (card4.number === '8' ||
+      card4.number === '9' ||
+      card4.number === '10' ||
+      card4.number === 'J' ||
+      card4.number === 'Q') &&
+    (card5.number === '8' ||
+      card5.number === '9' ||
+      card5.number === '10' ||
+      card5.number === 'J' ||
+      card5.number === 'Q') &&
+    card1.number !== card2.number &&
+    card1.number !== card3.number &&
+    card1.number !== card4.number &&
+    card1.number !== card5.number &&
+    card2.number !== card3.number &&
+    card2.number !== card4.number &&
+    card2.number !== card5.number &&
+    card3.number !== card4.number &&
+    card3.number !== card5.number &&
+    card4.number !== card5.number
   ) {
     if (
-      card1.figure == card2.figure &&
-      card2.figure == card3.figure &&
-      card3.figure == card4.figure &&
-      card4.figure == card5.figure
+      card1.figure === card2.figure &&
+      card2.figure === card3.figure &&
+      card3.figure === card4.figure &&
+      card4.figure === card5.figure
     ) {
       // For COLOR STAIR
       hand.points = 75;
@@ -699,47 +701,47 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = `Escalera: 8 - Q`;
     }
   } else if (
-    (card1.number == 9 ||
-      card1.number == 10 ||
-      card1.number == 'J' ||
-      card1.number == 'Q' ||
-      card1.number == 'K') &&
-    (card2.number == 9 ||
-      card2.number == 10 ||
-      card2.number == 'J' ||
-      card2.number == 'Q' ||
-      card2.number == 'K') &&
-    (card3.number == 9 ||
-      card3.number == 10 ||
-      card3.number == 'J' ||
-      card3.number == 'Q' ||
-      card3.number == 'K') &&
-    (card4.number == 9 ||
-      card4.number == 10 ||
-      card4.number == 'J' ||
-      card4.number == 'Q' ||
-      card4.number == 'K') &&
-    (card5.number == 9 ||
-      card5.number == 10 ||
-      card5.number == 'J' ||
-      card5.number == 'Q' ||
-      card5.number == 'K') &&
-    card1.number != card2.number &&
-    card1.number != card3.number &&
-    card1.number != card4.number &&
-    card1.number != card5.number &&
-    card2.number != card3.number &&
-    card2.number != card4.number &&
-    card2.number != card5.number &&
-    card3.number != card4.number &&
-    card3.number != card5.number &&
-    card4.number != card5.number
+    (card1.number === '9' ||
+      card1.number === '10' ||
+      card1.number === 'J' ||
+      card1.number === 'Q' ||
+      card1.number === 'K') &&
+    (card2.number === '9' ||
+      card2.number === '10' ||
+      card2.number === 'J' ||
+      card2.number === 'Q' ||
+      card2.number === 'K') &&
+    (card3.number === '9' ||
+      card3.number === '10' ||
+      card3.number === 'J' ||
+      card3.number === 'Q' ||
+      card3.number === 'K') &&
+    (card4.number === '9' ||
+      card4.number === '10' ||
+      card4.number === 'J' ||
+      card4.number === 'Q' ||
+      card4.number === 'K') &&
+    (card5.number === '9' ||
+      card5.number === '10' ||
+      card5.number === 'J' ||
+      card5.number === 'Q' ||
+      card5.number === 'K') &&
+    card1.number !== card2.number &&
+    card1.number !== card3.number &&
+    card1.number !== card4.number &&
+    card1.number !== card5.number &&
+    card2.number !== card3.number &&
+    card2.number !== card4.number &&
+    card2.number !== card5.number &&
+    card3.number !== card4.number &&
+    card3.number !== card5.number &&
+    card4.number !== card5.number
   ) {
     if (
-      card1.figure == card2.figure &&
-      card2.figure == card3.figure &&
-      card3.figure == card4.figure &&
-      card4.figure == card5.figure
+      card1.figure === card2.figure &&
+      card2.figure === card3.figure &&
+      card3.figure === card4.figure &&
+      card4.figure === card5.figure
     ) {
       // For COLOR STAIR
       hand.points = 75;
@@ -750,47 +752,47 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
       hand.description = 'Escalera: 9 - K';
     }
   } else if (
-    (card1.number == 10 ||
-      card1.number == 'J' ||
-      card1.number == 'Q' ||
-      card1.number == 'K' ||
-      card1.number == 'A') &&
-    (card2.number == 10 ||
-      card2.number == 'J' ||
-      card2.number == 'Q' ||
-      card2.number == 'K' ||
-      card2.number == 'A') &&
-    (card3.number == 10 ||
-      card3.number == 'J' ||
-      card3.number == 'Q' ||
-      card3.number == 'K' ||
-      card3.number == 'A') &&
-    (card4.number == 10 ||
-      card4.number == 'J' ||
-      card4.number == 'Q' ||
-      card4.number == 'K' ||
-      card4.number == 'A') &&
-    (card5.number == 10 ||
-      card5.number == 'J' ||
-      card5.number == 'Q' ||
-      card5.number == 'K' ||
-      card5.number == 'A') &&
-    card1.number != card2.number &&
-    card1.number != card3.number &&
-    card1.number != card4.number &&
-    card1.number != card5.number &&
-    card2.number != card3.number &&
-    card2.number != card4.number &&
-    card2.number != card5.number &&
-    card3.number != card4.number &&
-    card3.number != card5.number &&
-    card4.number != card5.number
+    (card1.number === '10' ||
+      card1.number === 'J' ||
+      card1.number === 'Q' ||
+      card1.number === 'K' ||
+      card1.number === 'A') &&
+    (card2.number === '10' ||
+      card2.number === 'J' ||
+      card2.number === 'Q' ||
+      card2.number === 'K' ||
+      card2.number === 'A') &&
+    (card3.number === '10' ||
+      card3.number === 'J' ||
+      card3.number === 'Q' ||
+      card3.number === 'K' ||
+      card3.number === 'A') &&
+    (card4.number === '10' ||
+      card4.number === 'J' ||
+      card4.number === 'Q' ||
+      card4.number === 'K' ||
+      card4.number === 'A') &&
+    (card5.number === '10' ||
+      card5.number === 'J' ||
+      card5.number === 'Q' ||
+      card5.number === 'K' ||
+      card5.number === 'A') &&
+    card1.number !== card2.number &&
+    card1.number !== card3.number &&
+    card1.number !== card4.number &&
+    card1.number !== card5.number &&
+    card2.number !== card3.number &&
+    card2.number !== card4.number &&
+    card2.number !== card5.number &&
+    card3.number !== card4.number &&
+    card3.number !== card5.number &&
+    card4.number !== card5.number
   ) {
     if (
-      card1.figure == card2.figure &&
-      card2.figure == card3.figure &&
-      card3.figure == card4.figure &&
-      card4.figure == card5.figure
+      card1.figure === card2.figure &&
+      card2.figure === card3.figure &&
+      card3.figure === card4.figure &&
+      card4.figure === card5.figure
     ) {
       // For REAL COLOR STAIR
       hand.points = 100;
