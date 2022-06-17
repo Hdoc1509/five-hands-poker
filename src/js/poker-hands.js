@@ -11,7 +11,7 @@
  * Card Object
  * @typedef {Object} ObjCard
  * @property {String} id Card's id
- * @property {String | Number} number Card's number
+ * @property {String} number Card's number
  * @property {String} figure Card's figure
  */
 
