@@ -46,6 +46,26 @@ const isPair = (cards, { number: numberToCheck }) => {
 };
 
 /**
+ * Check if hand is an specific TWO PAIR
+ * @param {Array<ObjCard>} cards
+ * @param {Array<ObjCard>} cardsToCheck - Cards to check its pairs
+ */
+const isTwoPair = (cards, [{ number: number1 }, { number: number2 }]) => {
+  const number1Matches = cards.filter(({ number }) => number === number1);
+  const number2Matches = cards.filter(({ number }) => number === number2);
+
+  const restNumbers = cards.filter(
+    ({ number }) => number !== number1 && number !== number2
+  );
+
+  return (
+    number1Matches.length === 2 &&
+    number2Matches.length === 2 &&
+    restNumbers.length === 1
+  );
+};
+
+/**
  * Check if hand is an specific STRAIGHT
  * @param  {Array<ObjCard>} cards
  * @param  {string} straight
@@ -88,7 +108,6 @@ function verificateHand(cards, handsPlayerCounter) {
   };
 
   // For PAIR
-  // TODO: Implement isPair() for rest checkings of pair hand
   if (isPair(cards, card1)) {
     hand.points = 2;
     hand.description = `Par de ${card1.number}`;
