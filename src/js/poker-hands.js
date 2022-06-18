@@ -11,12 +11,6 @@ const STRAIGHT = Object.freeze({
   '10-A': /^10|J|Q|K|A$/,
 });
 
-const getRandomStraight = () => {
-  const keys = Object.keys(STRAIGHT);
-
-  return keys[Math.floor(Math.random() * keys.length)];
-};
-
 /**
  * Check if all cards has different numbers
  * @param  {Array<ObjCard>} cards
@@ -42,7 +36,7 @@ const allSameFigure = (cards) => {
  * @param  {Array<ObjCard>} cards
  * @param  {string} straight
  */
-const isStraight = (cards, straight = getRandomStraight()) =>
+const isStraight = (cards, straight) =>
   cards.every(({ number }) => number.match(STRAIGHT[straight])) &&
   allDifferentNumbers(cards);
 
