@@ -37,10 +37,10 @@ const allSameFigure = (cards) => {
  * @param {ObjCard}        card        - Card with specific number
  * @param {number}         card.number - Number to check pair
  */
-const isPair = (cards, { number: numberToChcek }) => {
-  const matches = cards.filter(({ number }) => number === numberToChcek);
+const isPair = (cards, { number: numberToCheck }) => {
+  const matches = cards.filter(({ number }) => number === numberToCheck);
 
-  const restNumbers = cards.filter(({ number }) => number !== numberToChcek);
+  const restNumbers = cards.filter(({ number }) => number !== numberToCheck);
 
   return matches.length === 2 && allDifferentNumbers(restNumbers);
 };
@@ -88,36 +88,7 @@ function verificateHand(cards, handsPlayerCounter) {
   };
 
   // For PAIR
-  if (
-    (card1.number == card2.number &&
-      card1.number != card3.number &&
-      card1.number != card4.number &&
-      card1.number != card5.number &&
-      card3.number != card4.number &&
-      card3.number != card5.number &&
-      card4.number != card5.number) ||
-    (card1.number == card3.number &&
-      card1.number != card2.number &&
-      card1.number != card4.number &&
-      card1.number != card5.number &&
-      card2.number != card4.number &&
-      card2.number != card5.number &&
-      card4.number != card5.number) ||
-    (card1.number == card4.number &&
-      card1.number != card2.number &&
-      card1.number != card3.number &&
-      card1.number != card5.number &&
-      card2.number != card3.number &&
-      card2.number != card5.number &&
-      card3.number != card5.number) ||
-    (card1.number == card5.number &&
-      card1.number != card2.number &&
-      card1.number != card3.number &&
-      card1.number != card4.number &&
-      card2.number != card3.number &&
-      card2.number != card4.number &&
-      card3.number != card4.number)
-  ) {
+  if (isPair(cards, card1)) {
     hand.points = 2;
     hand.description = `Par de ${card1.number}`;
   } else if (
