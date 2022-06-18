@@ -67,13 +67,7 @@ function verificateHand(cards, handsPlayerCounter) {
   const [card1, card2, card3, card4, card5] = cards;
 
   const hand = {
-    cards: [
-      `${card1.number}${card1.figure}`,
-      `${card2.number}${card2.figure}`,
-      `${card3.number}${card3.figure}`,
-      `${card4.number}${card4.figure}`,
-      `${card5.number}${card5.figure}`,
-    ],
+    cards: cards.map(({ number, figure }) => `${number}${figure}`),
     description: '',
     id: `hand${handsPlayerCounter}`,
     points: 0,
