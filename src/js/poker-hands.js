@@ -88,61 +88,17 @@ function verificateHand(cards, handsPlayerCounter) {
   };
 
   // For PAIR
+  // TODO: Implement isPair() for rest checkings of pair hand
   if (isPair(cards, card1)) {
     hand.points = 2;
     hand.description = `Par de ${card1.number}`;
-  } else if (
-    (card2.number == card3.number &&
-      card2.number != card1.number &&
-      card2.number != card4.number &&
-      card2.number != card5.number &&
-      card1.number != card4.number &&
-      card1.number != card5.number &&
-      card4.number != card5.number) ||
-    (card2.number == card4.number &&
-      card2.number != card1.number &&
-      card2.number != card3.number &&
-      card2.number != card5.number &&
-      card1.number != card3.number &&
-      card1.number != card5.number &&
-      card3.number != card5.number) ||
-    (card2.number == card5.number &&
-      card2.number != card1.number &&
-      card2.number != card3.number &&
-      card2.number != card4.number &&
-      card1.number != card3.number &&
-      card1.number != card4.number &&
-      card3.number != card4.number)
-  ) {
+  } else if (isPair(cards, card2)) {
     hand.points = 2;
     hand.description = `Par de ${card2.number}`;
-  } else if (
-    (card3.number == card4.number &&
-      card3.number != card1.number &&
-      card3.number != card2.number &&
-      card3.number != card5.number &&
-      card1.number != card2.number &&
-      card1.number != card5.number &&
-      card2.number != card5.number) ||
-    (card3.number == card5.number &&
-      card3.number != card1.number &&
-      card3.number != card2.number &&
-      card3.number != card4.number &&
-      card1.number != card2.number &&
-      card1.number != card4.number &&
-      card2.number != card4.number)
-  ) {
+  } else if (isPair(cards, card3)) {
     hand.points = 2;
     hand.description = `Par de ${card3.number}`;
-  } else if (
-    card4.number == card5.number &&
-    card4.number != card1.number &&
-    card4.number != card2.number &&
-    card4.number != card3.number &&
-    card1.number != card2.number &&
-    card1.number != card3.number &&
-    card2.number != card3.number
-  ) {
+  } else if (isPair(cards, card4)) {
     hand.points = 2;
     hand.description = `Par de ${card4.number}`;
   }
