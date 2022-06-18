@@ -320,12 +320,7 @@ function verificateHand(cards, handsPlayerCounter) {
   }
 
   // For FLUSH
-  else if (
-    card1.figure == card2.figure &&
-    card2.figure == card3.figure &&
-    card3.figure == card4.figure &&
-    card4.figure == card5.figure
-  ) {
+  else if (allSameFigure(cards)) {
     hand.points = 20;
     hand.description = `Color(${card1.figure})`;
   }
