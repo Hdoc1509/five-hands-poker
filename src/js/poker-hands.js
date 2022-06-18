@@ -16,20 +16,12 @@ const STRAIGHT = Object.freeze({
  * @param  {Array<ObjCard>} cards
  */
 const allDifferentNumbers = (cards) => {
-  const [card1, card2, card3, card4, card5] = cards;
+  const [{ number: numberToCheck }] = cards;
+  const cardsToCheck = cards.map((e) => e);
 
-  return (
-    card1.number !== card2.number &&
-    card1.number !== card3.number &&
-    card1.number !== card4.number &&
-    card1.number !== card5.number &&
-    card2.number !== card3.number &&
-    card2.number !== card4.number &&
-    card2.number !== card5.number &&
-    card3.number !== card4.number &&
-    card3.number !== card5.number &&
-    card4.number !== card5.number
-  );
+  cardsToCheck.shift();
+
+  return cardsToCheck.every(({ number }) => number !== numberToCheck);
 };
 
 /**
