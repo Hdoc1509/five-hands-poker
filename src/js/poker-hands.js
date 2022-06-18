@@ -1,3 +1,16 @@
+const STRAIGHT = Object.freeze({
+  'A-5': /^A|[2-5]$/,
+  '2-6': /^[2-6]$/,
+  '3-7': /^[3-7]$/,
+  '4-8': /^[4-8]$/,
+  '5-9': /^[5-9]$/,
+  '6-10': /^[6-9]|10$/,
+  '7-J': /^[7-9]|10|J$/,
+  '8-Q': /^8|9|10|J|Q$/,
+  '9-K': /^9|10|J|Q|K$/,
+  '10-A': /^10|J|Q|K|A$/,
+});
+
 /**
  * Check if all cards has different numbers
  * @param  {Array<ObjCard>} cards
@@ -28,6 +41,15 @@ const allSameFigure = (cards) => {
 
   return cards.every(({ figure }) => figure === figureToCheck);
 };
+
+/**
+ * Check if hand is an specific STRAIGHT
+ * @param  {Array<ObjCard>} cards
+ * @param  {string} straight
+ */
+const isStraight = (cards, straight) =>
+  cards.every(({ number }) => number.match(STRAIGHT[straight])) &&
+  allDifferentNumbers(cards);
 
 /**
  * Hand Object
@@ -157,7 +179,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
     hand.description = `Par de ${card4.number}`;
   }
 
-  // For DOUBLE PAIR
+  // For TWO PAIR
   else if (
     (card1.number == card2.number &&
       card3.number == card4.number &&
@@ -255,7 +277,7 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
     hand.description = `Doble par: par de ${card2.number} y par de ${card3.number}`;
   }
 
-  // For TRIO
+  // For THREE OF A KIND
   else if (
     (card1.number == card2.number &&
       card1.number == card3.number &&
@@ -320,90 +342,60 @@ function verificateHand(generatedObjCards, handsPlayerCounter) {
     hand.description = `Trío de ${card3.number}`;
   }
 
-  // For STAIR
-  else if (
-    generatedObjCards.every(({ number }) => number.match(/^A|[2-5]$/)) &&
-    allDifferentNumbers(generatedObjCards)
-  ) {
+  // For STRAIGHT
+  else if (isStraight(generatedObjCards, 'A-5')) {
     hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
     hand.description = allSameFigure(generatedObjCards)
       ? `Escalera de Color(${card1.figure}): A - 5`
       : 'Escalera: A - 5';
-  } else if (
-    generatedObjCards.every(({ number }) => number.match(/^[2-6]$/)) &&
-    allDifferentNumbers(generatedObjCards)
-  ) {
+  } else if (isStraight(generatedObjCards, '2-6')) {
     hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
     hand.description = allSameFigure(generatedObjCards)
       ? `Escalera de Color(${card1.figure}): 2 - 6`
       : 'Escalera: 2 - 6';
-  } else if (
-    generatedObjCards.every(({ number }) => number.match(/^[3-7]$/)) &&
-    allDifferentNumbers(generatedObjCards)
-  ) {
+  } else if (isStraight(generatedObjCards, '3-7')) {
     hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
     hand.description = allSameFigure(generatedObjCards)
       ? `Escalera de Color(${card1.figure}): 3 - 7`
       : 'Escalera: 3 - 7';
-  } else if (
-    generatedObjCards.every(({ number }) => number.match(/^[4-8]$/)) &&
-    allDifferentNumbers(generatedObjCards)
-  ) {
+  } else if (isStraight(generatedObjCards, '4-8')) {
     hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
     hand.description = allSameFigure(generatedObjCards)
       ? `Escalera de Color(${card1.figure}): 4 - 8`
       : 'Escalera: 4 - 8';
-  } else if (
-    generatedObjCards.every(({ number }) => number.match(/^[5-9]$/)) &&
-    allDifferentNumbers(generatedObjCards)
-  ) {
+  } else if (isStraight(generatedObjCards, '5-9')) {
     hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
     hand.description = allSameFigure(generatedObjCards)
       ? `Escalera de Color(${card1.figure}): 5 - 9`
       : 'Escalera: 5 - 9';
-  } else if (
-    generatedObjCards.every(({ number }) => number.match(/^[6-9]|10$/)) &&
-    allDifferentNumbers(generatedObjCards)
-  ) {
+  } else if (isStraight(generatedObjCards, '6-10')) {
     hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
     hand.description = allSameFigure(generatedObjCards)
       ? `Escalera de Color(${card1.figure}): 6 - 10`
       : 'Escalera: 6 - 10';
-  } else if (
-    generatedObjCards.every(({ number }) => number.match(/^[7-9]|10|J$/)) &&
-    allDifferentNumbers(generatedObjCards)
-  ) {
+  } else if (isStraight(generatedObjCards, '7-J')) {
     hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
     hand.description = allSameFigure(generatedObjCards)
       ? `Escalera de Color(${card1.figure}): 7 - J`
       : 'Escalera: 7 - J';
-  } else if (
-    generatedObjCards.every(({ number }) => number.match(/^8|9|10|J|Q$/)) &&
-    allDifferentNumbers(generatedObjCards)
-  ) {
+  } else if (isStraight(generatedObjCards, '8-Q')) {
     hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
     hand.description = allSameFigure(generatedObjCards)
       ? `Escalera de Color(${card1.figure}): 8 - Q`
       : 'Escalera: 8 - Q';
-  } else if (
-    generatedObjCards.every(({ number }) => number.match(/^9|10|J|Q|K$/)) &&
-    allDifferentNumbers(generatedObjCards)
-  ) {
+  } else if (isStraight(generatedObjCards, '9-K')) {
     hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
     hand.description = allSameFigure(generatedObjCards)
       ? `Escalera de Color(${card1.figure}): 9 - K`
       : 'Escalera: 9 - K';
-  } else if (
-    generatedObjCards.every(({ number }) => number.match(/^10|J|Q|K|A$/)) &&
-    allDifferentNumbers(generatedObjCards)
-  ) {
+  } else if (isStraight(generatedObjCards, '10-A')) {
     hand.points = allSameFigure(generatedObjCards) ? 75 : 15;
     hand.description = allSameFigure(generatedObjCards)
       ? `Escalera Real de Color(${card1.figure})`
       : 'Escalera: 10 - A';
   }
 
-  // For COLOR
+  // For FLUSH
   else if (
     card1.figure == card2.figure &&
     card2.figure == card3.figure &&
