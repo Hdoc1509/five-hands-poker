@@ -32,6 +32,20 @@ const allSameFigure = (cards) => {
 };
 
 /**
+ * Check if hand is an specific PAIR
+ * @param {Array<ObjCard>} cards
+ * @param {ObjCard}        card        - Card with specific number
+ * @param {number}         card.number - Number to check pair
+ */
+const isPair = (cards, { number: numberToChcek }) => {
+  const matches = cards.filter(({ number }) => number === numberToChcek);
+
+  const restNumbers = cards.filter(({ number }) => number !== numberToChcek);
+
+  return matches.length === 2 && allDifferentNumbers(restNumbers);
+};
+
+/**
  * Check if hand is an specific STRAIGHT
  * @param  {Array<ObjCard>} cards
  * @param  {string} straight
