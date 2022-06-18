@@ -22,12 +22,9 @@ const getRandomStraight = () => {
  * @param  {Array<ObjCard>} cards
  */
 const allDifferentNumbers = (cards) => {
-  const [{ number: numberToCheck }] = cards;
-  const cardsToCheck = cards.map((e) => e);
+  const numbers = new Set(cards.map(({ number }) => number));
 
-  cardsToCheck.shift();
-
-  return cardsToCheck.every(({ number }) => number !== numberToCheck);
+  return numbers.size === cards.length;
 };
 
 /**
