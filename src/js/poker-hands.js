@@ -84,6 +84,22 @@ const isThreeOfKind = (cards, { number: numberToCheck }) => {
 };
 
 /**
+ * Check if hand is an specific FULL HOUSE
+ * @param {Array<ObjCard>} cards
+ * @param {Array<ObjCard>} cardsToCheck - Cards for check full house
+ */
+const isFullHouse = (cards, [{ number: number1 }, { number: number2 }]) => {
+  const number1Matches = cards.filter(({ number }) => number === number1);
+  const number2Matches = cards.filter(({ number }) => number === number2);
+
+  return (
+    number1Matches.length === 3 &&
+    number2Matches.length === 2 &&
+    number1 !== number2
+  );
+};
+
+/**
  * Hand Object
  * @typedef {Object} ObjHand
  * @property {Array<String>} cards Hand's cards
