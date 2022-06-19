@@ -63,13 +63,17 @@ const isTwoPair = (cards, [{ number: number1 }, { number: number2 }]) => {
 
 /**
  * Check if hand is an specific STRAIGHT
- * @param  {Array<ObjCard>} cards
- * @param  {string} straight
+ * @param {Array<ObjCard>} cards
+ * @param {string}         straight - Straight to check
  */
 const isStraight = (cards, straight) =>
   cards.every(({ number }) => number.match(STRAIGHT[straight])) &&
   allDifferentNumbers(cards);
 
+/**
+ * Check if hand is any possible STRAIGHT
+ * @param  {Array<ObjCard>} cards
+ */
 const isAnyStraight = (cards) =>
   Object.keys(STRAIGHT).some((key) => isStraight(cards, key));
 
