@@ -77,6 +77,9 @@ const isStraight = (cards, straight) => {
   );
 };
 
+const isAnyStraight = (cards) =>
+  Object.keys(STRAIGHT).some((key) => isStraight(cards, key));
+
 /**
  * Check if hand is an specific THREE OF A KIND
  * @param {Array<ObjCard>} cards
