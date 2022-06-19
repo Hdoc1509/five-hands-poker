@@ -208,56 +208,20 @@ function verificateHand(cards, handsPlayerCounter) {
   }
 
   // For STRAIGHT
-  else if (isStraight(cards, 'A-5')) {
+  else if (isAnyStraight(cards)) {
+    const straightMatch = findStraight(cards);
+    const parsedStraightMatch = straightMatch.split('').join(' ');
+
     hand.points = allSameFigure(cards) ? 75 : 15;
-    hand.description = allSameFigure(cards)
-      ? `Escalera de Color(${card1.figure}): A - 5`
-      : 'Escalera: A - 5';
-  } else if (isStraight(cards, '2-6')) {
-    hand.points = allSameFigure(cards) ? 75 : 15;
-    hand.description = allSameFigure(cards)
-      ? `Escalera de Color(${card1.figure}): 2 - 6`
-      : 'Escalera: 2 - 6';
-  } else if (isStraight(cards, '3-7')) {
-    hand.points = allSameFigure(cards) ? 75 : 15;
-    hand.description = allSameFigure(cards)
-      ? `Escalera de Color(${card1.figure}): 3 - 7`
-      : 'Escalera: 3 - 7';
-  } else if (isStraight(cards, '4-8')) {
-    hand.points = allSameFigure(cards) ? 75 : 15;
-    hand.description = allSameFigure(cards)
-      ? `Escalera de Color(${card1.figure}): 4 - 8`
-      : 'Escalera: 4 - 8';
-  } else if (isStraight(cards, '5-9')) {
-    hand.points = allSameFigure(cards) ? 75 : 15;
-    hand.description = allSameFigure(cards)
-      ? `Escalera de Color(${card1.figure}): 5 - 9`
-      : 'Escalera: 5 - 9';
-  } else if (isStraight(cards, '6-10')) {
-    hand.points = allSameFigure(cards) ? 75 : 15;
-    hand.description = allSameFigure(cards)
-      ? `Escalera de Color(${card1.figure}): 6 - 10`
-      : 'Escalera: 6 - 10';
-  } else if (isStraight(cards, '7-J')) {
-    hand.points = allSameFigure(cards) ? 75 : 15;
-    hand.description = allSameFigure(cards)
-      ? `Escalera de Color(${card1.figure}): 7 - J`
-      : 'Escalera: 7 - J';
-  } else if (isStraight(cards, '8-Q')) {
-    hand.points = allSameFigure(cards) ? 75 : 15;
-    hand.description = allSameFigure(cards)
-      ? `Escalera de Color(${card1.figure}): 8 - Q`
-      : 'Escalera: 8 - Q';
-  } else if (isStraight(cards, '9-K')) {
-    hand.points = allSameFigure(cards) ? 75 : 15;
-    hand.description = allSameFigure(cards)
-      ? `Escalera de Color(${card1.figure}): 9 - K`
-      : 'Escalera: 9 - K';
-  } else if (isStraight(cards, '10-A')) {
-    hand.points = allSameFigure(cards) ? 75 : 15;
-    hand.description = allSameFigure(cards)
-      ? `Escalera Real de Color(${card1.figure})`
-      : 'Escalera: 10 - A';
+
+    if (straightMatch === '10-A')
+      hand.description = allSameFigure(cards)
+        ? `Royal Flush (${card1.figure}): ${parsedStraightMatch}`
+        : `Straight: ${parsedStraightMatch}`;
+    else
+      hand.description = allSameFigure(cards)
+        ? `Straight Flush (${card1.figure}): ${parsedStraightMatch}`
+        : `Straight: ${parsedStraightMatch}`;
   }
 
   // For FLUSH
