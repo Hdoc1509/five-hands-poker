@@ -54,15 +54,7 @@ const isTwoPair = (cards, [{ number: number1 }, { number: number2 }]) => {
   const number1Matches = cards.filter(({ number }) => number === number1);
   const number2Matches = cards.filter(({ number }) => number === number2);
 
-  const restNumbers = cards.filter(
-    ({ number }) => number !== number1 && number !== number2
-  );
-
-  return (
-    number1Matches.length === 2 &&
-    number2Matches.length === 2 &&
-    restNumbers.length === 1
-  );
+  return number1Matches.length === 2 && number2Matches.length === 2;
 };
 
 /**
