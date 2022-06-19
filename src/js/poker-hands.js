@@ -210,7 +210,7 @@ function verificateHand(cards, handsPlayerCounter) {
   // For STRAIGHT
   else if (isAnyStraight(cards)) {
     const straightMatch = findStraight(cards);
-    const parsedStraightMatch = straightMatch.split('').join(' ');
+    const parsedStraightMatch = straightMatch.replace('-', ' - ');
 
     if (straightMatch === '10-A') {
       hand.points = allSameFigure(cards) ? 100 : 15;
