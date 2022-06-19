@@ -65,10 +65,17 @@ const isTwoPair = (cards, [{ number: number1 }, { number: number2 }]) => {
  * Check if hand is an specific STRAIGHT
  * @param  {Array<ObjCard>} cards
  * @param  {string} straight
+ * @returns {boolean}
  */
-const isStraight = (cards, straight) =>
-  cards.every(({ number }) => number.match(STRAIGHT[straight])) &&
-  allDifferentNumbers(cards);
+const isStraight = (cards, straight) => {
+  if (straight == null)
+    return Object.keys(STRAIGHT).some((key) => isStraight(cards, key));
+
+  return (
+    cards.every(({ number }) => number.match(STRAIGHT[straight])) &&
+    allDifferentNumbers(cards)
+  );
+};
 
 /**
  * Check if hand is an specific THREE OF A KIND
