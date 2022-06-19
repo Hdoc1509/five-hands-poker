@@ -123,101 +123,21 @@ function verificateHand(cards, handsPlayerCounter) {
   }
 
   // For TWO PAIR
-  else if (
-    (card1.number == card2.number &&
-      card3.number == card4.number &&
-      card1.number != card3.number &&
-      card1.number != card5.number &&
-      card3.number != card5.number) ||
-    (card1.number == card2.number &&
-      card3.number == card5.number &&
-      card1.number != card3.number &&
-      card1.number != card4.number &&
-      card3.number != card4.number) ||
-    (card1.number == card4.number &&
-      card3.number == card5.number &&
-      card1.number != card3.number &&
-      card1.number != card2.number &&
-      card3.number != card2.number) ||
-    (card1.number == card5.number &&
-      card3.number == card4.number &&
-      card1.number != card3.number &&
-      card1.number != card2.number &&
-      card3.number != card2.number)
-  ) {
-    hand.points = 5;
-    hand.description = `Doble par: par de ${card1.number} y par de ${card3.number}`;
-  } else if (
-    (card1.number == card2.number &&
-      card4.number == card5.number &&
-      card1.number != card4.number &&
-      card1.number != card3.number &&
-      card4.number != card3.number) ||
-    (card1.number == card3.number &&
-      card4.number == card5.number &&
-      card1.number != card2.number &&
-      card1.number != card4.number &&
-      card2.number != card4.number)
-  ) {
-    hand.points = 5;
-    hand.description = `Doble par: par de ${card1.number} y par de ${card4.number}`;
-  } else if (
-    card2.number == card3.number &&
-    card4.number == card5.number &&
-    card2.number != card4.number &&
-    card2.number != card1.number &&
-    card4.number != card1.number
-  ) {
-    hand.points = 5;
-    hand.description = `Doble par: par de ${card2.number} y par de ${card4.number}`;
-  } else if (
-    (card1.number == card3.number &&
-      card2.number == card4.number &&
-      card1.number != card2.number &&
-      card1.number != card5.number &&
-      card2.number != card5.number) ||
-    (card1.number == card3.number &&
-      card2.number == card5.number &&
-      card1.number != card2.number &&
-      card1.number != card4.number &&
-      card2.number != card4.number) ||
-    (card1.number == card4.number &&
-      card2.number == card5.number &&
-      card1.number != card2.number &&
-      card1.number != card3.number &&
-      card2.number != card3.number) ||
-    (card1.number == card4.number &&
-      card2.number == card3.number &&
-      card1.number != card2.number &&
-      card1.number != card5.number &&
-      card2.number != card5.number) ||
-    (card1.number == card5.number &&
-      card2.number == card3.number &&
-      card1.number != card2.number &&
-      card1.number != card4.number &&
-      card2.number != card4.number) ||
-    (card1.number == card5.number &&
-      card2.number == card4.number &&
-      card1.number != card2.number &&
-      card1.number != card3.number &&
-      card2.number != card3.number)
-  ) {
+  else if (isTwoPair(cards, [card1, card2])) {
     hand.points = 5;
     hand.description = `Doble par: par de ${card1.number} y par de ${card2.number}`;
-  } else if (
-    (card2.number == card4.number &&
-      card3.number == card5.number &&
-      card2.number != card3.number &&
-      card2.number != card1.number &&
-      card3.number != card1.number) ||
-    (card2.number == card5.number &&
-      card3.number == card4.number &&
-      card2.number != card3.number &&
-      card2.number != card1.number &&
-      card3.number != card1.number)
-  ) {
+  } else if (isTwoPair(cards, [card1, card3])) {
+    hand.points = 5;
+    hand.description = `Doble par: par de ${card1.number} y par de ${card3.number}`;
+  } else if (isTwoPair(cards, [card1, card4])) {
+    hand.points = 5;
+    hand.description = `Doble par: par de ${card1.number} y par de ${card4.number}`;
+  } else if (isTwoPair(cards, [card2, card3])) {
     hand.points = 5;
     hand.description = `Doble par: par de ${card2.number} y par de ${card3.number}`;
+  } else if (isTwoPair(cards, [card2, card4])) {
+    hand.points = 5;
+    hand.description = `Doble par: par de ${card2.number} y par de ${card4.number}`;
   }
 
   // For THREE OF A KIND
