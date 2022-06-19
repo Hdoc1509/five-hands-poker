@@ -78,6 +78,14 @@ const isAnyStraight = (cards) =>
   Object.keys(STRAIGHT).some((key) => isStraight(cards, key));
 
 /**
+ * Searchs for any possible STRAIGHT and returns it
+ * @param  {Array<ObjCard>} cards
+ * @return {string}         Straight found
+ */
+const findStraight = (cards) =>
+  Object.keys(STRAIGHT).find((key) => isStraight(cards, key));
+
+/**
  * Check if hand is an specific THREE OF A KIND
  * @param {Array<ObjCard>} cards
  * @param {ObjCard}        card        - Card with specific number
