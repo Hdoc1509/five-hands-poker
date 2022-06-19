@@ -98,6 +98,9 @@ const isStraight = (cards, straight) =>
  * @returns {ObjHand} Returns hand information as an object
  */
 function verificateHand(cards, handsPlayerCounter) {
+  if (cards.length !== 5)
+    throw new Error('Array of cards must have 5 elements');
+
   const [card1, card2, card3, card4, card5] = cards;
 
   const hand = {
