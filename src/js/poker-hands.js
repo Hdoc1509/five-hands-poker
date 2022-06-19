@@ -261,33 +261,11 @@ function verificateHand(cards, handsPlayerCounter) {
     hand.description = 'Full House';
   }
 
-  // For POKER
-  else if (
-    (card1.number == card2.number &&
-      card1.number == card3.number &&
-      card1.number == card4.number &&
-      card1.number != card5.number) ||
-    (card1.number == card2.number &&
-      card1.number == card3.number &&
-      card1.number == card5.number &&
-      card1.number != card4.number) ||
-    (card1.number == card2.number &&
-      card1.number == card4.number &&
-      card1.number == card5.number &&
-      card1.number != card3.number) ||
-    (card1.number == card3.number &&
-      card1.number == card4.number &&
-      card1.number == card5.number &&
-      card1.number != card2.number)
-  ) {
+  // For FOUR OF A KIND
+  else if (isFourOfKind(cards, card1)) {
     hand.points = 50;
     hand.description = `Póker de ${card1.number}`;
-  } else if (
-    card2.number == card3.number &&
-    card2.number == card4.number &&
-    card2.number == card5.number &&
-    card2.number != card1.number
-  ) {
+  } else if (isFourOfKind(cards, card2)) {
     hand.points = 50;
     hand.description = `Póker de ${card2.number}`;
   }
