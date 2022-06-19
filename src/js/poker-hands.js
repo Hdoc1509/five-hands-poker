@@ -153,66 +153,13 @@ function verificateHand(cards, handsPlayerCounter) {
   }
 
   // For THREE OF A KIND
-  else if (
-    (card1.number == card2.number &&
-      card1.number == card3.number &&
-      card1.number != card4.number &&
-      card1.number != card5.number &&
-      card4.number != card5.number) ||
-    (card1.number == card2.number &&
-      card1.number == card4.number &&
-      card1.number != card3.number &&
-      card1.number != card5.number &&
-      card3.number != card5.number) ||
-    (card1.number == card2.number &&
-      card1.number == card5.number &&
-      card1.number != card3.number &&
-      card1.number != card4.number &&
-      card3.number != card4.number) ||
-    (card1.number == card3.number &&
-      card1.number == card4.number &&
-      card1.number != card2.number &&
-      card1.number != card5.number &&
-      card2.number != card5.number) ||
-    (card1.number == card3.number &&
-      card1.number == card5.number &&
-      card1.number != card2.number &&
-      card1.number != card4.number &&
-      card2.number != card4.number) ||
-    (card1.number == card4.number &&
-      card1.number == card5.number &&
-      card1.number != card2.number &&
-      card1.number != card3.number &&
-      card2.number != card3.number)
-  ) {
+  else if (isThreeOfKind(cards, card1)) {
     hand.points = 10;
     hand.description = `Trío de ${card1.number}`;
-  } else if (
-    (card2.number == card3.number &&
-      card2.number == card4.number &&
-      card2.number != card1.number &&
-      card2.number != card5.number &&
-      card1.number != card5.number) ||
-    (card2.number == card3.number &&
-      card2.number == card5.number &&
-      card2.number != card1.number &&
-      card2.number != card4.number &&
-      card1.number != card4.number) ||
-    (card2.number == card4.number &&
-      card2.number == card5.number &&
-      card2.number != card1.number &&
-      card2.number != card3.number &&
-      card1.number != card3.number)
-  ) {
+  } else if (isThreeOfKind(cards, card2)) {
     hand.points = 10;
     hand.description = `Trío de ${card2.number}`;
-  } else if (
-    card3.number == card4.number &&
-    card3.number == card5.number &&
-    card3.number != card1.number &&
-    card3.number != card2.number &&
-    card1.number != card2.number
-  ) {
+  } else if (isThreeOfKind(cards, card3)) {
     hand.points = 10;
     hand.description = `Trío de ${card3.number}`;
   }
