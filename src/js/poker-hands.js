@@ -212,16 +212,17 @@ function verificateHand(cards, handsPlayerCounter) {
     const straightMatch = findStraight(cards);
     const parsedStraightMatch = straightMatch.split('').join(' ');
 
-    hand.points = allSameFigure(cards) ? 75 : 15;
-
-    if (straightMatch === '10-A')
+    if (straightMatch === '10-A') {
+      hand.points = allSameFigure(cards) ? 100 : 15;
       hand.description = allSameFigure(cards)
         ? `Royal Flush (${card1.figure}): ${parsedStraightMatch}`
         : `Straight: ${parsedStraightMatch}`;
-    else
+    } else {
+      hand.points = allSameFigure(cards) ? 75 : 15;
       hand.description = allSameFigure(cards)
         ? `Straight Flush (${card1.figure}): ${parsedStraightMatch}`
         : `Straight: ${parsedStraightMatch}`;
+    }
   }
 
   // For FLUSH
