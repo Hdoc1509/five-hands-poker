@@ -228,7 +228,7 @@ function verificateHand(cards, handsPlayerCounter) {
   // For FLUSH
   else if (allSameFigure(cards)) {
     hand.points = 20;
-    hand.description = `Color(${card1.figure})`;
+    hand.description = `Flush (${card1.figure})`;
   }
 
   // For FULL HOUSE
