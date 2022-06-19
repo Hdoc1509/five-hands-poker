@@ -241,56 +241,9 @@ function verificateHand(cards, handsPlayerCounter) {
 
   // For FULL HOUSE
   else if (
-    (card1.number == card2.number &&
-      card2.number == card3.number &&
-      card1.number != card4.number &&
-      card1.number != card5.number &&
-      card4.number == card5.number) ||
-    (card1.number == card2.number &&
-      card1.number == card4.number &&
-      card1.number != card3.number &&
-      card1.number != card5.number &&
-      card3.number == card5.number) ||
-    (card1.number == card2.number &&
-      card1.number == card5.number &&
-      card1.number != card3.number &&
-      card1.number != card4.number &&
-      card3.number == card4.number) ||
-    (card1.number == card3.number &&
-      card1.number == card5.number &&
-      card1.number != card2.number &&
-      card1.number != card4.number &&
-      card2.number == card4.number) ||
-    (card1.number == card3.number &&
-      card1.number == card4.number &&
-      card1.number != card2.number &&
-      card1.number != card5.number &&
-      card2.number == card5.number) ||
-    (card1.number == card4.number &&
-      card1.number == card5.number &&
-      card1.number != card2.number &&
-      card1.number != card3.number &&
-      card2.number == card3.number) ||
-    (card2.number == card3.number &&
-      card2.number == card5.number &&
-      card2.number != card1.number &&
-      card2.number != card4.number &&
-      card1.number == card4.number) ||
-    (card2.number == card3.number &&
-      card2.number == card4.number &&
-      card2.number != card1.number &&
-      card2.number != card5.number &&
-      card1.number == card5.number) ||
-    (card2.number == card4.number &&
-      card2.number == card5.number &&
-      card2.number != card1.number &&
-      card2.number != card3.number &&
-      card1.number == card3.number) ||
-    (card3.number == card4.number &&
-      card3.number == card5.number &&
-      card3.number != card1.number &&
-      card3.number != card2.number &&
-      card1.number == card2.number)
+    isFullHouse(cards, [card1, card2]) ||
+    isFullHouse(cards, [card1, card3]) ||
+    isFullHouse(cards, [card1, card4])
   ) {
     hand.points = 25;
     hand.description = 'Full House';
