@@ -100,6 +100,18 @@ const isFullHouse = (cards, [{ number: number1 }, { number: number2 }]) => {
 };
 
 /**
+ * Check if hand is an specific FOUR OF A KIND
+ * @param {Array<ObjCard>} cards
+ * @param {ObjCard}        card        - Card with specific number
+ * @param {number}         card.number - Number to check
+ */
+const isFourOfKind = (cards, { number: numberToCheck }) => {
+  const matches = cards.filter(({ number }) => number === numberToCheck);
+
+  return matches.length === 4;
+};
+
+/**
  * Hand Object
  * @typedef {Object} ObjHand
  * @property {Array<String>} cards Hand's cards
