@@ -93,8 +93,8 @@ const isFullHouse = (cards, [{ number: number1 }, { number: number2 }]) => {
   const number2Matches = cards.filter(({ number }) => number === number2);
 
   return (
-    number1Matches.length === 3 &&
-    number2Matches.length === 2 &&
+    ((number1Matches.length === 3 && number2Matches.length === 2) ||
+      (number1Matches.length === 2 && number2Matches.length === 3)) &&
     number1 !== number2
   );
 };
