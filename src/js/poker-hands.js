@@ -67,6 +67,19 @@ const isStraight = (cards, straight) =>
   allDifferentNumbers(cards);
 
 /**
+ * Check if hand is an specific THREE OF A KIND
+ * @param {Array<ObjCard>} cards
+ * @param {ObjCard}        card        - Card with specific number
+ * @param {number}         card.number - Number to check
+ */
+const isThreeOfKind = (cards, { number: numberToCheck }) => {
+  const matches = cards.filter(({ number }) => number === numberToCheck);
+  const restNumbers = cards.filter(({ number }) => number !== numberToCheck);
+
+  return matches.length === 3 && allDifferentNumbers(restNumbers);
+};
+
+/**
  * Hand Object
  * @typedef {Object} ObjHand
  * @property {Array<String>} cards Hand's cards
