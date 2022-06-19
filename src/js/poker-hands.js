@@ -46,6 +46,18 @@ const isPair = (cards, { number: numberToCheck }) => {
 };
 
 /**
+ * Check if hand is any possible PAIR
+ * @param {Array<ObjCard>} cards
+ */
+const isAnyPair = (cards) => cards.some((card) => isPair(cards, card));
+
+/**
+ * Searchs for any possible PAIR and returns its card number
+ * @param {Array<ObjCard>} cards
+ */
+const findPair = (cards) => cards.find((card) => isPair(cards, card));
+
+/**
  * Check if hand is an specific TWO PAIR
  * @param {Array<ObjCard>} cards
  * @param {Array<ObjCard>} cardsToCheck - Cards to check its pairs
