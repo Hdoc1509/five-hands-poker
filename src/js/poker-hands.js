@@ -175,18 +175,12 @@ function verificateHand(cards, handsPlayerCounter) {
   };
 
   // For PAIR
-  if (isPair(cards, card1)) {
+
+  if (isAnyPair(cards)) {
+    const { number } = findPair(cards);
+
     hand.points = 2;
-    hand.description = `Par de ${card1.number}`;
-  } else if (isPair(cards, card2)) {
-    hand.points = 2;
-    hand.description = `Par de ${card2.number}`;
-  } else if (isPair(cards, card3)) {
-    hand.points = 2;
-    hand.description = `Par de ${card3.number}`;
-  } else if (isPair(cards, card4)) {
-    hand.points = 2;
-    hand.description = `Par de ${card4.number}`;
+    hand.description = `Pair (${number})`;
   }
 
   // For TWO PAIR
