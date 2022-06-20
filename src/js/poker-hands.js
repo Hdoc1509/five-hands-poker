@@ -200,7 +200,7 @@ function verificateHand(cards, handsPlayerCounter) {
   if (cards.length !== 5)
     throw new Error('Array of cards must have 5 elements');
 
-  const [card1, card2, card3, card4, card5] = cards;
+  const [card1, card2, card3, card4] = cards;
 
   const hand = {
     cards: cards.map(({ number, figure }) => `${number}${figure}`),
