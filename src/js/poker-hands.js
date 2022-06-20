@@ -111,9 +111,8 @@ const findStraight = (cards) =>
  * @param {ObjCard}        card        - Card with specific number
  * @param {number}         card.number - Number to check
  */
-const isThreeOfKind = (cards, { number: numberToCheck }) => {
-  const matches = cards.filter(({ number }) => number === numberToCheck);
-  const restNumbers = cards.filter(({ number }) => number !== numberToCheck);
+const isThreeOfKind = (cards, { number }) => {
+  const { matches, notMatches: restNumbers } = numberMatches(cards, number);
 
   return matches.length === 3 && allDifferentNumbers(restNumbers);
 };
