@@ -216,15 +216,11 @@ function verificateHand(cards, handsPlayerCounter) {
   }
 
   // For THREE OF A KIND
-  else if (isThreeOfKind(cards, card1)) {
+  else if (isAnyThreeOfKind(cards)) {
+    const { number } = findThreeOfKind(cards);
+
     hand.points = 10;
-    hand.description = `Trío de ${card1.number}`;
-  } else if (isThreeOfKind(cards, card2)) {
-    hand.points = 10;
-    hand.description = `Trío de ${card2.number}`;
-  } else if (isThreeOfKind(cards, card3)) {
-    hand.points = 10;
-    hand.description = `Trío de ${card3.number}`;
+    hand.description = `Three of a kind (${number})`;
   }
 
   // For STRAIGHT
