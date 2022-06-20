@@ -55,10 +55,8 @@ const numberMatches = (cards, numberToCheck) => ({
  * @param {ObjCard}        card        - Card with specific number
  * @param {number}         card.number - Number to check pair
  */
-const isPair = (cards, { number: numberToCheck }) => {
-  const matches = cards.filter(({ number }) => number === numberToCheck);
-
-  const restNumbers = cards.filter(({ number }) => number !== numberToCheck);
+const isPair = (cards, { number }) => {
+  const { matches, notMatches: restNumbers } = numberMatches(cards, number);
 
   return matches.length === 2 && allDifferentNumbers(restNumbers);
 };
