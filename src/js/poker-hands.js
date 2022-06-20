@@ -173,8 +173,6 @@ const isAnyFourOfKind = (cards) =>
 const findFourOfKind = (cards) =>
   cards.find((card) => isFourOfKind(cards, card));
 
-// TODO: Create isAnyFourOfKind() and findFourOfKind()
-
 /**
  * Hand Object
  * @typedef {Object} ObjHand
