@@ -153,8 +153,8 @@ const isFullHouse = (cards, [{ number: number1 }, { number: number2 }]) => {
  * @param {ObjCard}        card        - Card with specific number
  * @param {number}         card.number - Number to check
  */
-const isFourOfKind = (cards, { number: numberToCheck }) => {
-  const matches = cards.filter(({ number }) => number === numberToCheck);
+const isFourOfKind = (cards, { number }) => {
+  const { matches } = numberMatches(cards, number);
 
   return matches.length === 4;
 };
