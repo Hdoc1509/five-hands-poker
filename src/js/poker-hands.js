@@ -119,7 +119,7 @@ const isAnyThreeOfKind = (cards) =>
 
 /**
  * Searchs for any possible THREE OF KIND and returns its card
- * @param  {Array<ObjCard>} cards
+ * @param {Array<ObjCard>} cards
  */
 const findThreeOfKind = (cards) =>
   cards.find((card) => isThreeOfKind(cards, card));
@@ -151,6 +151,22 @@ const isFourOfKind = (cards, { number: numberToCheck }) => {
 
   return matches.length === 4;
 };
+
+/**
+ * Check if hand is any possible FOUR OF A KIND
+ * @param {Array<ObjCard>} cards
+ */
+const isAnyFourOfKind = (cards) =>
+  cards.some((card) => isFourOfKind(cards, card));
+
+/**
+ * Searchs for any possible FOUR OF A KIND and returns its card
+ * @param {Array<ObjCard>} cards
+ */
+const findFourOfKind = (cards) =>
+  cards.find((card) => isFourOfKind(cards, card));
+
+// TODO: Create isAnyFourOfKind() and findFourOfKind()
 
 /**
  * Hand Object
