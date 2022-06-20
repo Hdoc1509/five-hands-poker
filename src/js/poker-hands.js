@@ -111,6 +111,20 @@ const isThreeOfKind = (cards, { number: numberToCheck }) => {
 };
 
 /**
+ * Check if hand is any possible THREE OF KIND
+ * @param {Array<ObjCard>} cards
+ */
+const isAnyThreeOfKind = (cards) =>
+  cards.some((card) => isThreeOfKind(cards, card));
+
+/**
+ * Searchs for any possible THREE OF KIND and returns its card
+ * @param  {Array<ObjCard>} cards
+ */
+const findThreeOfKind = (cards) =>
+  cards.find((card) => isThreeOfKind(cards, card));
+
+/**
  * Check if hand is an specific FULL HOUSE
  * @param {Array<ObjCard>} cards
  * @param {Array<ObjCard>} cardsToCheck - Cards for check full house
