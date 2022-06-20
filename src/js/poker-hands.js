@@ -210,7 +210,6 @@ function verificateHand(cards, handsPlayerCounter) {
   };
 
   // For PAIR
-
   if (isAnyPair(cards)) {
     const { number } = findPair(cards);
 
@@ -283,14 +282,17 @@ function verificateHand(cards, handsPlayerCounter) {
   // For FOUR OF A KIND
   else if (isAnyFourOfKind(cards)) {
     const { number } = findFourOfKind(cards);
+
     hand.points = 50;
     hand.description = `Four of a kind (${number})`;
   }
 
-  //For NOTHING
+  //For HIGH CARD
   else {
-    hand.points = 0;
-    hand.description = 'Nothing';
+    const thereOneAce = cards.some(({ number }) => number === 'A');
+
+    hand.points = thereOneAce ? 1 : 0;
+    hand.description = thereOneAce ? 'High Card (A)' : 'Nothing';
   }
 
   return hand;
