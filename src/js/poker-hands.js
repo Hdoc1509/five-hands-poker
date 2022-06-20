@@ -271,13 +271,15 @@ function verificateHand(cards, handsPlayerCounter) {
   }
 
   // For FULL HOUSE
-  else if (
-    isFullHouse(cards, [card1, card2]) ||
-    isFullHouse(cards, [card1, card3]) ||
-    isFullHouse(cards, [card1, card4])
-  ) {
+  else if (isFullHouse(cards, [card1, card2])) {
     hand.points = 25;
-    hand.description = 'Full House';
+    hand.description = `Full House (${card1.number} & ${card2.number})`;
+  } else if (isFullHouse(cards, [card1, card3])) {
+    hand.points = 25;
+    hand.description = `Full House (${card1.number} & ${card3.number})`;
+  } else if (isFullHouse(cards, [card1, card4])) {
+    hand.points = 25;
+    hand.description = `Full House (${card1.number}) & ${card4.number}`;
   }
 
   // For FOUR OF A KIND
