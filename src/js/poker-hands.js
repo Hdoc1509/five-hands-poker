@@ -279,7 +279,7 @@ function verificateHand(cards, handsPlayerCounter) {
     hand.description = `Full House (${card1.number} & ${card3.number})`;
   } else if (isFullHouse(cards, [card1, card4])) {
     hand.points = 25;
-    hand.description = `Full House (${card1.number}) & ${card4.number}`;
+    hand.description = `Full House (${card1.number} & ${card4.number})`;
   }
 
   // For FOUR OF A KIND
