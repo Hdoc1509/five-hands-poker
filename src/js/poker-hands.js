@@ -32,17 +32,9 @@ const allSameFigure = (cards) => {
 };
 
 /**
- * Number matches
- * @typedef  {Object}         NumberMatches
- * @property {Array<ObjCard>} matches
- * @property {Array<ObjCard>} notMatches
- */
-
-/**
  * Returns matches and not maches of a given card number
  * @param {Array<ObjCard>} cards
  * @param {number}         numberToCheck
- * @return {NumberMatches} Matches and not matches of the number
  */
 const numberMatches = (cards, numberToCheck) => ({
   matches: cards.filter(({ number }) => number === numberToCheck),
