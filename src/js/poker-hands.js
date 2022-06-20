@@ -274,12 +274,10 @@ function verificateHand(cards, handsPlayerCounter) {
   }
 
   // For FOUR OF A KIND
-  else if (isFourOfKind(cards, card1)) {
+  else if (isAnyFourOfKind(cards)) {
+    const { number } = findFourOfKind(cards);
     hand.points = 50;
-    hand.description = `Póker de ${card1.number}`;
-  } else if (isFourOfKind(cards, card2)) {
-    hand.points = 50;
-    hand.description = `Póker de ${card2.number}`;
+    hand.description = `Four of a kind (${number})`;
   }
 
   //For NOTHING
