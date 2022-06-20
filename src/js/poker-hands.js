@@ -32,6 +32,24 @@ const allSameFigure = (cards) => {
 };
 
 /**
+ * Number matches
+ * @typedef  {Object}         NumberMatches
+ * @property {Array<ObjCard>} matches
+ * @property {Array<ObjCard>} notMatches
+ */
+
+/**
+ * Returns matches and not maches of a given card number
+ * @param {Array<ObjCard>} cards
+ * @param {number}         numberToCheck
+ * @return {NumberMatches} Matches and not matches of the number
+ */
+const numberMatches = (cards, numberToCheck) => ({
+  matches: cards.filter(({ number }) => number === numberToCheck),
+  notMatches: cards.filter(({ number }) => number !== numberToCheck),
+});
+
+/**
  * Check if hand is an specific PAIR
  * @param {Array<ObjCard>} cards
  * @param {ObjCard}        card        - Card with specific number
