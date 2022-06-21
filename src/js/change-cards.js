@@ -1,5 +1,3 @@
-const changeButton = document.getElementById('change-button');
-
 function changeSelectedCards() {
   const $selectedCards = document.querySelectorAll('.card--selected');
   const quantity = $selectedCards.length;
@@ -29,8 +27,8 @@ function changeSelectedCards() {
   ).textContent = `${remainingCardsCounter}`;
 
   if (remainingCardsCounter === 0) {
-    changeButton.classList.add('hidden');
-    changeButton.removeEventListener('click', changeSelectedCards);
+    GAME_BUTTONS.change.classList.add('hidden');
+    GAME_BUTTONS.change.removeEventListener('click', changeSelectedCards);
 
     // Listener for cards
     document.removeEventListener('click', toggleSelectedCard);
