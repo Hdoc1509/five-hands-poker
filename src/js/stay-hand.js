@@ -7,16 +7,16 @@ let handsPlayerCounter = 1;
 
 const playAgain = () => location.reload();
 
-function showPlayerHands() {
-  const cardsDesc = document.querySelectorAll('.points-details__hand-cards');
-  const pointsDetails = document.querySelectorAll('.points-details__hand');
+const showPlayerHands = () => {
+  const $cardsDesc = document.querySelectorAll('.points-details__hand-cards');
+  const $pointsDetails = document.querySelectorAll('.points-details__hand');
 
   //Displaying description container of each hand
-  cardsDesc.forEach((handCards) => handCards.classList.remove('hidden'));
+  $cardsDesc.forEach(($handCards) => $handCards.classList.remove('hidden'));
 
   // Setting new styles for description of each hand
-  pointsDetails.forEach((detail) => {
-    detail.classList.add('points-details__hand--game-over');
+  $pointsDetails.forEach(($detail) => {
+    $detail.classList.add('points-details__hand--game-over');
   });
 
   // Show player hands
@@ -24,7 +24,7 @@ function showPlayerHands() {
     const handCards = `(${cards.join(' ')})`;
     document.getElementById(`${id}-cards`).textContent = handCards;
   });
-}
+};
 
 /** Stay with the current hand */
 function stayHand() {
@@ -72,12 +72,12 @@ function stayHand() {
     ).textContent = `${playerPoints}`;
 
     // Updating styles for total points box
-    const totalPointsBox = document.getElementById('total-points');
-    totalPointsBox.classList.remove('hidden');
+    const $totalPointsBox = document.getElementById('total-points');
+    $totalPointsBox.classList.remove('hidden');
 
     /** @type {HTMLDialogElement} */
-    const gameResult = document.getElementById('game-result');
-    gameResult.show();
+    const $gameResult = document.getElementById('game-result');
+    $gameResult.show();
 
     // Show player hands beside points of each hand
     showPlayerHands();
@@ -86,14 +86,14 @@ function stayHand() {
     const playerWin = playerPoints >= 60;
 
     if (playerWin) {
-      gameResult.classList.add('dialog-game-result--win');
-      totalPointsBox.classList.add('points-details__total--win');
+      $gameResult.classList.add('dialog-game-result--win');
+      $totalPointsBox.classList.add('points-details__total--win');
     } else {
-      gameResult.classList.add('dialog-game-result--lose');
-      totalPointsBox.classList.add('points-details__total--lose');
+      $gameResult.classList.add('dialog-game-result--lose');
+      $totalPointsBox.classList.add('points-details__total--lose');
     }
 
-    gameResult.textContent = playerWin ? 'You win!' : 'You lose!';
+    $gameResult.textContent = playerWin ? 'You win!' : 'You lose!';
 
     // Hidding the remaining cards container
     document
