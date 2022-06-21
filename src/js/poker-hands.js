@@ -54,16 +54,24 @@ const isPair = (cards, { number }) => {
 };
 
 /**
+ * Callback of isPair
+ * @param  {ObjCard} card
+ * @param  {number} _index
+ * @param  {Array<ObjCard>} cards
+ */
+const isPairCb = (card, _index, cards) => isPair(cards, card);
+
+/**
  * Check if hand is any possible PAIR
  * @param {Array<ObjCard>} cards
  */
-const isAnyPair = (cards) => cards.some((card) => isPair(cards, card));
+const isAnyPair = (cards) => cards.some(isPairCb);
 
 /**
  * Searchs for any possible PAIR and returns its card number
  * @param {Array<ObjCard>} cards
  */
-const findPair = (cards) => cards.find((card) => isPair(cards, card));
+const findPair = (cards) => cards.find(isPairCb);
 
 /**
  * Check if hand is an specific TWO PAIR
