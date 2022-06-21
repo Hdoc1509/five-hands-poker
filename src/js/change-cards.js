@@ -2,7 +2,7 @@ function changeSelectedCards() {
   const $selectedCards = document.querySelectorAll('.card--selected');
   const quantity = $selectedCards.length;
 
-  if (quantity > remainingCardsCounter) errChangeCardsQuantity();
+  if (quantity > getRemainingCards()) errChangeCardsQuantity();
   else if (quantity == 0) errNoCardSelected();
   else {
     // Changing cards
@@ -15,8 +15,7 @@ function changeSelectedCards() {
           cardInfo;
     }
 
-    // Updating the counter of remaining cards
-    remainingCardsCounter -= quantity;
+    setRemainingCards((value) => value - quantity);
   }
 
   $selectedCards.forEach(($card) => $card.classList.remove('card--selected'));
@@ -24,9 +23,9 @@ function changeSelectedCards() {
   // Updating the counter of remaining cards
   document.getElementById(
     'remaining-cards'
-  ).textContent = `${remainingCardsCounter}`;
+  ).textContent = `${getRemainingCards()}`;
 
-  if (remainingCardsCounter === 0) {
+  if (getRemainingCards() === 0) {
     GAME_BUTTONS.change.classList.add('hidden');
     GAME_BUTTONS.change.removeEventListener('click', changeSelectedCards);
 
