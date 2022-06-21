@@ -5,7 +5,7 @@ function startGame() {
   const $cardsInfo = document.querySelectorAll('.card__info');
 
   GAME_BUTTONS.start.classList.add('hidden');
-  nextHandButton.classList.add('hidden');
+  GAME_BUTTONS.nextHand.classList.add('hidden');
   changeButton.classList.remove('hidden');
   stayButton.classList.remove('hidden');
 
@@ -46,7 +46,7 @@ function startGame() {
 
   // Removing listeners of the start button and the next hand button
   GAME_BUTTONS.start.removeEventListener('click', startGame);
-  nextHandButton.removeEventListener('click', startGame);
+  GAME_BUTTONS.nextHand.removeEventListener('click', startGame);
 }
 
 GAME_BUTTONS.start.addEventListener('click', startGame);
