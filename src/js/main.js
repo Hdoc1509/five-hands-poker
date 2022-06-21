@@ -47,9 +47,17 @@ const getRandomCard = () =>
   gameCards[Math.floor(Math.random() * gameCards.length)];
 
 /**
+ * Parsed Card
+ * @typedef  {Object} ParsedCard
+ * @property {string} number
+ * @property {string} figure
+ * @property {string} rawCard
+ */
+
+/**
  * Parse data of string card
  * @param  {string} card
- * @return {{number: string, figure: string, rawCard: string}}
+ * @return {ParsedCard}
  */
 const parseCard = (card) => {
   const number = card.startsWith('10') ? card.slice(0, 2) : card.charAt(0);
