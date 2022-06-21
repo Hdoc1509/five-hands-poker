@@ -1,6 +1,4 @@
-const playAgainButton = document.getElementById('play-again-button');
 const playerHands = [];
-
 let handsPlayerCounter = 1;
 
 const playAgain = () => location.reload();
@@ -52,9 +50,9 @@ function stayHand() {
   //Validation if it's the last hand
   if (playerHands.length === 5) {
     GAME_BUTTONS.nextHand.classList.add('hidden');
-    playAgainButton.classList.remove('hidden');
+    GAME_BUTTONS.playAgain.classList.remove('hidden');
 
-    playAgainButton.addEventListener('click', playAgain);
+    GAME_BUTTONS.playAgain.addEventListener('click', playAgain);
     GAME_BUTTONS.nextHand.removeEventListener('click', startGame);
 
     // Removing class for current hand
@@ -104,7 +102,7 @@ function stayHand() {
     GAME_BUTTONS.nextHand.classList.remove('hidden');
 
     GAME_BUTTONS.nextHand.addEventListener('click', startGame);
-    playAgainButton.removeEventListener('click', playAgain);
+    GAME_BUTTONS.playAgain.removeEventListener('click', playAgain);
   }
 
   document.getElementById('remaining-cards').textContent = '-';
