@@ -5,7 +5,7 @@ startButton.addEventListener('click', startGame);
 
 function startGame() {
   /** Number and suit in the corners of each card */
-  const cardsInfo = document.querySelectorAll('.card__info');
+  const $cardsInfo = document.querySelectorAll('.card__info');
 
   startButton.classList.add('hidden');
   nextHandButton.classList.add('hidden');
@@ -23,8 +23,8 @@ function startGame() {
     const { id, cardInfo } = setCardNumAndFig(`card${i + 1}`, false);
 
     // Displaying card info
-    cardsInfo[i].innerText = cardInfo;
-    if (id === 'card5') cardsInfo[i + 1].innerText = cardInfo;
+    $cardsInfo[i].innerText = cardInfo;
+    if (id === 'card5') $cardsInfo[i + 1].innerText = cardInfo;
   }
 
   // Listener for cards
@@ -40,11 +40,11 @@ function startGame() {
 
   // validation for current hand
   if (handsPlayerCounter <= 5) {
-    const currentHand = document.getElementById(
+    const $currentHand = document.getElementById(
       `hand${handsPlayerCounter}-points`
     );
     // @ts-ignore
-    currentHand.parentNode.classList.add('points-details__hand--current');
+    $currentHand.parentNode.classList.add('points-details__hand--current');
   }
 
   // Removing listeners of the start button and the next hand button
