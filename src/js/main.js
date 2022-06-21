@@ -1,8 +1,8 @@
 /** Central figure of each card */
-const cardsCentralSuit = document.querySelectorAll('.card__figure');
+const $cardsCentralSuit = document.querySelectorAll('.card__figure');
 
 /** Card containers */
-const tableCards = document.querySelectorAll('.card');
+const $tableCards = document.querySelectorAll('.card');
 
 const figures = ['♥', '♦', '♣', '♠'];
 
@@ -85,9 +85,9 @@ function setCardNumAndFig(cardId, isToChange) {
     ? (generatedObjCards[cardIndex] = cardObj)
     : generatedObjCards.push(cardObj);
 
-  tableCards[cardIndex].style.color = figure.match(/^♥|♦$/) ? '#f00' : '#000';
+  $tableCards[cardIndex].style.color = figure.match(/^♥|♦$/) ? '#f00' : '#000';
 
-  cardsCentralSuit[cardIndex].textContent = figure;
+  $cardsCentralSuit[cardIndex].textContent = figure;
   removeCard(card);
 
   return cardObj;
@@ -105,9 +105,11 @@ const toggleSelectedCard = ({ target }) => {
 
 /** Remove class "section__current-hand" */
 function clearCurrentHandClass() {
-  const currentHand = document.querySelector('p.points-details__hand--current');
+  const $currentHand = document.querySelector(
+    'p.points-details__hand--current'
+  );
 
-  currentHand?.classList.remove('points-details__hand--current');
+  $currentHand?.classList.remove('points-details__hand--current');
 }
 
 // Generating all game cards
