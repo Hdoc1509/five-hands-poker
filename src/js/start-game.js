@@ -4,6 +4,9 @@ let remainingCardsCounter = 0;
 startButton.addEventListener('click', startGame);
 
 function startGame() {
+  /** Number and suit in the corners of each card */
+  const cardsInfo = document.querySelectorAll('.card__info');
+
   startButton.classList.add('hidden');
   nextHandButton.classList.add('hidden');
   changeButton.classList.remove('hidden');
