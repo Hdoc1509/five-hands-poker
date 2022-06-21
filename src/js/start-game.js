@@ -7,7 +7,7 @@ function startGame() {
   GAME_BUTTONS.start.classList.add('hidden');
   GAME_BUTTONS.nextHand.classList.add('hidden');
   GAME_BUTTONS.change.classList.remove('hidden');
-  stayButton.classList.remove('hidden');
+  GAME_BUTTONS.stay.classList.remove('hidden');
 
   // Displaying counter of remaining cards
   remainingCardsCounter = 3;
@@ -31,7 +31,7 @@ function startGame() {
   GAME_BUTTONS.change.addEventListener('click', changeSelectedCards);
 
   // Listener for the Stay Button
-  stayButton.addEventListener('click', stayHand);
+  GAME_BUTTONS.stay.addEventListener('click', stayHand);
 
   clearCurrentHandClass();
 
