@@ -2,7 +2,7 @@
 const cardsCentralSuit = document.querySelectorAll('.card__figure');
 
 /** Card containers */
-const cardsToChange = document.querySelectorAll('.card');
+const tableCards = document.querySelectorAll('.card');
 
 const figures = ['♥', '♦', '♣', '♠'];
 
@@ -85,9 +85,7 @@ function setCardNumAndFig(cardId, isToChange) {
     ? (generatedObjCards[cardIndex] = cardObj)
     : generatedObjCards.push(cardObj);
 
-  cardsToChange[cardIndex].style.color = figure.match(/^♥|♦$/)
-    ? '#f00'
-    : '#000';
+  tableCards[cardIndex].style.color = figure.match(/^♥|♦$/) ? '#f00' : '#000';
 
   cardsCentralSuit[cardIndex].textContent = figure;
   removeCard(card);
