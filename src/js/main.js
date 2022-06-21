@@ -51,7 +51,7 @@ const getRandomCard = () =>
  * @typedef  {Object} ParsedCard
  * @property {string} number
  * @property {string} figure
- * @property {string} rawCard
+ * @property {string} card
  */
 
 /**
@@ -64,7 +64,7 @@ const parseCard = (card) => {
   const number = card.startsWith('10') ? card.slice(0, 2) : card.charAt(0);
   const figure = card.startsWith('10') ? card.charAt(2) : card.charAt(1);
 
-  return { number, figure, rawCard: card };
+  return { number, figure, card };
 };
 
 /**
@@ -75,7 +75,7 @@ const parseCard = (card) => {
  * @returns {ObjCard} Returns the card as an object
  */
 function setCardNumAndFig(cardId, isToChange) {
-  const { number, figure, rawCard: card } = parseCard(getRandomCard());
+  const { number, figure, card } = parseCard(getRandomCard());
   const cardIndex = Number(cardId.charAt(4)) - 1;
   const cardObj = {
     id: cardId,
