@@ -1,19 +1,19 @@
 const changeButton = document.getElementById('change-button');
 
 function changeSelectedCards() {
-  const selectedCards = document.querySelectorAll('.card--selected');
-  const quantity = selectedCards.length;
+  const $selectedCards = document.querySelectorAll('.card--selected');
+  const quantity = $selectedCards.length;
 
   if (quantity > remainingCardsCounter) errChangeCardsQuantity();
   else if (quantity == 0) errNoCardSelected();
   else {
     // Changing cards
     for (let i = 0; i < quantity; i++) {
-      const { id, cardInfo } = setCardNumAndFig(selectedCards[i].id, true);
+      const { id, cardInfo } = setCardNumAndFig($selectedCards[i].id, true);
 
-      selectedCards[i].querySelector('.card__info--top').innerText = cardInfo;
+      $selectedCards[i].querySelector('.card__info--top').innerText = cardInfo;
       if (id === 'card5')
-        selectedCards[i].querySelector('.card__info--bottom').innerText =
+        $selectedCards[i].querySelector('.card__info--bottom').innerText =
           cardInfo;
     }
 
@@ -21,7 +21,7 @@ function changeSelectedCards() {
     remainingCardsCounter -= quantity;
   }
 
-  selectedCards.forEach((card) => card.classList.remove('card--selected'));
+  $selectedCards.forEach(($card) => $card.classList.remove('card--selected'));
 
   // Updating the counter of remaining cards
   document.getElementById(
