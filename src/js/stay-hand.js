@@ -27,10 +27,10 @@ const showPlayerHands = () => {
 
 /** Stay with the current hand */
 function stayHand() {
-  changeButton.classList.add('hidden');
+  GAME_BUTTONS.change.classList.add('hidden');
   stayButton.classList.add('hidden');
 
-  changeButton.removeEventListener('click', changeSelectedCards);
+  GAME_BUTTONS.change.removeEventListener('click', changeSelectedCards);
   stayButton.removeEventListener('click', stayHand);
 
   // Listener for cards
