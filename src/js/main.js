@@ -4,8 +4,15 @@ const $cardsCentralSuit = document.querySelectorAll('.card__figure');
 /** Card containers */
 const $tableCards = document.querySelectorAll('.card');
 
-const figures = ['♥', '♦', '♣', '♠'];
+const GAME_BUTTONS = Object.freeze({
+  start: document.getElementById('start-button'),
+  change: document.getElementById('change-button'),
+  stay: document.getElementById('stay-button'),
+  nextHand: document.getElementById('next-hand-button'),
+  playAgain: document.getElementById('play-again-button'),
+});
 
+const figures = ['♥', '♦', '♣', '♠'];
 const numbers = ['A', 2, 3, 4, 5, 6, 7, 8, 9, '10', 'J', 'Q', 'K'];
 
 /**
