@@ -18,10 +18,10 @@ const gameCards = [];
 
 /**
  * Card Object
- * @typedef {Object} ObjCard
- * @property {String} id Card's id
- * @property {String | Number} number Card's number
- * @property {String} figure Card's figure
+ * @typedef  {Object} ObjCard
+ * @property {String} id
+ * @property {String} number
+ * @property {String} figure
  */
 
 /**
@@ -36,7 +36,7 @@ const generatedObjCards = [];
 const cleanArray = (array) => array.splice(0, array.length);
 
 /**
- * @param  {string} card Card to remove
+ * @param {string} card - Card to remove
  */
 function removeCard(card) {
   const cardPosition = gameCards.indexOf(card);
@@ -56,7 +56,8 @@ const getRandomCard = () =>
 
 /**
  * Parse data of string card
- * @param  {string} card
+ * @param {string} card
+ *
  * @return {ParsedCard}
  */
 const parseCard = (card) => {
@@ -68,8 +69,9 @@ const parseCard = (card) => {
 
 /**
  * Set the info of each card
- * @param {String} cardId Card's Id
- * @param {Boolean} isToChange Especify if the card must be changed
+ * @param {String}  cardId     - Card's Id
+ * @param {Boolean} isToChange - Especify if the card must be changed
+ *
  * @returns {ObjCard} Returns the card as an object
  */
 function setCardNumAndFig(cardId, isToChange) {
