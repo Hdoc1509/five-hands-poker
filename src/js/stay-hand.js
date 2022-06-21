@@ -63,8 +63,10 @@ function stayHand() {
     clearCurrentHandClass();
 
     // Setting total points
-    let playerPoints = 0;
-    playerHands.forEach(({ points }) => (playerPoints += points));
+    const playerPoints = playerHands.reduce(
+      (prev, { points }) => prev + points,
+      0
+    );
 
     // Displaying total points
     document.getElementById(
