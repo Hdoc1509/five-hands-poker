@@ -1,6 +1,3 @@
-/** Number and figure in the corners of each card */
-const cardsInfo = document.querySelectorAll('.card__info');
-
 /** Central figure of each card */
 const cardDisplay = document.querySelectorAll('.card__figure');
 
