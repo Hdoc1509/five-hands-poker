@@ -1,5 +1,3 @@
-let remainingCardsCounter = 0;
-
 function startGame() {
   /** Number and suit in the corners of each card */
   const $cardsInfo = document.querySelectorAll('.card__info');
@@ -10,10 +8,10 @@ function startGame() {
   GAME_BUTTONS.stay.classList.remove('hidden');
 
   // Displaying counter of remaining cards
-  remainingCardsCounter = 3;
+  setRemainingCards(() => 3);
   document.getElementById(
     'remaining-cards'
-  ).textContent = `${remainingCardsCounter}`;
+  ).textContent = `${getRemainingCards()}`;
 
   // Generating the first 5 cards of the hand
   for (let i = 0; i < 5; i++) {
