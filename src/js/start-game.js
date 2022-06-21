@@ -1,13 +1,10 @@
-const startButton = document.getElementById('start-button');
 let remainingCardsCounter = 0;
-
-startButton.addEventListener('click', startGame);
 
 function startGame() {
   /** Number and suit in the corners of each card */
   const $cardsInfo = document.querySelectorAll('.card__info');
 
-  startButton.classList.add('hidden');
+  GAME_BUTTONS.start.classList.add('hidden');
   nextHandButton.classList.add('hidden');
   changeButton.classList.remove('hidden');
   stayButton.classList.remove('hidden');
@@ -48,6 +45,8 @@ function startGame() {
   }
 
   // Removing listeners of the start button and the next hand button
-  startButton.removeEventListener('click', startGame);
+  GAME_BUTTONS.start.removeEventListener('click', startGame);
   nextHandButton.removeEventListener('click', startGame);
 }
+
+GAME_BUTTONS.start.addEventListener('click', startGame);
