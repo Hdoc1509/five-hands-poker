@@ -1,4 +1,3 @@
-const stayButton = document.getElementById('stay-button');
 const playAgainButton = document.getElementById('play-again-button');
 const playerHands = [];
 
@@ -28,10 +27,10 @@ const showPlayerHands = () => {
 /** Stay with the current hand */
 function stayHand() {
   GAME_BUTTONS.change.classList.add('hidden');
-  stayButton.classList.add('hidden');
+  GAME_BUTTONS.stay.classList.add('hidden');
 
   GAME_BUTTONS.change.removeEventListener('click', changeSelectedCards);
-  stayButton.removeEventListener('click', stayHand);
+  GAME_BUTTONS.stay.removeEventListener('click', stayHand);
 
   // Listener for cards
   document.removeEventListener('click', toggleSelectedCard);
