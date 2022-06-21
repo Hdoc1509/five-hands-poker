@@ -15,6 +15,34 @@ const GAME_BUTTONS = Object.freeze({
 const figures = ['♥', '♦', '♣', '♠'];
 const numbers = ['A', 2, 3, 4, 5, 6, 7, 8, 9, '10', 'J', 'Q', 'K'];
 
+/** @type {number} Counter of remaining cards */
+let remainingCardsCounter = null;
+
+/**
+ * Sets new value for counter of remaining cards
+ * @param  {Function} callback Callback for update counter of remaining cards
+ *
+ * @example
+ * // Increments the value in 1
+ * setRemainingCards((value) => value + 1);
+ * @example
+ * // Decrements the value in value of myNum
+ * const myNum = 2;
+ * setRemainingCards((value) => value - myNum);
+ * @example
+ * // Sets the value to 3
+ * setRemainingCards((value) => 3);
+ */
+const setRemainingCards = (callback) => {
+  remainingCardsCounter = callback(remainingCardsCounter);
+};
+
+/**
+ * Gets the current value of counter of remaining cards
+ * @return {number} Current value of counter of remaining cards
+ */
+const getRemainingCards = () => remainingCardsCounter;
+
 /**
  * @type {Array<String>}
  */
