@@ -1,5 +1,5 @@
 /** Central figure of each card */
-const cardDisplay = document.querySelectorAll('.card__figure');
+const cardsCentralSuit = document.querySelectorAll('.card__figure');
 
 /** Card containers */
 const cardsToChange = document.querySelectorAll('.card');
@@ -89,7 +89,7 @@ function setCardNumAndFig(cardId, isToChange) {
     ? '#f00'
     : '#000';
 
-  cardDisplay[cardIndex].textContent = figure;
+  cardsCentralSuit[cardIndex].textContent = figure;
   removeCard(card);
 
   return cardObj;
