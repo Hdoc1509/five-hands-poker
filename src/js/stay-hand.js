@@ -1,5 +1,4 @@
 const stayButton = document.getElementById('stay-button');
-const nextHandButton = document.getElementById('next-hand-button');
 const playAgainButton = document.getElementById('play-again-button');
 const playerHands = [];
 
@@ -53,11 +52,11 @@ function stayHand() {
 
   //Validation if it's the last hand
   if (playerHands.length === 5) {
-    nextHandButton.classList.add('hidden');
+    GAME_BUTTONS.nextHand.classList.add('hidden');
     playAgainButton.classList.remove('hidden');
 
     playAgainButton.addEventListener('click', playAgain);
-    nextHandButton.removeEventListener('click', startGame);
+    GAME_BUTTONS.nextHand.removeEventListener('click', startGame);
 
     // Removing class for current hand
     clearCurrentHandClass();
@@ -103,9 +102,9 @@ function stayHand() {
       .classList.add('hidden');
   } else {
     // If it isn't the last hand
-    nextHandButton.classList.remove('hidden');
+    GAME_BUTTONS.nextHand.classList.remove('hidden');
 
-    nextHandButton.addEventListener('click', startGame);
+    GAME_BUTTONS.nextHand.addEventListener('click', startGame);
     playAgainButton.removeEventListener('click', playAgain);
   }
 
