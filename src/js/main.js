@@ -52,16 +52,8 @@ const getRandomCard = () =>
  * @return {{number: string, figure: string, rawCard: string}}
  */
 const parseCard = (card) => {
-  let figure = '';
-  let number = null;
-
-  if (card.startsWith('10')) {
-    number = card.slice(0, 2);
-    figure = card.charAt(2);
-  } else {
-    number = card.charAt(0);
-    figure = card.charAt(1);
-  }
+  const number = card.startsWith('10') ? card.slice(0, 2) : card.charAt(0);
+  const figure = card.startsWith('10') ? card.charAt(2) : card.charAt(1);
 
   return { number, figure, rawCard: card };
 };
