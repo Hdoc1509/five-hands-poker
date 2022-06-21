@@ -85,7 +85,7 @@ function setCardNumAndFig(cardId, isToChange) {
   };
 
   isToChange
-    ? (generatedObjCards[Number(cardId.slice(-1)) - 1] = cardObj)
+    ? (generatedObjCards[cardIndex] = cardObj)
     : generatedObjCards.push(cardObj);
 
   cardsToChange[cardIndex].style.color = figure.match(/^♥|♦$/)
