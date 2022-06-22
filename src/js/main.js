@@ -40,10 +40,7 @@ const setRemainingCards = (callback) => {
   remainingCardsCounter = callback(remainingCardsCounter);
 };
 
-/**
- * Gets the current value of counter of remaining cards
- * @return {number} Current value of counter of remaining cards
- */
+/** Gets the current value of counter of remaining cards */
 const getRemainingCards = () => remainingCardsCounter;
 
 /********/
@@ -66,10 +63,7 @@ const setPlayerHands = (callback) => {
   playerHandsCounter = callback(playerHandsCounter);
 };
 
-/**
- * Gets the current value of counter of player hands
- * @return {number} Current value of counter of remaining cards
- */
+/** Gets the current value of counter of player hands */
 const getPlayerHands = () => playerHandsCounter;
 
 /**
