@@ -18,6 +18,9 @@ const numbers = ['A', 2, 3, 4, 5, 6, 7, 8, 9, '10', 'J', 'Q', 'K'];
 /** @type {number} Counter of remaining cards */
 let remainingCardsCounter = null;
 
+/** @type {number} Counter of hands player */
+let playerHandsCounter = null;
+
 /**
  * Sets new value for counter of remaining cards
  * @param  {Function} callback Callback for update counter of remaining cards
@@ -42,6 +45,32 @@ const setRemainingCards = (callback) => {
  * @return {number} Current value of counter of remaining cards
  */
 const getRemainingCards = () => remainingCardsCounter;
+
+/********/
+/**
+ * Sets new value for counter of player hands
+ * @param  {Function} callback Callback for update counter of player hands
+ *
+ * @example
+ * // Increments the value in 1
+ * setRemainingCards((value) => value + 1);
+ * @example
+ * // Decrements the value in value of myNum
+ * const myNum = 2;
+ * setRemainingCards((value) => value - myNum);
+ * @example
+ * // Sets the value to 3
+ * setRemainingCards(() => 3);
+ */
+const setPlayerHands = (callback) => {
+  playerHandsCounter = callback(playerHandsCounter);
+};
+
+/**
+ * Gets the current value of counter of player hands
+ * @return {number} Current value of counter of remaining cards
+ */
+const getPlayerHands = () => playerHandsCounter;
 
 /**
  * @type {Array<String>}
