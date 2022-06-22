@@ -267,21 +267,11 @@ function verificateHand(cards, handsPlayerCounter) {
   }
 
   // For TWO PAIR
-  else if (isTwoPair(cards, [card1, card2])) {
+  else if (isAnyTwoPair(cards)) {
+    const [pair1, pair2] = findTwoPair(cards);
+
     hand.points = 5;
-    hand.description = `Two Pair: (${card1.number} & ${card2.number})`;
-  } else if (isTwoPair(cards, [card1, card3])) {
-    hand.points = 5;
-    hand.description = `Two Pair: (${card1.number} & ${card3.number})`;
-  } else if (isTwoPair(cards, [card1, card4])) {
-    hand.points = 5;
-    hand.description = `Two Pair: (${card1.number} & ${card4.number})`;
-  } else if (isTwoPair(cards, [card2, card3])) {
-    hand.points = 5;
-    hand.description = `Two Pair: (${card2.number} & ${card3.number})`;
-  } else if (isTwoPair(cards, [card2, card4])) {
-    hand.points = 5;
-    hand.description = `Two Pair: (${card2.number} & ${card4.number})`;
+    hand.description = `Two Pair: (${pair1} & ${pair2})`;
   }
 
   // For THREE OF A KIND
