@@ -34,9 +34,11 @@ function startGame() {
   clearCurrentHandClass();
 
   // validation for current hand
-  if (handsPlayerCounter <= 5) {
+  const currentHandsCounter = getPlayerHands();
+
+  if (currentHandsCounter <= 5) {
     const $currentHand = document.getElementById(
-      `hand${handsPlayerCounter}-points`
+      `hand${currentHandsCounter}-points`
     );
     // @ts-ignore
     $currentHand.parentNode.classList.add('points-details__hand--current');
