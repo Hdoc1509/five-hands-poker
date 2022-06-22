@@ -1,5 +1,4 @@
 const playerHands = [];
-let handsPlayerCounter = 1;
 
 const playAgain = () => location.reload();
 
@@ -34,18 +33,19 @@ function stayHand() {
   document.removeEventListener('click', toggleSelectedCard);
 
   // Data for the current hand
-  const currentHand = verificateHand(generatedObjCards, handsPlayerCounter);
+  const currentHandsCounter = getPlayerHands();
+  const currentHand = verificateHand(generatedObjCards, currentHandsCounter);
 
   // Displaying the points of the current hand
   document.getElementById(
-    `hand${handsPlayerCounter}-points`
+    `hand${currentHandsCounter}-points`
   ).textContent = `${currentHand.points}`;
 
   // Adding the current hand to array playerHands
   playerHands.push(currentHand);
 
   // Updating the counter of hands
-  handsPlayerCounter++;
+  setPlayerHands((current) => current + 1);
 
   //Validation if it's the last hand
   if (playerHands.length === 5) {
@@ -57,6 +57,7 @@ function stayHand() {
 
     // Removing class for current hand
     clearCurrentHandClass();
+    setPlayerHands(() => null);
 
     // Setting total points
     const playerPoints = playerHands.reduce(
