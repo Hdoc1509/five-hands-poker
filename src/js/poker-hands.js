@@ -50,7 +50,11 @@ const numberMatches = (cards, numberToCheck) => ({
 const isPair = (cards, { number }) => {
   const { matches, notMatches: restNumbers } = numberMatches(cards, number);
 
-  return matches.length === 2 && allDifferentNumbers(restNumbers);
+  return (
+    matches.length === 2 &&
+    allDifferentNumbers(restNumbers) &&
+    !allSameFigure(matches)
+  );
 };
 
 /**
