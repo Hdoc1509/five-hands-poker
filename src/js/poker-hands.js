@@ -333,16 +333,17 @@ function verificateHand(cards, handsPlayerCounter) {
   else if (isAnyStraight(cards)) {
     const straightMatch = findStraight(cards);
     const parsedStraightMatch = straightMatch.replace('-', ' - ');
+    const flushSuit = cards[0].figure;
 
     if (straightMatch === '10-A') {
       hand.points = allSameFigure(cards) ? 100 : 15;
       hand.description = allSameFigure(cards)
-        ? `Royal Flush (${card1.figure}): ${parsedStraightMatch}`
+        ? `Royal Flush (${flushSuit}): ${parsedStraightMatch}`
         : `Straight: ${parsedStraightMatch}`;
     } else {
       hand.points = allSameFigure(cards) ? 75 : 15;
       hand.description = allSameFigure(cards)
-        ? `Straight Flush (${card1.figure}): ${parsedStraightMatch}`
+        ? `Straight Flush (${flushSuit}): ${parsedStraightMatch}`
         : `Straight: ${parsedStraightMatch}`;
     }
   }
@@ -350,7 +351,7 @@ function verificateHand(cards, handsPlayerCounter) {
   // For FLUSH
   else if (allSameFigure(cards)) {
     hand.points = 20;
-    hand.description = `Flush (${card1.figure})`;
+    hand.description = `Flush (${cards[0].figure})`;
   }
 
   // For FULL HOUSE
