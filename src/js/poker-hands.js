@@ -79,6 +79,42 @@ const isAnyPair = (cards) => cards.some((card) => isPair(cards, card));
 const findPair = (cards) => cards.find((card) => isPair(cards, card));
 
 /**
+ * Retrieves all pairs in the hand
+ * @param {Array<ObjCard>} cards
+ *
+ * @return {Set<string>} Unique numbers that have a pair
+ */
+const getPairs = (cards) => {
+  const aux = cards
+    .filter(({ number }) => {
+      const { matches } = numberMatches(cards, number);
+
+      return matches.length === 2 && !allSameFigure(matches);
+    })
+    .map(({ number }) => number);
+
+  return new Set(aux);
+};
+
+/**
+ * Check if hand is any possible TWO PAIR
+ * @param {Array<ObjCard>} cards
+ */
+const isAnyTwoPair = (cards) => {
+  const pairs = getPairs(cards);
+
+  return pairs.size === 2;
+};
+
+/**
+ * Searchs for any possible TWO PAIR and returns its card numbers
+ * @param {Array<ObjCard>} cards
+ *
+ * @return {Array<string>} Numbers that have a pair
+ */
+const findTwoPair = (cards) => Array.from(getPairs(cards));
+
+/**
  * Check if hand is an specific TWO PAIR
  * @param {Array<ObjCard>} cards
  * @param {Array<ObjCard>} cardsToCheck - Cards to check its pairs
