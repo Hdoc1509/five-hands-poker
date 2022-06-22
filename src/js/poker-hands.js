@@ -354,15 +354,11 @@ function verificateHand(cards, handsPlayerCounter) {
   }
 
   // For FULL HOUSE
-  else if (isFullHouse(cards, [card1, card2])) {
+  else if (isAnyFullHouse(cards)) {
+    const { pair, threeOfKind } = findFullHouse(cards);
+
     hand.points = 25;
-    hand.description = `Full House (${card1.number} & ${card2.number})`;
-  } else if (isFullHouse(cards, [card1, card3])) {
-    hand.points = 25;
-    hand.description = `Full House (${card1.number} & ${card3.number})`;
-  } else if (isFullHouse(cards, [card1, card4])) {
-    hand.points = 25;
-    hand.description = `Full House (${card1.number} & ${card4.number})`;
+    hand.description = `Full House (Pair - ${pair} & Three of Kind - ${threeOfKind})`;
   }
 
   // For FOUR OF A KIND
