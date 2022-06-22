@@ -43,7 +43,6 @@ const setRemainingCards = (callback) => {
 /** Gets the current value of counter of remaining cards */
 const getRemainingCards = () => remainingCardsCounter;
 
-/********/
 /**
  * Sets new value for counter of player hands
  * @param  {Function} callback Callback for update counter of player hands
@@ -66,9 +65,7 @@ const setPlayerHands = (callback) => {
 /** Gets the current value of counter of player hands */
 const getPlayerHands = () => playerHandsCounter;
 
-/**
- * @type {Array<String>}
- */
+/** @type {Array<String>} */
 const gameCards = [];
 
 /**
