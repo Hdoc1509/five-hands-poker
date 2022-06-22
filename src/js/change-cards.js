@@ -21,11 +21,13 @@ function changeSelectedCards() {
   $selectedCards.forEach(($card) => $card.classList.remove('card--selected'));
 
   // Updating the counter of remaining cards
+  const currentRemainingCards = getRemainingCards();
+
   document.getElementById(
     'remaining-cards'
-  ).textContent = `${getRemainingCards()}`;
+  ).textContent = `${currentRemainingCards}`;
 
-  if (getRemainingCards() === 0) {
+  if (currentRemainingCards === 0) {
     GAME_BUTTONS.change.classList.add('hidden');
     GAME_BUTTONS.change.removeEventListener('click', changeSelectedCards);
 
