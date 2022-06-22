@@ -197,3 +197,5 @@ function clearCurrentHandClass() {
   // Generating all cards
   for (let i = 0; i < 52; i++) gameCards.push(generateRandomCard());
 })(gameCards);
+
+setPlayerHands(() => 1);
