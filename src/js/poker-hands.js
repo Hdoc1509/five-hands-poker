@@ -293,7 +293,8 @@ function verificateHand(cards, handsPlayerCounter) {
 
   //For HIGH CARD
   else {
-    const thereOneAce = cards.some(({ number }) => number === 'A');
+    const { matches: aces } = numberMatches(cards, 'A');
+    const thereOneAce = aces.length === 1;
 
     hand.points = thereOneAce ? 1 : 0;
     hand.description = thereOneAce ? 'High Card (A)' : 'Nothing';
