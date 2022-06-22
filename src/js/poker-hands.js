@@ -181,6 +181,22 @@ const findThreeOfKind = (cards) =>
   cards.find((card) => isThreeOfKind(cards, card));
 
 /**
+ * Retrieves the number that compose the THREE OF A KIND in the hand
+ * @param {Array<ObjCard>} cards
+ */
+const getThreeOfKind = (cards) => {
+  const aux = cards
+    .filter(({ number }) => {
+      const { matches } = numberMatches(cards, number);
+
+      return matches.length === 3 && !allSameFigure(matches);
+    })
+    .map(({ number }) => number);
+
+  return new Set(aux);
+};
+
+/**
  * Check if hand is an specific FULL HOUSE
  * @param {Array<ObjCard>} cards
  * @param {Array<ObjCard>} cardsToCheck - Cards for check full house
