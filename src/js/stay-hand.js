@@ -112,6 +112,6 @@ export const stayHand = () => {
     GAME_BUTTONS.playAgain.removeEventListener('click', playAgain);
   }
 
-  setRemainingCardsCounter(() => null);
+  setRemainingCardsCounter(null);
   cleanObjCards();
 };
