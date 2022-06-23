@@ -6,7 +6,7 @@ import { setCardNumAndFig } from './card-data.js';
 import { GAME_BUTTONS } from './game-buttons.js';
 import { changeCardsQuantityError, noCardSelectedError } from './errors.js';
 import { toggleSelectedCard } from './card-utils.js';
-import { qsa, gid, qs } from './utils/dom.js';
+import { qsa, qs } from './utils/dom.js';
 
 export const changeSelectedCards = () => {
   const $selectedCards = qsa('.card--selected');
@@ -30,12 +30,7 @@ export const changeSelectedCards = () => {
 
   $selectedCards.forEach(($card) => $card.classList.remove('card--selected'));
 
-  // Updating the counter of remaining cards
-  const currentRemainingCards = getRemainingCardsCounter();
-
-  gid('remaining-cards').textContent = `${currentRemainingCards}`;
-
-  if (currentRemainingCards === 0) {
+  if (getRemainingCardsCounter() === 0) {
     GAME_BUTTONS.change.classList.add('hidden');
     GAME_BUTTONS.change.removeEventListener('click', changeSelectedCards);
 
