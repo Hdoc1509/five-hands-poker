@@ -8,6 +8,15 @@ const $tableCards = document.querySelectorAll('.card');
 const $cardsCentralSuit = document.querySelectorAll('.card__figure');
 
 /**
+ * Card Object
+ * @typedef  {Object} ObjCard
+ * @property {String} id
+ * @property {String} number
+ * @property {String} figure
+ * @property {string} cardInfo
+ */
+
+/**
  * Set the info of each card
  * @param {String}  cardId     - Card's Id
  * @param {Boolean} isToChange - Especify if the card must be changed
