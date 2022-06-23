@@ -1,11 +1,12 @@
 import { parseCard } from './card-utils.js';
 import { getRandomCard, generatedObjCards, removeCard } from './game-cards.js';
+import { qsa } from './utils/dom.js';
 
 /** Card containers */
-const $tableCards = document.querySelectorAll('.card');
+const $tableCards = qsa('.card');
 
 /** Central figure of each card */
-const $cardsCentralSuit = document.querySelectorAll('.card__figure');
+const $cardsCentralSuit = qsa('.card__figure');
 
 /**
  * Card Object
