@@ -6,9 +6,10 @@ import { setCardNumAndFig } from './card-data.js';
 import { GAME_BUTTONS } from './game-buttons.js';
 import { changeCardsQuantityError, noCardSelectedError } from './errors.js';
 import { toggleSelectedCard } from './card-utils.js';
+import { qsa, gid, qs } from './utils/dom.js';
 
 export const changeSelectedCards = () => {
-  const $selectedCards = document.querySelectorAll('.card--selected');
+  const $selectedCards = qsa('.card--selected');
   const quantity = $selectedCards.length;
 
   if (quantity > getRemainingCardsCounter()) changeCardsQuantityError();
@@ -16,12 +17,12 @@ export const changeSelectedCards = () => {
   else {
     // Changing cards
     for (let i = 0; i < quantity; i++) {
-      const { id, cardInfo } = setCardNumAndFig($selectedCards[i].id, true);
+      const selectedCard = $selectedCards[i];
+      const { id, cardInfo } = setCardNumAndFig(selectedCard.id, true);
 
-      $selectedCards[i].querySelector('.card__info--top').innerText = cardInfo;
+      qs('.card__info--top', selectedCard).innerText = cardInfo;
       if (id === 'card5')
-        $selectedCards[i].querySelector('.card__info--bottom').innerText =
-          cardInfo;
+        qs('.card__info--bottom', selectedCard).innerText = cardInfo;
     }
 
     setRemainingCardsCounter((value) => value - quantity);
@@ -32,9 +33,7 @@ export const changeSelectedCards = () => {
   // Updating the counter of remaining cards
   const currentRemainingCards = getRemainingCardsCounter();
 
-  document.getElementById(
-    'remaining-cards'
-  ).textContent = `${currentRemainingCards}`;
+  gid('remaining-cards').textContent = `${currentRemainingCards}`;
 
   if (currentRemainingCards === 0) {
     GAME_BUTTONS.change.classList.add('hidden');
