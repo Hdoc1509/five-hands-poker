@@ -6,14 +6,15 @@ import { verificateHand } from './poker-hand-verifier/poker-hands.js';
 import { getObjCards, cleanObjCards } from './game-cards.js';
 import { startGame } from './start-game.js';
 import { clearCurrentHandClass } from './game-hands.js';
+import { qsa, gid } from './utils/dom.js';
 
 const playerHands = [];
 
 const playAgain = () => location.reload();
 
 const showPlayerHands = () => {
-  const $cardsDesc = document.querySelectorAll('.points-details__hand-cards');
-  const $pointsDetails = document.querySelectorAll('.points-details__hand');
+  const $cardsDesc = qsa('.points-details__hand-cards');
+  const $pointsDetails = qsa('.points-details__hand');
 
   //Displaying description container of each hand
   $cardsDesc.forEach(($handCards) => $handCards.classList.remove('hidden'));
@@ -26,7 +27,7 @@ const showPlayerHands = () => {
   // Show player hands
   playerHands.forEach(({ cards, id }) => {
     const handCards = `(${cards.join(' ')})`;
-    document.getElementById(`${id}-cards`).textContent = handCards;
+    gid(`${id}-cards`).textContent = handCards;
   });
 };
 
@@ -45,7 +46,7 @@ export const stayHand = () => {
   const currentHand = verificateHand(getObjCards(), currentHandsCounter);
 
   // Displaying the points of the current hand
-  document.getElementById(
+  gid(
     `hand${currentHandsCounter}-points`
   ).textContent = `${currentHand.points}`;
 
@@ -74,16 +75,14 @@ export const stayHand = () => {
     );
 
     // Displaying total points
-    document.getElementById(
-      'total-hands-points'
-    ).textContent = `${playerPoints}`;
+    gid('total-hands-points').textContent = `${playerPoints}`;
 
     // Updating styles for total points box
-    const $totalPointsBox = document.getElementById('total-points');
+    const $totalPointsBox = gid('total-points');
     $totalPointsBox.classList.remove('hidden');
 
     /** @type {HTMLDialogElement} */
-    const $gameResult = document.getElementById('game-result');
+    const $gameResult = gid('game-result');
     $gameResult.show();
 
     // Show player hands beside points of each hand
@@ -103,9 +102,7 @@ export const stayHand = () => {
     $gameResult.textContent = playerWin ? 'You win!' : 'You lose!';
 
     // Hidding the remaining cards container
-    document
-      .getElementById('remaining-cards-container')
-      .classList.add('hidden');
+    gid('remaining-cards-container').classList.add('hidden');
   } else {
     // If it isn't the last hand
     GAME_BUTTONS.nextHand.classList.remove('hidden');
@@ -114,6 +111,6 @@ export const stayHand = () => {
     GAME_BUTTONS.playAgain.removeEventListener('click', playAgain);
   }
 
-  document.getElementById('remaining-cards').textContent = '-';
+  gid('remaining-cards').textContent = '-';
   cleanObjCards();
 };
