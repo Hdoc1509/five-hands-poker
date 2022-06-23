@@ -1,8 +1,5 @@
 import { GAME_BUTTONS } from './game-buttons.js';
-import {
-  setRemainingCardsCounter,
-  getRemainingCardsCounter,
-} from './remaining-cards.js';
+import { setRemainingCardsCounter } from './remaining-cards.js';
 import { setCardNumAndFig } from './card-data.js';
 import { toggleSelectedCard } from './card-utils.js';
 import { changeSelectedCards } from './change-cards.js';
@@ -19,9 +16,8 @@ export const startGame = () => {
   GAME_BUTTONS.change.classList.remove('hidden');
   GAME_BUTTONS.stay.classList.remove('hidden');
 
-  // Displaying counter of remaining cards
+  // Setting and displaying counter of remaining cards
   setRemainingCardsCounter(() => 3);
-  gid('remaining-cards').textContent = `${getRemainingCardsCounter()}`;
 
   // Generating the first 5 cards of the hand
   for (let i = 0; i < 5; i++) {
