@@ -8,10 +8,11 @@ import { toggleSelectedCard } from './card-utils.js';
 import { changeSelectedCards } from './change-cards.js';
 import { stayHand } from './stay-hand.js';
 import { clearCurrentHandClass, getPlayerHandsCounter } from './game-hands.js';
+import { gid, qsa } from './utils/dom.js';
 
 export const startGame = () => {
   /** Number and suit in the corners of each card */
-  const $cardsInfo = document.querySelectorAll('.card__info');
+  const $cardsInfo = qsa('.card__info');
 
   GAME_BUTTONS.start.classList.add('hidden');
   GAME_BUTTONS.nextHand.classList.add('hidden');
@@ -20,9 +21,7 @@ export const startGame = () => {
 
   // Displaying counter of remaining cards
   setRemainingCardsCounter(() => 3);
-  document.getElementById(
-    'remaining-cards'
-  ).textContent = `${getRemainingCardsCounter()}`;
+  gid('remaining-cards').textContent = `${getRemainingCardsCounter()}`;
 
   // Generating the first 5 cards of the hand
   for (let i = 0; i < 5; i++) {
@@ -48,10 +47,8 @@ export const startGame = () => {
   const currentHandsCounter = getPlayerHandsCounter();
 
   if (currentHandsCounter <= 5) {
-    const $currentHand = document.getElementById(
-      `hand${currentHandsCounter}-points`
-    );
-    // @ts-ignore
+    const $currentHand = gid(`hand${currentHandsCounter}-points`);
+
     $currentHand.parentNode.classList.add('points-details__hand--current');
   }
 
