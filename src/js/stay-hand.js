@@ -7,6 +7,7 @@ import { getObjCards, cleanObjCards } from './game-cards.js';
 import { startGame } from './start-game.js';
 import { clearCurrentHandClass } from './game-hands.js';
 import { qsa, gid } from './utils/dom.js';
+import { setRemainingCardsCounter } from './remaining-cards.js';
 
 const playerHands = [];
 
@@ -111,6 +112,6 @@ export const stayHand = () => {
     GAME_BUTTONS.playAgain.removeEventListener('click', playAgain);
   }
 
-  gid('remaining-cards').textContent = '-';
+  setRemainingCardsCounter(() => null);
   cleanObjCards();
 };
