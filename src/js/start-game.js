@@ -1,4 +1,15 @@
-function startGame() {
+import { GAME_BUTTONS } from './game-buttons.js';
+import {
+  setRemainingCardsCounter,
+  getRemainingCardsCounter,
+} from './remaining-cards.js';
+import { setCardNumAndFig } from './card-data.js';
+import { toggleSelectedCard } from './card-utils.js';
+import { changeSelectedCards } from './change-cards.js';
+import { stayHand } from './stay-hand.js';
+import { clearCurrentHandClass, getPlayerHandsCounter } from './game-hands.js';
+
+export const startGame = () => {
   /** Number and suit in the corners of each card */
   const $cardsInfo = document.querySelectorAll('.card__info');
 
@@ -8,10 +19,10 @@ function startGame() {
   GAME_BUTTONS.stay.classList.remove('hidden');
 
   // Displaying counter of remaining cards
-  setRemainingCards(() => 3);
+  setRemainingCardsCounter(() => 3);
   document.getElementById(
     'remaining-cards'
-  ).textContent = `${getRemainingCards()}`;
+  ).textContent = `${getRemainingCardsCounter()}`;
 
   // Generating the first 5 cards of the hand
   for (let i = 0; i < 5; i++) {
@@ -34,7 +45,7 @@ function startGame() {
   clearCurrentHandClass();
 
   // validation for current hand
-  const currentHandsCounter = getPlayerHands();
+  const currentHandsCounter = getPlayerHandsCounter();
 
   if (currentHandsCounter <= 5) {
     const $currentHand = document.getElementById(
@@ -47,6 +58,6 @@ function startGame() {
   // Removing listeners of the start button and the next hand button
   GAME_BUTTONS.start.removeEventListener('click', startGame);
   GAME_BUTTONS.nextHand.removeEventListener('click', startGame);
-}
+};
 
 GAME_BUTTONS.start.addEventListener('click', startGame);
