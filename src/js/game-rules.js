@@ -1,8 +1,10 @@
-const $dialogOpenBtn = document.querySelector('.dialog-open-button');
-const $dialogCloseBtn = document.querySelector('.dialog-rules__close');
+import { qs } from './utils/dom.js';
+
+const $dialogOpenBtn = qs('.dialog-open-button');
+const $dialogCloseBtn = qs('.dialog-rules__close');
 
 /** @type {HTMLDialogElement} */
-const $dialogRules = document.querySelector('.dialog-rules');
+const $dialogRules = qs('.dialog-rules');
 
 const hideRules = () => {
   $dialogRules.close();
