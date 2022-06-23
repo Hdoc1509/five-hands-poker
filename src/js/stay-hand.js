@@ -1,3 +1,12 @@
+import { GAME_BUTTONS } from './game-buttons.js';
+import { changeSelectedCards } from './change-cards.js';
+import { toggleSelectedCard } from './card-utils.js';
+import { getPlayerHandsCounter, setPlayerHandsCounter } from './game-hands.js';
+import { verificateHand } from './poker-hand-verifier/poker-hands.js';
+import { getObjCards, cleanObjCards } from './game-cards.js';
+import { startGame } from './start-game.js';
+import { clearCurrentHandClass } from './game-hands.js';
+
 const playerHands = [];
 
 const playAgain = () => location.reload();
@@ -21,8 +30,7 @@ const showPlayerHands = () => {
   });
 };
 
-/** Stay with the current hand */
-function stayHand() {
+export const stayHand = () => {
   GAME_BUTTONS.change.classList.add('hidden');
   GAME_BUTTONS.stay.classList.add('hidden');
 
@@ -33,8 +41,8 @@ function stayHand() {
   document.removeEventListener('click', toggleSelectedCard);
 
   // Data for the current hand
-  const currentHandsCounter = getPlayerHands();
-  const currentHand = verificateHand(generatedObjCards, currentHandsCounter);
+  const currentHandsCounter = getPlayerHandsCounter();
+  const currentHand = verificateHand(getObjCards(), currentHandsCounter);
 
   // Displaying the points of the current hand
   document.getElementById(
@@ -45,7 +53,7 @@ function stayHand() {
   playerHands.push(currentHand);
 
   // Updating the counter of hands
-  setPlayerHands((current) => current + 1);
+  setPlayerHandsCounter((current) => current + 1);
 
   //Validation if it's the last hand
   if (playerHands.length === 5) {
@@ -57,7 +65,7 @@ function stayHand() {
 
     // Removing class for current hand
     clearCurrentHandClass();
-    setPlayerHands(() => null);
+    setPlayerHandsCounter(() => null);
 
     // Setting total points
     const playerPoints = playerHands.reduce(
@@ -107,5 +115,5 @@ function stayHand() {
   }
 
   document.getElementById('remaining-cards').textContent = '-';
-  cleanArray(generatedObjCards);
-}
+  cleanObjCards();
+};
