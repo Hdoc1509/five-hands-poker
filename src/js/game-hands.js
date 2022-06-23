@@ -1,3 +1,5 @@
+import { qs } from './utils/dom.js';
+
 /** @type {number} Counter of hands player */
 let playerHandsCounter = null;
 
@@ -25,9 +27,7 @@ export const getPlayerHandsCounter = () => playerHandsCounter;
 
 /** Remove class "section__current-hand" */
 export const clearCurrentHandClass = () => {
-  const $currentHand = document.querySelector(
-    'p.points-details__hand--current'
-  );
+  const $currentHand = qs('.points-details__hand--current');
 
   $currentHand?.classList.remove('points-details__hand--current');
 };
