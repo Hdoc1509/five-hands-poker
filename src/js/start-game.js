@@ -17,7 +17,7 @@ export const startGame = () => {
   GAME_BUTTONS.stay.classList.remove('hidden');
 
   // Setting and displaying counter of remaining cards
-  setRemainingCardsCounter(() => 3);
+  setRemainingCardsCounter(3);
 
   // Generating the first 5 cards of the hand
   for (let i = 0; i < 5; i++) {
