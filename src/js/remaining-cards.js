@@ -1,3 +1,5 @@
+import { gid } from './utils/dom.js';
+
 /** @type {number} Counter of remaining cards */
 let remainingCardsCounter = null;
 
@@ -18,6 +20,7 @@ let remainingCardsCounter = null;
  */
 export const setRemainingCardsCounter = (callback) => {
   remainingCardsCounter = callback(remainingCardsCounter);
+  gid('remaining-cards').textContent = remainingCardsCounter?.toString() ?? '-';
 };
 
 /** Gets the current value of counter of remaining cards */
