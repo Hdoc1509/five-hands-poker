@@ -2,7 +2,7 @@ import { generateCards } from './utils/cards-generator.js';
 import { parseCard } from './card-utils.js';
 import { cleanArray } from './utils/array.js';
 
-/** @type {Array<String>} */
+/** Cards for use in game */
 const gameCards = generateCards();
 
 /**
