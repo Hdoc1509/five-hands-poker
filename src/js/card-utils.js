@@ -10,7 +10,7 @@
  * Parse data of string card
  * @param {string} card
  *
- * @return {ParsedCard}
+ * @return {ParsedCard} Parsed card info
  */
 export const parseCard = (card) => {
   const number = card.startsWith('10') ? card.slice(0, 2) : card.charAt(0);
