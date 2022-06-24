@@ -1,4 +1,3 @@
-import { parseCard } from './card-utils.js';
 import { getRandomCard, generatedObjCards } from './game-cards.js';
 import { qsa } from './utils/dom.js';
 
@@ -25,7 +24,7 @@ const $cardsCentralSuit = qsa('.card__figure');
  * @returns {ObjCard} Returns the card as an object
  */
 export const setCardNumAndFig = (cardId, isToChange) => {
-  const { number, figure } = parseCard(getRandomCard());
+  const { number, figure } = getRandomCard();
   const cardIndex = Number(cardId.charAt(4)) - 1;
   const cardObj = {
     id: cardId,
