@@ -45,14 +45,6 @@ export const getRandomCard = () => {
   return gameCards.splice(cardPosition, 1)[0];
 };
 
-/**
- * @param {string} card - Card to remove
- */
-export const removeCard = (card) => {
-  const cardPosition = gameCards.indexOf(card);
-  gameCards.splice(cardPosition, 1);
-};
-
 // Generating all game cards
 ((gameCards) => {
   const getRandomNumber = () =>
