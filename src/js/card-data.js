@@ -1,5 +1,5 @@
 import { parseCard } from './card-utils.js';
-import { getRandomCard, generatedObjCards, removeCard } from './game-cards.js';
+import { getRandomCard, generatedObjCards } from './game-cards.js';
 import { qsa } from './utils/dom.js';
 
 /** Card containers */
@@ -25,7 +25,7 @@ const $cardsCentralSuit = qsa('.card__figure');
  * @returns {ObjCard} Returns the card as an object
  */
 export const setCardNumAndFig = (cardId, isToChange) => {
-  const { number, figure, card } = parseCard(getRandomCard());
+  const { number, figure } = parseCard(getRandomCard());
   const cardIndex = Number(cardId.charAt(4)) - 1;
   const cardObj = {
     id: cardId,
@@ -41,7 +41,6 @@ export const setCardNumAndFig = (cardId, isToChange) => {
   $tableCards[cardIndex].style.color = figure.match(/^♥|♦$/) ? '#f00' : '#000';
 
   $cardsCentralSuit[cardIndex].textContent = figure;
-  removeCard(card);
 
   return cardObj;
 };
