@@ -38,8 +38,12 @@ export const getObjCards = () => generatedObjCards;
 
 export const cleanObjCards = () => cleanArray(generatedObjCards);
 
-export const getRandomCard = () =>
-  gameCards[Math.floor(Math.random() * gameCards.length)];
+export const getRandomCard = () => {
+  const card = gameCards[Math.floor(Math.random() * gameCards.length)];
+  const cardPosition = gameCards.indexOf(card);
+
+  return gameCards.splice(cardPosition, 1)[0];
+};
 
 /**
  * @param {string} card - Card to remove
