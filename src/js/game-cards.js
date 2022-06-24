@@ -1,3 +1,4 @@
+import { parseCard } from './card-utils.js';
 import { cleanArray } from './utils/array.js';
 
 /** @type {Array<String>} */
@@ -42,7 +43,9 @@ export const getRandomCard = () => {
   const card = gameCards[Math.floor(Math.random() * gameCards.length)];
   const cardPosition = gameCards.indexOf(card);
 
-  return gameCards.splice(cardPosition, 1)[0];
+  // Removing card
+  gameCards.splice(cardPosition, 1);
+  return parseCard(card);
 };
 
 // Generating all game cards
