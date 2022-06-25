@@ -35,7 +35,4 @@ export const startGame = () => {
     qsa('.points-details__hand')[currentHandsCounter - 1].classList.add(
       'points-details__hand--current'
     );
-
-  // Removing listeners of some game buttons
-  GAME_BUTTONS.nextHand.removeEventListener('click', startGame);
 };
