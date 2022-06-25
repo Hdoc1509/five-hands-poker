@@ -1,4 +1,4 @@
-import { getRandomCard, generatedObjCards } from './game-cards.js';
+import { getRandomCard, setObjCards } from './game-cards.js';
 import { qsa } from './utils/dom.js';
 
 /** Card containers */
@@ -33,9 +33,13 @@ export const setCardNumAndFig = (cardId, isToChange) => {
     cardInfo: `${number}\n${figure}`,
   };
 
-  isToChange
-    ? (generatedObjCards[cardIndex] = cardObj)
-    : generatedObjCards.push(cardObj);
+  if (isToChange)
+    setObjCards((cards) => {
+      cards[cardIndex] = cardObj;
+
+      return cards;
+    });
+  else setObjCards((cards) => [...cards, cardObj]);
 
   $tableCards[cardIndex].style.color = figure.match(/^♥|♦$/) ? '#f00' : '#000';
 
