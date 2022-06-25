@@ -261,7 +261,6 @@ button {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 4px;
-  z-index: 100;
   transition: background-color 0.25s ease;
 }
 
@@ -292,12 +291,6 @@ button {
   transition: top 0.25s ease, outline 0.25s ease;
 }
 
-/**
-
-  TODO Refactor from here to .section__card
-
- */
-
 .card--selected {
   top: -16px;
   outline: solid var(--selected-card);
@@ -311,7 +304,6 @@ button {
   text-align: center;
   letter-spacing: -2px;
   line-height: 32px;
-  z-index: 15;
 }
 
 .card__info--top {
