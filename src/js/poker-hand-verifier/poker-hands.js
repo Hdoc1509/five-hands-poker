@@ -12,25 +12,26 @@ import { isAnyFourOfKind, findFourOfKind } from './four-of-kind.js';
 
 /**
  * Hand Object
- * @typedef {Object} ObjHand
- * @property {Array<String>} cards Hand's cards
- * @property {String} description Hand's description
- * @property {String} id Hand's id
- * @property {Number} points Hand's points
+ * @typedef  {Object}        ObjHand
+ * @property {Array<String>} cards       - Hand's cards
+ * @property {String}        description - Hand's description
+ * @property {String}        id          - Hand's id
+ * @property {Number}        points      - Hand's points
  */
 
 /**
  * Card Object
- * @typedef {Object} ObjCard
- * @property {String} id Card's id
- * @property {String} number Card's number
- * @property {String} figure Card's figure
+ * @typedef  {Object} ObjCard
+ * @property {String} id      - Card's id
+ * @property {String} number  - Card's number
+ * @property {String} suit    - Card's suit
  */
 
 /**
  * Verificate hand
  * @param {Array<ObjCard>} cards
- * @param {number} handsPlayerCounter
+ * @param {number}         handsPlayerCounter
+ *
  * @returns {ObjHand} Returns hand information as an object
  */
 export const verificateHand = (cards, handsPlayerCounter) => {
