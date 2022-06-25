@@ -66,8 +66,6 @@ export const setObjCards = (data) => {
 
 export const getObjCards = () => generatedObjCards;
 
-export const cleanObjCards = () => cleanArray(generatedObjCards);
-
 export const getRandomCard = () => {
   const card = gameCards[Math.floor(Math.random() * gameCards.length)];
   const cardPosition = gameCards.indexOf(card);
