@@ -61,7 +61,7 @@ export const stayHand = () => {
     GAME_BUTTONS.nextHand.classList.add('hidden');
     GAME_BUTTONS.playAgain.classList.remove('hidden');
 
-    GAME_BUTTONS.playAgain.addEventListener('click', playAgain);
+    GAME_BUTTONS.playAgain.addEventListener('click', playAgain, { once: true });
     GAME_BUTTONS.nextHand.removeEventListener('click', startGame);
 
     // Removing class for current hand
@@ -106,7 +106,6 @@ export const stayHand = () => {
     GAME_BUTTONS.nextHand.classList.remove('hidden');
 
     GAME_BUTTONS.nextHand.addEventListener('click', startGame, { once: true });
-    GAME_BUTTONS.playAgain.removeEventListener('click', playAgain);
   }
 
   setRemainingCardsCounter(null); // Cleaning counter
