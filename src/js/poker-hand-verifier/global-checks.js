@@ -13,9 +13,9 @@ export const allDifferentNumbers = (cards) => {
  * @param  {Array<ObjCard>} cards
  */
 export const allSameSuit = (cards) => {
-  const [{ figure: figureToCheck }] = cards;
+  const suits = new Set(cards.map(({ suit }) => suit));
 
-  return cards.every(({ figure }) => figure === figureToCheck);
+  return suits.size === 1;
 };
 
 /**
