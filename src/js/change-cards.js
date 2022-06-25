@@ -2,7 +2,7 @@ import {
   getRemainingCardsCounter,
   setRemainingCardsCounter,
 } from './remaining-cards.js';
-import { setCardNumAndFig } from './card-data.js';
+import { setCardData } from './card-data.js';
 import { GAME_BUTTONS } from './game-buttons.js';
 import { changeCardsQuantityError, noCardSelectedError } from './errors.js';
 import { toggleSelectedCard } from './card-utils.js';
@@ -16,8 +16,7 @@ export const changeSelectedCards = () => {
   else if (quantity === 0) noCardSelectedError();
   else {
     // Changing cards
-    for (let i = 0; i < quantity; i++)
-      setCardNumAndFig($selectedCards[i].id, true);
+    for (let i = 0; i < quantity; i++) setCardData($selectedCards[i].id, true);
 
     setRemainingCardsCounter((value) => value - quantity);
   }

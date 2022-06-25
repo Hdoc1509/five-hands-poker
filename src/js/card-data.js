@@ -6,7 +6,7 @@ import { qsa, gid, qs } from './utils/dom.js';
  * @param {String}  cardId     - Card's Id
  * @param {Boolean} isToChange - Especify if the card must be changed
  */
-export const setCardNumAndFig = (cardId, isToChange) => {
+export const setCardData = (cardId, isToChange) => {
   const { number, figure } = getRandomCard();
   const cardIndex = Number(cardId.charAt(4)) - 1;
   const cardInfo = `${number}\n${figure}`;

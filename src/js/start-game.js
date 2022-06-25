@@ -1,6 +1,6 @@
 import { GAME_BUTTONS } from './game-buttons.js';
 import { setRemainingCardsCounter } from './remaining-cards.js';
-import { setCardNumAndFig } from './card-data.js';
+import { setCardData } from './card-data.js';
 import { toggleSelectedCard } from './card-utils.js';
 import { changeSelectedCards } from './change-cards.js';
 import { stayHand } from './stay-hand.js';
@@ -17,7 +17,7 @@ export const startGame = () => {
   setRemainingCardsCounter(3);
 
   // Generating the first 5 cards of the hand
-  for (let i = 0; i < 5; i++) setCardNumAndFig(`card${i + 1}`, false);
+  for (let i = 0; i < 5; i++) setCardData(`card${i + 1}`, false);
 
   // Listener for cards
   document.addEventListener('click', toggleSelectedCard);
