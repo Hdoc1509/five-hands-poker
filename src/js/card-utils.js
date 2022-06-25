@@ -2,7 +2,7 @@
  * Parsed Card
  * @typedef  {Object} ParsedCard
  * @property {string} number
- * @property {string} figure
+ * @property {string} suit
  * @property {string} card
  */
 
@@ -14,9 +14,9 @@
  */
 export const parseCard = (card) => {
   const number = card.startsWith('10') ? card.slice(0, 2) : card.charAt(0);
-  const figure = card.startsWith('10') ? card.charAt(2) : card.charAt(1);
+  const suit = card.startsWith('10') ? card.charAt(2) : card.charAt(1);
 
-  return { number, figure, card };
+  return { number, suit, card };
 };
 
 /**
