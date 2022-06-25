@@ -10,7 +10,7 @@ const gameCards = generateCards();
  * @typedef  {Object} ObjCard
  * @property {String} id
  * @property {String} number
- * @property {String} figure
+ * @property {String} suit
  */
 
 /**
@@ -33,13 +33,13 @@ export const generatedObjCards = [];
  * @example
  * // Edit hand at index 2
  * setObjCards((cards) => {
- *   cards[2] = { number: '5', figure: '♦'};
+ *   cards[2] = { number: '5', suit: '♦'};
  *
  *  return cards;
  * });
  * @example
  * // Add a new card
- * const card = { number: '9', figure: '♣'};
+ * const card = { number: '9', suit: '♣'};
  * setObjCards((cards) => [...cards, card]);
  * @example
  * // Clean cards
