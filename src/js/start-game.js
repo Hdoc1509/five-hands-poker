@@ -38,7 +38,6 @@ export const startGame = () => {
       'points-details__hand--current'
     );
 
-  // Removing listeners of the start button and the next hand button
-  GAME_BUTTONS.start.removeEventListener('click', startGame);
+  // Removing listeners of some game buttons
   GAME_BUTTONS.nextHand.removeEventListener('click', startGame);
 };
