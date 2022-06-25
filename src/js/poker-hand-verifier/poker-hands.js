@@ -1,6 +1,6 @@
 import {
   allDifferentNumbers,
-  allSameFigure,
+  allSameSuit,
   numberMatches,
 } from './global-checks.js';
 import { isAnyPair, findPair } from './pair.js';
@@ -76,20 +76,20 @@ export const verificateHand = (cards, handsPlayerCounter) => {
     const flushSuit = cards[0].suit;
 
     if (straightMatch === '10-A') {
-      hand.points = allSameFigure(cards) ? 100 : 15;
-      hand.description = allSameFigure(cards)
+      hand.points = allSameSuit(cards) ? 100 : 15;
+      hand.description = allSameSuit(cards)
         ? `Royal Flush (${flushSuit}): ${parsedStraightMatch}`
         : `Straight: ${parsedStraightMatch}`;
     } else {
-      hand.points = allSameFigure(cards) ? 75 : 15;
-      hand.description = allSameFigure(cards)
+      hand.points = allSameSuit(cards) ? 75 : 15;
+      hand.description = allSameSuit(cards)
         ? `Straight Flush (${flushSuit}): ${parsedStraightMatch}`
         : `Straight: ${parsedStraightMatch}`;
     }
   }
 
   // For FLUSH
-  else if (allSameFigure(cards) && allDifferentNumbers(cards)) {
+  else if (allSameSuit(cards) && allDifferentNumbers(cards)) {
     hand.points = 20;
     hand.description = `Flush (${cards[0].suit})`;
   }

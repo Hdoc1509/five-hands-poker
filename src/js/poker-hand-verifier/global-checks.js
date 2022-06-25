@@ -12,7 +12,7 @@ export const allDifferentNumbers = (cards) => {
  * Check if all cards has the same figure
  * @param  {Array<ObjCard>} cards
  */
-export const allSameFigure = (cards) => {
+export const allSameSuit = (cards) => {
   const [{ figure: figureToCheck }] = cards;
 
   return cards.every(({ figure }) => figure === figureToCheck);

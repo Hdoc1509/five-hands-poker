@@ -1,6 +1,6 @@
 import {
   allDifferentNumbers,
-  allSameFigure,
+  allSameSuit,
   numberMatches,
 } from './global-checks.js';
 
@@ -16,7 +16,7 @@ const isPair = (cards, { number }) => {
   return (
     matches.length === 2 &&
     allDifferentNumbers(restNumbers) &&
-    !allSameFigure(matches)
+    !allSameSuit(matches)
   );
 };
 
@@ -43,7 +43,7 @@ export const getPairs = (cards) => {
     .filter(({ number }) => {
       const { matches } = numberMatches(cards, number);
 
-      return matches.length === 2 && !allSameFigure(matches);
+      return matches.length === 2 && !allSameSuit(matches);
     })
     .map(({ number }) => number);
 

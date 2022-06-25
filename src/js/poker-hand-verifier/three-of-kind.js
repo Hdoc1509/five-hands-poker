@@ -1,7 +1,7 @@
 import {
   numberMatches,
   allDifferentNumbers,
-  allSameFigure,
+  allSameSuit,
 } from './global-checks.js';
 
 /**
@@ -39,7 +39,7 @@ export const getThreeOfKind = (cards) => {
     .filter(({ number }) => {
       const { matches } = numberMatches(cards, number);
 
-      return matches.length === 3 && !allSameFigure(matches);
+      return matches.length === 3 && !allSameSuit(matches);
     })
     .map(({ number }) => number);
 
