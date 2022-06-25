@@ -6,7 +6,7 @@ import { setCardNumAndFig } from './card-data.js';
 import { GAME_BUTTONS } from './game-buttons.js';
 import { changeCardsQuantityError, noCardSelectedError } from './errors.js';
 import { toggleSelectedCard } from './card-utils.js';
-import { qsa, qs } from './utils/dom.js';
+import { qsa } from './utils/dom.js';
 
 export const changeSelectedCards = () => {
   const $selectedCards = qsa('.card--selected');
@@ -18,11 +18,11 @@ export const changeSelectedCards = () => {
     // Changing cards
     for (let i = 0; i < quantity; i++) {
       const selectedCard = $selectedCards[i];
-      const { id, cardInfo } = setCardNumAndFig(selectedCard.id, true);
+      const { cardInfo } = setCardNumAndFig(selectedCard.id, true);
 
-      qs('.card__info--top', selectedCard).innerText = cardInfo;
-      if (id === 'card5')
-        qs('.card__info--bottom', selectedCard).innerText = cardInfo;
+      qsa('.card__info', selectedCard).forEach(
+        (info) => (info.innerText = cardInfo)
+      );
     }
 
     setRemainingCardsCounter((value) => value - quantity);
