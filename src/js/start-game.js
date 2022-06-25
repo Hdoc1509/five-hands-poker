@@ -5,7 +5,7 @@ import { toggleSelectedCard } from './card-utils.js';
 import { changeSelectedCards } from './change-cards.js';
 import { stayHand } from './stay-hand.js';
 import { clearCurrentHandClass, getPlayerHandsCounter } from './game-hands.js';
-import { gid, qsa } from './utils/dom.js';
+import { qsa } from './utils/dom.js';
 
 export const startGame = () => {
   GAME_BUTTONS.start.classList.add('hidden');
@@ -17,12 +17,7 @@ export const startGame = () => {
   setRemainingCardsCounter(3);
 
   // Generating the first 5 cards of the hand
-  for (let i = 0; i < 5; i++) {
-    const { id, cardInfo } = setCardNumAndFig(`card${i + 1}`, false);
-
-    // Displaying info in the corners of each card
-    qsa('.card__info', gid(id)).forEach((info) => (info.innerText = cardInfo));
-  }
+  for (let i = 0; i < 5; i++) setCardNumAndFig(`card${i + 1}`, false);
 
   // Listener for cards
   document.addEventListener('click', toggleSelectedCard);
