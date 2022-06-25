@@ -92,14 +92,12 @@ export const stayHand = () => {
     // Validation for win the game
     const playerWin = playerPoints >= 60;
 
-    if (playerWin) {
-      $gameResult.classList.add('dialog-game-result--win');
-      $totalPointsBox.classList.add('points-details__total--win');
-    } else {
-      $gameResult.classList.add('dialog-game-result--lose');
-      $totalPointsBox.classList.add('points-details__total--lose');
-    }
-
+    $gameResult.classList.add(
+      playerWin ? 'dialog-game-result--win' : 'dialog-game-result--lose'
+    );
+    $totalPointsBox.classList.add(
+      playerWin ? 'points-details__total--win' : 'points-details__total--lose'
+    );
     $gameResult.textContent = playerWin ? 'You win!' : 'You lose!';
 
     // Hidding the remaining cards container
