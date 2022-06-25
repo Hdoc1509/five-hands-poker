@@ -62,7 +62,6 @@ export const stayHand = () => {
     GAME_BUTTONS.playAgain.classList.remove('hidden');
 
     GAME_BUTTONS.playAgain.addEventListener('click', playAgain, { once: true });
-    GAME_BUTTONS.nextHand.removeEventListener('click', startGame);
 
     // Removing class for current hand
     clearCurrentHandClass();
