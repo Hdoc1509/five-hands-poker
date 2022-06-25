@@ -16,14 +16,8 @@ export const changeSelectedCards = () => {
   else if (quantity === 0) noCardSelectedError();
   else {
     // Changing cards
-    for (let i = 0; i < quantity; i++) {
-      const selectedCard = $selectedCards[i];
-      const { cardInfo } = setCardNumAndFig(selectedCard.id, true);
-
-      qsa('.card__info', selectedCard).forEach(
-        (info) => (info.innerText = cardInfo)
-      );
-    }
+    for (let i = 0; i < quantity; i++)
+      setCardNumAndFig($selectedCards[i].id, true);
 
     setRemainingCardsCounter((value) => value - quantity);
   }
