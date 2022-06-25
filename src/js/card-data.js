@@ -1,5 +1,5 @@
 import { getRandomCard, setObjCards } from './game-cards.js';
-import { qsa } from './utils/dom.js';
+import { qsa, gid, qs } from './utils/dom.js';
 
 /** Card containers */
 const $tableCards = qsa('.card');
@@ -20,18 +20,12 @@ const $cardsCentralSuit = qsa('.card__figure');
  * Set the info of each card
  * @param {String}  cardId     - Card's Id
  * @param {Boolean} isToChange - Especify if the card must be changed
- *
- * @returns {ObjCard} Returns the card as an object
  */
 export const setCardNumAndFig = (cardId, isToChange) => {
   const { number, figure } = getRandomCard();
   const cardIndex = Number(cardId.charAt(4)) - 1;
-  const cardObj = {
-    id: cardId,
-    number,
-    figure,
-    cardInfo: `${number}\n${figure}`,
-  };
+  const cardInfo = `${number}\n${figure}`;
+  const cardObj = { id: cardId, number, figure };
 
   if (isToChange)
     setObjCards((cards) => {
@@ -43,7 +37,9 @@ export const setCardNumAndFig = (cardId, isToChange) => {
 
   $tableCards[cardIndex].style.color = figure.match(/^♥|♦$/) ? '#f00' : '#000';
 
-  $cardsCentralSuit[cardIndex].textContent = figure;
-
-  return cardObj;
+  // Displaying card info
+  qsa('.card__info', gid(cardId)).forEach(
+    (info) => (info.innerText = cardInfo)
+  );
+  qs('.card__figure', gid(cardId)).textContent = figure;
 };
