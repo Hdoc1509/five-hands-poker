@@ -39,7 +39,7 @@ export const verificateHand = (cards, handsPlayerCounter) => {
     throw new Error('Array of cards must have 5 elements');
 
   const hand = {
-    cards: cards.map(({ number, figure }) => `${number}${figure}`),
+    cards: cards.map(({ number, suit }) => `${number}${suit}`),
     description: '',
     id: `hand${handsPlayerCounter}`,
     points: 0,
@@ -73,7 +73,7 @@ export const verificateHand = (cards, handsPlayerCounter) => {
   else if (isAnyStraight(cards)) {
     const straightMatch = findStraight(cards);
     const parsedStraightMatch = straightMatch.replace('-', ' - ');
-    const flushSuit = cards[0].figure;
+    const flushSuit = cards[0].suit;
 
     if (straightMatch === '10-A') {
       hand.points = allSameFigure(cards) ? 100 : 15;
@@ -91,7 +91,7 @@ export const verificateHand = (cards, handsPlayerCounter) => {
   // For FLUSH
   else if (allSameFigure(cards) && allDifferentNumbers(cards)) {
     hand.points = 20;
-    hand.description = `Flush (${cards[0].figure})`;
+    hand.description = `Flush (${cards[0].suit})`;
   }
 
   // For FULL HOUSE
