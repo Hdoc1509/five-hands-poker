@@ -4,18 +4,6 @@ import { qsa, gid, qs } from './utils/dom.js';
 /** Card containers */
 const $tableCards = qsa('.card');
 
-/** Central figure of each card */
-const $cardsCentralSuit = qsa('.card__figure');
-
-/**
- * Card Object
- * @typedef  {Object} ObjCard
- * @property {String} id
- * @property {String} number
- * @property {String} figure
- * @property {string} cardInfo
- */
-
 /**
  * Set the info of each card
  * @param {String}  cardId     - Card's Id
