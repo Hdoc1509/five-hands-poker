@@ -105,7 +105,7 @@ export const stayHand = () => {
     // If it isn't the last hand
     GAME_BUTTONS.nextHand.classList.remove('hidden');
 
-    GAME_BUTTONS.nextHand.addEventListener('click', startGame);
+    GAME_BUTTONS.nextHand.addEventListener('click', startGame, { once: true });
     GAME_BUTTONS.playAgain.removeEventListener('click', playAgain);
   }
 
