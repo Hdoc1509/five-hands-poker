@@ -37,7 +37,6 @@ export const stayHand = () => {
   GAME_BUTTONS.stay.classList.add('hidden');
 
   GAME_BUTTONS.change.removeEventListener('click', changeSelectedCards);
-  GAME_BUTTONS.stay.removeEventListener('click', stayHand);
 
   // Listener for cards
   document.removeEventListener('click', toggleSelectedCard);
