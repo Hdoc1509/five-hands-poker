@@ -3,7 +3,7 @@ import { changeSelectedCards } from './change-cards.js';
 import { toggleSelectedCard } from './card-utils.js';
 import { getPlayerHandsCounter, setPlayerHandsCounter } from './game-hands.js';
 import { verificateHand } from './poker-hand-verifier/poker-hands.js';
-import { getObjCards, cleanObjCards } from './game-cards.js';
+import { getObjCards, setObjCards } from './game-cards.js';
 import { startGame } from './start-game.js';
 import { clearCurrentHandClass } from './game-hands.js';
 import { qsa, gid } from './utils/dom.js';
@@ -112,6 +112,6 @@ export const stayHand = () => {
     GAME_BUTTONS.playAgain.removeEventListener('click', playAgain);
   }
 
-  setRemainingCardsCounter(null);
-  cleanObjCards();
+  setRemainingCardsCounter(null); // Cleaning counter
+  setObjCards([]); // Cleaning cards
 };
