@@ -42,5 +42,3 @@ export const startGame = () => {
   GAME_BUTTONS.start.removeEventListener('click', startGame);
   GAME_BUTTONS.nextHand.removeEventListener('click', startGame);
 };
-
-GAME_BUTTONS.start.addEventListener('click', startGame);
