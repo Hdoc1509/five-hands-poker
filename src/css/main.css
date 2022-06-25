@@ -291,6 +291,14 @@ button {
   transition: top 0.25s ease, outline 0.25s ease;
 }
 
+.card[data-suit-color='red'] {
+  color: #f00;
+}
+
+.card[data-suit-color='black'] {
+  color: #000;
+}
+
 .card--selected {
   top: -16px;
   outline: solid var(--selected-card);
