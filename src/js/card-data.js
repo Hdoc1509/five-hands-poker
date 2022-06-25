@@ -14,6 +14,7 @@ export const setCardNumAndFig = (cardId, isToChange) => {
   const cardIndex = Number(cardId.charAt(4)) - 1;
   const cardInfo = `${number}\n${figure}`;
   const cardObj = { id: cardId, number, figure };
+  const $card = gid(cardId);
 
   if (isToChange)
     setObjCards((cards) => {
@@ -26,8 +27,6 @@ export const setCardNumAndFig = (cardId, isToChange) => {
   $tableCards[cardIndex].style.color = figure.match(/^♥|♦$/) ? '#f00' : '#000';
 
   // Displaying card info
-  qsa('.card__info', gid(cardId)).forEach(
-    (info) => (info.innerText = cardInfo)
-  );
-  qs('.card__figure', gid(cardId)).textContent = figure;
+  qsa('.card__info', $card).forEach((info) => (info.innerText = cardInfo));
+  qs('.card__figure', $card).textContent = figure;
 };
