@@ -22,11 +22,9 @@ export const startGame = () => {
   // Listener for cards
   document.addEventListener('click', toggleSelectedCard);
 
-  // Listener for the Change Button
+  // Adding Listener for the game buttons
   GAME_BUTTONS.change.addEventListener('click', changeSelectedCards);
-
-  // Listener for the Stay Button
-  GAME_BUTTONS.stay.addEventListener('click', stayHand);
+  GAME_BUTTONS.stay.addEventListener('click', stayHand, { once: true });
 
   clearCurrentHandClass();
 
