@@ -64,7 +64,7 @@ export const setObjCards = (data) => {
   generatedObjCards.push(...aux);
 };
 
-export const getObjCards = () => generatedObjCards;
+export const getObjCards = () => generatedObjCards.map((el) => el);
 
 export const getRandomCard = () => {
   const card = gameCards[Math.floor(Math.random() * gameCards.length)];
