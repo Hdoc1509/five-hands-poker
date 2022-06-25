@@ -1,9 +1,6 @@
 import { getRandomCard, setObjCards } from './game-cards.js';
 import { qsa, gid, qs } from './utils/dom.js';
 
-/** Card containers */
-const $tableCards = qsa('.card');
-
 /**
  * Set the info of each card
  * @param {String}  cardId     - Card's Id
@@ -24,9 +21,8 @@ export const setCardNumAndFig = (cardId, isToChange) => {
     });
   else setObjCards((cards) => [...cards, cardObj]);
 
-  $tableCards[cardIndex].style.color = figure.match(/^♥|♦$/) ? '#f00' : '#000';
-
   // Displaying card info
   qsa('.card__info', $card).forEach((info) => (info.innerText = cardInfo));
   qs('.card__figure', $card).textContent = figure;
+  $card.dataset.suitColor = figure.match(/^♥|♦$/) ? 'red' : 'black';
 };
