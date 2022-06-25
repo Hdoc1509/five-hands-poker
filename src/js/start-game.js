@@ -38,11 +38,10 @@ export const startGame = () => {
   // validation for current hand
   const currentHandsCounter = getPlayerHandsCounter();
 
-  if (currentHandsCounter <= 5) {
-    const $currentHand = gid(`hand${currentHandsCounter}-points`);
-
-    $currentHand.parentNode.classList.add('points-details__hand--current');
-  }
+  if (currentHandsCounter <= 5)
+    qsa('.points-details__hand')[currentHandsCounter - 1].classList.add(
+      'points-details__hand--current'
+    );
 
   // Removing listeners of the start button and the next hand button
   GAME_BUTTONS.start.removeEventListener('click', startGame);
