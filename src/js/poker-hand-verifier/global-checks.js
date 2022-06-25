@@ -9,7 +9,7 @@ export const allDifferentNumbers = (cards) => {
 };
 
 /**
- * Check if all cards has the same figure
+ * Check if all cards has the same suit
  * @param  {Array<ObjCard>} cards
  */
 export const allSameSuit = (cards) => {
