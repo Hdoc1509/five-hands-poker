@@ -8,9 +8,6 @@ import { clearCurrentHandClass, getPlayerHandsCounter } from './game-hands.js';
 import { gid, qsa } from './utils/dom.js';
 
 export const startGame = () => {
-  /** Number and suit in the corners of each card */
-  const $cardsInfo = qsa('.card__info');
-
   GAME_BUTTONS.start.classList.add('hidden');
   GAME_BUTTONS.nextHand.classList.add('hidden');
   GAME_BUTTONS.change.classList.remove('hidden');
@@ -23,9 +20,8 @@ export const startGame = () => {
   for (let i = 0; i < 5; i++) {
     const { id, cardInfo } = setCardNumAndFig(`card${i + 1}`, false);
 
-    // Displaying card info
-    $cardsInfo[i].innerText = cardInfo;
-    if (id === 'card5') $cardsInfo[i + 1].innerText = cardInfo;
+    // Displaying info in the corners of each card
+    qsa('.card__info', gid(id)).forEach((info) => (info.innerText = cardInfo));
   }
 
   // Listener for cards
