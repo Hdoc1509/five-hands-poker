@@ -23,6 +23,6 @@ export const setCardData = (cardId, isToChange) => {
 
   // Displaying card info
   qsa('.card__info', $card).forEach((info) => (info.innerText = cardInfo));
-  qs('.card__figure', $card).textContent = suit;
+  qs('.card__suit', $card).textContent = suit;
   $card.dataset.suitColor = suit.match(/^♥|♦$/) ? 'red' : 'black';
 };
