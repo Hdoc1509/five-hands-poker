@@ -27,7 +27,12 @@ const showPlayerHands = () => {
 
   // Show player hands
   playerHands.forEach(({ cards, id }) => {
-    const handCards = `(${cards.join(' ')})`;
+    const handCards = `(${cards
+      .join(' ')
+      .replace(/H/g, '♥')
+      .replace(/D/g, '♦')
+      .replace(/C/g, '♣')
+      .replace(/S/g, '♠')})`;
     gid(`${id}-cards`).textContent = handCards;
   });
 };
