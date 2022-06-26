@@ -1,6 +1,13 @@
 import { getRandomCard, setObjCards } from './game-cards.js';
 import { qsa, gid, qs } from './utils/dom.js';
 
+const SUITS = {
+  H: '♥',
+  D: '♦',
+  C: '♣',
+  S: '♠',
+};
+
 /**
  * Set the info of each card
  * @param {String}  cardId     - Card's Id
@@ -9,7 +16,7 @@ import { qsa, gid, qs } from './utils/dom.js';
 export const setCardData = (cardId, isToChange) => {
   const { number, suit } = getRandomCard();
   const cardIndex = Number(cardId.charAt(4)) - 1;
-  const cardInfo = `${number}\n${suit}`;
+  const cardInfo = `${number}\n${SUITS[suit]}`;
   const cardObj = { id: cardId, number, suit };
   const $card = gid(cardId);
 
@@ -23,6 +30,6 @@ export const setCardData = (cardId, isToChange) => {
 
   // Displaying card info
   qsa('.card__info', $card).forEach((info) => (info.innerText = cardInfo));
-  qs('.card__suit', $card).textContent = suit;
-  $card.dataset.suitColor = suit.match(/^♥|♦$/) ? 'red' : 'black';
+  qs('.card__suit', $card).textContent = SUITS[suit];
+  $card.dataset.suitColor = suit.match(/^H|D$/) ? 'red' : 'black';
 };
