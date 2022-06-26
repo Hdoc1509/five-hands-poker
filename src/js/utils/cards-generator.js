@@ -1,4 +1,4 @@
-const suits = ['♥', '♦', '♣', '♠'];
+const suits = ['H', 'D', 'C', 'S'];
 const numbers = [
   'A',
   '2',
