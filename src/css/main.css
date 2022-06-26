@@ -328,17 +328,31 @@ button {
 }
 
 .card__suit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
+  width: 75%;
   margin: auto;
-  font-size: 384px;
-  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card[data-suit='H'] .card__suit {
+  background-image: url('../img/figures/heart.svg');
+}
+
+.card[data-suit='D'] .card__suit {
+  background-image: url('../img/figures/diamond.svg');
+}
+
+.card[data-suit='C'] .card__suit {
+  background-image: url('../img/figures/club.svg');
+}
+
+.card[data-suit='S'] .card__suit {
+  background-image: url('../img/figures/spade.svg');
 }
 
 #card1 {
