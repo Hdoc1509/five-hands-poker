@@ -31,5 +31,5 @@ export const setCardData = (cardId, isToChange) => {
   // Displaying card info
   qsa('.card__info', $card).forEach((info) => (info.innerText = cardInfo));
   qs('.card__suit', $card).textContent = SUITS[suit];
-  $card.dataset.suitColor = suit.match(/^H|D$/) ? 'red' : 'black';
+  $card.dataset.suit = suit;
 };
