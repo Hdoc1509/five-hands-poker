@@ -26,5 +26,7 @@ export const parseCard = (card) => {
  */
 export const toggleSelectedCard = ({ target }) => {
   if (target.matches('.card > *'))
-    target.parentNode.classList.toggle('card--selected');
+    return target.parentNode.classList.toggle('card--selected');
+
+  if (target.matches('.card')) return target.classList.toggle('card--selected');
 };
