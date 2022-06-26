@@ -291,11 +291,13 @@ button {
   transition: top 0.25s ease, outline 0.25s ease;
 }
 
-.card[data-suit-color='red'] {
+.card[data-suit='H'],
+.card[data-suit='D'] {
   color: #f00;
 }
 
-.card[data-suit-color='black'] {
+.card[data-suit='C'],
+.card[data-suit='S'] {
   color: #000;
 }
 
