@@ -1,6 +1,6 @@
-import { generateCards } from './utils/cards-generator.js';
+import { generateCards } from '../utils/cards-generator.js';
 import { parseCard } from './card-utils.js';
-import { cleanArray } from './utils/array.js';
+import { cleanArray } from '../utils/array.js';
 
 /** Cards for use in game */
 const gameCards = generateCards();

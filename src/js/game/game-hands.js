@@ -1,4 +1,4 @@
-import { qs } from './utils/dom.js';
+import { qs } from '../utils/dom.js';
 
 /** @type {number} Counter of hands player */
 let playerHandsCounter = null;
