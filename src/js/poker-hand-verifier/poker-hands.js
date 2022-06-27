@@ -15,7 +15,6 @@ import { isAnyFourOfKind, findFourOfKind } from './four-of-kind.js';
  * @typedef  {Object}        ObjHand
  * @property {Array<String>} cards       - Hand's cards
  * @property {String}        description - Hand's description
- * @property {String}        id          - Hand's id
  * @property {Number}        points      - Hand's points
  */
 
@@ -30,18 +29,16 @@ import { isAnyFourOfKind, findFourOfKind } from './four-of-kind.js';
 /**
  * Verificate hand
  * @param {Array<ObjCard>} cards
- * @param {number}         handsPlayerCounter
  *
  * @returns {ObjHand} Returns hand information as an object
  */
-export const verificateHand = (cards, handsPlayerCounter) => {
+export const verificateHand = (cards) => {
   if (cards.length !== 5)
     throw new Error('Array of cards must have 5 elements');
 
   const hand = {
     cards: cards.map(({ number, suit }) => `${number}${suit}`),
     description: '',
-    id: `hand${handsPlayerCounter}`,
     points: 0,
   };
 
