@@ -47,15 +47,13 @@ export const stayHand = () => {
   document.removeEventListener('click', toggleSelectedCard);
 
   // Data for the current hand
-  const currentHandsCounter = getPlayerHandsCounter();
+  const handsCounter = getPlayerHandsCounter();
   const currentHand = verificateHand(getObjCards());
 
-  currentHand.id = `hand${currentHandsCounter}`;
+  currentHand.id = `hand${handsCounter}`;
 
   // Displaying the points of the current hand
-  gid(
-    `hand${currentHandsCounter}-points`
-  ).textContent = `${currentHand.points}`;
+  gid(`hand${handsCounter}-points`).textContent = `${currentHand.points}`;
 
   // Adding the current hand to array playerHands
   playerHands.push(currentHand);
