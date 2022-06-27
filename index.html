@@ -1,204 +1,243 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="author" content="Héctor Ochoa">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Five Hands Poker</title>
-	<link rel="icon" type="image/x-icon" href="img/fhp-ico.ico">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/responsive.css">
+  <meta charset="UTF-8" />
+  <meta name="author" content="Hdoc1509" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Hands Poker</title>
+  <link rel="icon" type="image/x-icon" href="img/fhp-ico.ico" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/index.css" />
+
+  <!-- Scripts -->
+  <script src="./js/index.js" type="module" defer></script>
+  <script src="./js/game-rules.js" type="module" defer></script>
 </head>
+
 <body>
+  <div class="container">
+    <!-- MODAL -->
+    <button class="dialog-open-button">i</button>
 
-<div class="container">
+    <dialog class="dialog-rules">
+      <button class="dialog-rules__close">X</button>
 
-	<!--============================
-	=            Dialog            =
-	=============================-->
+      <h3 class="dialog-rules__title">Game Rules</h3>
 
-	<button id="dialog-open-button" class="dialog-open-button">i</button>
-	
-	<dialog id="dialog-game-rules" class="dialog-container">
-		<button id="dialog-close-button" class="dialog-container__close-button">X</button>
+      <h4 class="dialog-rules__subtitle">Objective</h4>
+      <p class="dialog-rules__details">
+        The goal is to get the highest score by playing 5 hands of poker. By getting 60 points or more, you win the
+        game.
+      </p>
 
-		<h3 class="dialog-container__rules-title">Reglas del Juego</h3>
+      <h4 class="dialog-rules__subtitle">Punctuation</h4>
+      <table class="dialog-rules__details dialog-rules__details--punctuation">
+        <thead>
+          <tr>
+            <th>Poker Hand</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="dialog-rules__poker-hand">Royal Flush (10, J, Q, K, A *)</td>
+            <td class="dialog-rules__poker-hand-points">100</td>
+          </tr>
+          <tr>
+            <td class="dialog-rules__poker-hand">Straight Flush (A, 2, 3, 4, 5 *)</td>
+            <td class="dialog-rules__poker-hand-points">75</td>
+          </tr>
+          <tr>
+            <td class="dialog-rules__poker-hand">Four of a Kind (A, A, A, A, X)</td>
+            <td class="dialog-rules__poker-hand-points">50</td>
+          </tr>
+          <tr>
+            <td class="dialog-rules__poker-hand">Full House (A, A, 2, 2, 2)</td>
+            <td class="dialog-rules__poker-hand-points">15</td>
+          </tr>
+          <tr>
+            <td class="dialog-rules__poker-hand">Flush (A, 5, J, 3, 9 *)</td>
+            <td class="dialog-rules__poker-hand-points">20</td>
+          </tr>
+          <tr>
+            <td class="dialog-rules__poker-hand">Straight (A, 2, 3, 4, 5)</td>
+            <td class="dialog-rules__poker-hand-points">15</td>
+          </tr>
+          <tr>
+            <td class="dialog-rules__poker-hand">Three of a Kind (A, A, A, X, X)</td>
+            <td class="dialog-rules__poker-hand-points">10</td>
+          </tr>
+          <tr>
+            <td class="dialog-rules__poker-hand">Two Pair (A, A, 2, 2, X)</td>
+            <td class="dialog-rules__poker-hand-points">5</td>
+          </tr>
+          <tr>
+            <td class="dialog-rules__poker-hand">Pair (A, A, X, X, X)</td>
+            <td class="dialog-rules__poker-hand-points">2</td>
+          </tr>
+          <tr>
+            <td class="dialog-rules__poker-hand">High Card (A, X, X, X, X)</td>
+            <td class="dialog-rules__poker-hand-points">1</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="dialog-rules__details">
+        (<span class="dialog-rules__poker-hand">*</span>) In
+        <span class="dialog-rules__poker-hand">Royal Flush, Straight Flush</span>
+        and <span class="dialog-rules__poker-hand">Flush</span>, all five cards must be of the same suit.
+      </p>
 
-		<h4 class="dialog-container__rules-subtitle">Objetivo</h4>
-		<p class="dialog-container__rules-details">
-			El objetivo es conseguir la máxima puntuación jugando 5 manos de póker. Al conseguir 60 puntos o más, se gana el juego.
-		</p>
+      <h4 class="dialog-rules__subtitle">Instructions</h4>
+      <p class="dialog-rules__details">
+        At the beginning of the game, 5 cards will be placed on the table, thus beginning the first hand.<br>In each
+        hand, the player can change up to a maximum of 3 cards. The combinations of change will be at the discretion of
+        the player.<br>Once the player wants to keep the hand of can no longer change cards, the hand is finished and
+        the player receives the points according to the hand achieved. Then the cards on the table are removed and 5
+        more are dealt.<br>The game continues in the same way until it reaches the end of the 5th hand and the player's
+        total points and description of each hand are displayed, along the final result of the game.
+      </p>
 
-		<h4 class="dialog-container__rules-subtitle">Puntuación</h4>
-		<ul class="dialog-container__rules-details dialog-container__rules-details--punctuation">
-			<li><span class="dialog-container__poker-hand">Escalera Real de Color (10,J,Q,K,A *)</span> => <span class="dialog-container__poker-hand-points">100 ptos</span></li>
-			<li><span class="dialog-container__poker-hand">Escalera de Color (A,2,3,4,5 *)</span> => <span class="dialog-container__poker-hand-points">75 ptos</span></li>
-			<li><span class="dialog-container__poker-hand">Póker (A,A,A,A,X)</span> => <span class="dialog-container__poker-hand-points">50 ptos</span></li>
-			<li><span class="dialog-container__poker-hand">Full House (A,A,2,2,2)</span> => <span class="dialog-container__poker-hand-points">25 ptos</span></li>
-			<li><span class="dialog-container__poker-hand">Color (A,5,J,3,9 *)</span> => <span class="dialog-container__poker-hand-points">20 ptos</span></li>
-			<li><span class="dialog-container__poker-hand">Escalera (1,2,3,4,5)</span> => <span class="dialog-container__poker-hand-points">15 ptos</span></li>
-			<li><span class="dialog-container__poker-hand">Trío (A,A,A,X,X)</span> => <span class="dialog-container__poker-hand-points">10 ptos</span></li>
-			<li><span class="dialog-container__poker-hand">Doble Par (A,A,2,2X)</span> => <span class="dialog-container__poker-hand-points">5 ptos</span></li>
-			<li><span class="dialog-container__poker-hand">Par (A,A,X,X,X)</span> => <span class="dialog-container__poker-hand-points">2 ptos</span></li>
-		</ul>
-		<p class="dialog-container__rules-details">
-			(*) En la <span class="dialog-container__poker-hand">Escalera Real de Color, Escalera de Color</span> y <span class="dialog-container__poker-hand">Color</span>, las cinco cartas deberán tener el mismo palo (figura).
-		</p>
+      <h4 class="dialog-rules__subtitle">Ability</h4>
+      <p class="dialog-rules__details">
+        This is game that combines dexterity and strateg with a bit of luck.
+      </p>
 
-		<h4 class="dialog-container__rules-subtitle">Instrucciones</h4>
-		<p class="dialog-container__rules-details">
-			Al iniciar el juego se colocarán 5 cartas en la mesa, comenzando así la primera mano. En cada mano, el jugador puede cambiar hasta un máximo de 3 cartas. Las combinaciones de cambio serán a criterio del jugador.<br>Una vez que el jugador quiera quedarse con la mano o ya no pueda cambiar cartas, se procede a terminar la mano y recibe los puntos según la mano que consiguió. Luego, las cartas de la mesa se eliminan y se reparten 5 más.<br>El juego continúa de la misma manera hasta que llega al final de la 5 mano y se le muestra al jugador sus puntos totales, junto con el resultado final del juego.
-		</p>
+      <p class="dialog-rules__game-version">
+        <a href="#">v1.1.0</a>
+      </p>
+    </dialog>
 
-		<h4 class="dialog-container__rules-subtitle">Habilidad</h4>
-		<p class="dialog-container__rules-details">
-			Este es un juego que combina la destreza y estrategia con un poco de suerte.
-		</p>
+    <dialog id="game-result" class="dialog-game-result"></dialog>
+    <!-- END OF MODAL -->
 
-		<p class="dialog-container__game-version"><a href="./changelog.html">v 1.0.1</a></p>
-	</dialog>
+    <!-- HEADER -->
+    <header class="row">
+      <h1 class="main-title col-12">Five Hands Poker</h1>
+    </header>
+    <!-- END OF HEADER -->
 
-	<dialog id="game-result" class="dialog-game-result"></dialog>
-	
-	<!--====  End of Dialog  ====-->
-	
-	<!--============================
-	=            Header            =
-	=============================-->
-	
-	<header class="row">
-		<div class="title-container col-12">
-			<h1 class="title-container__title">Five Hands Poker</h1>
-		</div>
-	</header>
-	
-	<!--====  End of Header  ====-->
+    <!-- MAIN -->
+    <main class="row">
+      <!-- BUTTONS -->
+      <section class="buttons col-12">
+        <button id="start-button" class="buttons__action-button">
+          Start
+        </button>
 
-	<!--=============================
-	=            Article            =
-	==============================-->
-	
-	<article class="row">
+        <button id="change-button" class="buttons__action-button hidden">
+          Change
+        </button>
 
-		<!--===============================
-		=            Section 1            =
-		================================-->
-		
-		<section class="section col-12">
-			<div class="section__buttons-container">
-				<button id="start-button" class="section__action-button">Start</button>
+        <button id="stay-button" class="buttons__action-button hidden">
+          Stay
+        </button>
 
-				<button id="change-button" class="section__action-button">Change</button>
+        <button id="next-hand-button" class="buttons__action-button hidden">
+          Next Hand
+        </button>
 
-				<button id="stay-button" class="section__action-button">Stay</button>
+        <button id="play-again-button" class="buttons__action-button hidden">
+          Play Again
+        </button>
+      </section>
+      <!-- END OF BUTTONS -->
 
-				<button id="next-hand-button" class="section__action-button">Next Hand</button>
+      <!-- CARDS -->
+      <section class="cards-group">
+        <div id="card1" class="card">
+          <p class="card__info card__info--top">?</p>
+          <p class="card__suit"></p>
+          <p class="card__info card__info--bottom">?</p>
+        </div>
 
-				<button id="play-again-button" class="section__action-button">Play Again</button>
-			</div>
+        <div id="card2" class="card">
+          <p class="card__info card__info--top">?</p>
+          <p class="card__suit"></p>
+          <p class="card__info card__info--bottom">?</p>
+        </div>
 
-			<div class="section__cards-group">
-				<div id="card1" class="section__card-container">
-					<p class="section__card-info section__card-top-info">?</p>
-					<p class="section__card"></p>
-				</div>
+        <div id="card3" class="card">
+          <p class="card__info card__info--top">?</p>
+          <p class="card__suit"></p>
+          <p class="card__info card__info--bottom">?</p>
+        </div>
 
-				<div id="card2" class="section__card-container">
-					<p class="section__card-info section__card-top-info">?</p>
-					<p class="section__card"></p>
-				</div>
+        <div id="card4" class="card">
+          <p class="card__info card__info--top">?</p>
+          <p class="card__suit"></p>
+          <p class="card__info card__info--bottom">?</p>
+        </div>
 
-				<div id="card3" class="section__card-container">
-					<p class="section__card-info section__card-top-info">?</p>
-					<p class="section__card"></p>
-				</div>
+        <div id="card5" class="card">
+          <p class="card__info card__info--top">?</p>
+          <p class="card__suit"></p>
+          <p class="card__info card__info--bottom">?</p>
+        </div>
+      </section>
+      <!-- END OF CARDS -->
 
-				<div id="card4" class="section__card-container">
-					<p class="section__card-info section__card-top-info">?</p>
-					<p class="section__card"></p>
-				</div>
+      <!-- GAME INFO -->
+      <section class="game-info col-12">
+        <!-- POINTS -->
+        <div class="points-details">
+          <h3 class="points-details__title">Player points</h3>
 
-				<div id="card5" class="section__card-container">
-					<p class="section__card-info section__card-top-info">?</p>
-					<p class="section__card"></p>
-					<p class="section__card-info section__card-bottom-info">?</p>
-				</div>
-			</div>
-		</section>
+          <p class="points-details__hand">
+            Hand 1:
+            <span id="hand1-points" class="points-details__hand-point">?</span><br />
+            <span id="hand1-cards" class="points-details__hand-cards hidden"></span>
+          </p>
 
-		<!--====  End of Section 1  ====-->
+          <p class="points-details__hand">
+            Hand 2:
+            <span id="hand2-points" class="points-details__hand-point">?</span><br />
+            <span id="hand2-cards" class="points-details__hand-cards hidden"></span>
+          </p>
 
-		<!--===============================
-		=            Section 2            =
-		================================-->
-		
-		<section class="section section--points col-12">
-			<div class="section__points-details-container">
-				<h3 class="section__points-title">Player points</h3>
+          <p class="points-details__hand">
+            Hand 3:
+            <span id="hand3-points" class="points-details__hand-point">?</span><br />
+            <span id="hand3-cards" class="points-details__hand-cards hidden"></span>
+          </p>
 
-				<p class="section__points-details">Hand 1:
-					<span id="hand1-points" class="section__hand-point">00</span><br>
-					<span id="hand1-cards" class="section__hand-cards"></span>
-				</p>
+          <p class="points-details__hand">
+            Hand 4:
+            <span id="hand4-points" class="points-details__hand-point">?</span><br />
+            <span id="hand4-cards" class="points-details__hand-cards hidden"></span>
+          </p>
 
-				<p class="section__points-details">Hand 2:
-					<span id="hand2-points" class="section__hand-point">00</span><br>
-					<span id="hand2-cards" class="section__hand-cards"></span>
-				</p>
+          <p class="points-details__hand">
+            Hand 5:
+            <span id="hand5-points" class="points-details__hand-point">?</span><br />
+            <span id="hand5-cards" class="points-details__hand-cards hidden"></span>
+          </p>
 
-				<p class="section__points-details">Hand 3:
-					<span id="hand3-points" class="section__hand-point">00</span><br>
-					<span id="hand3-cards" class="section__hand-cards"></span>
-				</p>
+          <p id="total-points" class="points-details__total hidden">
+            Total:
+            <span id="total-hands-points" class="section__total-hands-points"></span>
+          </p>
+        </div>
+        <!-- END OF POINTS -->
 
-				<p class="section__points-details">Hand 4:
-					<span id="hand4-points" class="section__hand-point">00</span><br>
-					<span id="hand4-cards" class="section__hand-cards"></span>
-				</p>
+        <!-- REMAINING CARDS -->
+        <div id="remaining-cards-container" class="remaining-cards">
+          <h3 class="remaining-cards__title">Remaining Cards</h3>
+          <p id="remaining-cards" class="remaining-cards__details">?</p>
+        </div>
+        <!-- END OF REMAINING CARDS -->
+      </section>
+      <!-- END OF GAME INFO -->
+    </main>
+    <!-- END OF MAIN -->
 
-				<p class="section__points-details">Hand 5:
-					<span id="hand5-points" class="section__hand-point">00</span><br>
-					<span id="hand5-cards" class="section__hand-cards"></span>
-				</p>
-
-				<p id="total-points" class="section__points-details section__points-details--total-points">Total:
-					<span id="total-hands-points" class="section__total-hands-points">00</span>
-				</p>
-			</div>
-
-			<div id="remaining-cards-container" class="section__remaining-cards-container">
-				<h3 class="section__remaining-cards-title">Remaining Cards</h3>
-				<p id="remaining-cards" class="section__remaining-cards-details">?</p>
-			</div>
-		</section>
-
-		<!--====  End of Section 2  ====-->
-
-	</article>
-	
-	<!--====  End of Article  ====-->
-
-	<!--============================
-	=            Footer            =
-	=============================-->
-	
-	<footer class="row">
-		<div class="credits-container col-12">
-			<p id="credits" class="credits-container__author">&copy; 2021 Héctor Ochoa</p>
-		</div>
-	</footer>
-	
-	<!--====  End of Footer  ====-->
-	
-
-</div>
-
-<script src="./js/main.js"></script>
-<script src="./js/start-game.js"></script>
-<script src="./js/change-cards.js"></script>
-<script src="./js/stay-hand.js"></script>
-<script src="./js/poker-hands.js"></script>
-<script src="./js/game-rules.js"></script>
-<script src="./js/errors.js"></script>
+    <!-- FOOTER -->
+    <footer class="credits col-12">
+      <p class="credits__author">&copy; 2022 <a href="https://github.com/Hdoc1509" target="_blank" rel="noopener noreferrer">Hdoc</a></p>
+    </footer>
+    <!-- END OF FOOTER -->
+  </div>
 </body>
+
 </html>
