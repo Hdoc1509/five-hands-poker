@@ -1,3 +1,3 @@
 # Five Hands Poker
 
-A game created for show my knowledge in JS, HTML, CSS and NPM packages.
+A game created for show my knowledge in vanilla JS, HTML, CSS, git, git-hub and some NPM packages.
