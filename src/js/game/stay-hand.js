@@ -48,7 +48,9 @@ export const stayHand = () => {
 
   // Data for the current hand
   const currentHandsCounter = getPlayerHandsCounter();
-  const currentHand = verificateHand(getObjCards(), currentHandsCounter);
+  const currentHand = verificateHand(getObjCards());
+
+  currentHand.id = `hand${currentHandsCounter}`;
 
   // Displaying the points of the current hand
   gid(
