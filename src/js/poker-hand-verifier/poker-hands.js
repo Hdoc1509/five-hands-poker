@@ -15,6 +15,7 @@ import { isAnyFourOfKind, findFourOfKind } from './four-of-kind.js';
  * @typedef  {Object}        ObjHand
  * @property {Array<String>} cards       - Hand's cards
  * @property {String}        description - Hand's description
+ * @property {String}        type        - Type of hand
  */
 
 /**
@@ -38,6 +39,7 @@ export const verificateHand = (cards) => {
   const hand = {
     cards: cards.map(({ number, suit }) => `${number}${suit}`),
     description: '',
+    type: '',
   };
 
   // For PAIR
@@ -45,6 +47,7 @@ export const verificateHand = (cards) => {
     const { number } = findPair(cards);
 
     hand.description = `Pair (${number})`;
+    hand.type = 'pair';
   }
 
   // For TWO PAIR
@@ -52,6 +55,7 @@ export const verificateHand = (cards) => {
     const [pair1, pair2] = findTwoPair(cards);
 
     hand.description = `Two Pair: (${pair1} & ${pair2})`;
+    hand.type = 'two-pair';
   }
 
   // For THREE OF A KIND
@@ -59,6 +63,7 @@ export const verificateHand = (cards) => {
     const { number } = findThreeOfKind(cards);
 
     hand.description = `Three of a kind (${number})`;
+    hand.type = 'three-of-kind';
   }
 
   // For STRAIGHT
@@ -71,16 +76,19 @@ export const verificateHand = (cards) => {
       hand.description = allSameSuit(cards)
         ? `Royal Flush (${flushSuit}): ${parsedStraightMatch}`
         : `Straight: ${parsedStraightMatch}`;
+      hand.type = allSameSuit(cards) ? 'royal-flush' : 'straight';
     } else {
       hand.description = allSameSuit(cards)
         ? `Straight Flush (${flushSuit}): ${parsedStraightMatch}`
         : `Straight: ${parsedStraightMatch}`;
+      hand.type = allSameSuit(cards) ? 'straight-flush' : 'straight';
     }
   }
 
   // For FLUSH
   else if (allSameSuit(cards) && allDifferentNumbers(cards)) {
     hand.description = `Flush (${cards[0].suit})`;
+    hand.type = 'flush';
   }
 
   // For FULL HOUSE
@@ -88,6 +96,7 @@ export const verificateHand = (cards) => {
     const { pair, threeOfKind } = findFullHouse(cards);
 
     hand.description = `Full House (Pair - ${pair} & Three of Kind - ${threeOfKind})`;
+    hand.type = 'full-house';
   }
 
   // For FOUR OF A KIND
@@ -95,6 +104,7 @@ export const verificateHand = (cards) => {
     const { number } = findFourOfKind(cards);
 
     hand.description = `Four of a kind (${number})`;
+    hand.type = 'four-of-kind';
   }
 
   //For HIGH CARD
@@ -103,6 +113,7 @@ export const verificateHand = (cards) => {
     const thereOneAce = aces.length === 1;
 
     hand.description = thereOneAce ? 'High Card (A)' : 'Nothing';
+    hand.type = thereOneAce ? 'high-card' : 'nothing';
   }
 
   return hand;
