@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "live-server --watch=src --open=src",
     "build": "node build.js",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/Hdoc1509/five-hands-poker#readme",
   "devDependencies": {
     "esbuild": "0.14.47",
+    "gh-pages": "4.0.0",
     "live-server": "1.2.2"
   }
 }
