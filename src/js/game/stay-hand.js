@@ -8,6 +8,7 @@ import { startGame } from './start-game.js';
 import { clearCurrentHandClass } from './game-hands.js';
 import { qsa, gid } from '../utils/dom.js';
 import { setRemainingCardsCounter } from './remaining-cards.js';
+import { HAND_POINTS } from './hand-points.js';
 
 const playerHands = [];
 
@@ -51,6 +52,7 @@ export const stayHand = () => {
   const currentHand = verificateHand(getObjCards());
 
   currentHand.id = `hand${handsCounter}`;
+  currentHand.points = HAND_POINTS[currentHand.type];
 
   // Displaying the points of the current hand
   gid(`hand${handsCounter}-points`).textContent = `${currentHand.points}`;
