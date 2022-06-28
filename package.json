@@ -7,6 +7,7 @@
     "dev": "live-server --watch=src --open=src",
     "build": "node build.js && cp src/index.html dist/index.html",
     "deploy": "gh-pages -d dist",
+    "preview": "live-server --open=dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +26,7 @@
   "devDependencies": {
     "esbuild": "0.14.47",
     "gh-pages": "4.0.0",
-    "live-server": "1.2.2"
+    "live-server": "1.2.2",
+    "minify": "9.1.0"
   }
 }
