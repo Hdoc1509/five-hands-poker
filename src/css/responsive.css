@@ -96,6 +96,10 @@
   .col-md-0 {
     display: none;
   }
+
+  .dialog-rules {
+    width: 700px;
+  }
 }
 
 /*=======================================================
@@ -165,17 +169,23 @@
     display: none;
   }
 
-  /**
-
-    TODO: Optimize rest of selectors
-
-   */
-
   .dialog-open-button {
     width: 24px;
     top: 15px;
     right: 15px;
     font-size: 14px;
+  }
+
+  .dialog-rules {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .dialog-rules__close {
+    top: 1rem;
+    right: 0.5rem;
+    width: 24px;
+    border-radius: 8px;
   }
 
   .dialog-game-result {
@@ -193,6 +203,10 @@
 
   .cards-group {
     width: 90%;
+  }
+
+  .card {
+    border-radius: 10px;
   }
 
   .card__info {
