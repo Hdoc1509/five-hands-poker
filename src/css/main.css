@@ -111,6 +111,7 @@ button {
   background-color: #333;
   padding: 1.5rem;
   margin: auto;
+  font-size: 1rem;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -165,11 +166,6 @@ button {
   letter-spacing: 1px;
   line-height: 20px;
   text-align: justify;
-}
-
-.dialog-rules__details--punctuation {
-  width: 50%;
-  margin: 4px 0;
 }
 
 .dialog-rules__details--punctuation thead {
