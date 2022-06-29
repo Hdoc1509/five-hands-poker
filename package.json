@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "live-server --watch=src --open=src",
-    "build": "node build.js && cp src/index.html dist/index.html",
+    "build": "node build.js & minify src/index.html > dist/index.html",
     "deploy": "gh-pages -d dist",
     "preview": "live-server --open=dist",
     "test": "echo \"Error: no test specified\" && exit 1"
