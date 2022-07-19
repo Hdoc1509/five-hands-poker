@@ -2,7 +2,7 @@ import { GAME_BUTTONS } from './game-buttons.js';
 import { changeSelectedCards } from './change-cards.js';
 import { toggleSelectedCard } from './card-utils.js';
 import { getPlayerHandsCounter, setPlayerHandsCounter } from './game-hands.js';
-import { verificateHand } from '../poker-hand-verifier/poker-hands.js';
+import { verificateHand } from 'poker-hand-verifier';
 import { getObjCards, setObjCards } from './game-cards.js';
 import { startGame } from './start-game.js';
 import { clearCurrentHandClass } from './game-hands.js';
