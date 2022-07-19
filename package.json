@@ -8,7 +8,9 @@
     "build": "vite build src",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check-dependencies": "ncu --color --packageFile package.json",
+    "update-dependencies": "npm run check-dependencies -- -u"
   },
   "repository": {
     "type": "git",
