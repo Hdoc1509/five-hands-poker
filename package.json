@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite serve src",
-    "build": "node build.js & minify src/index.html > dist/index.html",
+    "build": "vite build src",
+    "preview": "vite preview",
     "deploy": "gh-pages -d dist",
-    "preview": "live-server --open=dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
