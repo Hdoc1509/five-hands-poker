@@ -27,6 +27,7 @@
     "esbuild": "0.14.47",
     "gh-pages": "4.0.0",
     "live-server": "1.2.2",
-    "minify": "9.1.0"
+    "minify": "9.1.0",
+    "poker-hand-verifier": "1.0.0"
   }
 }
