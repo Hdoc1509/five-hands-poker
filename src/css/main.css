@@ -51,7 +51,7 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: #ddd;
 }
 
-.container {
+.container, .row {
   position: relative;
   margin: auto;
   width: 100%;
@@ -59,10 +59,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .row {
-  position: relative;
-  margin: auto;
-  width: 100%;
-  height: auto;
   clear: both;
   display: table;
 }
