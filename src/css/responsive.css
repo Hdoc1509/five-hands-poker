@@ -219,6 +219,12 @@
     line-height: 18px;
   }
 
+  .card__info[data-suit]::after {
+    width: 20px;
+    left: -4px;
+    margin-top: 4px;
+  }
+
   .card__info--top {
     top: 10px;
     left: 10px;

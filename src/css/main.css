@@ -13,6 +13,10 @@
   --current-hand: #51f75182;
   --total-points: #006700;
   --selected-card: #0d0;
+  --diamond-suit-url: url('../img/figures/diamond.svg');
+  --heart-suit-url: url('../img/figures/heart.svg');
+  --spade-suit-url: url('../img/figures/spade.svg');
+  --club-suit-url: url('../img/figures/club.svg');
 }
 
 * {
@@ -298,25 +302,72 @@ button {
 }
 
 .card[data-suit='H'] .card__suit {
-  background-image: url('../img/figures/heart.svg');
+  background-image: var(--heart-suit-url);
 }
 
 .card[data-suit='D'] .card__suit {
-  background-image: url('../img/figures/diamond.svg');
+  background-image: var(--diamond-suit-url);
 }
 
 .card[data-suit='C'] .card__suit {
-  background-image: url('../img/figures/club.svg');
+  background-image: var(--club-suit-url);
 }
 
 .card[data-suit='S'] .card__suit {
-  background-image: url('../img/figures/spade.svg');
+  background-image: var(--spade-suit-url);
 }
 
 .card--selected {
   top: -16px;
   outline: solid var(--selected-card);
   transition: top 0.25s ease, outline 0.25s ease;
+}
+
+.card__info[data-number]::before {
+  content: attr(data-number);
+  position: relative;
+}
+
+.card__info:not([data-number])::before,
+.card__info[data-number='']::before {
+  content: '?';
+}
+
+.card__info[data-number='10'].card__info[data-suit]::before {
+  left: -10px;
+}
+
+.card__info[data-number='K'].card__info[data-suit]::before {
+  left: -2px;
+}
+
+.card__info[data-number='A'].card__info[data-suit]::after {
+  left: -4px;
+}
+
+.card__info[data-suit]::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -6px;
+  aspect-ratio: 1 / 1;
+  width: 30px;
+}
+
+.card__info[data-suit='D']::after {
+  background-image: var(--diamond-suit-url);
+}
+
+.card__info[data-suit='H']::after {
+  background-image: var(--heart-suit-url);
+}
+
+.card__info[data-suit='S']::after {
+  background-image: var(--spade-suit-url);
+}
+
+.card__info[data-suit='C']::after {
+  background-image: var(--club-suit-url);
 }
 
 .card__info {
