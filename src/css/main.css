@@ -172,17 +172,14 @@ button {
   text-decoration: underline;
 }
 
-.dialog-rules__details--punctuation .dialog-rules__poker-hand-points {
-  font-weight: bold;
-  text-align: center;
-}
-
 .dialog-rules__poker-hand {
   color: var(--poker-hand);
 }
 
 .dialog-rules__poker-hand-points {
   color: var(--poker-hand-points);
+  font-weight: bold;
+  text-align: center;
 }
 
 .dialog-rules__game-version {
