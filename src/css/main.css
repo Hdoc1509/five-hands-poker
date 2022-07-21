@@ -297,6 +297,22 @@ button {
   color: #000;
 }
 
+.card[data-suit='H'] .card__suit {
+  background-image: url('../img/figures/heart.svg');
+}
+
+.card[data-suit='D'] .card__suit {
+  background-image: url('../img/figures/diamond.svg');
+}
+
+.card[data-suit='C'] .card__suit {
+  background-image: url('../img/figures/club.svg');
+}
+
+.card[data-suit='S'] .card__suit {
+  background-image: url('../img/figures/spade.svg');
+}
+
 .card--selected {
   top: -16px;
   outline: solid var(--selected-card);
@@ -333,22 +349,6 @@ button {
   margin: auto;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.card[data-suit='H'] .card__suit {
-  background-image: url('../img/figures/heart.svg');
-}
-
-.card[data-suit='D'] .card__suit {
-  background-image: url('../img/figures/diamond.svg');
-}
-
-.card[data-suit='C'] .card__suit {
-  background-image: url('../img/figures/club.svg');
-}
-
-.card[data-suit='S'] .card__suit {
-  background-image: url('../img/figures/spade.svg');
 }
 
 #card1 {
