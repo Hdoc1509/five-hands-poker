@@ -4,9 +4,9 @@
   "description": "Game created as a personal project",
   "type": "module",
   "scripts": {
-    "dev": "vite --open",
+    "dev": "vite --host --port 3000 --open",
     "build": "vite build",
-    "preview": "vite preview --open",
+    "preview": "vite preview --host --port 3000 --open",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "check-dependencies": "ncu --color --packageFile package.json",
