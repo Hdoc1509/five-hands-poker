@@ -39,6 +39,15 @@
   transition: top 0.25s ease, outline 0.25s ease;
 }
 
+.card__info {
+  position: absolute;
+  font-size: 32px;
+  transition: none;
+  text-align: center;
+  letter-spacing: -2px;
+  line-height: 32px;
+}
+
 .card__info[data-number]::before {
   content: attr(data-number);
   position: relative;
@@ -88,15 +97,6 @@
 .card__info[data-suit='C']::after,
 .card[data-suit='C'] .card__suit {
   background-image: var(--club-suit-url);
-}
-
-.card__info {
-  position: absolute;
-  font-size: 32px;
-  transition: none;
-  text-align: center;
-  letter-spacing: -2px;
-  line-height: 32px;
 }
 
 .card__info--top {
