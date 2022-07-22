@@ -98,10 +98,10 @@ export const stayHand = () => {
     const playerWin = playerPoints >= 60;
 
     $gameResult.classList.add(
-      playerWin ? 'dialog-game-result--win' : 'dialog-game-result--lose'
+      `dialog-game-result--${playerWin ? 'win' : 'lose'}`
     );
     $totalPointsBox.classList.add(
-      playerWin ? 'points-details__total--win' : 'points-details__total--lose'
+      `points-details__total--${playerWin ? 'win' : 'lose'}`
     );
     $gameResult.textContent = playerWin ? 'You win!' : 'You lose!';
 
