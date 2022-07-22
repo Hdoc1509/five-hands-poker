@@ -95,8 +95,7 @@ export const stayHand = () => {
     showPlayerHands();
 
     // Validation for win the game
-    const playerWin = playerPoints >= 60;
-    const resultText = playerWin ? 'win' : 'lose';
+    const resultText = playerPoints >= 60 ? 'win' : 'lose';
 
     $gameResult.classList.add(`dialog-game-result--${resultText}`);
     $gameResult.textContent = `You ${resultText}!`;
