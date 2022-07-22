@@ -33,22 +33,6 @@
   color: #000;
 }
 
-.card[data-suit='H'] .card__suit {
-  background-image: var(--heart-suit-url);
-}
-
-.card[data-suit='D'] .card__suit {
-  background-image: var(--diamond-suit-url);
-}
-
-.card[data-suit='C'] .card__suit {
-  background-image: var(--club-suit-url);
-}
-
-.card[data-suit='S'] .card__suit {
-  background-image: var(--spade-suit-url);
-}
-
 .card--selected {
   top: -16px;
   outline: solid var(--selected-card);
@@ -86,19 +70,23 @@
   width: 30px;
 }
 
-.card__info[data-suit='D']::after {
+.card__info[data-suit='D']::after,
+.card[data-suit='D'] .card__suit {
   background-image: var(--diamond-suit-url);
 }
 
-.card__info[data-suit='H']::after {
+.card__info[data-suit='H']::after,
+.card[data-suit='H'] .card__suit {
   background-image: var(--heart-suit-url);
 }
 
-.card__info[data-suit='S']::after {
+.card__info[data-suit='S']::after,
+.card[data-suit='S'] .card__suit {
   background-image: var(--spade-suit-url);
 }
 
-.card__info[data-suit='C']::after {
+.card__info[data-suit='C']::after,
+.card[data-suit='C'] .card__suit {
   background-image: var(--club-suit-url);
 }
 
