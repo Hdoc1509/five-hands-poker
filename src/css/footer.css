@@ -1,0 +1,19 @@
+/*==============================
+=            FOOTER            =
+==============================*/
+
+.credits__author {
+  padding-bottom: 10px;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 2px 2px 4px #000;
+  color: #fff;
+}
+
+.credits__author a {
+  color: #fff;
+}
+
+.credits__author a:hover {
+  text-decoration: underline;
+}

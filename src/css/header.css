@@ -1,0 +1,11 @@
+/*==============================
+=            HEADER            =
+==============================*/
+
+.main-title {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px #000;
+  z-index: 50;
+}

@@ -1,0 +1,29 @@
+/*===============================
+=            BUTTONS            =
+===============================*/
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.buttons__action-button {
+  position: relative;
+  margin-bottom: 8px;
+  background-color: #000;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  transition: background-color 0.25s ease;
+}
+
+.buttons__action-button:hover {
+  background-color: #2c632c;
+}

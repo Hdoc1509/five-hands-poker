@@ -1,2 +1,8 @@
 @import 'main.css';
+@import 'modal.css';
+@import 'header.css';
+@import 'game-buttons.css';
+@import 'cards.css';
+@import 'game-info.css';
+@import 'footer.css';
 @import 'responsive.css';
