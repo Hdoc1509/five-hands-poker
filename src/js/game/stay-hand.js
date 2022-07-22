@@ -15,18 +15,17 @@ const playerHands = [];
 const playAgain = () => location.reload();
 
 const showPlayerHands = () => {
-  const $cardsDesc = qsa('.points-details__hand-cards');
-  const $pointsDetails = qsa('.points-details__hand');
-
-  //Displaying description container of each hand
-  $cardsDesc.forEach(($handCards) => $handCards.classList.remove('hidden'));
+  // Displaying description container of each hand
+  qsa('.points-details__hand-cards').forEach(($handCards) =>
+    $handCards.classList.remove('hidden')
+  );
 
   // Setting new styles for description of each hand
-  $pointsDetails.forEach(($detail) => {
-    $detail.classList.add('points-details__hand--game-over');
-  });
+  qsa('.points-details__hand').forEach(($detail) =>
+    $detail.classList.add('points-details__hand--game-over')
+  );
 
-  // Show player hands
+  // Setting player hands text
   playerHands.forEach(({ cards, id }) => {
     const handCards = `(${cards
       .join(' ')
@@ -34,6 +33,7 @@ const showPlayerHands = () => {
       .replace(/D/g, '♦')
       .replace(/C/g, '♣')
       .replace(/S/g, '♠')})`;
+
     gid(`${id}-cards`).textContent = handCards;
   });
 };
