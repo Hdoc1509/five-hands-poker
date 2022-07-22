@@ -13,10 +13,10 @@
   --current-hand: #51f75182;
   --total-points: #006700;
   --selected-card: #0d0;
-  --diamond-suit-url: url('../img/figures/diamond.svg');
-  --heart-suit-url: url('../img/figures/heart.svg');
-  --spade-suit-url: url('../img/figures/spade.svg');
-  --club-suit-url: url('../img/figures/club.svg');
+  --diamond-suit-url: url('../assets/diamond.svg');
+  --heart-suit-url: url('../assets/heart.svg');
+  --spade-suit-url: url('../assets/spade.svg');
+  --club-suit-url: url('../assets/club.svg');
 }
 
 * {
