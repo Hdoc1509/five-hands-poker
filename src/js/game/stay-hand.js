@@ -96,14 +96,11 @@ export const stayHand = () => {
 
     // Validation for win the game
     const playerWin = playerPoints >= 60;
+    const resultText = playerWin ? 'win' : 'lose';
 
-    $gameResult.classList.add(
-      `dialog-game-result--${playerWin ? 'win' : 'lose'}`
-    );
-    $totalPointsBox.classList.add(
-      `points-details__total--${playerWin ? 'win' : 'lose'}`
-    );
-    $gameResult.textContent = playerWin ? 'You win!' : 'You lose!';
+    $gameResult.classList.add(`dialog-game-result--${resultText}`);
+    $gameResult.textContent = `You ${resultText}!`;
+    $totalPointsBox.classList.add(`points-details__total--${resultText}`);
 
     // Hidding the remaining cards container
     gid('remaining-cards-container').classList.add('hidden');
