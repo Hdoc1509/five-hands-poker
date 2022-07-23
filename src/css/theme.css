@@ -1,0 +1,21 @@
+#btn-theme {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  aspect-ratio: 1 / 1;
+  width: 60px;
+  border-radius: 50%;
+  background-image: url('../assets/dark-theme.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  z-index: 50;
+}
+
+#btn-theme:hover {
+  background-color: #121212;
+}
+
+#btn-theme.dark-mode {
+  background-image: url('../assets/light-theme.png');
+}

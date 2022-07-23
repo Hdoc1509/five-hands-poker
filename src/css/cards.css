@@ -23,6 +23,11 @@
   transition: top 0.25s ease, outline 0.25s ease;
 }
 
+.card.dark-mode {
+  background-color: #111;
+  color: #fff;
+}
+
 .card[data-suit='H'],
 .card[data-suit='D'] {
   color: #f00;
@@ -31,6 +36,11 @@
 .card[data-suit='C'],
 .card[data-suit='S'] {
   color: #000;
+}
+
+.card.dark-mode[data-suit='C'],
+.card.dark-mode[data-suit='S'] {
+  color: #fff;
 }
 
 .card--selected {
@@ -97,6 +107,16 @@
 .card__info[data-suit='C']::after,
 .card[data-suit='C'] .card__suit {
   background-image: var(--club-suit-url);
+}
+
+.card.dark-mode[data-suit='S'] .card__info::after,
+.card.dark-mode[data-suit='S'] .card__suit {
+  background-image: url('../assets/spade-dark.svg');
+}
+
+.card.dark-mode[data-suit='C'] .card__info::after,
+.card.dark-mode[data-suit='C'] .card__suit {
+  background-image: url('../assets/club-dark.svg');
 }
 
 .card__info--top {

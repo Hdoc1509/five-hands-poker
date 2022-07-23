@@ -12,12 +12,15 @@
   <link rel="stylesheet" href="src/css/index.css" />
 
   <!-- Scripts -->
+  <script src="src/js/dark-theme.js" type="module" defer></script>
   <script src="src/js/index.js" type="module" defer></script>
   <script src="src/js/game-rules.js" type="module" defer></script>
 </head>
 
 <body>
   <div class="container">
+  <button id="btn-theme" data-dark></button>
+
     <!-- MODAL -->
     <button class="dialog-open-button">i</button>
 
@@ -155,31 +158,31 @@
 
       <!-- CARDS -->
       <section class="cards-group">
-        <div id="card1" class="card">
+        <div id="card1" class="card" data-dark>
           <p class="card__info card__info--top"></p>
           <p class="card__suit"></p>
           <p class="card__info card__info--bottom"></p>
         </div>
 
-        <div id="card2" class="card">
+        <div id="card2" class="card" data-dark>
           <p class="card__info card__info--top"></p>
           <p class="card__suit"></p>
           <p class="card__info card__info--bottom"></p>
         </div>
 
-        <div id="card3" class="card">
+        <div id="card3" class="card" data-dark>
           <p class="card__info card__info--top"></p>
           <p class="card__suit"></p>
           <p class="card__info card__info--bottom"></p>
         </div>
 
-        <div id="card4" class="card">
+        <div id="card4" class="card" data-dark>
           <p class="card__info card__info--top"></p>
           <p class="card__suit"></p>
           <p class="card__info card__info--bottom"></p>
         </div>
 
-        <div id="card5" class="card">
+        <div id="card5" class="card" data-dark>
           <p class="card__info card__info--top"></p>
           <p class="card__suit"></p>
           <p class="card__info card__info--bottom"></p>
