@@ -12,14 +12,14 @@
   <link rel="stylesheet" href="src/css/index.css" />
 
   <!-- Scripts -->
-  <script src="src/js/dark-theme.js" type="module" defer></script>
   <script src="src/js/index.js" type="module" defer></script>
   <script src="src/js/game-rules.js" type="module" defer></script>
 </head>
 
 <body>
   <div class="container">
-  <button id="btn-theme" data-dark></button>
+    <button id="btn-theme"></button>
+    <script src="src/js/dark-theme.js"></script>
 
     <!-- MODAL -->
     <button class="dialog-open-button">i</button>
@@ -117,7 +117,8 @@
       </p>
 
       <p class="dialog-rules__game-version">
-        <a href="https://github.com/Hdoc1509/five-hands-poker/releases/tag/v1.1.1" target="_blank" rel="noopener noreferrer">v1.1.1</a>
+        <a href="https://github.com/Hdoc1509/five-hands-poker/releases/tag/v1.1.1" target="_blank"
+          rel="noopener noreferrer">v1.1.1</a>
       </p>
     </dialog>
 
@@ -158,31 +159,31 @@
 
       <!-- CARDS -->
       <section class="cards-group">
-        <div id="card1" class="card" data-dark>
+        <div id="card1" class="card">
           <p class="card__info card__info--top"></p>
           <p class="card__suit"></p>
           <p class="card__info card__info--bottom"></p>
         </div>
 
-        <div id="card2" class="card" data-dark>
+        <div id="card2" class="card">
           <p class="card__info card__info--top"></p>
           <p class="card__suit"></p>
           <p class="card__info card__info--bottom"></p>
         </div>
 
-        <div id="card3" class="card" data-dark>
+        <div id="card3" class="card">
           <p class="card__info card__info--top"></p>
           <p class="card__suit"></p>
           <p class="card__info card__info--bottom"></p>
         </div>
 
-        <div id="card4" class="card" data-dark>
+        <div id="card4" class="card">
           <p class="card__info card__info--top"></p>
           <p class="card__suit"></p>
           <p class="card__info card__info--bottom"></p>
         </div>
 
-        <div id="card5" class="card" data-dark>
+        <div id="card5" class="card">
           <p class="card__info card__info--top"></p>
           <p class="card__suit"></p>
           <p class="card__info card__info--bottom"></p>
@@ -252,6 +253,7 @@
     </footer>
     <!-- END OF FOOTER -->
   </div>
+
 </body>
 
 </html>

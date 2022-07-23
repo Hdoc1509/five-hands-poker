@@ -16,6 +16,6 @@
   background-color: #121212;
 }
 
-#btn-theme.dark-mode {
+body.dark-mode #btn-theme {
   background-image: url('../assets/light-theme.png');
 }
