@@ -20,7 +20,9 @@
 <body>
   <div class="container">
     <button id="btn-theme"></button>
-    <script src="src/js/dark-theme.js"></script>
+    <script>
+      (function(d,$body,ls){function darkTheme(){$body.classList.add('dark-mode');ls.setItem('theme','dark')}function lightTheme(){$body.classList.remove('dark-mode');ls.setItem('theme','light')}if(ls.getItem('theme')==='dark')darkTheme();d.getElementById('btn-theme').addEventListener('click',function(){$body.classList.contains('dark-mode')?lightTheme():darkTheme()})})(document,document.body,localStorage);
+    </script>
 
     <!-- MODAL -->
     <button class="dialog-open-button">i</button>
