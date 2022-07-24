@@ -29,6 +29,7 @@
     "gh-pages": "4.0.0",
     "npm-check-updates": "15.3.4",
     "poker-hand-verifier": "1.0.0",
-    "vite": "3.0.2"
+    "vite": "3.0.2",
+    "vite-plugin-html": "3.2.0"
   }
 }
