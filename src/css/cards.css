@@ -110,13 +110,10 @@ body.dark-mode .card[data-suit='S'] {
 }
 
 body.dark-mode .card[data-suit='S'] .card__info::after,
-body.dark-mode .card[data-suit='S'] .card__suit {
-  background-image: url('../assets/spade-dark.svg');
-}
-
 body.dark-mode .card[data-suit='C'] .card__info::after,
-body.dark-mode .card[data-suit='C'] .card__suit {
-  background-image: url('../assets/club-dark.svg');
+body.dark-mode .card[data-suit='C'] .card__suit,
+body.dark-mode .card[data-suit='S'] .card__suit {
+  filter: invert();
 }
 
 .card__info--top {

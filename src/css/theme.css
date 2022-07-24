@@ -1,21 +1,23 @@
 #btn-theme {
+  --btn-width: 30px;
   position: fixed;
-  left: 20px;
-  bottom: 20px;
+  right: 10px;
+  top: 50px;
   aspect-ratio: 1 / 1;
-  width: 60px;
+  width: var(--btn-width);
   border-radius: 50%;
-  background-image: url('../assets/dark-theme.png');
+  background-image: url('../assets/light-lightbulb.svg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 50px;
+  background-size: calc(var(--btn-width) - 15px);
   z-index: 50;
+  transition: filter 0.3s ease;
 }
 
 #btn-theme:hover {
-  background-color: #121212;
+  filter:  invert();
 }
 
 body.dark-mode #btn-theme {
-  background-image: url('../assets/light-theme.png');
+  background-image: url('../assets/dark-lightbulb.svg');
 }

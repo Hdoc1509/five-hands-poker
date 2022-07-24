@@ -175,10 +175,9 @@
   }
 
   #btn-theme {
-    left: 10px;
-    bottom: 10px;
-    width: 50px;
-    background-size: 40px;
+    width: 24px;
+    right: 15px;
+    background-size: 12px;
   }
 
   .dialog-open-button {
