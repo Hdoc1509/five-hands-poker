@@ -12,17 +12,17 @@
   <link rel="stylesheet" href="src/css/index.css" />
 
   <!-- Scripts -->
-  <script src="src/js/game-version.js" type="module" defer></script>
   <script src="src/js/index.js" type="module" defer></script>
   <script src="src/js/game-rules.js" type="module" defer></script>
+  <script src="src/js/game-version.js" type="module" defer></script>
+  <script src="src/js/dark-theme.js" type="module" defer></script>
 </head>
 
 <body>
   <div class="container">
     <button id="btn-theme"></button>
-    <script>
-      (function(d,$body,ls){function darkTheme(){$body.classList.add('dark-mode');ls.setItem('theme','dark')}function lightTheme(){$body.classList.remove('dark-mode');ls.setItem('theme','light')}if(ls.getItem('theme')==='dark')darkTheme();d.getElementById('btn-theme').addEventListener('click',function(){$body.classList.contains('dark-mode')?lightTheme():darkTheme()})})(document,document.body,localStorage);
-    </script>
+    <!-- Dark mode logic. DON'T MODIFY -->
+    <script>(function(b,l){if(l.getItem('theme')==='dark')b.classList.add('dark-mode')})(document.body,localStorage)</script>
 
     <!-- MODAL -->
     <button class="dialog-open-button">i</button>
