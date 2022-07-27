@@ -12,10 +12,10 @@
   background-size: calc(var(--btn-width) - 15px);
   z-index: 50;
   transition: filter 0.3s ease;
-}
 
-#btn-theme:hover {
-  filter:  invert();
+  &:hover {
+    filter:  invert(100%);
+  }
 }
 
 body.dark-mode #btn-theme {

@@ -1,0 +1,173 @@
+/*=============================
+=            CARDS            =
+=============================*/
+
+.cards-group {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  aspect-ratio: 68 / 54.4;
+  width: 680px;
+  margin: 0 auto;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  width: 47.05882352%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 4px 4px 15px #222;
+  cursor: default;
+  transition: top 0.25s ease, outline 0.25s ease;
+
+  &[data-suit='H'],
+  &[data-suit='D'] {
+    color: #f00 !important;
+  }
+
+  &[data-suit='C'],
+  &[data-suit='S'] {
+    color: #000;
+  }
+
+  &[data-suit='D'] &__suit {
+    background-image: var(--diamond-suit-url);
+  }
+
+  &[data-suit='H'] &__suit {
+    background-image: var(--heart-suit-url);
+  }
+
+  &[data-suit='S'] &__suit {
+    background-image: var(--spade-suit-url);
+  }
+
+  &[data-suit='C'] &__suit {
+    background-image: var(--club-suit-url);
+  }
+
+  &--selected {
+    top: -16px;
+    outline: solid var(--selected-card);
+    transition: top 0.25s ease, outline 0.25s ease;
+  }
+
+  &__info {
+    position: absolute;
+    font-size: 32px;
+    transition: none;
+    text-align: center;
+    letter-spacing: -2px;
+    line-height: 32px;
+
+    &[data-number]::before {
+      content: attr(data-number);
+      position: relative;
+    }
+
+    &:not([data-number])::before,
+    &[data-number='']::before {
+      content: '?';
+    }
+
+    &[data-number='10'][data-suit]::before {
+      left: -10px;
+    }
+
+    &[data-number='Q'][data-suit]::before {
+      left: -4px;
+    }
+
+    &[data-number='K'][data-suit]::before,
+    &[data-number='A'][data-suit]::before {
+      left: -2px;
+    }
+
+    &[data-suit]::after {
+      content: '';
+      display: block;
+      position: absolute;
+      aspect-ratio: 1 / 1;
+      width: 30px;
+      left: -6px;
+    }
+
+    &[data-suit='D']::after {
+      background-image: var(--diamond-suit-url);
+    }
+
+    &[data-suit='H']::after {
+      background-image: var(--heart-suit-url);
+    }
+
+    &[data-suit='S']::after {
+      background-image: var(--spade-suit-url);
+    }
+
+    &[data-suit='C']::after {
+      background-image: var(--club-suit-url);
+    }
+
+    &--top {
+      top: 20px;
+      left: 20px;
+    }
+
+    &--bottom {
+      bottom: 20px;
+      right: 20px;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__suit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 75%;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+body.dark-mode .card {
+  background-color: #111;
+  color: #fff;
+
+  &[data-suit='C'],
+  &[data-suit='S'] {
+    color: #fff;
+  }
+
+  &[data-suit='S'] .card__info::after,
+  &[data-suit='S'] .card__suit,
+  &[data-suit='C'] .card__info::after,
+  &[data-suit='C'] .card__suit {
+      filter: invert(100%);
+  }
+}
+
+#card1 {
+  left: 0;
+}
+
+#card2 {
+  left: 13.235294%;
+}
+
+#card3 {
+  left: 26.470588%;
+}
+
+#card4 {
+  left: 39.705882%;
+}
+
+#card5 {
+  left: 52.941176%;
+}
