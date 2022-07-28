@@ -1,5 +1,5 @@
 import { gid } from './utils/dom';
-import { version } from '../../package.json';
+import { version } from '../package.json';
 
 const $version = gid('game-version');
 const releaseURL = 'https://github.com/Hdoc1509/five-hands-poker/releases/tag';
