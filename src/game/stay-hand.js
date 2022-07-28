@@ -6,7 +6,7 @@ import { verificateHand } from 'poker-hand-verifier';
 import { getObjCards, setObjCards } from './game-cards.js';
 import { startGame } from './start-game.js';
 import { clearCurrentHandClass } from './game-hands.js';
-import { qsa, gid } from '../utils/dom.js';
+import { qsa, gid } from '../utils/dom';
 import { setRemainingCardsCounter } from './remaining-cards.js';
 import { HAND_POINTS } from './hand-points.js';
 

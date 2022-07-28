@@ -1,9 +1,9 @@
 import { gid } from './utils/dom';
 
 const $body = document.body;
-const saveTheme = (theme) => localStorage.setItem('theme', theme);
+const saveTheme = (theme: string) => localStorage.setItem('theme', theme);
 
-gid('btn-theme').addEventListener('click', () => {
+gid('btn-theme')?.addEventListener('click', () => {
   if ($body.classList.contains('dark-mode')) {
     $body.classList.remove('dark-mode');
     saveTheme('light');

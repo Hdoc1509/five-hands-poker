@@ -1,4 +1,4 @@
-import { qs } from './utils/dom.js';
+import { qs } from './utils/dom';
 
 const $dialogOpenBtn = qs('.dialog-open-button');
 const $dialogCloseBtn = qs('.dialog-rules__close');

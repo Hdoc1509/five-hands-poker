@@ -5,7 +5,7 @@ import { toggleSelectedCard } from './card-utils.js';
 import { changeSelectedCards } from './change-cards.js';
 import { stayHand } from './stay-hand.js';
 import { clearCurrentHandClass, getPlayerHandsCounter } from './game-hands.js';
-import { qsa } from '../utils/dom.js';
+import { qsa } from '../utils/dom';
 
 export const startGame = () => {
   GAME_BUTTONS.start.classList.add('hidden');

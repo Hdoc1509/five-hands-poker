@@ -1,4 +1,4 @@
-import { gid } from '../utils/dom.js';
+import { gid } from '../utils/dom';
 
 /** @type {number} Counter of remaining cards */
 let remainingCardsCounter = null;

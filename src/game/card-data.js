@@ -1,5 +1,5 @@
 import { getRandomCard, setObjCards } from './game-cards.js';
-import { qsa, gid } from '../utils/dom.js';
+import { qsa, gid } from '../utils/dom';
 
 /**
  * Set the info of each card

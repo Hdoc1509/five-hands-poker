@@ -6,7 +6,7 @@ import { setCardData } from './card-data.js';
 import { GAME_BUTTONS } from './game-buttons.js';
 import { changeCardsQuantityError, noCardSelectedError } from './errors.js';
 import { toggleSelectedCard } from './card-utils.js';
-import { qsa } from '../utils/dom.js';
+import { qsa } from '../utils/dom';
 
 export const changeSelectedCards = () => {
   const $selectedCards = qsa('.card--selected');
