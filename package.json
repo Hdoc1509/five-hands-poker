@@ -31,7 +31,9 @@
     "npm-check-updates": "15.3.4",
     "poker-hand-verifier": "1.0.0",
     "sass": "1.54.0",
+    "typescript": "4.7.4",
     "vite": "3.0.2",
-    "vite-plugin-html": "3.2.0"
+    "vite-plugin-html": "3.2.0",
+    "vitest": "0.19.1"
   }
 }
