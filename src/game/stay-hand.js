@@ -72,7 +72,7 @@ export const stayHand = () => {
 
     // Removing class for current hand
     clearCurrentHandClass();
-    setPlayerHandsCounter(() => null);
+    setPlayerHandsCounter(null);
 
     // Setting total points
     const playerPoints = playerHands.reduce(
