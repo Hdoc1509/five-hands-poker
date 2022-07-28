@@ -27,8 +27,8 @@ export const getPlayerHandsCounter = () => playerHandsCounter;
 
 /** Remove class "section__current-hand" */
 export const clearCurrentHandClass = () => {
-  const currentHandSelector = '.points-details__hand--current';
-  const $currentHand = qs(currentHandSelector);
+  const currentHandClass = 'points-details__hand--current';
+  const $currentHand = qs(`.${currentHandClass}`);
 
-  $currentHand?.classList.remove(currentHandSelector);
+  $currentHand?.classList.remove(currentHandClass);
 };
