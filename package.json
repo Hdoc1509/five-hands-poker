@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/Hdoc1509/five-hands-poker#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.31.0",
+    "@typescript-eslint/parser": "5.31.0",
     "gh-pages": "4.0.0",
     "npm-check-updates": "15.3.4",
     "poker-hand-verifier": "1.0.0",
