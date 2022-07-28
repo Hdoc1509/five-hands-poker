@@ -1,5 +1,6 @@
 {
   "name": "five-hands-poker",
+  "private": true,
   "version": "1.1.1",
   "description": "Game created as a personal project",
   "type": "module",
