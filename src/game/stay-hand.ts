@@ -1,16 +1,22 @@
-import { GAME_BUTTONS } from './game-buttons.js';
+import { GAME_BUTTONS } from './game-buttons';
 import { changeSelectedCards } from './change-cards.js';
 import { toggleSelectedCard } from './card-utils.js';
-import { getPlayerHandsCounter, setPlayerHandsCounter } from './game-hands.js';
+import { getPlayerHandsCounter, setPlayerHandsCounter, clearCurrentHandClass } from './game-hands';
 import { verificateHand } from 'poker-hand-verifier';
 import { getObjCards, setObjCards } from './game-cards.js';
-import { startGame } from './start-game.js';
-import { clearCurrentHandClass } from './game-hands.js';
+import { startGame } from './start-game';
 import { qsa, gid } from '../utils/dom';
 import { setRemainingCardsCounter } from './remaining-cards.js';
-import { HAND_POINTS } from './hand-points.js';
+import { HAND_POINTS } from './hand-points';
 
-const playerHands = [];
+type PlayerHandData = {
+  cards: Array<string>;
+  id: string;
+  points: number;
+  description: string;
+}
+
+const playerHands: Array<PlayerHandData> = [];
 
 const playAgain = () => location.reload();
 
@@ -34,7 +40,7 @@ const showPlayerHands = () => {
       .replace(/C/g, '♣')
       .replace(/S/g, '♠')})`;
 
-    gid(`${id}-cards`).textContent = handCards;
+    gid(`${id}-cards`)!.textContent = handCards;
   });
 };
 
@@ -50,15 +56,17 @@ export const stayHand = () => {
   // Data for the current hand
   const handsCounter = getPlayerHandsCounter();
   const currentHand = verificateHand(getObjCards());
-
-  currentHand.id = `hand${handsCounter}`;
-  currentHand.points = HAND_POINTS[currentHand.type];
+  const currentHandData: PlayerHandData = {
+    ...currentHand,
+    id: `hand${handsCounter}`,
+    points: HAND_POINTS[currentHand.type],
+  };
 
   // Displaying the points of the current hand
-  gid(`hand${handsCounter}-points`).textContent = `${currentHand.points}`;
+  gid(`hand${handsCounter}-points`)!.textContent = `${currentHandData.points}`;
 
   // Adding the current hand to array playerHands
-  playerHands.push(currentHand);
+  playerHands.push(currentHandData);
 
   // Updating the counter of hands
   setPlayerHandsCounter((current) => current + 1);
@@ -72,7 +80,7 @@ export const stayHand = () => {
 
     // Removing class for current hand
     clearCurrentHandClass();
-    setPlayerHandsCounter(null);
+    setPlayerHandsCounter(0);
 
     // Setting total points
     const playerPoints = playerHands.reduce(
@@ -81,14 +89,13 @@ export const stayHand = () => {
     );
 
     // Displaying total points
-    gid('total-hands-points').textContent = `${playerPoints}`;
+    gid('total-hands-points')!.textContent = `${playerPoints}`;
 
     // Updating styles for total points box
-    const $totalPointsBox = gid('total-points');
+    const $totalPointsBox = gid('total-points') as HTMLParagraphElement;
     $totalPointsBox.classList.remove('hidden');
 
-    /** @type {HTMLDialogElement} */
-    const $gameResult = gid('game-result');
+    const $gameResult = gid('game-result') as HTMLDialogElement;
     $gameResult.show();
 
     // Show player hands beside points of each hand
@@ -102,7 +109,7 @@ export const stayHand = () => {
     $totalPointsBox.classList.add(`points-details__total--${resultText}`);
 
     // Hidding the remaining cards container
-    gid('remaining-cards-container').classList.add('hidden');
+    gid('remaining-cards-container')!.classList.add('hidden');
   } else {
     // If it isn't the last hand
     GAME_BUTTONS.nextHand.classList.remove('hidden');
@@ -110,6 +117,6 @@ export const stayHand = () => {
     GAME_BUTTONS.nextHand.addEventListener('click', startGame, { once: true });
   }
 
-  setRemainingCardsCounter(null); // Cleaning counter
+  setRemainingCardsCounter(0); // Cleaning counter
   setObjCards([]); // Cleaning cards
 };

@@ -5,5 +5,5 @@ const $version = gid('game-version');
 const releaseURL = 'https://github.com/Hdoc1509/five-hands-poker/releases/tag';
 const currentVersion = `v${version}`;
 
-$version.setAttribute('href', `${releaseURL}/${currentVersion}`);
-$version.textContent = `${currentVersion}`;
+$version!.setAttribute('href', `${releaseURL}/${currentVersion}`);
+$version!.textContent = `${currentVersion}`;

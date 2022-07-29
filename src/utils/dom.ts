@@ -1,23 +1,23 @@
-const d = document;
+type ElementParent = Document | Element | DocumentFragment;
 
 /**
  * Simplified name for document.getElementById()
- * @param  {String} id String that specifies the ID value.
+ * @param id String that specifies the ID value.
  */
-export const gid = (id) => d.getElementById(id);
+export const gid = (id: string) => document.getElementById(id);
 
 /**
  * Simplified name for Element.querySelector()
- * @param  {String} selector A valid css selector
- * @param  {Document|Element|DocumentFragment} parent   Parent Node
+ * @param selector A valid css selector
+ * @param parent   Parent Node
  */
-export const qs = (selector, parent = d) => parent.querySelector(selector);
+export const qs = (selector: string, parent: ElementParent = document) =>
+  parent.querySelector(selector);
 
 /**
  * Simplified name for Element.querySelectorAll()
- * @param  {String} selector A valid css selector
- * @param  {Document|Element|DocumentFragment} parent   Parent Node
+ * @param selector A valid css selector
+ * @param parent   Parent Node
  */
-export const qsa = (selector, parent = d) => [
-  ...parent.querySelectorAll(selector),
-];
+export const qsa = (selector: string, parent: ElementParent = document) =>
+  Array.from(parent.querySelectorAll<HTMLElement>(selector));

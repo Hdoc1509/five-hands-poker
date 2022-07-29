@@ -1,4 +1,4 @@
-export const HAND_POINTS = Object.freeze({
+export const HAND_POINTS: {[index: string]: number} = Object.freeze({
   nothing: 0,
   'high-card': 1,
   pair: 2,

@@ -1,16 +1,16 @@
-import { getRandomCard, setObjCards } from './game-cards.js';
+import { getRandomCard, setObjCards } from './game-cards';
 import { qsa, gid } from '../utils/dom';
 
 /**
  * Set the info of each card
- * @param {String}  cardId     - Card's Id
- * @param {Boolean} isToChange - Especify if the card must be changed
+ * @param cardId     Card's Id
+ * @param isToChange Especify if the card must be changed
  */
-export const setCardData = (cardId, isToChange) => {
+export const setCardData = (cardId: string, isToChange: boolean) => {
   const { number, suit } = getRandomCard();
   const cardIndex = Number(cardId.charAt(4)) - 1;
   const cardObj = { id: cardId, number, suit };
-  const $card = gid(cardId);
+  const $card = gid(cardId) as HTMLDivElement;
 
   if (isToChange)
     setObjCards((cards) => {

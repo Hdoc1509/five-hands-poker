@@ -1,34 +1,25 @@
-import { generateCards } from '../utils/cards-generator.js';
-import { parseCard } from './card-utils.js';
-import { cleanArray } from '../utils/array.js';
+import { generateCards } from '../utils/cards-generator';
+import { parseCard } from './card-utils';
+import { cleanArray } from '../utils/array';
 
 /** Cards for use in game */
 const gameCards = generateCards();
 
-/**
- * Card Object
- * @typedef  {Object} ObjCard
- * @property {String} id
- * @property {String} number
- * @property {String} suit
- */
+type ObjCard = {
+  id: string;
+  number: string;
+  suit: string;
+};
 
-/**
- * Array of cards for each hand
- * @type {Array<ObjCard>}
- */
-export const generatedObjCards = [];
+/** Array of cards for each hand */
+const generatedObjCards: Array<ObjCard> = [];
 
-/**
- * Callbak for update object cards
- * @callback ObjCardCallback
- * @param {Array<ObjCard>} cards Current array of object cards
- * @returns {Array<ObjCard>} New array of object cards
- */
+/** Callbak for update object cards */
+type ObjCardsCallback = (currentCards: Array<ObjCard>) => Array<ObjCard>;
 
 /**
  * Sets new value for object cards of each hand
- * @param  {Array<ObjCard>|ObjCardCallback} data Callback or value for update object cards
+ * @param data Callback or value for update object cards
  *
  * @example
  * // Edit hand at index 2
@@ -45,7 +36,7 @@ export const generatedObjCards = [];
  * // Clean cards
  * setObjCards([]);
  */
-export const setObjCards = (data) => {
+export const setObjCards = (data: Array<ObjCard> | ObjCardsCallback) => {
   let aux = null;
 
   if (typeof data === 'function') {

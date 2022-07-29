@@ -1,11 +1,13 @@
 import { gid } from '../utils/dom';
 
-/** @type {number} Counter of remaining cards */
-let remainingCardsCounter = null;
+/** Counter of remaining cards */
+let remainingCardsCounter = 0;
+
+type RemainingCardsCounterCallback = (current: number) => number;
 
 /**
  * Sets and display new value for counter of remaining cards
- * @param  {number|Function} data Callback or value for update counter of remaining cards
+ * @param data Callback or value for update counter of remaining cards
  *
  * @example
  * // Increments the value in 1
@@ -17,11 +19,10 @@ let remainingCardsCounter = null;
  * @example
  * // Sets the value to 3
  * setRemainingCardsCounter(3);
- * @example
- * // Sets the value to null
- * setRemainingCardsCounter(null);
  */
-export const setRemainingCardsCounter = (data) => {
+export const setRemainingCardsCounter = (
+  data: number | RemainingCardsCounterCallback
+) => {
   let aux = null;
 
   if (typeof data === 'function') {
@@ -37,7 +38,7 @@ export const setRemainingCardsCounter = (data) => {
   }
 
   remainingCardsCounter = aux;
-  gid('remaining-cards').textContent = remainingCardsCounter?.toString() ?? '-';
+  gid('remaining-cards')!.textContent = remainingCardsCounter === 0 ? '-' : `${remainingCardsCounter}`;
 };
 
 /** Gets the current value of counter of remaining cards */

@@ -3,8 +3,8 @@ import {
   setRemainingCardsCounter,
 } from './remaining-cards.js';
 import { setCardData } from './card-data.js';
-import { GAME_BUTTONS } from './game-buttons.js';
-import { changeCardsQuantityError, noCardSelectedError } from './errors.js';
+import { GAME_BUTTONS } from './game-buttons';
+import { changeCardsQuantityError, noCardSelectedError } from './errors';
 import { toggleSelectedCard } from './card-utils.js';
 import { qsa } from '../utils/dom';
 

@@ -1,11 +1,10 @@
 import { qs } from './utils/dom';
 
-const $dialogOpenBtn = qs('.dialog-open-button');
-const $dialogCloseBtn = qs('.dialog-rules__close');
+const $dialogOpenBtn = qs('.dialog-open-button') as HTMLButtonElement;
+const $dialogCloseBtn = qs('.dialog-rules__close') as HTMLButtonElement;
 const $body = document.body;
 
-/** @type {HTMLDialogElement} */
-const $dialogRules = qs('.dialog-rules');
+const $dialogRules = qs('.dialog-rules') as HTMLDialogElement;
 
 const hideRules = () => {
   $dialogRules.close();

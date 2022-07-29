@@ -24,19 +24,13 @@ const getRandomCard = () => `${getRandomNumber()}${getRandomSuit()}`;
 
 /**
  * Generates playing cards as an Array of strings
- * @param {number} [quantity] - Quantity of cards to generate
- *
- * @return {Array<string>} Array of cards
+ * @param quantity - Quantity of cards to generate
  */
-export const generateCards = (quantity = 52) => {
-  if (typeof quantity !== 'number')
-    throw new TypeError('Expected a number as argument.');
-
+export const generateCards = (quantity = 52): Array<string> => {
   if (quantity > 52 || quantity < 1)
     throw new RangeError('Argument must be between 1 and 52.');
 
-  /** @type {Set<string>} */
-  const cards = new Set();
+  const cards: Set<string> = new Set();
 
   const generateCard = () => {
     let card = getRandomCard();

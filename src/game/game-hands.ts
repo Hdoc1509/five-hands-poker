@@ -1,11 +1,13 @@
 import { qs } from '../utils/dom';
 
-/** @type {number} Counter of hands player */
-let playerHandsCounter = null;
+/** Counter of hands player */
+let playerHandsCounter = 0;
+
+type PlayerHandsCounterCallback = (current: number) => number;
 
 /**
  * Sets new value for counter of player hands
- * @param  {number|Function} data Callback or value for update counter of player hands
+ * @param data Callback or value for update counter of player hands
  *
  * @example
  * // Increments the value in 1
@@ -18,7 +20,9 @@ let playerHandsCounter = null;
  * // Sets the value to 3
  * setRemainingCards(3);
  */
-export const setPlayerHandsCounter = (data) => {
+export const setPlayerHandsCounter = (
+  data: number | PlayerHandsCounterCallback
+) => {
   let auxiliar = null;
 
   if (typeof data === 'function') {

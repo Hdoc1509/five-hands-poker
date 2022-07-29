@@ -1,10 +1,10 @@
-import { GAME_BUTTONS } from './game-buttons.js';
-import { setRemainingCardsCounter } from './remaining-cards.js';
-import { setCardData } from './card-data.js';
-import { toggleSelectedCard } from './card-utils.js';
-import { changeSelectedCards } from './change-cards.js';
-import { stayHand } from './stay-hand.js';
-import { clearCurrentHandClass, getPlayerHandsCounter } from './game-hands.js';
+import { GAME_BUTTONS } from './game-buttons';
+import { setRemainingCardsCounter } from './remaining-cards';
+import { setCardData } from './card-data';
+import { toggleSelectedCard } from './card-utils';
+import { changeSelectedCards } from './change-cards';
+import { stayHand } from './stay-hand';
+import { clearCurrentHandClass, getPlayerHandsCounter } from './game-hands';
 import { qsa } from '../utils/dom';
 
 export const startGame = () => {

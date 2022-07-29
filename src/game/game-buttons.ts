@@ -1,22 +1,9 @@
 import { gid } from '../utils/dom';
 
-/**
- * @typedef  {Object}            GameButtons
- * @property {HTMLButtonElement} start
- * @property {HTMLButtonElement} change
- * @property {HTMLButtonElement} stay
- * @property {HTMLButtonElement} nextHand
- * @property {HTMLButtonElement} playAgain
- */
-
-/**
- * Game buttons
- * @type {GameButtons}
- */
 export const GAME_BUTTONS = Object.freeze({
-  start: gid('start-button'),
-  change: gid('change-button'),
-  stay: gid('stay-button'),
-  nextHand: gid('next-hand-button'),
-  playAgain: gid('play-again-button'),
+  start: gid('start-button') as HTMLButtonElement,
+  change: gid('change-button') as HTMLButtonElement,
+  stay: gid('stay-button') as HTMLButtonElement,
+  nextHand: gid('next-hand-button') as HTMLButtonElement,
+  playAgain: gid('play-again-button') as HTMLButtonElement,
 });
