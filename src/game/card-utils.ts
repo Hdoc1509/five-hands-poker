@@ -6,8 +6,9 @@ type ParsedCard = {
 
 /** Parse data of string card */
 export const parseCard = (card: string): ParsedCard => {
-  const number = card.startsWith('10') ? card.slice(0, 2) : card.charAt(0);
-  const suit = card.startsWith('10') ? card.charAt(2) : card.charAt(1);
+  const isTen = card.startsWith('10');
+  const number = isTen ? card.slice(0, 2) : card.charAt(0);
+  const suit = isTen ? card.charAt(2) : card.charAt(1);
 
   return { number, suit, card };
 };
