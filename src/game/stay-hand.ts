@@ -5,7 +5,7 @@ import { getPlayerHandsCounter, setPlayerHandsCounter, clearCurrentHandClass } f
 import { verificateHand } from 'poker-hand-verifier';
 import { getObjCards, setObjCards } from './game-cards';
 import { startGame } from './start-game';
-import { qsa, gid } from '../utils/dom';
+import { qsa, gid, qs } from '../utils/dom';
 import { setRemainingCardsCounter } from './remaining-cards';
 import { HAND_POINTS } from './hand-points';
 
@@ -109,11 +109,10 @@ export const stayHand = () => {
     $totalPointsBox.classList.add(`points-details__total--${resultText}`);
 
     // Hidding the remaining cards container
-    gid('remaining-cards-container')!.classList.add('hidden');
+    qs('.remaining-cards')!.classList.add('hidden');
   } else {
     // If it isn't the last hand
     GAME_BUTTONS.nextHand.classList.remove('hidden');
-
     GAME_BUTTONS.nextHand.addEventListener('click', startGame, { once: true });
   }
 
