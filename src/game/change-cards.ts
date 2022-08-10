@@ -1,11 +1,11 @@
 import {
   getRemainingCardsCounter,
   setRemainingCardsCounter,
-} from './remaining-cards.js';
-import { setCardData } from './card-data.js';
+} from './remaining-cards';
+import { setCardData } from './card-data';
 import { GAME_BUTTONS } from './game-buttons';
 import { changeCardsQuantityError, noCardSelectedError } from './errors';
-import { toggleSelectedCard } from './card-utils.js';
+import { toggleSelectedCard } from './card-utils';
 import { qsa } from '../utils/dom';
 
 export const changeSelectedCards = () => {

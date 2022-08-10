@@ -1,12 +1,12 @@
 import { GAME_BUTTONS } from './game-buttons';
-import { changeSelectedCards } from './change-cards.js';
-import { toggleSelectedCard } from './card-utils.js';
+import { changeSelectedCards } from './change-cards';
+import { toggleSelectedCard } from './card-utils';
 import { getPlayerHandsCounter, setPlayerHandsCounter, clearCurrentHandClass } from './game-hands';
 import { verificateHand } from 'poker-hand-verifier';
-import { getObjCards, setObjCards } from './game-cards.js';
+import { getObjCards, setObjCards } from './game-cards';
 import { startGame } from './start-game';
 import { qsa, gid } from '../utils/dom';
-import { setRemainingCardsCounter } from './remaining-cards.js';
+import { setRemainingCardsCounter } from './remaining-cards';
 import { HAND_POINTS } from './hand-points';
 
 type PlayerHandData = {
