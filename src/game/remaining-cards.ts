@@ -38,7 +38,7 @@ export const setRemainingCardsCounter = (
   }
 
   remainingCardsCounter = aux;
-  gid('remaining-cards')!.textContent = remainingCardsCounter === 0 ? '-' : `${remainingCardsCounter}`;
+  gid('remaining-cards-counter')!.textContent = remainingCardsCounter === 0 ? '-' : `${remainingCardsCounter}`;
 };
 
 /** Gets the current value of counter of remaining cards */
