@@ -1,4 +1,4 @@
-type ElementParent = Document | Element | DocumentFragment;
+type Parent = Document | Element | DocumentFragment;
 
 /**
  * Simplified name for document.getElementById()
@@ -11,7 +11,7 @@ export const gid = (id: string) => document.getElementById(id);
  * @param selector A valid css selector
  * @param parent   Parent Node
  */
-export const qs = (selector: string, parent: ElementParent = document) =>
+export const qs = (selector: string, parent: Parent = document) =>
   parent.querySelector(selector);
 
 /**
@@ -19,5 +19,5 @@ export const qs = (selector: string, parent: ElementParent = document) =>
  * @param selector A valid css selector
  * @param parent   Parent Node
  */
-export const qsa = (selector: string, parent: ElementParent = document) =>
+export const qsa = (selector: string, parent: Parent = document) =>
   Array.from(parent.querySelectorAll<HTMLElement>(selector));
