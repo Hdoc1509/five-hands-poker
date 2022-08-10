@@ -45,10 +45,10 @@ const showPlayerHands = () => {
 };
 
 export const stayHand = () => {
-  GAME_BUTTONS.change.classList.add('hidden');
-  GAME_BUTTONS.stay.classList.add('hidden');
+  GAME_BUTTONS.CHANGE.classList.add('hidden');
+  GAME_BUTTONS.STAY.classList.add('hidden');
 
-  GAME_BUTTONS.change.removeEventListener('click', changeSelectedCards);
+  GAME_BUTTONS.CHANGE.removeEventListener('click', changeSelectedCards);
 
   // Listener for cards
   document.removeEventListener('click', toggleSelectedCard);
@@ -73,10 +73,10 @@ export const stayHand = () => {
 
   //Validation if it's the last hand
   if (playerHands.length === 5) {
-    GAME_BUTTONS.nextHand.classList.add('hidden');
-    GAME_BUTTONS.playAgain.classList.remove('hidden');
+    GAME_BUTTONS.NEXT_HAND.classList.add('hidden');
+    GAME_BUTTONS.PLAY_AGAIN.classList.remove('hidden');
 
-    GAME_BUTTONS.playAgain.addEventListener('click', playAgain, { once: true });
+    GAME_BUTTONS.PLAY_AGAIN.addEventListener('click', playAgain, { once: true });
 
     // Removing class for current hand
     clearCurrentHandClass();
@@ -112,8 +112,8 @@ export const stayHand = () => {
     qs('.remaining-cards')!.classList.add('hidden');
   } else {
     // If it isn't the last hand
-    GAME_BUTTONS.nextHand.classList.remove('hidden');
-    GAME_BUTTONS.nextHand.addEventListener('click', startGame, { once: true });
+    GAME_BUTTONS.NEXT_HAND.classList.remove('hidden');
+    GAME_BUTTONS.NEXT_HAND.addEventListener('click', startGame, { once: true });
   }
 
   setRemainingCardsCounter(0); // Cleaning counter

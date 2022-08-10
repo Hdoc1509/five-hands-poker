@@ -8,10 +8,10 @@ import { clearCurrentHandClass, getPlayerHandsCounter } from './game-hands';
 import { qsa } from '../utils/dom';
 
 export const startGame = () => {
-  GAME_BUTTONS.start.classList.add('hidden');
-  GAME_BUTTONS.nextHand.classList.add('hidden');
-  GAME_BUTTONS.change.classList.remove('hidden');
-  GAME_BUTTONS.stay.classList.remove('hidden');
+  GAME_BUTTONS.START.classList.add('hidden');
+  GAME_BUTTONS.NEXT_HAND.classList.add('hidden');
+  GAME_BUTTONS.CHANGE.classList.remove('hidden');
+  GAME_BUTTONS.STAY.classList.remove('hidden');
 
   // Setting and displaying counter of remaining cards
   setRemainingCardsCounter(3);
@@ -23,8 +23,8 @@ export const startGame = () => {
   document.addEventListener('click', toggleSelectedCard);
 
   // Adding Listener for the game buttons
-  GAME_BUTTONS.change.addEventListener('click', changeSelectedCards);
-  GAME_BUTTONS.stay.addEventListener('click', stayHand, { once: true });
+  GAME_BUTTONS.CHANGE.addEventListener('click', changeSelectedCards);
+  GAME_BUTTONS.STAY.addEventListener('click', stayHand, { once: true });
 
   clearCurrentHandClass();
 

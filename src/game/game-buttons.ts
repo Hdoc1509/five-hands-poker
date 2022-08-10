@@ -1,9 +1,9 @@
 import { gid } from '../utils/dom';
 
 export const GAME_BUTTONS = Object.freeze({
-  start: gid('start-button') as HTMLButtonElement,
-  change: gid('change-button') as HTMLButtonElement,
-  stay: gid('stay-button') as HTMLButtonElement,
-  nextHand: gid('next-hand-button') as HTMLButtonElement,
-  playAgain: gid('play-again-button') as HTMLButtonElement,
+  START: gid('start-button') as HTMLButtonElement,
+  CHANGE: gid('change-button') as HTMLButtonElement,
+  STAY: gid('stay-button') as HTMLButtonElement,
+  NEXT_HAND: gid('next-hand-button') as HTMLButtonElement,
+  PLAY_AGAIN: gid('play-again-button') as HTMLButtonElement,
 });
