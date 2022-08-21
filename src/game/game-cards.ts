@@ -5,7 +5,7 @@ import { cleanArray } from '../utils/array';
 /** Cards for use in game */
 const gameCards = generateCards();
 
-type ObjCard = {
+export type ObjCard = {
   id: string;
   number: string;
   suit: string;

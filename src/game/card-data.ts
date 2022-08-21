@@ -1,24 +1,15 @@
-import { getRandomCard, setObjCards } from './game-cards';
+import { getRandomCard } from './game-cards';
 import { qsa, gid } from '../utils/dom';
+import type { ObjCard } from './game-cards';
 
 /**
  * Set the info of each card
- * @param cardId     Card's Id
- * @param isToChange Especify if the card must be changed
+ * @param cardId Card's Id
  */
-export const setCardData = (cardId: string, isToChange: boolean) => {
+export const setCardData = (cardId: string): ObjCard => {
   const { number, suit } = getRandomCard();
-  const cardIndex = Number(cardId.charAt(4)) - 1;
   const cardObj = { id: cardId, number, suit };
   const $card = gid(cardId) as HTMLDivElement;
-
-  if (isToChange)
-    setObjCards((cards) => {
-      cards[cardIndex] = cardObj;
-
-      return cards;
-    });
-  else setObjCards((cards) => [...cards, cardObj]);
 
   // Displaying card info
   qsa('.card__info', $card).forEach((info) => {
@@ -26,4 +17,6 @@ export const setCardData = (cardId: string, isToChange: boolean) => {
     info.dataset.suit = suit;
   });
   $card.dataset.suit = suit;
+
+  return cardObj;
 };
