@@ -8,6 +8,7 @@ import { startGame } from './start-game';
 import { qsa, gid, qs } from '../utils/dom';
 import { setRemainingCardsCounter } from './remaining-cards';
 import { HAND_POINTS } from './hand-points';
+import { hideElements, showElements } from '../utils/gui';
 
 type PlayerHandData = {
   cards: Array<string>;
@@ -22,9 +23,7 @@ const playAgain = () => location.reload();
 
 const showPlayerHands = () => {
   // Displaying description container of each hand
-  qsa('.points-details__hand-cards').forEach(($handCards) =>
-    $handCards.classList.remove('hidden')
-  );
+  showElements(...qsa('.points-details__hand-cards'));
 
   // Setting new styles for description of each hand
   qsa('.points-details__hand').forEach(($detail) =>
@@ -45,8 +44,7 @@ const showPlayerHands = () => {
 };
 
 export const stayHand = () => {
-  GAME_BUTTONS.CHANGE.classList.add('hidden');
-  GAME_BUTTONS.STAY.classList.add('hidden');
+  hideElements(GAME_BUTTONS.CHANGE, GAME_BUTTONS.STAY);
 
   GAME_BUTTONS.CHANGE.removeEventListener('click', changeSelectedCards);
 
@@ -73,8 +71,8 @@ export const stayHand = () => {
 
   //Validation if it's the last hand
   if (playerHands.length === 5) {
-    GAME_BUTTONS.NEXT_HAND.classList.add('hidden');
-    GAME_BUTTONS.PLAY_AGAIN.classList.remove('hidden');
+    hideElements(GAME_BUTTONS.NEXT_HAND);
+    showElements(GAME_BUTTONS.PLAY_AGAIN);
 
     GAME_BUTTONS.PLAY_AGAIN.addEventListener('click', playAgain, { once: true });
 
@@ -93,7 +91,7 @@ export const stayHand = () => {
 
     // Updating styles for total points box
     const $totalPointsBox = gid('total-points') as HTMLParagraphElement;
-    $totalPointsBox.classList.remove('hidden');
+    showElements($totalPointsBox);
 
     const $gameResult = gid('game-result') as HTMLDialogElement;
     $gameResult.show();
@@ -109,10 +107,10 @@ export const stayHand = () => {
     $totalPointsBox.classList.add(`points-details__total--${resultText}`);
 
     // Hidding the remaining cards container
-    qs('.remaining-cards')!.classList.add('hidden');
+    hideElements(qs('.remaining-cards') as HTMLDivElement);
   } else {
     // If it isn't the last hand
-    GAME_BUTTONS.NEXT_HAND.classList.remove('hidden');
+    showElements(GAME_BUTTONS.NEXT_HAND);
     GAME_BUTTONS.NEXT_HAND.addEventListener('click', startGame, { once: true });
   }
 

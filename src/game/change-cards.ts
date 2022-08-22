@@ -8,6 +8,7 @@ import { changeCardsQuantityError, noCardSelectedError } from './errors';
 import { toggleSelectedCard } from './card-utils';
 import { qsa } from '../utils/dom';
 import { setObjCards } from './game-cards';
+import { hideElements } from '../utils/gui';
 
 export const changeSelectedCards = () => {
   const $selectedCards = qsa('.card--selected');
@@ -34,7 +35,7 @@ export const changeSelectedCards = () => {
   $selectedCards.forEach(($card) => $card.classList.remove('card--selected'));
 
   if (getRemainingCardsCounter() === 0) {
-    GAME_BUTTONS.CHANGE.classList.add('hidden');
+    hideElements(GAME_BUTTONS.CHANGE);
     GAME_BUTTONS.CHANGE.removeEventListener('click', changeSelectedCards);
 
     // Listener for cards

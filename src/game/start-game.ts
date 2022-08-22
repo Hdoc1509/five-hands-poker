@@ -7,12 +7,11 @@ import { stayHand } from './stay-hand';
 import { clearCurrentHandClass, getPlayerHandsCounter } from './game-hands';
 import { qsa } from '../utils/dom';
 import { setObjCards } from './game-cards';
+import { hideElements, showElements } from '../utils/gui';
 
 export const startGame = () => {
-  GAME_BUTTONS.START.classList.add('hidden');
-  GAME_BUTTONS.NEXT_HAND.classList.add('hidden');
-  GAME_BUTTONS.CHANGE.classList.remove('hidden');
-  GAME_BUTTONS.STAY.classList.remove('hidden');
+  hideElements(GAME_BUTTONS.START, GAME_BUTTONS.NEXT_HAND);
+  showElements(GAME_BUTTONS.CHANGE, GAME_BUTTONS.STAY);
 
   // Setting and displaying counter of remaining cards
   setRemainingCardsCounter(3);
