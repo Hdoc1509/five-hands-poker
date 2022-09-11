@@ -9,7 +9,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview --host --port 3000 --open",
     "deploy": "gh-pages -d dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run tests --reporter verbose",
     "check-dependencies": "ncu --color --packageFile package.json",
     "update-dependencies": "npm run check-dependencies -- -u"
   },
