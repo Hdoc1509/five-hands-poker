@@ -18,6 +18,7 @@
     "spaced-comment": "off",
     "multiline-ternary": "off"
   },
+  "ignorePatterns": ["./dist"],
   "overrides": [
     {
       "files": ["*.ts"],
