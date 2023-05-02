@@ -28,6 +28,7 @@
     "gh-pages": "4.0.0",
     "poker-hand-verifier": "1.0.0",
     "sass": "1.54.0",
+    "semistandard": "16.0.1",
     "vite": "3.0.2",
     "vite-plugin-html": "3.2.0",
     "vitest": "0.19.1"
