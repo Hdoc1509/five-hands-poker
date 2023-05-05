@@ -24,6 +24,7 @@ $cards-group-width: 690px;
   border-radius: 20px;
   box-shadow: 4px 4px 15px #222;
   cursor: default;
+  outline: solid #0000 0;
   transition: top 0.25s ease, outline 0.25s ease;
 
   @media (max-width: 767px) {
