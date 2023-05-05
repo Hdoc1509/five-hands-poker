@@ -2,24 +2,24 @@
 =            CARDS            =
 =============================*/
 
+$cards-group-width: 690px;
+
 .cards-group {
-  display: flex;
-  justify-content: center;
   position: relative;
-  aspect-ratio: 68 / 54.4;
-  width: 680px;
+  aspect-ratio: 68 / 51;
+  width: $cards-group-width;
   margin: 0 auto;
 
   @media (max-width: 767px) {
-    width: 90%;
+    width: 90vw;
   }
 }
 
 .card {
   position: absolute;
   top: 0;
-  width: 47.05882352%;
-  height: 100%;
+  width: 48%;
+  aspect-ratio: 1 / 1.55;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 4px 4px 15px #222;
@@ -186,17 +186,33 @@ body.dark-mode .card {
 }
 
 #card2 {
-  left: 13.235294%;
+  left: calc($cards-group-width * 13 / 100);
+
+  @media (max-width: 767px) {
+    left: 12vw;
+  }
 }
 
 #card3 {
-  left: 26.470588%;
+  left: calc($cards-group-width * 26 / 100);
+
+  @media (max-width: 767px) {
+    left: 24vw;
+  }
 }
 
 #card4 {
-  left: 39.705882%;
+  left: calc($cards-group-width * 39 / 100);
+
+  @media (max-width: 767px) {
+    left: 36vw;
+  }
 }
 
 #card5 {
-  left: 52.941176%;
+  left: calc($cards-group-width * 52 / 100);
+
+  @media (max-width: 767px) {
+    left: 47vw;
+  }
 }
