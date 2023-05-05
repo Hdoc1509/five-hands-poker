@@ -9,6 +9,10 @@
   aspect-ratio: 68 / 54.4;
   width: 680px;
   margin: 0 auto;
+
+  @media (max-width: 767px) {
+    width: 90%;
+  }
 }
 
 .card {
@@ -22,29 +26,33 @@
   cursor: default;
   transition: top 0.25s ease, outline 0.25s ease;
 
-  &[data-suit='H'],
-  &[data-suit='D'] {
+  @media (max-width: 767px) {
+    border-radius: 10px;
+  }
+
+  &[data-suit="H"],
+  &[data-suit="D"] {
     color: #f00 !important;
   }
 
-  &[data-suit='C'],
-  &[data-suit='S'] {
+  &[data-suit="C"],
+  &[data-suit="S"] {
     color: #000;
   }
 
-  &[data-suit='D'] &__suit {
+  &[data-suit="D"] &__suit {
     background-image: var(--diamond-suit-url);
   }
 
-  &[data-suit='H'] &__suit {
+  &[data-suit="H"] &__suit {
     background-image: var(--heart-suit-url);
   }
 
-  &[data-suit='S'] &__suit {
+  &[data-suit="S"] &__suit {
     background-image: var(--spade-suit-url);
   }
 
-  &[data-suit='C'] &__suit {
+  &[data-suit="C"] &__suit {
     background-image: var(--club-suit-url);
   }
 
@@ -62,63 +70,84 @@
     letter-spacing: -2px;
     line-height: 32px;
 
+    @media (max-width: 767px) {
+      font-size: 20px;
+      line-height: 18px;
+    }
+
     &[data-number]::before {
       content: attr(data-number);
       position: relative;
     }
 
     &:not([data-number])::before,
-    &[data-number='']::before {
-      content: '?';
+    &[data-number=""]::before {
+      content: "?";
     }
 
-    &[data-number='10'][data-suit]::before {
+    &[data-number="10"][data-suit]::before {
       left: -10px;
     }
 
-    &[data-number='Q'][data-suit]::before {
+    &[data-number="Q"][data-suit]::before {
       left: -4px;
     }
 
-    &[data-number='K'][data-suit]::before,
-    &[data-number='A'][data-suit]::before {
+    &[data-number="K"][data-suit]::before,
+    &[data-number="A"][data-suit]::before {
       left: -2px;
     }
 
     &[data-suit]::after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       aspect-ratio: 1 / 1;
       width: 30px;
       left: -6px;
+
+      @media (max-width: 767px) {
+        width: 20px;
+        left: -4px;
+        margin-top: 4px;
+      }
     }
 
-    &[data-suit='D']::after {
+    &[data-suit="D"]::after {
       background-image: var(--diamond-suit-url);
     }
 
-    &[data-suit='H']::after {
+    &[data-suit="H"]::after {
       background-image: var(--heart-suit-url);
     }
 
-    &[data-suit='S']::after {
+    &[data-suit="S"]::after {
       background-image: var(--spade-suit-url);
     }
 
-    &[data-suit='C']::after {
+    &[data-suit="C"]::after {
       background-image: var(--club-suit-url);
     }
 
     &--top {
       top: 20px;
       left: 20px;
+
+      @media (max-width: 767px) {
+        top: 10px;
+        left: 10px;
+      }
     }
 
     &--bottom {
       bottom: 20px;
       right: 20px;
       transform: rotate(180deg);
+
+      @media (max-width: 767px) {
+        bottom: 10px;
+        right: 10px;
+      }
     }
   }
 
@@ -139,16 +168,16 @@ body.dark-mode .card {
   background-color: #111;
   color: #fff;
 
-  &[data-suit='C'],
-  &[data-suit='S'] {
+  &[data-suit="C"],
+  &[data-suit="S"] {
     color: #fff;
   }
 
-  &[data-suit='S'] .card__info::after,
-  &[data-suit='S'] .card__suit,
-  &[data-suit='C'] .card__info::after,
-  &[data-suit='C'] .card__suit {
-      filter: invert(100%);
+  &[data-suit="S"] .card__info::after,
+  &[data-suit="S"] .card__suit,
+  &[data-suit="C"] .card__info::after,
+  &[data-suit="C"] .card__suit {
+    filter: invert(100%);
   }
 }
 

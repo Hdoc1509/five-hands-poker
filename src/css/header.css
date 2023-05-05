@@ -9,3 +9,9 @@
   text-align: center;
   text-shadow: 2px 2px 4px #000;
 }
+
+@media (max-width: 767px) {
+  .main-title {
+    font-size: 1.5rem;
+  }
+}
