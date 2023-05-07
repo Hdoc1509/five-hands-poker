@@ -21,7 +21,5 @@ export const setCardData = (cardId: string): ObjCard => {
   const { number, suit } = getRandomCard();
   const cardObj = { id: cardId, number, suit };
 
-  renderCard(cardObj);
-
   return cardObj;
 };
