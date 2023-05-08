@@ -20,11 +20,10 @@ export const changeSelectedCards = () => {
     // Changing cards
     for (let i = 0; i < quantity; i++) {
       const newCardId = $selectedCards[i].id;
-      const newCardIndex = Number(newCardId.charAt(4)) - 1;
       const newCard = setCardData(newCardId);
 
       setObjCards((cards) =>
-        cards.map((card, index) => (index === newCardIndex ? newCard : card))
+        cards.map((card) => (card.id === newCardId ? newCard : card))
       );
       renderCard(newCard);
     }
