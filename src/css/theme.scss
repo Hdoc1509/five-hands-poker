@@ -6,7 +6,7 @@
   aspect-ratio: 1 / 1;
   width: var(--btn-width);
   border-radius: 50%;
-  background-image: url("../assets/light-lightbulb.svg");
+  background-image: url("../assets/dark-lightbulb.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: calc(var(--btn-width) - 15px);
@@ -25,5 +25,5 @@
 }
 
 body.dark-mode #btn-theme {
-  background-image: url("../assets/dark-lightbulb.svg");
+  background-image: url("../assets/light-lightbulb.svg");
 }
