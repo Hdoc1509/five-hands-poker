@@ -1,7 +1,6 @@
 type ParsedCard = {
   number: string;
   suit: string;
-  card: string;
 };
 
 /** Parse data of string card */
@@ -10,7 +9,7 @@ export const parseCard = (card: string): ParsedCard => {
   const number = isTen ? card.slice(0, 2) : card.charAt(0);
   const suit = isTen ? card.charAt(2) : card.charAt(1);
 
-  return { number, suit, card };
+  return { number, suit };
 };
 
 /** Toggles class "card--selected" */
