@@ -88,15 +88,27 @@ $cards-group-width: 690px;
 
     &[data-number="10"][data-suit]::before {
       left: -10px;
+
+      @media (max-width: 767px) {
+        left: -5px;
+      }
     }
 
     &[data-number="Q"][data-suit]::before {
       left: -4px;
+
+      @media (max-width: 767px) {
+        left: -2px;
+      }
     }
 
     &[data-number="K"][data-suit]::before,
     &[data-number="A"][data-suit]::before {
       left: -2px;
+
+      @media (max-width: 767px) {
+        left: -1px;
+      }
     }
 
     &[data-suit]::after {
