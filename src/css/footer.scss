@@ -15,8 +15,10 @@
   a {
     color: #fff;
 
-    &:hover {
-      text-decoration: underline;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

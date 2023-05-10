@@ -22,8 +22,10 @@
     text-transform: uppercase;
     letter-spacing: 4px;
 
-    &:hover {
-      background-color: #2c632c;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: #2c632c;
+      }
     }
 
     @media (max-width: 767px) {
