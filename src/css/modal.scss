@@ -142,8 +142,9 @@
 }
 
 .dialog-game-result {
-  top: 350px;
-  margin: 0 auto;
+  position: absolute;
+  inset: 0;
+  margin: auto;
   padding: 10px;
   border: none;
   border-radius: 20px;
@@ -162,7 +163,6 @@
   }
 
   @media (max-width: 767px) {
-    top: 220px;
     font-size: 3rem;
   }
 }
