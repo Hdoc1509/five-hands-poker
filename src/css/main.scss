@@ -13,10 +13,10 @@
   --current-hand: #51f75182;
   --total-points: #006700;
   --selected-card: #0d0;
-  --diamond-suit-url: url('../assets/diamond.svg');
-  --heart-suit-url: url('../assets/heart.svg');
-  --spade-suit-url: url('../assets/spade.svg');
-  --club-suit-url: url('../assets/club.svg');
+  --diamond-suit-url: url("../assets/diamond.svg");
+  --heart-suit-url: url("../assets/heart.svg");
+  --spade-suit-url: url("../assets/spade.svg");
+  --club-suit-url: url("../assets/club.svg");
 }
 
 * {
@@ -51,7 +51,8 @@ body {
   }
 }
 
-.container, .row {
+.container,
+.row {
   position: relative;
   margin: auto;
   width: 100%;
@@ -61,6 +62,12 @@ body {
 .row {
   clear: both;
   display: table;
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 992px;
+  }
 }
 
 button {
