@@ -19,9 +19,8 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2.2.4
         with:
-          node-version: 16
-          cache: "npm"
-      - run: npm ci --no-audit
-      - run: npm run lint
+          version: 8
+          run_install: true
+      - run: pnpm run lint
