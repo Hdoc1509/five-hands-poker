@@ -22,5 +22,5 @@ jobs:
       - uses: pnpm/action-setup@v2.2.4
         with:
           version: 8
-          run_install: true
+      - run: pnpm install --prefer-offline
       - run: pnpm run lint
